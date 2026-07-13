@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MINI SUPER SJT | Pedido a Domicilio en Menos de 30 Min</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fredoka:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --color-primary: #2d6a4f;
+    --color-green-dark: #1b4332;
+    --color-accent: #e76f51;
+    --color-cream: #fefae0;
+    --color-warm: #faedcd;
+    --color-text: #2b2d42;
+    --color-muted: #6c757d;
+    --shadow: 0 12px 40px rgba(0,0,0,0.06);
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Inter', sans-serif; color: var(--color-text); background: #fff; line-height: 1.7; }
+
+  .demo-badge {
+    position: fixed; bottom: 24px; right: 24px;
+    background: rgba(45,106,79,0.92); color: var(--color-cream);
+    padding: 10px 20px; border-radius: 8px; font-size: 0.78rem; font-weight: 600;
+    z-index: 9999; backdrop-filter: blur(8px); border: 1px solid rgba(231,111,81,0.3);
+  }
+  .demo-badge span { color: var(--color-accent); font-weight: 700; }
+
+  header {
+    position: fixed; top: 0; left: 0; right: 0;
+    background: rgba(255,255,255,0.97); backdrop-filter: blur(12px);
+    box-shadow: 0 1px 20px rgba(0,0,0,0.05); z-index: 1000;
+  }
+  .header-container { max-width: 1200px; margin: 0 auto; padding: 0 28px; display: flex; align-items: center; justify-content: space-between; height: 72px; }
+  .logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+  .logo-icon { font-family: 'Fredoka', sans-serif; font-size: 1.6rem; color: var(--color-primary); font-weight: 700; }
+  .logo-text { font-weight: 800; font-size: 1.1rem; color: var(--color-text); }
+  nav ul { display: flex; list-style: none; gap: 32px; }
+  nav a { text-decoration: none; color: var(--color-text); font-weight: 600; font-size: 0.88rem; transition: color 0.3s; }
+  nav a:hover { color: var(--color-primary); }
+  .menu-toggle { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 8px; }
+  .menu-toggle span { width: 24px; height: 2.5px; background: var(--color-text); border-radius: 2px; }
+  .btn-header { padding: 10px 24px; background: var(--color-accent); color: #fff; text-decoration: none; font-weight: 700; font-size: 0.85rem; border-radius: 50px; transition: all 0.3s; }
+  .btn-header:hover { background: #d45a3a; }
+
+  .hero {
+    min-height: 100vh; display: flex; align-items: center;
+    background: linear-gradient(100deg, rgba(27,67,50,0.9) 0%, rgba(45,106,79,0.75) 40%, rgba(45,106,79,0.3) 100%),
+                url('https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=1600&q=80');
+    background-size: cover; background-position: center;
+    padding: 100px 28px 80px;
+  }
+  .hero-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center; }
+  .hero-content { color: #fff; }
+  .hero-badge { display: inline-flex; align-items: center; gap: 8px; background: var(--color-accent); color: #fff; padding: 7px 18px; border-radius: 50px; font-weight: 800; font-size: 0.8rem; margin-bottom: 22px; }
+  .hero h1 { font-family: 'Fredoka', sans-serif; font-size: 3rem; line-height: 1.15; margin-bottom: 18px; }
+  .hero h1 em { color: var(--color-cream); font-style: normal; }
+  .hero p { font-size: 1.1rem; opacity: 0.9; margin-bottom: 28px; line-height: 1.75; max-width: 480px; }
+  .hero-cta { display: flex; gap: 14px; flex-wrap: wrap; }
+  .btn-primary { padding: 16px 36px; background: var(--color-accent); color: #fff; text-decoration: none; font-weight: 800; font-size: 0.95rem; border-radius: 50px; transition: all 0.3s; display: inline-block; box-shadow: 0 6px 20px rgba(231,111,81,0.35); }
+  .btn-primary:hover { background: #fff; color: var(--color-accent); }
+  .btn-ghost { padding: 16px 36px; border: 2px solid rgba(255,255,255,0.5); color: #fff; text-decoration: none; font-weight: 700; font-size: 0.95rem; border-radius: 50px; transition: all 0.3s; }
+  .btn-ghost:hover { border-color: var(--color-cream); color: var(--color-cream); }
+  .hero-delivery { margin-top: 32px; display: flex; align-items: center; gap: 12px; padding: 14px 20px; background: rgba(255,255,255,0.1); border-radius: 10px; backdrop-filter: blur(4px); max-width: 380px; }
+  .hero-delivery svg { width: 28px; height: 28px; fill: var(--color-cream); flex-shrink: 0; }
+  .hero-delivery div strong { display: block; font-size: 0.9rem; }
+  .hero-delivery div span { font-size: 0.78rem; opacity: 0.8; }
+  .hero-img img { width: 100%; height: 450px; object-fit: cover; border-radius: 16px; box-shadow: 0 30px 60px rgba(0,0,0,0.25); }
+
+  section { padding: 90px 28px; }
+  .container { max-width: 1140px; margin: 0 auto; }
+  .section-title { font-family: 'Fredoka', sans-serif; font-size: 2.3rem; color: var(--color-green-dark); margin-bottom: 10px; text-align: center; }
+  .section-subtitle { text-align: center; color: var(--color-muted); margin-bottom: 50px; }
+
+  .how-it-works { background: var(--color-cream); }
+  .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+  .step { background: #fff; padding: 32px 24px; border-radius: 16px; text-align: center; box-shadow: var(--shadow); }
+  .step-num { width: 50px; height: 50px; background: var(--color-primary); color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: 'Fredoka', sans-serif; font-size: 1.3rem; margin: 0 auto 16px; }
+  .step h3 { font-size: 1.05rem; font-weight: 700; margin-bottom: 8px; }
+  .step p { font-size: 0.88rem; color: var(--color-muted); }
+
+  .categories { background: #fff; }
+  .cat-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+  .cat-card { padding: 28px 20px; border-radius: 14px; text-align: center; border: 2px solid #eef0e8; transition: all 0.3s; }
+  .cat-card:hover { border-color: var(--color-primary); transform: translateY(-4px); }
+  .cat-card h3 { font-size: 0.95rem; font-weight: 700; margin-bottom: 6px; }
+  .cat-card p { font-size: 0.82rem; color: var(--color-muted); margin-bottom: 10px; }
+  .cat-card .price-tag { display: inline-block; padding: 4px 12px; background: var(--color-cream); color: var(--color-green-dark); font-size: 0.72rem; font-weight: 700; border-radius: 50px; }
+
+  .why-us { background: var(--color-green-dark); color: #fff; }
+  .why-us .section-title { color: #fff; }
+  .why-us .section-subtitle { color: var(--color-cream); opacity: 0.7; }
+  .why-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; text-align: center; }
+  .why-item strong { display: block; font-family: 'Fredoka', sans-serif; font-size: 2rem; color: var(--color-accent); margin-bottom: 6px; }
+  .why-item span { font-size: 0.85rem; opacity: 0.8; }
+
+  .testimonials { background: var(--color-warm); }
+  .testi-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+  .testi-card { background: #fff; padding: 28px; border-radius: 14px; box-shadow: var(--shadow); }
+  .testi-stars { color: #f4a261; margin-bottom: 14px; font-size: 1.1rem; }
+  .testi-card p { font-size: 0.92rem; line-height: 1.7; margin-bottom: 18px; color: var(--color-text); }
+  .testi-person { display: flex; align-items: center; gap: 12px; }
+  .testi-avatar { width: 42px; height: 42px; border-radius: 50%; background: var(--color-primary); display: flex; align-items: center; justify-content: center; color: #fff; font-weight: 800; font-size: 0.85rem; }
+  .testi-person strong { font-size: 0.88rem; color: var(--color-text); }
+  .testi-person span { font-size: 0.75rem; color: var(--color-muted); display: block; }
+
+  .promo-bar { background: var(--color-accent); color: #fff; padding: 50px 28px; text-align: center; }
+  .promo-bar h2 { font-family: 'Fredoka', sans-serif; font-size: 2rem; margin-bottom: 10px; }
+  .promo-bar p { opacity: 0.9; font-size: 1rem; margin-bottom: 20px; }
+  .btn-light { padding: 14px 36px; background: #fff; color: var(--color-accent); text-decoration: none; font-weight: 800; border-radius: 50px; display: inline-block; transition: all 0.3s; }
+  .btn-light:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,0.15); }
+
+  .contact { background: #fff; }
+  .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: start; }
+  .contact-left h3 { font-family: 'Fredoka', sans-serif; font-size: 1.5rem; color: var(--color-green-dark); margin-bottom: 16px; }
+  .contact-left > p { color: var(--color-muted); margin-bottom: 24px; }
+  .contact-item { display: flex; gap: 14px; margin-bottom: 16px; }
+  .contact-item .icon { width: 44px; height: 44px; background: var(--color-cream); border-radius: 10px; display: flex; align-items: center; justify-content: center; color: var(--color-primary); flex-shrink: 0; }
+  .contact-item strong { display: block; font-size: 0.88rem; }
+  .contact-item span { font-size: 0.85rem; color: var(--color-muted); }
+  .contact-form { background: #fff; padding: 32px; border-radius: 16px; box-shadow: var(--shadow); border: 1px solid #eef0e8; }
+  .form-group { margin-bottom: 14px; }
+  .form-group label { display: block; font-weight: 600; font-size: 0.78rem; color: var(--color-green-dark); margin-bottom: 5px; text-transform: uppercase; letter-spacing: 0.5px; }
+  .form-group input, .form-group textarea { width: 100%; padding: 12px 14px; border: 2px solid #e8ebe3; border-radius: 10px; font-family: inherit; font-size: 0.93rem; transition: border-color 0.3s; }
+  .form-group input:focus, .form-group textarea:focus { outline: none; border-color: var(--color-primary); }
+  .form-group textarea { resize: vertical; min-height: 80px; }
+  .btn-submit { width: 100%; padding: 14px; background: var(--color-accent); color: #fff; border: none; border-radius: 10px; font-family: inherit; font-weight: 800; font-size: 0.95rem; cursor: pointer; transition: all 0.3s; }
+  .btn-submit:hover { background: #d45a3a; }
+
+  footer { background: var(--color-green-dark); color: rgba(255,255,255,0.55); padding: 40px 28px 20px; }
+  .footer-inner { max-width: 1140px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; }
+  .footer-brand { font-weight: 800; color: #fff; font-size: 1.1rem; }
+  .footer-links { display: flex; gap: 24px; }
+  .footer-links a { color: rgba(255,255,255,0.5); text-decoration: none; font-size: 0.85rem; }
+  .footer-links a:hover { color: var(--color-cream); }
+
+  @media (max-width: 900px) {
+    .hero-inner { grid-template-columns: 1fr; }
+    .hero-img { display: none; }
+    .steps { grid-template-columns: 1fr; }
+    .cat-grid { grid-template-columns: 1fr 1fr; }
+    .why-grid { grid-template-columns: 1fr 1fr; }
+    .testi-grid { grid-template-columns: 1fr; }
+    .contact-grid { grid-template-columns: 1fr; }
+    .menu-toggle { display: flex; }
+    nav { display: none; position: absolute; top: 72px; left: 0; right: 0; background: #fff; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+    nav.active { display: block; }
+    nav ul { flex-direction: column; padding: 20px; gap: 0; }
+    nav li { border-bottom: 1px solid #eee; }
+    nav a { display: block; padding: 14px 0; }
+    .btn-header { display: none; }
+    .hero h1 { font-size: 2.2rem; }
+    .footer-inner { flex-direction: column; text-align: center; }
+  }
+</style>
+</head>
+<body>
+
+<div class="demo-badge"><span>DEMO</span> — Activa tu página web hoy</div>
+
+<header>
+  <div class="header-container">
+    <a href="#" class="logo">
+      <span class="logo-icon">SJT</span>
+      <span class="logo-text">MINI SUPER</span>
+    </a>
+    <div class="menu-toggle" onclick="document.querySelector('nav').classList.toggle('active')">
+      <span></span><span></span><span></span>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="#inicio">Inicio</a></li>
+        <li><a href="#como-pedir">Cómo pedir</a></li>
+        <li><a href="#productos">Productos</a></li>
+        <li><a href="#contacto">Pedido</a></li>
+      </ul>
+    </nav>
+    <a href="#contacto" class="btn-header">Pide ahora</a>
+  </div>
+</header>
+
+<section class="hero" id="inicio">
+  <div class="hero-inner">
+    <div class="hero-content">
+      <div class="hero-badge">Entrega en menos de 30 min</div>
+      <h1>Se te acabó la leche a las <em>9 de la noche</em> y no quieres salir. Nosotros te la llevamos en 20 min.</h1>
+      <p>Mini Super SJT en Colonia Las Américas. Todo lo que necesitas para tu hogar, con entrega a domicilio rápida y precios de siempre. Pide por WhatsApp, paga al recibir.</p>
+      <div class="hero-cta">
+        <a href="#contacto" class="btn-primary">Haz tu pedido ahora</a>
+        <a href="#productos" class="btn-ghost">Ver productos</a>
+      </div>
+      <div class="hero-delivery">
+        <svg viewBox="0 0 24 24"><path d="M18.92 6.01C18.72 5.42 18.16 5 17.5 5h-11c-.66 0-1.21.42-1.42 1.01L3 12v8c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h12v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-8l-2.08-5.99zM6.5 16c-.83 0-1.5-.67-1.5-1.5S5.67 13 6.5 13s1.5.67 1.5 1.5S7.33 16 6.5 16zm11 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zM5 11l1.5-4.5h11L19 11H5z"/></svg>
+        <div><strong>Envío gratis en Col. Las Américas</strong><span>Pedido mínimo $100. Pago en efectivo o transferencia.</span></div>
+      </div>
+    </div>
+    <div class="hero-img">
+      <img src="https://images.unsplash.com/photo-1604719312566-8912e9227c6a?auto=format&fit=crop&w=800&q=80" alt="Productos frescos del minisuper">
+    </div>
+  </div>
+</section>
+
+<section class="how-it-works" id="como-pedir">
+  <div class="container">
+    <h2 class="section-title">Así de fácil es pedir</h2>
+    <p class="section-subtitle">3 pasos y recibes tu pedido en la puerta de tu casa.</p>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <h3>Nos escribes por WhatsApp</h3>
+        <p>Mándanos tu lista de compras. No necesitas app ni registro. Así de simple.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <h3>Te confirmamos precio y hora</h3>
+        <p>Te decimos el total exacto y en cuánto tiempo llegamos. Generalmente en 20-30 min.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <h3>Recibes y pagas al momento</h3>
+        <p>Pago en efectivo o transferencia al recibir. Sin comisiones, sin suscripciones.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="categories" id="productos">
+  <div class="container">
+    <h2 class="section-title">Lo que encuentras en SJT</h2>
+    <p class="section-subtitle">Abarrotes, lácteos, bebidas, panadería, limpieza y más. Todo para tu hogar.</p>
+    <div class="cat-grid">
+      <div class="cat-card">
+        <h3>Abarrotes y Básicos</h3>
+        <p>Arroz, frijol, aceite, azúcar, sal, sopa, enlatados</p>
+        <span class="price-tag">Precios de siempre</span>
+      </div>
+      <div class="cat-card">
+        <h3>Lácteos y Refrigerados</h3>
+        <p>Leche, yogurt, quesos, jamón, huevos, mantequilla</p>
+        <span class="price-tag">Frescos diarios</span>
+      </div>
+      <div class="cat-card">
+        <h3>Bebidas y Snacks</h3>
+        <p>Refrescos, jugos, agua, botanas, dulces, golosinas</p>
+        <span class="price-tag">Promos semanales</span>
+      </div>
+      <div class="cat-card">
+        <h3>Limpieza e Higiene</h3>
+        <p>Detergentes, jabones, papel, productos de limpieza</p>
+        <span class="price-tag">Marcas conocidas</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="why-us">
+  <div class="container">
+    <h2 class="section-title">Por qué pedir en SJT</h2>
+    <p class="section-subtitle">Somos tu vecino. Conocemos tu barrio y tus necesidades.</p>
+    <div class="why-grid">
+      <div class="why-item"><strong>&lt;30min</strong><span>Entrega promedio</span></div>
+      <div class="why-item"><strong>$100</strong><span>Pedido mínimo</span></div>
+      <div class="why-item"><strong>7am-10pm</strong><span>Todos los días</span></div>
+      <div class="why-item"><strong>0</strong><span>Costo de envío</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="testimonials">
+  <div class="container">
+    <h2 class="section-title">Lo que dicen nuestros vecinos</h2>
+    <p class="section-subtitle">Familias de Colonia Las Américas que ya no salen a comprar.</p>
+    <div class="testi-grid">
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <p>"Les escribo por WhatsApp desde el trabajo y cuando llego a casa ya está todo en la puerta. Llevo 6 meses pidiendo así y nunca me han fallado."</p>
+        <div class="testi-person">
+          <div class="testi-avatar">AP</div>
+          <div><strong>Ana Patricia Ku</strong><span>Col. Las Américas</span></div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <p>"Una vez les pedí a las 9:45 pm porque se me olvidó comprar leche para el desayuno de mis hijos. Me la trajeron en 15 min. Increíble."</p>
+        <div class="testi-person">
+          <div class="testi-avatar">JM</div>
+          <div><strong>José Manuel Canul</strong><span>Col. Las Américas</span></div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <p>"Los precios son iguales que si voy al local. No me cobran envío y me ahorro el tiempo y la gasolina. Ya no compro en otro lado."</p>
+        <div class="testi-person">
+          <div class="testi-avatar">LC</div>
+          <div><strong>Lorena Cetz</strong><span>Col. Las Américas</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="promo-bar">
+  <h2>Programa de puntos SJT</h2>
+  <p>Cada $100 de compra = 1 punto. Acumula 10 puntos y canjea $50 de descuento en tu siguiente pedido.</p>
+  <a href="#contacto" class="btn-light">Empezar a acumular puntos</a>
+</div>
+
+<section class="contact" id="contacto">
+  <div class="container">
+    <div class="contact-grid">
+      <div class="contact-left">
+        <h3>Haz tu pedido ahora</h3>
+        <p>Escríbenos por WhatsApp con tu lista o usa el formulario. Te respondemos en minutos.</p>
+        <div class="contact-item">
+          <div class="icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+          <div><strong>Ubicación</strong><span>Colonia Las Américas, Mérida, Yucatán</span></div>
+        </div>
+        <div class="contact-item">
+          <div class="icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+          <div><strong>Horario</strong><span>Lunes a Domingo: 7:00 AM – 10:00 PM</span></div>
+        </div>
+        <div class="contact-item">
+          <div class="icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg></div>
+          <div><strong>WhatsApp</strong><span>Pide ahora y recibe en 30 min</span></div>
+        </div>
+      </div>
+      <form class="contact-form" onsubmit="event.preventDefault(); alert('¡Pedido recibido! Te contactaremos en minutos para confirmar.');">
+        <div class="form-group">
+          <label>Nombre</label>
+          <input type="text" placeholder="Tu nombre" required>
+        </div>
+        <div class="form-group">
+          <label>Teléfono</label>
+          <input type="tel" placeholder="999 123 4567" required>
+        </div>
+        <div class="form-group">
+          <label>Dirección de entrega</label>
+          <input type="text" placeholder="Calle, número, entre calles" required>
+        </div>
+        <div class="form-group">
+          <label>Tu pedido</label>
+          <textarea placeholder="Ej: 1kg arroz, 1L leche Lala, 1 jabón Zest, etc." required></textarea>
+        </div>
+        <button type="submit" class="btn-submit">Enviar pedido</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">Mini Super SJT</div>
+    <div class="footer-links">
+      <a href="#inicio">Inicio</a>
+      <a href="#productos">Productos</a>
+      <a href="#contacto">Pedido</a>
+    </div>
+    <div style="font-size:0.8rem;"> Mini Super SJT — Tu vecino de confianza en Las Américas</div>
+  </div>
+</footer>
+
+</body>
+</html>
