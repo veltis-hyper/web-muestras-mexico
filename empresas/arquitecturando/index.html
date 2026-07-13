@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Arquitecturando | Construcción y Urbanización en San Juan del Río, Querétaro</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink: #1a1a2e;
+      --gold: #d4af37;
+      --gold-light: #e8c547;
+      --slate: #64748b;
+      --cream: #f8f9fa;
+      --white: #ffffff;
+      --text: #1e293b;
+    }
+    * { margin:0; padding:0; box-sizing:border-box; }
+    html { scroll-behavior: smooth; }
+    body { font-family:'Inter',sans-serif; background:var(--cream); color:var(--text); line-height:1.6; overflow-x:hidden; }
+
+    .demo-badge { position:fixed; bottom:20px; right:20px; z-index:9999; background:var(--ink); color:var(--gold); padding:10px 20px; border-radius:8px; font-weight:600; font-size:12px; letter-spacing:0.5px; border:1px solid rgba(212,175,55,0.3); box-shadow:0 4px 20px rgba(26,26,46,0.3); cursor:pointer; transition:all .3s; }
+    .demo-badge:hover { background:var(--gold); color:var(--ink); }
+
+    header { position:fixed; top:0; left:0; right:0; z-index:1000; background:rgba(255,255,255,0.95); backdrop-filter:blur(16px); border-bottom:1px solid rgba(26,26,46,0.06); }
+    .header-inner { max-width:1200px; margin:0 auto; padding:16px 28px; display:flex; align-items:center; justify-content:space-between; }
+    .logo { display:flex; align-items:center; gap:10px; font-weight:700; font-size:18px; color:var(--ink); letter-spacing:-0.3px; font-family:'Playfair Display',serif; }
+    .logo-icon { width:36px; height:36px; background:var(--ink); border-radius:8px; display:flex; align-items:center; justify-content:center; color:var(--gold); font-weight:700; font-size:16px; }
+    nav ul { display:flex; gap:36px; list-style:none; align-items:center; }
+    nav a { color:var(--slate); text-decoration:none; font-weight:500; font-size:14px; transition:color .2s; }
+    nav a:hover { color:var(--ink); }
+    .btn-header { padding:10px 24px; background:var(--ink); color:var(--gold); font-weight:600; font-size:13px; border-radius:8px; text-decoration:none; transition:all .2s; }
+    .btn-header:hover { background:var(--gold); color:var(--ink); }
+    .mobile-toggle { display:none; background:none; border:none; font-size:24px; cursor:pointer; color:var(--ink); }
+
+    /* Hero with large image */
+    .hero { position:relative; min-height:100vh; display:flex; align-items:center; padding:100px 28px 80px; overflow:hidden; }
+    .hero-bg { position:absolute; inset:0; z-index:-1; }
+    .hero-bg img { width:100%; height:100%; object-fit:cover; }
+    .hero-bg::after { content:''; position:absolute; inset:0; background:linear-gradient(0deg, rgba(26,26,46,0.9) 0%, rgba(26,26,46,0.5) 40%, rgba(26,26,46,0.3) 100%); }
+    .hero-inner { max-width:1200px; margin:0 auto; width:100%; display:grid; grid-template-columns:1fr 1fr; gap:64px; align-items:end; }
+    .hero-left { max-width:560px; }
+    .hero-tag { display:inline-flex; align-items:center; gap:8px; background:rgba(212,175,55,0.15); color:var(--gold); padding:8px 18px; border-radius:50px; font-size:13px; font-weight:600; margin-bottom:24px; border:1px solid rgba(212,175,55,0.2); }
+    .hero h1 { font-family:'Playfair Display',serif; font-size:clamp(40px,5vw,64px); font-weight:700; color:#fff; line-height:1.1; margin-bottom:20px; }
+    .hero h1 span { color:var(--gold); }
+    .hero p { font-size:17px; color:rgba(255,255,255,0.8); line-height:1.7; margin-bottom:32px; max-width:480px; }
+    .hero-cta { display:flex; gap:14px; flex-wrap:wrap; align-items:center; }
+    .btn-primary { padding:16px 32px; background:var(--gold); color:var(--ink); font-weight:700; font-size:15px; border-radius:8px; text-decoration:none; transition:all .2s; display:inline-flex; align-items:center; gap:8px; border:none; cursor:pointer; }
+    .btn-primary:hover { background:var(--gold-light); transform:translateY(-2px); box-shadow:0 10px 30px rgba(212,175,55,0.3); }
+    .btn-secondary { padding:16px 32px; background:transparent; color:#fff; font-weight:700; font-size:15px; border-radius:8px; text-decoration:none; border:2px solid rgba(255,255,255,0.3); transition:all .2s; }
+    .btn-secondary:hover { border-color:var(--gold); color:var(--gold); }
+    .hero-right { background:rgba(255,255,255,0.08); backdrop-filter:blur(12px); border:1px solid rgba(255,255,255,0.1); border-radius:16px; padding:36px; }
+    .hero-right h3 { font-family:'Playfair Display',serif; font-size:20px; color:var(--gold); margin-bottom:20px; }
+    .stat-row { display:flex; justify-content:space-between; align-items:center; padding:14px 0; border-bottom:1px solid rgba(255,255,255,0.08); }
+    .stat-row:last-child { border-bottom:none; }
+    .stat-row strong { font-size:24px; color:#fff; font-weight:800; }
+    .stat-row span { font-size:14px; color:rgba(255,255,255,0.6); }
+
+    /* Portfolio */
+    .portfolio { padding:100px 28px; background:var(--white); }
+    .portfolio-inner { max-width:1200px; margin:0 auto; }
+    .portfolio-header { display:flex; justify-content:space-between; align-items:flex-end; margin-bottom:48px; flex-wrap:wrap; gap:16px; }
+    .portfolio-header h2 { font-family:'Playfair Display',serif; font-size:36px; font-weight:700; color:var(--ink); }
+    .portfolio-header p { color:var(--slate); font-size:16px; max-width:400px; }
+    .portfolio-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:24px; }
+    .portfolio-item { position:relative; border-radius:16px; overflow:hidden; height:320px; }
+    .portfolio-item img { width:100%; height:100%; object-fit:cover; transition:transform .5s; }
+    .portfolio-item:hover img { transform:scale(1.05); }
+    .portfolio-item .overlay { position:absolute; inset:0; background:linear-gradient(0deg, rgba(26,26,46,0.85), transparent 60%); display:flex; flex-direction:column; justify-content:flex-end; padding:24px; }
+    .portfolio-item h3 { font-family:'Playfair Display',serif; font-size:20px; color:#fff; margin-bottom:6px; }
+    .portfolio-item p { font-size:14px; color:rgba(255,255,255,0.7); }
+    .portfolio-item .tag { position:absolute; top:16px; left:16px; background:var(--gold); color:var(--ink); padding:4px 12px; border-radius:4px; font-size:11px; font-weight:700; }
+    .portfolio-item.wide { grid-column:span 2; }
+
+    /* Services */
+    .services { padding:100px 28px; }
+    .services-inner { max-width:1100px; margin:0 auto; }
+    .services-header { text-align:center; margin-bottom:64px; }
+    .services-header h2 { font-family:'Playfair Display',serif; font-size:36px; font-weight:700; color:var(--ink); margin-bottom:12px; }
+    .services-header p { color:var(--slate); font-size:17px; }
+    .services-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:24px; }
+    .service-card { display:flex; gap:20px; background:var(--white); border:1px solid #e2e8f0; border-radius:16px; padding:32px; transition:all .3s; }
+    .service-card:hover { border-color:var(--gold); box-shadow:0 10px 30px rgba(0,0,0,0.06); }
+    .service-icon { width:56px; height:56px; background:var(--cream); border-radius:14px; display:flex; align-items:center; justify-content:center; font-size:24px; flex-shrink:0; }
+    .service-card h3 { font-size:17px; font-weight:700; color:var(--ink); margin-bottom:8px; }
+    .service-card p { font-size:14px; color:var(--slate); line-height:1.6; }
+
+    /* Process */
+    .process { padding:100px 28px; background:var(--ink); }
+    .process-inner { max-width:1000px; margin:0 auto; }
+    .process-header { text-align:center; margin-bottom:64px; }
+    .process-header h2 { font-family:'Playfair Display',serif; font-size:36px; font-weight:700; color:#fff; margin-bottom:12px; }
+    .process-header p { color:var(--slate); font-size:17px; }
+    .process-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:40px; position:relative; }
+    .process-grid::before { content:''; position:absolute; top:30px; left:15%; right:15%; height:2px; background:linear-gradient(90deg, var(--gold), transparent); opacity:0.3; }
+    .process-step { text-align:center; position:relative; z-index:1; }
+    .process-step-num { width:60px; height:60px; background:var(--gold); color:var(--ink); font-weight:800; font-size:20px; border-radius:50%; display:flex; align-items:center; justify-content:center; margin:0 auto 24px; }
+    .process-step h3 { font-size:18px; font-weight:700; color:#fff; margin-bottom:10px; }
+    .process-step p { font-size:14px; color:var(--slate); line-height:1.6; }
+
+    /* Testimonials */
+    .testimonials { padding:100px 28px; background:var(--white); }
+    .testimonials-inner { max-width:1100px; margin:0 auto; }
+    .testi-header { text-align:center; margin-bottom:64px; }
+    .testi-header h2 { font-family:'Playfair Display',serif; font-size:36px; font-weight:700; color:var(--ink); margin-bottom:12px; }
+    .testi-header p { color:var(--slate); font-size:17px; }
+    .testi-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:28px; }
+    .testi-card { background:var(--cream); border:1px solid #e2e8f0; border-radius:16px; padding:36px; }
+    .testi-quote { font-family:'Playfair Display',serif; font-size:20px; color:var(--ink); line-height:1.5; margin-bottom:24px; }
+    .testi-author { display:flex; align-items:center; gap:14px; }
+    .testi-avatar { width:48px; height:48px; border-radius:50%; background:var(--ink); display:flex; align-items:center; justify-content:center; color:var(--gold); font-weight:700; font-size:16px; }
+    .testi-author div strong { font-size:15px; color:var(--ink); }
+    .testi-author div span { font-size:13px; color:var(--slate); display:block; }
+
+    /* CTA */
+    .cta { padding:100px 28px; background:var(--cream); }
+    .cta-inner { max-width:800px; margin:0 auto; text-align:center; }
+    .cta h2 { font-family:'Playfair Display',serif; font-size:40px; font-weight:700; color:var(--ink); margin-bottom:16px; }
+    .cta p { color:var(--slate); font-size:17px; margin-bottom:40px; }
+    .cta-box { display:grid; grid-template-columns:1fr 1fr; gap:32px; background:var(--white); border:1px solid #e2e8f0; border-radius:16px; padding:48px; text-align:left; }
+    .cta-info-item { display:flex; align-items:flex-start; gap:14px; margin-bottom:20px; }
+    .cta-info-icon { width:40px; height:40px; background:var(--ink); border-radius:10px; display:flex; align-items:center; justify-content:center; color:var(--gold); font-size:16px; flex-shrink:0; }
+    .cta-info-item div strong { font-size:15px; color:var(--ink); display:block; margin-bottom:2px; }
+    .cta-info-item div span { font-size:14px; color:var(--slate); }
+    .cta-form { display:flex; flex-direction:column; gap:16px; }
+    .cta-form input, .cta-form textarea { padding:14px 18px; border:2px solid #e2e8f0; border-radius:10px; font-family:inherit; font-size:15px; transition:border-color .2s; }
+    .cta-form input:focus, .cta-form textarea:focus { outline:none; border-color:var(--gold); }
+    .cta-form textarea { min-height:100px; resize:vertical; }
+    .cta-form button { padding:14px; background:var(--ink); color:var(--gold); font-weight:700; font-size:15px; border:none; border-radius:10px; cursor:pointer; transition:all .2s; }
+    .cta-form button:hover { background:var(--gold); color:var(--ink); }
+
+    /* Footer */
+    footer { background:var(--ink); padding:48px 28px 24px; }
+    .footer-inner { max-width:1200px; margin:0 auto; display:flex; justify-content:space-between; align-items:center; }
+    .footer-logo { font-family:'Playfair Display',serif; font-weight:700; font-size:18px; color:var(--gold); }
+    .footer-copy { color:var(--slate); font-size:13px; }
+
+    @media (max-width:900px) {
+      .hero-inner { grid-template-columns:1fr; }
+      .hero-right { display:none; }
+      .portfolio-grid { grid-template-columns:1fr; }
+      .portfolio-item.wide { grid-column:span 1; }
+      .services-grid { grid-template-columns:1fr; }
+      .process-grid { grid-template-columns:1fr; }
+      .process-grid::before { display:none; }
+      .testi-grid { grid-template-columns:1fr; }
+      .cta-box { grid-template-columns:1fr; }
+      .footer-inner { flex-direction:column; gap:12px; text-align:center; }
+      nav ul { display:none; position:absolute; top:100%; left:0; right:0; background:#fff; flex-direction:column; padding:20px; gap:16px; border-bottom:1px solid #e2e8f0; }
+      nav ul.active { display:flex; }
+      .mobile-toggle { display:block; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="demo-badge">DEMO — Activa tu web hoy</div>
+
+  <header>
+    <div class="header-inner">
+      <div class="logo"><div class="logo-icon">A</div> Arquitecturando</div>
+      <button class="mobile-toggle" onclick="document.querySelector('nav ul').classList.toggle('active')">☰</button>
+      <nav>
+        <ul>
+          <li><a href="#inicio">Inicio</a></li>
+          <li><a href="#proyectos">Proyectos</a></li>
+          <li><a href="#servicios">Servicios</a></li>
+          <li><a href="#testimonios">Clientes</a></li>
+          <li><a href="#contacto" class="btn-header">Cotizar obra</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero" id="inicio">
+    <div class="hero-bg">
+      <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1600&q=80" alt="Maquinaria de construcción">
+    </div>
+    <div class="hero-inner">
+      <div class="hero-left">
+        <div class="hero-tag">Garantía de 5 años en todas las obras</div>
+        <h1>¿Tu desarrollo tiene <span>obras sin terminar</span> y permisos a medias?</h1>
+        <p>Construimos urbanización, pavimentación, drenaje y alumbrado público en San Juan del Río y zona metropolitana. Cumplimiento total de normas municipales, entrega a tiempo y garantía de 5 años. Más de 35 proyectos ejecutados sin contratiempos.</p>
+        <div class="hero-cta">
+          <a href="#contacto" class="btn-primary">Solicita visita técnica gratuita →</a>
+          <a href="#proyectos" class="btn-secondary">Ver proyectos</a>
+        </div>
+      </div>
+      <div class="hero-right">
+        <h3>Números que respaldan</h3>
+        <div class="stat-row"><strong>35+</strong><span>proyectos entregados</span></div>
+        <div class="stat-row"><strong>5 años</strong><span>garantía en obra</span></div>
+        <div class="stat-row"><strong>100%</strong><span>normas municipales</span></div>
+        <div class="stat-row"><strong>12</strong><span>años de experiencia</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="portfolio" id="proyectos">
+    <div class="portfolio-inner">
+      <div class="portfolio-header">
+        <div>
+          <h2>Proyectos ejecutados</h2>
+          <p>Urbanización, pavimentación y espacios públicos en Querétaro.</p>
+        </div>
+      </div>
+      <div class="portfolio-grid">
+        <div class="portfolio-item wide">
+          <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=1200&q=80" alt="Construcción de urbanización">
+          <div class="overlay">
+            <span class="tag">URBANIZACIÓN</span>
+            <h3>Fraccionamiento Jardines del Valle</h3>
+            <p>12 calles pavimentadas, drenaje pluvial, alumbrado LED y áreas verdes. 85 lotes.</p>
+          </div>
+        </div>
+        <div class="portfolio-item">
+          <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=600&q=80" alt="Diseño arquitectónico">
+          <div class="overlay">
+            <span class="tag">PAISAJISMO</span>
+            <h3>Parque La Valla</h3>
+            <p>3,200 m² de áreas verdes</p>
+          </div>
+        </div>
+        <div class="portfolio-item">
+          <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=600&q=80" alt="Desarrollo urbano">
+          <div class="overlay">
+            <span class="tag">INFRAESTRUCTURA</span>
+            <h3>Red de Agua Potable</h3>
+            <p>Red hidráulica para 200 viviendas</p>
+          </div>
+        </div>
+        <div class="portfolio-item wide">
+          <img src="https://images.unsplash.com/photo-1590644365607-1c5a8e9c1e3c?auto=format&fit=crop&w=1200&q=80" alt="Pavimentación">
+          <div class="overlay">
+            <span class="tag">PAVIMENTACIÓN</span>
+            <h3>Calles Emiliano Zapata y 16 de Septiembre</h3>
+            <p>1.8 km de pavimentación con concreto hidráulico, banquetas, guarniciones y señalización.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="services" id="servicios">
+    <div class="services-inner">
+      <div class="services-header">
+        <h2>Servicios de construcción integral</h2>
+        <p>Desde el movimiento de tierras hasta la entrega de llaves. Todo con normas y garantía.</p>
+      </div>
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-icon">🛣️</div>
+          <div><h3>Urbanización y Pavimentación</h3><p>Desarrollo de infraestructura vial con concreto hidráulico, banquetas, guarniciones y señalización. Incluye topografía y proyecto ejecutivo.</p></div>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">🌳</div>
+          <div><h3>Espacios Públicos y Paisajismo</h3><p>Diseño y construcción de parques, plazas, jardines y áreas recreativas. Selección de flora nativa y sistemas de riego.</p></div>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">💧</div>
+          <div><h3>Infraestructura Hidráulica</h3><p>Drenaje pluvial, redes de agua potable, alcantarillado sanitario y sistemas de captación de agua de lluvia con cálculo hidráulico.</p></div>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">💡</div>
+          <div><h3>Alumbrado y Movimiento de Tierras</h3><p>Instalación de alumbrado público LED, nivelación de terrenos, desazolve y preparación de lotes para desarrollos habitacionales.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="process">
+    <div class="process-inner">
+      <div class="process-header">
+        <h2>Cómo trabajamos</h2>
+        <p>Proceso transparente. Desde la primera visita hasta la entrega final.</p>
+      </div>
+      <div class="process-grid">
+        <div class="process-step">
+          <div class="process-step-num">1</div>
+          <h3>Visita técnica gratuita</h3>
+          <p>Acudimos a tu obra, evaluamos el terreno, revisamos planos y estudiamos permisos. Te entregamos un presupuesto detallado sin compromiso en 72 horas.</p>
+        </div>
+        <div class="process-step">
+          <div class="process-step-num">2</div>
+          <h3>Proyecto y permisos</h3>
+          <p>Elaboramos el proyecto ejecutivo, gestionamos los permisos municipales y aprobamos especificaciones. Tú sabes exactamente qué se va a construir y cuándo.</p>
+        </div>
+        <div class="process-step">
+          <div class="process-step-num">3</div>
+          <h3>Construcción y entrega</h3>
+          <p>Ejecutamos la obra con supervisiones semanales. Entregamos con bitácora de construcción, garantía de 5 años y libre de adeudos municipales.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="testimonials" id="testimonios">
+    <div class="testimonials-inner">
+      <div class="testi-header">
+        <h2>Lo que dicen nuestros clientes</h2>
+        <p>Desarrolladores inmobiliarios, gobiernos municipales y particulares en Querétaro.</p>
+      </div>
+      <div class="testi-grid">
+        <div class="testi-card">
+          <p class="testi-quote">"Llevamos 3 desarrollos con Arquitecturando y en todos cumplieron los tiempos. La garantía de 5 años no es marketing: en uno de los proyectos tuvimos una grieta menor en banquetas y la repararon en 48 horas, sin costo."</p>
+          <div class="testi-author">
+            <div class="testi-avatar">EG</div>
+            <div><strong>Enrique Gómez</strong><span>Desarrollador inmobiliario, San Juan del Río</span></div>
+          </div>
+        </div>
+        <div class="testi-card">
+          <p class="testi-quote">"Como municipio necesitábamos un contratista que cumpliera normas técnicas y permisos. Ellos gestionaron todo el trámite con el ayuntamiento. La obra de pavimentación de 1.8 km se entregó 2 semanas antes del plazo."</p>
+          <div class="testi-author">
+            <div class="testi-avatar">MC</div>
+            <div><strong>María del Carmen Vázquez</strong><span>Coordinadora de Obras Públicas, Municipio</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta" id="contacto">
+    <div class="cta-inner">
+      <h2>¿Tienes un terreno o un proyecto pendiente?</h2>
+      <p>Solicita tu visita técnica gratuita. En 72 horas recibes presupuesto detallado, cronograma y especificaciones.</p>
+      <div class="cta-box">
+        <div>
+          <div class="cta-info-item">
+            <div class="cta-info-icon">📍</div>
+            <div><strong>Oficina</strong><span>Av. Freos 68, Jardines del Valle, SJR, Qro.</span></div>
+          </div>
+          <div class="cta-info-item">
+            <div class="cta-info-icon">✉️</div>
+            <div><strong>Email</strong><span>contacto@arquitecturando.mx</span></div>
+          </div>
+          <div class="cta-info-item">
+            <div class="cta-info-icon">🕐</div>
+            <div><strong>Horario</strong><span>Lun-Vie: 9am-6pm, Sáb: 9am-1pm</span></div>
+          </div>
+        </div>
+        <form class="cta-form" onsubmit="event.preventDefault(); alert('¡Gracias! Te contactamos en 24h. Demostración.');">
+          <input type="text" placeholder="Tu nombre" required>
+          <input type="email" placeholder="Correo electrónico" required>
+          <input type="tel" placeholder="Teléfono">
+          <input type="text" placeholder="Tipo de obra (ej. Urbanización, pavimentación)">
+          <textarea placeholder="Cuéntanos sobre tu proyecto"></textarea>
+          <button type="submit">Solicitar visita técnica gratuita →</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-logo">Arquitecturando</div>
+      <div class="footer-copy">© 2025 Arquitecturando Diseño y Construcción — San Juan del Río, Querétaro</div>
+    </div>
+  </footer>
+
+  <script>
+    window.addEventListener('scroll', () => {
+      document.querySelector('header').classList.toggle('scrolled', window.scrollY > 20);
+    });
+  </script>
+
+</body>
+</html>

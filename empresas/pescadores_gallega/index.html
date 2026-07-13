@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SCPP Pescadores del Bajo de la Gallega | Pesca Directa para Hoteles y Restaurantes</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=DM+Serif+Display&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy: #0a192f;
+      --navy-light: #112240;
+      --cyan: #64ffda;
+      --slate: #8892b0;
+      --light-slate: #a8b2d1;
+      --white: #e6f1ff;
+      --text: #ccd6f6;
+      --text-dark: #1a2e35;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Inter', sans-serif; color: var(--text-dark); line-height: 1.6; overflow-x: hidden; }
+    html { scroll-behavior: smooth; }
+
+    .demo-badge {
+      background: var(--cyan); color: var(--navy);
+      text-align: center; padding: 10px 20px;
+      font-size: 0.8rem; font-weight: 700;
+      position: fixed; top: 0; left: 0; right: 0; z-index: 2000;
+    }
+
+    header {
+      position: fixed; top: 38px; left: 0; right: 0;
+      background: rgba(255,255,255,0.98); backdrop-filter: blur(12px);
+      z-index: 1000; border-bottom: 1px solid rgba(10,25,47,0.08);
+    }
+    .header-inner { max-width: 1200px; margin: 0 auto; padding: 16px 25px; display: flex; align-items: center; justify-content: space-between; }
+    .logo { display: flex; align-items: center; gap: 10px; font-family: 'DM Serif Display', serif; font-size: 1.2rem; color: var(--navy); }
+    .logo svg { width: 36px; height: 36px; fill: var(--cyan); stroke: var(--navy); stroke-width: 0.5; }
+    nav ul { display: flex; gap: 32px; list-style: none; }
+    nav a { text-decoration: none; color: var(--text-dark); font-weight: 500; font-size: 0.9rem; transition: color 0.2s; }
+    nav a:hover { color: var(--navy); }
+    .btn-nav { background: var(--navy); color: var(--cyan); padding: 10px 22px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 0.85rem; transition: all 0.2s; border: 1px solid var(--cyan); }
+    .btn-nav:hover { background: var(--navy-light); }
+    .mobile-menu-btn { display: none; background: none; border: none; font-size: 1.4rem; cursor: pointer; color: var(--text-dark); }
+
+    .hero {
+      min-height: 100vh; display: flex; align-items: center;
+      background: linear-gradient(105deg, rgba(10,25,47,0.95) 0%, rgba(17,34,64,0.85) 50%, rgba(10,25,47,0.93) 100%),
+                  url('https://images.unsplash.com/photo-1518837695005-2083093ee35b?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+      position: relative; padding: 160px 25px 100px;
+    }
+    .hero-content { max-width: 650px; position: relative; z-index: 1; }
+    .hero-tag { display: inline-flex; align-items: center; gap: 8px; background: rgba(100,255,218,0.12); color: var(--cyan); padding: 8px 18px; border-radius: 50px; font-size: 0.8rem; font-weight: 600; margin-bottom: 24px; border: 1px solid rgba(100,255,218,0.25); }
+    .hero h1 { font-family: 'DM Serif Display', serif; font-size: 3.2rem; color: var(--white); line-height: 1.1; margin-bottom: 22px; }
+    .hero h1 em { color: var(--cyan); font-style: normal; }
+    .hero p { font-size: 1.15rem; color: rgba(230,241,255,0.85); margin-bottom: 32px; max-width: 520px; line-height: 1.6; }
+    .btn-primary { display: inline-flex; align-items: center; gap: 10px; background: transparent; color: var(--cyan); padding: 16px 32px; border-radius: 10px; font-weight: 700; font-size: 1rem; text-decoration: none; transition: all 0.2s; border: 1px solid var(--cyan); cursor: pointer; }
+    .btn-primary:hover { background: rgba(100,255,218,0.1); transform: translateY(-2px); box-shadow: 0 10px 30px rgba(100,255,218,0.15); }
+    .btn-solid { display: inline-flex; align-items: center; gap: 10px; background: var(--cyan); color: var(--navy); padding: 16px 32px; border-radius: 10px; font-weight: 700; font-size: 1rem; text-decoration: none; transition: all 0.2s; border: none; cursor: pointer; margin-left: 12px; }
+    .btn-solid:hover { background: #4fd1b8; transform: translateY(-2px); box-shadow: 0 10px 30px rgba(100,255,218,0.3); }
+    .hero-stats { display: flex; gap: 40px; margin-top: 50px; }
+    .hero-stat { text-align: center; }
+    .hero-stat strong { display: block; font-size: 1.8rem; font-weight: 800; color: var(--cyan); }
+    .hero-stat span { font-size: 0.8rem; color: rgba(230,241,255,0.7); text-transform: uppercase; letter-spacing: 0.5px; }
+
+    .numbers-strip { background: var(--navy); padding: 50px 25px; }
+    .numbers-grid { max-width: 1000px; margin: 0 auto; display: grid; grid-template-columns: repeat(4, 1fr); gap: 30px; text-align: center; }
+    .number-item strong { font-size: 2.2rem; font-weight: 800; color: var(--cyan); display: block; }
+    .number-item span { font-size: 0.85rem; color: rgba(230,241,255,0.7); }
+
+    section { padding: 90px 25px; }
+    .container { max-width: 1100px; margin: 0 auto; }
+    .section-title { text-align: center; margin-bottom: 55px; }
+    .section-title h2 { font-family: 'DM Serif Display', serif; font-size: 2.4rem; color: var(--text-dark); margin-bottom: 12px; }
+    .section-title p { color: #5a6f78; max-width: 550px; margin: 0 auto; font-size: 1.05rem; }
+
+    .how-it-works { background: #f8fafc; }
+    .step-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 25px; }
+    .step-card { background: var(--white); border-radius: 16px; padding: 40px 30px; text-align: center; box-shadow: 0 4px 20px rgba(0,0,0,0.04); position: relative; border-top: 4px solid var(--cyan); }
+    .step-card h3 { font-size: 1.1rem; margin: 12px 0 10px; color: var(--text-dark); }
+    .step-card p { font-size: 0.9rem; color: #5a6f78; }
+    .step-num { font-size: 2.5rem; font-weight: 800; color: var(--cyan); opacity: 0.4; position: absolute; top: 10px; right: 20px; }
+
+    .benefits { background: var(--white); }
+    .benefit-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 25px; }
+    .benefit-card { display: flex; gap: 18px; background: #f8fafc; border-radius: 16px; padding: 30px; align-items: flex-start; }
+    .benefit-icon { width: 50px; height: 50px; background: var(--navy); color: var(--cyan); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.3rem; flex-shrink: 0; }
+    .benefit-card h3 { font-size: 1.05rem; margin-bottom: 6px; }
+    .benefit-card p { font-size: 0.85rem; color: #5a6f78; line-height: 1.6; }
+
+    .testimonials { background: #f8fafc; }
+    .testi-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 25px; }
+    .testi-card { background: var(--white); border-radius: 16px; padding: 35px 30px; box-shadow: 0 4px 20px rgba(0,0,0,0.04); border-left: 4px solid var(--cyan); }
+    .testi-card p { font-size: 0.95rem; color: var(--text-dark); line-height: 1.7; margin-bottom: 18px; font-style: italic; }
+    .testi-author { display: flex; align-items: center; gap: 12px; }
+    .testi-author .avatar { width: 44px; height: 44px; border-radius: 50%; background: var(--navy); color: var(--cyan); display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1rem; }
+    .testi-author div strong { font-size: 0.95rem; color: var(--text-dark); }
+    .testi-author div span { font-size: 0.8rem; color: #5a6f78; }
+
+    .contact-section { background: linear-gradient(135deg, var(--navy), var(--navy-light)); color: var(--white); padding: 80px 25px; }
+    .contact-grid { max-width: 1000px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: start; }
+    .contact-info h3 { font-size: 1.6rem; margin-bottom: 24px; font-family: 'DM Serif Display', serif; color: var(--white); }
+    .info-row { display: flex; align-items: flex-start; gap: 14px; margin-bottom: 20px; }
+    .info-row svg { width: 22px; height: 22px; fill: var(--cyan); flex-shrink: 0; margin-top: 3px; }
+    .info-row div strong { display: block; font-size: 0.95rem; margin-bottom: 2px; color: var(--white); }
+    .info-row div span { font-size: 0.9rem; color: rgba(230,241,255,0.7); }
+    .contact-form { background: rgba(255,255,255,0.06); border: 1px solid rgba(100,255,218,0.15); border-radius: 16px; padding: 40px; }
+    .form-group { margin-bottom: 18px; }
+    .form-group label { display: block; font-size: 0.85rem; margin-bottom: 6px; color: rgba(230,241,255,0.8); }
+    .form-group input, .form-group textarea { width: 100%; padding: 13px 16px; border: 1px solid rgba(100,255,218,0.2); border-radius: 10px; background: rgba(255,255,255,0.07); color: var(--white); font-size: 0.95rem; font-family: 'Inter', sans-serif; transition: all 0.2s; }
+    .form-group input:focus, .form-group textarea:focus { outline: none; border-color: var(--cyan); background: rgba(255,255,255,0.1); }
+    .form-group textarea { min-height: 100px; resize: vertical; }
+    .contact-form .btn-solid { width: 100%; justify-content: center; margin-top: 6px; margin-left: 0; }
+
+    footer { background: #050f1e; color: rgba(230,241,255,0.5); padding: 40px 25px; text-align: center; font-size: 0.85rem; }
+    footer .footer-logo { font-family: 'DM Serif Display', serif; font-size: 1.2rem; color: var(--white); margin-bottom: 10px; }
+
+    @media (max-width: 768px) {
+      .hero h1 { font-size: 2.1rem; }
+      .hero-stats { flex-wrap: wrap; gap: 20px; }
+      .btn-solid { margin-left: 0; margin-top: 12px; display: block; text-align: center; }
+      .numbers-grid { grid-template-columns: repeat(2, 1fr); }
+      .step-grid, .benefit-grid, .testi-grid, .contact-grid { grid-template-columns: 1fr; }
+      nav ul { display: none; position: absolute; top: 100%; left: 0; right: 0; background: var(--white); flex-direction: column; padding: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); gap: 15px; }
+      nav ul.active { display: flex; }
+      .mobile-menu-btn { display: block; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="demo-badge">DEMO &mdash; Esta es una muestra de tu futura p&aacute;gina. Cont&aacute;ctanos para activarla.</div>
+
+<header>
+  <div class="header-inner">
+    <div class="logo">
+      <svg viewBox="0 0 24 24"><path d="M12 2C8.5 2 5.5 4.5 4.5 8c-1.5 1-2.5 2.5-2.5 4.5 0 3 2.5 5.5 5.5 5.5h8c3 0 5.5-2.5 5.5-5.5 0-2-1-3.5-2.5-4.5C18.5 4.5 15.5 2 12 2z"/><path d="M12 22c-2 0-3.5-1.5-3.5-3.5h7C15.5 20.5 14 22 12 22z" fill="var(--cyan)"/></svg>
+      SCPP Pescadores del Bajo de la Gallega
+    </div>
+    <button class="mobile-menu-btn" onclick="document.querySelector('nav ul').classList.toggle('active')">&#9776;</button>
+    <nav>
+      <ul>
+        <li><a href="#inicio">Inicio</a></li>
+        <li><a href="#proceso">C&oacute;mo funciona</a></li>
+        <li><a href="#beneficios">Beneficios</a></li>
+        <li><a href="#testimonios">Clientes</a></li>
+        <li><a href="#contacto" class="btn-nav">Cotizar volumen</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<section class="hero" id="inicio">
+  <div class="hero-content">
+    <div class="hero-tag">Cooperativa de Producci&oacute;n Pesquera del Golfo</div>
+    <h1>&iquest;Tu hotel paga el triple por pescado que pasa por <em>3 intermediarios</em>?</h1>
+    <p>Compra directo del Golfo de M&eacute;xico. 32 socios pescadores. Del mar a tu almac&eacute;n en 6 horas. Sin intermediarios, sin sorpresas, con certificaci&oacute;n de origen.</p>
+    <a href="#contacto" class="btn-solid">Cotiza volumen mayorista &rarr;</a>
+    <a href="#proceso" class="btn-primary">Ver c&oacute;mo funciona</a>
+    <div class="hero-stats">
+      <div class="hero-stat"><strong>32</strong><span>socios pescadores</span></div>
+      <div class="hero-stat"><strong>150</strong><span>toneladas/a&ntilde;o</span></div>
+      <div class="hero-stat"><strong>14</strong><span>hoteles atendidos</span></div>
+      <div class="hero-stat"><strong>6h</strong><span>mar a almac&eacute;n</span></div>
+    </div>
+  </div>
+</section>
+
+<div class="numbers-strip">
+  <div class="numbers-grid">
+    <div class="number-item"><strong>32</strong><span>socios pescadores</span></div>
+    <div class="number-item"><strong>150</strong><span>toneladas al a&ntilde;o</span></div>
+    <div class="number-item"><strong>14</strong><span>hoteles y restaurantes</span></div>
+    <div class="number-item"><strong>6h</strong><span>de captura a entrega</span></div>
+  </div>
+</div>
+
+<section class="how-it-works" id="proceso">
+  <div class="container">
+    <div class="section-title">
+      <h2>C&oacute;mo funciona la compra directa</h2>
+      <p>Tres pasos para recibir pescado del Golfo sin intermediarios</p>
+    </div>
+    <div class="step-grid">
+      <div class="step-card">
+        <div class="step-num">01</div>
+        <h3>Cotiza tu volumen mensual</h3>
+        <p>Nos dices qu&eacute; especies necesitas, kilos por semana y d&iacute;as de entrega. Te damos precio directo de cooperativa, sin markup de distribuidor.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-num">02</div>
+        <h3>Programamos la captura</h3>
+        <p>Coordinamos con nuestros 32 socios pescadores. Tu producto se captura espec&iacute;ficamente para tu pedido, no viene de inventario congelado.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-num">03</div>
+        <h3>Entrega en tu almac&eacute;n</h3>
+        <p>Transporte refrigerado directo desde el muelle. Documentaci&oacute;n de origen, certificaci&oacute;n sanitaria y peso exacto. Tu recibes y revisas.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="benefits" id="beneficios">
+  <div class="container">
+    <div class="section-title">
+      <h2>Por qu&eacute; comprar directo</h2>
+      <p>La diferencia entre un distribuidor tradicional y nosotros</p>
+    </div>
+    <div class="benefit-grid">
+      <div class="benefit-card">
+        <div class="benefit-icon">&#36;</div>
+        <div>
+          <h3>Ahorra hasta 40% en costo de pescado</h3>
+          <p>Eliminas al distribuidor, al mayorista y al transportista intermedio. Precio directo de pescador a tu negocio.</p>
+        </div>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon">&#10003;</div>
+        <div>
+          <h3>Sabes exactamente de d&oacute;nde viene</h3>
+          <p>Cada entrega incluye certificado de origen del Golfo de M&eacute;xico. Puedes visitar la zona de pesca con cita previa.</p>
+        </div>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon">&#128197;</div>
+        <div>
+          <h3>Entregas programadas, nunca improvisadas</h3>
+          <p>T&uacute; eliges los d&iacute;as y horarios. Nosotros cumplimos. Si hay problema de clima, te avisamos con 24h de anticipaci&oacute;n.</p>
+        </div>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon">&#128196;</div>
+        <div>
+          <h3>Documentaci&oacute;n completa para auditor&iacute;as</h3>
+          <p>Certificaciones sanitarias, permisos de pesca, constancia de origen. Todo lo que necesitas para cumplir normativas.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="testimonials" id="testimonios">
+  <div class="container">
+    <div class="section-title">
+      <h2>Hoteles y restaurantes que ya compran directo</h2>
+      <p>La voz de quienes dejaron los distribuidores</p>
+    </div>
+    <div class="testi-grid">
+      <div class="testi-card">
+        <p>"Redujimos 40% el costo de pescado en nuestro hotel. La calidad es igual o mejor que el distribuidor que ten&iacute;amos. Y ahora s&eacute; exactamente de d&oacute;nde viene cada kilo."</p>
+        <div class="testi-author">
+          <div class="avatar">LG</div>
+          <div><strong>Luis Fernando Guti&eacute;rrez</strong><span>Director de Alimentos, Hotel Riviera</span></div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <p>"Me encanta que pueda visitar la zona de pesca. Llev&eacute; a mi equipo de cocina y ahora entienden de d&oacute;nde viene el producto. Eso se nota en la calidad del plato."</p>
+        <div class="testi-author">
+          <div class="avatar">DE</div>
+          <div><strong>Daniela Espinoza</strong><span>Chef Ejecutiva, Restaurante El Faro</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="contact-section" id="contacto">
+  <div class="contact-grid">
+    <div class="contact-info">
+      <h3>Cotiza volumen mayorista hoy</h3>
+      <div class="info-row">
+        <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+        <div><strong>Ubicaci&oacute;n</strong><span>Veracruz, Veracruz, C.P. 91897</span></div>
+      </div>
+      <div class="info-row">
+        <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+        <div><strong>WhatsApp Business</strong><span>Cotizaciones r&aacute;pidas de volumen</span></div>
+      </div>
+      <div class="info-row">
+        <svg viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/></svg>
+        <div><strong>Horario</strong><span>Lunes a S&aacute;bado: 7:00 AM - 5:00 PM</span></div>
+      </div>
+      <div class="info-row">
+        <svg viewBox="0 0 24 24"><path d="M18.92 6.01C18.72 5.42 18.16 5 17.5 5h-11c-.66 0-1.21.42-1.42 1.01L3 12v8c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h12v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-8l-2.08-5.99zM6.5 16c-.83 0-1.5-.67-1.5-1.5S5.67 13 6.5 13s1.5.67 1.5 1.5S7.33 16 6.5 16zm11 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zM5 11l1.5-4.5h11L19 11H5z"/></svg>
+        <div><strong>Cobertura</strong><span>Veracruz, Boca del R&iacute;o y zona conurbada</span></div>
+      </div>
+    </div>
+    <div class="contact-form">
+      <div class="form-group">
+        <label for="nombre">Hotel / Restaurante / Nombre</label>
+        <input type="text" id="nombre" placeholder="Tu negocio">
+      </div>
+      <div class="form-group">
+        <label for="email">Correo electr&oacute;nico</label>
+        <input type="email" id="email" placeholder="tu@email.com">
+      </div>
+      <div class="form-group">
+        <label for="telefono">Tel&eacute;fono</label>
+        <input type="tel" id="telefono" placeholder="(229) XXX-XXXX">
+      </div>
+      <div class="form-group">
+        <label for="mensaje">&iquest;Qu&eacute; volumen mensual necesitas?</label>
+        <textarea id="mensaje" placeholder="Especies, kilos por semana, d&iacute;as de entrega preferidos..."></textarea>
+      </div>
+      <button class="btn-solid">Cotizar precio directo en 24h &rarr;</button>
+      <p style="text-align:center; margin-top:14px; font-size:0.8rem; color:rgba(230,241,255,0.5);">Precio directo de cooperativa, sin intermediarios</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-logo">SCPP Pescadores del Bajo de la Gallega</div>
+  <p>Pesca responsable del Golfo de M&eacute;xico. Cooperativa de producci&oacute;n pesquera.</p>
+  <p>&copy; 2025 SCPP Pescadores del Bajo de la Gallega — Todos los derechos reservados</p>
+</footer>
+
+</body>
+</html>

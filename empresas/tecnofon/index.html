@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TECNOFON | Smartphones y Reparaciones Express en el Centro de Puebla</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink: #0a192f;
+      --cyan: #64ffda;
+      --slate: #8892b0;
+      --light-slate: #a8b2d1;
+      --white: #e6f1ff;
+      --bg: #f8fafc;
+      --card: #ffffff;
+      --accent: #0ea5e9;
+    }
+    * { margin:0; padding:0; box-sizing:border-box; }
+    html { scroll-behavior: smooth; }
+    body { font-family:'Inter',sans-serif; background:var(--bg); color:#1e293b; line-height:1.6; overflow-x:hidden; }
+
+    /* DEMO badge */
+    .demo-badge { position:fixed; bottom:20px; right:20px; z-index:9999; background:var(--ink); color:var(--cyan); padding:10px 20px; border-radius:8px; font-weight:600; font-size:12px; letter-spacing:0.5px; border:1px solid rgba(100,255,218,0.3); box-shadow:0 4px 20px rgba(10,25,47,0.3); cursor:pointer; transition:all .3s; }
+    .demo-badge:hover { background:var(--cyan); color:var(--ink); }
+
+    /* Header */
+    header { position:fixed; top:0; left:0; right:0; z-index:1000; background:rgba(255,255,255,0.92); backdrop-filter:blur(16px); border-bottom:1px solid rgba(0,0,0,0.06); transition:box-shadow .3s; }
+    header.scrolled { box-shadow:0 4px 30px rgba(0,0,0,0.08); }
+    .header-inner { max-width:1200px; margin:0 auto; padding:14px 28px; display:flex; align-items:center; justify-content:space-between; }
+    .logo { display:flex; align-items:center; gap:10px; font-weight:800; font-size:20px; color:var(--ink); letter-spacing:-0.5px; }
+    .logo-icon { width:36px; height:36px; background:var(--ink); border-radius:10px; display:flex; align-items:center; justify-content:center; color:var(--cyan); font-weight:800; font-size:14px; }
+    nav ul { display:flex; gap:36px; list-style:none; align-items:center; }
+    nav a { color:#475569; text-decoration:none; font-weight:500; font-size:14px; transition:color .2s; }
+    nav a:hover { color:var(--ink); }
+    .btn-header { padding:10px 24px; background:var(--ink); color:var(--white); font-weight:600; font-size:13px; border-radius:8px; text-decoration:none; transition:all .2s; }
+    .btn-header:hover { background:var(--accent); transform:translateY(-1px); }
+    .mobile-toggle { display:none; background:none; border:none; font-size:24px; cursor:pointer; color:var(--ink); }
+
+    /* Hero - Split layout */
+    .hero { display:grid; grid-template-columns:1fr 1fr; min-height:100vh; padding-top:64px; }
+    .hero-left { display:flex; flex-direction:column; justify-content:center; padding:60px 28px 60px max(28px, calc((100vw - 1200px)/2 + 28px)); max-width:600px; margin-left:auto; }
+    .hero-right { position:relative; overflow:hidden; }
+    .hero-right img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; }
+    .hero-right::after { content:''; position:absolute; inset:0; background:linear-gradient(90deg, var(--bg) 0%, transparent 40%); }
+    .hero-tag { display:inline-flex; align-items:center; gap:8px; background:#dbeafe; color:#1e40af; padding:8px 16px; border-radius:50px; font-size:13px; font-weight:600; margin-bottom:24px; width:fit-content; }
+    .hero-tag::before { content:''; width:8px; height:8px; background:#22c55e; border-radius:50%; animation:pulse 2s infinite; }
+    @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.4} }
+    .hero h1 { font-size:clamp(36px,4.5vw,56px); font-weight:800; color:var(--ink); line-height:1.1; letter-spacing:-1.5px; margin-bottom:20px; }
+    .hero h1 em { font-style:normal; color:var(--accent); position:relative; }
+    .hero h1 em::after { content:''; position:absolute; bottom:2px; left:0; right:0; height:8px; background:rgba(14,165,233,0.2); z-index:-1; }
+    .hero p { font-size:17px; color:var(--slate); line-height:1.7; margin-bottom:32px; max-width:440px; }
+    .hero-cta-group { display:flex; gap:14px; flex-wrap:wrap; align-items:center; }
+    .btn-primary { padding:16px 32px; background:var(--ink); color:var(--white); font-weight:700; font-size:15px; border-radius:10px; text-decoration:none; transition:all .2s; display:inline-flex; align-items:center; gap:8px; border:none; cursor:pointer; }
+    .btn-primary:hover { background:var(--accent); transform:translateY(-2px); box-shadow:0 10px 30px rgba(14,165,233,0.25); }
+    .btn-secondary { padding:16px 32px; background:transparent; color:var(--ink); font-weight:700; font-size:15px; border-radius:10px; text-decoration:none; border:2px solid #e2e8f0; transition:all .2s; }
+    .btn-secondary:hover { border-color:var(--ink); }
+    .hero-stats { display:flex; gap:32px; margin-top:48px; padding-top:28px; border-top:1px solid #e2e8f0; }
+    .hero-stats div strong { display:block; font-size:28px; font-weight:800; color:var(--ink); }
+    .hero-stats div span { font-size:13px; color:var(--slate); font-weight:500; }
+
+    /* Pain + Solution band */
+    .pain-band { background:var(--ink); padding:64px 28px; }
+    .pain-inner { max-width:1100px; margin:0 auto; display:grid; grid-template-columns:1fr 1fr; gap:56px; align-items:center; }
+    .pain-left h2 { font-size:32px; font-weight:800; color:var(--white); line-height:1.2; margin-bottom:16px; }
+    .pain-left p { color:var(--slate); font-size:16px; line-height:1.7; }
+    .pain-checks { display:flex; flex-direction:column; gap:16px; }
+    .pain-check { display:flex; align-items:flex-start; gap:14px; }
+    .pain-check .check-icon { width:28px; height:28px; background:rgba(100,255,218,0.15); border-radius:50%; display:flex; align-items:center; justify-content:center; color:var(--cyan); font-size:14px; flex-shrink:0; margin-top:2px; }
+    .pain-check span { color:var(--white); font-size:15px; font-weight:500; }
+
+    /* Products */
+    .products { padding:100px 28px; }
+    .products-inner { max-width:1200px; margin:0 auto; }
+    .section-header { text-align:center; margin-bottom:64px; }
+    .section-header h2 { font-size:36px; font-weight:800; color:var(--ink); margin-bottom:12px; }
+    .section-header p { color:var(--slate); font-size:17px; }
+    .products-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:24px; }
+    .product-card { background:var(--card); border-radius:16px; overflow:hidden; border:1px solid #e2e8f0; transition:transform .3s,box-shadow .3s; }
+    .product-card:hover { transform:translateY(-6px); box-shadow:0 20px 50px rgba(0,0,0,0.08); }
+    .product-img { height:180px; background:#f1f5f9; overflow:hidden; position:relative; }
+    .product-img img { width:100%; height:100%; object-fit:cover; transition:transform .4s; }
+    .product-card:hover .product-img img { transform:scale(1.05); }
+    .product-badge { position:absolute; top:12px; left:12px; background:var(--ink); color:var(--white); padding:4px 12px; border-radius:6px; font-size:11px; font-weight:700; }
+    .product-body { padding:24px; }
+    .product-body h3 { font-size:17px; font-weight:700; color:var(--ink); margin-bottom:8px; }
+    .product-body .desc { font-size:14px; color:var(--slate); margin-bottom:12px; }
+    .product-price { font-size:22px; font-weight:800; color:var(--ink); }
+    .product-price .old { font-size:14px; color:#94a3b8; text-decoration:line-through; font-weight:500; margin-left:8px; }
+
+    /* How it works */
+    .how { padding:100px 28px; background:#f1f5f9; }
+    .how-inner { max-width:1000px; margin:0 auto; }
+    .how-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:40px; margin-top:48px; }
+    .how-step { text-align:center; }
+    .how-step-num { width:56px; height:56px; background:var(--ink); color:var(--cyan); font-weight:800; font-size:20px; border-radius:16px; display:flex; align-items:center; justify-content:center; margin:0 auto 20px; }
+    .how-step h3 { font-size:18px; font-weight:700; color:var(--ink); margin-bottom:10px; }
+    .how-step p { font-size:14px; color:var(--slate); line-height:1.6; }
+
+    /* Testimonials */
+    .testimonials { padding:100px 28px; }
+    .testimonials-inner { max-width:1100px; margin:0 auto; }
+    .testi-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:28px; margin-top:48px; }
+    .testi-card { background:var(--card); border:1px solid #e2e8f0; border-radius:16px; padding:32px; position:relative; }
+    .testi-card::before { content:'"'; position:absolute; top:16px; left:20px; font-size:64px; color:#e2e8f0; font-family:Georgia,serif; line-height:1; }
+    .testi-stars { color:#f59e0b; font-size:16px; letter-spacing:2px; margin-bottom:16px; }
+    .testi-text { font-size:15px; color:#475569; line-height:1.7; margin-bottom:20px; position:relative; z-index:1; }
+    .testi-author { display:flex; align-items:center; gap:12px; }
+    .testi-avatar { width:44px; height:44px; border-radius:50%; background:linear-gradient(135deg,var(--ink),var(--accent)); display:flex; align-items:center; justify-content:center; color:var(--white); font-weight:700; font-size:16px; }
+    .testi-author div strong { font-size:14px; color:var(--ink); }
+    .testi-author div span { font-size:12px; color:var(--slate); }
+
+    /* Why us */
+    .why { padding:100px 28px; background:var(--ink); }
+    .why-inner { max-width:1100px; margin:0 auto; display:grid; grid-template-columns:1fr 1fr; gap:64px; align-items:center; }
+    .why-left h2 { font-size:36px; font-weight:800; color:var(--white); line-height:1.2; margin-bottom:20px; }
+    .why-left p { color:var(--slate); font-size:16px; line-height:1.7; margin-bottom:32px; }
+    .why-feature { display:flex; align-items:flex-start; gap:16px; margin-bottom:24px; }
+    .why-feature-icon { width:48px; height:48px; background:rgba(100,255,218,0.1); border-radius:12px; display:flex; align-items:center; justify-content:center; color:var(--cyan); font-size:20px; flex-shrink:0; }
+    .why-feature div h4 { font-size:16px; font-weight:700; color:var(--white); margin-bottom:4px; }
+    .why-feature div p { font-size:14px; color:var(--slate); margin:0; }
+    .why-right img { width:100%; height:420px; object-fit:cover; border-radius:16px; }
+
+    /* Contact */
+    .contact { padding:100px 28px; }
+    .contact-inner { max-width:800px; margin:0 auto; text-align:center; }
+    .contact h2 { font-size:36px; font-weight:800; color:var(--ink); margin-bottom:16px; }
+    .contact p { color:var(--slate); font-size:17px; margin-bottom:40px; }
+    .contact-box { display:grid; grid-template-columns:1fr 1fr; gap:24px; background:var(--card); border:1px solid #e2e8f0; border-radius:16px; padding:48px; text-align:left; }
+    .contact-info-item { display:flex; align-items:flex-start; gap:14px; margin-bottom:24px; }
+    .contact-info-icon { width:40px; height:40px; background:var(--ink); border-radius:10px; display:flex; align-items:center; justify-content:center; color:var(--cyan); font-size:16px; flex-shrink:0; }
+    .contact-info-item div strong { font-size:15px; color:var(--ink); display:block; margin-bottom:2px; }
+    .contact-info-item div span { font-size:14px; color:var(--slate); }
+    .whatsapp-btn { display:inline-flex; align-items:center; gap:10px; padding:14px 28px; background:#22c55e; color:#fff; font-weight:700; font-size:15px; border-radius:10px; text-decoration:none; margin-top:8px; transition:all .2s; }
+    .whatsapp-btn:hover { background:#16a34a; transform:translateY(-2px); }
+    .contact-form { display:flex; flex-direction:column; gap:16px; }
+    .contact-form input, .contact-form textarea { padding:14px 18px; border:2px solid #e2e8f0; border-radius:10px; font-family:inherit; font-size:15px; transition:border-color .2s; }
+    .contact-form input:focus, .contact-form textarea:focus { outline:none; border-color:var(--accent); }
+    .contact-form textarea { min-height:100px; resize:vertical; }
+    .contact-form button { padding:14px; background:var(--ink); color:var(--white); font-weight:700; font-size:15px; border:none; border-radius:10px; cursor:pointer; transition:all .2s; }
+    .contact-form button:hover { background:var(--accent); }
+
+    /* Footer */
+    footer { background:var(--ink); padding:48px 28px 24px; }
+    .footer-inner { max-width:1200px; margin:0 auto; display:flex; justify-content:space-between; align-items:center; }
+    .footer-logo { font-weight:800; font-size:18px; color:var(--white); }
+    .footer-copy { color:var(--slate); font-size:13px; }
+
+    @media (max-width:900px) {
+      .hero { grid-template-columns:1fr; }
+      .hero-right { display:none; }
+      .hero-left { padding:100px 28px 60px; max-width:100%; margin:0; }
+      .pain-inner { grid-template-columns:1fr; }
+      .testi-grid { grid-template-columns:1fr; }
+      .how-grid { grid-template-columns:1fr; }
+      .why-inner { grid-template-columns:1fr; }
+      .why-right { order:-1; }
+      .why-right img { height:280px; }
+      .contact-box { grid-template-columns:1fr; }
+      .footer-inner { flex-direction:column; gap:12px; text-align:center; }
+      nav ul { display:none; position:absolute; top:100%; left:0; right:0; background:#fff; flex-direction:column; padding:20px; gap:16px; border-bottom:1px solid #e2e8f0; }
+      nav ul.active { display:flex; }
+      .mobile-toggle { display:block; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="demo-badge">DEMO — Activa tu web hoy</div>
+
+  <header>
+    <div class="header-inner">
+      <div class="logo"><div class="logo-icon">T</div> TECNOFON</div>
+      <button class="mobile-toggle" onclick="document.querySelector('nav ul').classList.toggle('active')">☰</button>
+      <nav>
+        <ul>
+          <li><a href="#inicio">Inicio</a></li>
+          <li><a href="#productos">Smartphones</a></li>
+          <li><a href="#reparacion">Reparación</a></li>
+          <li><a href="#testimonios">Opiniones</a></li>
+          <li><a href="#contacto" class="btn-header">Cotiza gratis</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero" id="inicio">
+    <div class="hero-left">
+      <div class="hero-tag">Abierto ahora — Centro Histórico</div>
+      <h1>¿Se te rompió la pantalla? En <em>30 min</em> la dejamos como nueva</h1>
+      <p>Venta de smartphones con garantía de 6 meses y reparaciones express en el corazón de Puebla. Diagnóstico gratuito. No cobramos si no lo arreglamos.</p>
+      <div class="hero-cta-group">
+        <a href="#contacto" class="btn-primary">Cotiza tu reparación →</a>
+        <a href="#productos" class="btn-secondary">Ver smartphones</a>
+      </div>
+      <div class="hero-stats">
+        <div><strong>12+</strong><span>años en Puebla</span></div>
+        <div><strong>3,200+</strong><span>reparaciones</span></div>
+        <div><strong>30 min</strong><span>pantalla nueva</span></div>
+      </div>
+    </div>
+    <div class="hero-right">
+      <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=1200&q=80" alt="Smartphones y tecnología en Puebla">
+    </div>
+  </section>
+
+  <section class="pain-band">
+    <div class="pain-inner">
+      <div class="pain-left">
+        <h2>¿Cansado de que te cobren $2,000 por una pantalla que dura 2 semanas?</h2>
+        <p>En TECNOFON usamos solo piezas originales o de calidad OEM. Cada reparación incluye garantía por escrito de 90 días. Si algo falla, lo arreglamos sin costo.</p>
+      </div>
+      <div class="pain-checks">
+        <div class="pain-check"><div class="check-icon">✓</div><span>Diagnóstico gratuito, sin compromiso</span></div>
+        <div class="pain-check"><div class="check-icon">✓</div><span>Piezas con garantía de 90 días</span></div>
+        <div class="pain-check"><div class="check-icon">✓</div><span>Reparación en 30 min (pantalla)</span></div>
+        <div class="pain-check"><div class="check-icon">✓</div><span>Precio por adelantado, sin sorpresas</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="products" id="productos">
+    <div class="products-inner">
+      <div class="section-header">
+        <h2>Smartphones disponibles hoy</h2>
+        <p>Equipos nuevos y seminuevos revisados. Todos con garantía de 6 meses.</p>
+      </div>
+      <div class="products-grid">
+        <div class="product-card">
+          <div class="product-img">
+            <img src="https://images.unsplash.com/photo-1556656793-02715d8dd660?auto=format&fit=crop&w=600&q=80" alt="Smartphone nuevo">
+            <span class="product-badge">NUEVO</span>
+          </div>
+          <div class="product-body">
+            <h3>iPhone 14 Pro 128GB</h3>
+            <p class="desc"> Seminuevo, batería 96%. Garantía 6 meses. Liberado.</p>
+            <div class="product-price">$14,500<span class="old">$18,900</span></div>
+          </div>
+        </div>
+        <div class="product-card">
+          <div class="product-img">
+            <img src="https://images.unsplash.com/photo-1550009158-9ebf69173e03?auto=format&fit=crop&w=600&q=80" alt="Smartphone Samsung">
+          </div>
+          <div class="product-body">
+            <h3>Samsung Galaxy S23</h3>
+            <p class="desc">256GB, color Phantom Black. Estado impecable.</p>
+            <div class="product-price">$9,800<span class="old">$13,500</span></div>
+          </div>
+        </div>
+        <div class="product-card">
+          <div class="product-img">
+            <img src="https://images.unsplash.com/photo-1587614382346-4ec70e388b28?auto=format&fit=crop&w=600&q=80" alt="Accesorios tech">
+            <span class="product-badge">PROMO</span>
+          </div>
+          <div class="product-body">
+            <h3>Kit Carga Rápida 65W</h3>
+            <p class="desc">Cargador + cable USB-C. Compatible con todos los equipos.</p>
+            <div class="product-price">$350<span class="old">$580</span></div>
+          </div>
+        </div>
+        <div class="product-card">
+          <div class="product-img">
+            <img src="https://images.unsplash.com/photo-1572569028738-411a197b82c4?auto=format&fit=crop&w=600&q=80" alt="Smartphone Xiaomi">
+          </div>
+          <div class="product-body">
+            <h3>Xiaomi Redmi Note 13</h3>
+            <p class="desc">Nuevo sellado. 256GB, 8GB RAM. Cámara 108MP.</p>
+            <div class="product-price">$5,200</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="how" id="reparacion">
+    <div class="how-inner">
+      <div class="section-header">
+        <h2>Repara tu celular en 3 pasos</h2>
+        <p>Sin citas, sin esperar días. Entra y sal con tu celular listo.</p>
+      </div>
+      <div class="how-grid">
+        <div class="how-step">
+          <div class="how-step-num">1</div>
+          <h3>Lléganos o escríbenos</h3>
+          <p>Calle 9 Norte 406-C, Centro de Puebla. O mándanos WhatsApp con el modelo y el problema. Te damos precio inmediato.</p>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">2</div>
+          <h3>Diagnóstico gratis</h3>
+          <p>Revisamos tu celular sin costo. Te decimos exactamente qué necesita, cuánto cuesta y cuánto tardamos. Sin sorpresas.</p>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">3</div>
+          <h3>Recógelo reparado</h3>
+          <p>La mayoría de pantallas tardan 30 min. Baterías 20 min. Te avisamos por WhatsApp cuando esté listo. Garantía por escrito.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="testimonials" id="testimonios">
+    <div class="testimonials-inner">
+      <div class="section-header">
+        <h2>Lo que dicen nuestros clientes</h2>
+        <p>Más de 3,200 reparaciones y ventas en el Centro de Puebla.</p>
+      </div>
+      <div class="testi-grid">
+        <div class="testi-card">
+          <div class="testi-stars">★★★★★</div>
+          <p class="testi-text">Se me cayó el iPhone en la calle 8 Poniente. En 25 minutos tenía la pantalla nueva y parecía de fábrica. Me dieron garantía por escrito. El mejor precio que cotizé en todo el centro.</p>
+          <div class="testi-author">
+            <div class="testi-avatar">JM</div>
+            <div><strong>José María Hernández</strong><span>Estudiante, BUAP</span></div>
+          </div>
+        </div>
+        <div class="testi-card">
+          <div class="testi-stars">★★★★★</div>
+          <p class="testi-text">Compré un Samsung seminuevo hace 8 meses y sigue perfecto. Me dieron 6 meses de garantía y cuando tuve una duda me atendieron por WhatsApp un domingo. Eso no lo hace ninguna tienda grande.</p>
+          <div class="testi-author">
+            <div class="testi-avatar">LG</div>
+            <div><strong>Laura Gutiérrez</strong><span>Emprendedora, Centro</span></div>
+          </div>
+        </div>
+        <div class="testi-card">
+          <div class="testi-stars">★★★★★</div>
+          <p class="testi-text">Mi celular no cargaba y otros lugares me querían cambiar la tarjeta madre por $4,500. Aquí fue solo el puerto de carga: $650 y 20 minutos. Honestidad que ya no se ve.</p>
+          <div class="testi-author">
+            <div class="testi-avatar">RM</div>
+            <div><strong>Ricardo Morales</strong><span>Taxista, Puebla</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="why">
+    <div class="why-inner">
+      <div class="why-left">
+        <h2>¿Por qué comprar o reparar en TECNOFON?</h2>
+        <p>En el Centro Histórico hay docenas de tiendas de celulares. Pero solo una te da precio fijo por adelantado, garantía por escrito y te atiende como persona, no como número.</p>
+        <div class="why-feature">
+          <div class="why-feature-icon">⚡</div>
+          <div><h4>Reparación express</h4><p>La mayoría de fallas en 20-40 min. No dejes tu celular por días.</p></div>
+        </div>
+        <div class="why-feature">
+          <div class="why-feature-icon">🛡️</div>
+          <div><h4>Garantía por escrito</h4><p>90 días en reparaciones, 6 meses en equipos. Lo respaldamos.</p></div>
+        </div>
+        <div class="why-feature">
+          <div class="why-feature-icon">💰</div>
+          <div><h4>Precio sin sorpresas</h4><p>Te decimos el costo exacto antes de empezar. No hay cargos ocultos.</p></div>
+        </div>
+      </div>
+      <div class="why-right">
+        <img src="https://images.unsplash.com/photo-1581092160562-40aa8e79237f?auto=format&fit=crop&w=800&q=80" alt="Técnico reparando smartphone">
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="contacto">
+    <div class="contact-inner">
+      <h2>¿Listo para arreglar tu celular?</h2>
+      <p>Cotiza gratis por WhatsApp o ven directamente. Estamos a 2 cuadras del Zócalo.</p>
+      <div class="contact-box">
+        <div>
+          <div class="contact-info-item">
+            <div class="contact-info-icon">📍</div>
+            <div><strong>Ubicación</strong><span>Calle 9 Norte 406-C, Centro, Puebla<br>Entre 6 Poniente y 4 Poniente</span></div>
+          </div>
+          <div class="contact-info-item">
+            <div class="contact-info-icon">🕐</div>
+            <div><strong>Horario</strong><span>Lunes a Sábado: 10:00 am – 7:00 pm<br>Domingo: 11:00 am – 4:00 pm</span></div>
+          </div>
+          <div class="contact-info-item">
+            <div class="contact-info-icon">📱</div>
+            <div><strong>WhatsApp</strong><span>Responden en menos de 5 min</span></div>
+          </div>
+          <a href="#" class="whatsapp-btn">💬 Escríbenos por WhatsApp</a>
+        </div>
+        <form class="contact-form" onsubmit="event.preventDefault(); alert('¡Gracias! Te contactamos en minutos. Esta es una demostración.');">
+          <input type="text" placeholder="Tu nombre" required>
+          <input type="tel" placeholder="Tu teléfono" required>
+          <input type="text" placeholder="Modelo de tu celular (ej: iPhone 12, Samsung S21)">
+          <textarea placeholder="¿Qué le pasa a tu celular?"></textarea>
+          <button type="submit">Cotiza gratis — Respondemos en 5 min</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-logo">TECNOFON</div>
+      <div class="footer-copy">© 2025 TECNOFON — Smartphones y reparaciones en el Centro de Puebla</div>
+    </div>
+  </footer>
+
+  <script>
+    window.addEventListener('scroll', () => {
+      document.querySelector('header').classList.toggle('scrolled', window.scrollY > 20);
+    });
+  </script>
+
+</body>
+</html>

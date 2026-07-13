@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Panadería y Pastelería Imperial | Pan Fresco y Pasteles en Toluca</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --cafe: #5C3D2E;
+      --cafe-claro: #8B5E3C;
+      --cafe-suave: #A67B5B;
+      --dorado: #C9A96E;
+      --beige: #FBF7F2;
+      --crema: #F5EFE8;
+      --blanco: #FFFFFF;
+      --gris: #444;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'DM Sans', sans-serif; color: var(--gris); line-height: 1.6; background: var(--blanco); }
+
+    .demo-badge {
+      background: var(--cafe); color: var(--blanco); text-align: center;
+      padding: 8px 20px; font-size: 0.78rem; font-weight: 500; letter-spacing: 0.5px;
+      position: sticky; top: 0; z-index: 2000;
+    }
+
+    header {
+      background: rgba(255,255,255,0.96); backdrop-filter: blur(10px);
+      position: sticky; top: 32px; z-index: 1000;
+      border-bottom: 1px solid rgba(92,61,46,0.08);
+    }
+    .header-container {
+      max-width: 1200px; margin: 0 auto; padding: 14px 24px;
+      display: flex; justify-content: space-between; align-items: center;
+    }
+    .logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+    .logo-mark {
+      width: 42px; height: 42px; background: var(--crema); border: 2px solid var(--dorado);
+      border-radius: 50%; display: flex; align-items: center; justify-content: center;
+      font-family: 'Cormorant Garamond', serif; color: var(--cafe); font-size: 1.3rem; font-weight: 700;
+    }
+    .logo-text { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; color: var(--cafe); font-weight: 700; }
+    .logo-text span { display: block; font-family: 'DM Sans', sans-serif; font-size: 0.65rem; color: var(--cafe-suave); letter-spacing: 2px; text-transform: uppercase; margin-top: -2px; }
+    nav ul { display: flex; list-style: none; gap: 32px; }
+    nav a { text-decoration: none; color: var(--gris); font-weight: 500; font-size: 0.88rem; transition: color 0.3s; }
+    nav a:hover { color: var(--cafe); }
+    .cta-header {
+      background: var(--cafe); color: #fff; padding: 10px 24px; border-radius: 30px;
+      text-decoration: none; font-weight: 600; font-size: 0.85rem; transition: all 0.3s;
+    }
+    .cta-header:hover { background: var(--cafe-claro); }
+    .menu-toggle { display: none; font-size: 1.5rem; cursor: pointer; }
+
+    /* HERO */
+    .hero {
+      position: relative; min-height: 90vh; display: flex; align-items: center; overflow: hidden;
+    }
+    .hero-bg {
+      position: absolute; inset: 0;
+      background: url('https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+    }
+    .hero-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(to top, rgba(92,61,46,0.92) 0%, rgba(92,61,46,0.5) 50%, rgba(92,61,46,0.3) 100%);
+    }
+    .hero-content {
+      position: relative; z-index: 2; max-width: 1200px; margin: 0 auto; padding: 80px 24px;
+      width: 100%; text-align: center;
+    }
+    .hero-tag {
+      display: inline-block; background: var(--dorado); color: var(--cafe);
+      padding: 6px 20px; border-radius: 20px; font-size: 0.78rem; font-weight: 700;
+      letter-spacing: 1px; text-transform: uppercase; margin-bottom: 24px;
+    }
+    .hero h1 {
+      font-family: 'Cormorant Garamond', serif; font-size: 4rem; color: #fff;
+      line-height: 1.1; max-width: 700px; margin: 0 auto 20px; font-weight: 700;
+    }
+    .hero h1 em { color: var(--dorado); font-style: italic; }
+    .hero-sub {
+      font-size: 1.15rem; color: rgba(255,255,255,0.9); max-width: 550px;
+      margin: 0 auto 36px; font-weight: 400;
+    }
+    .hero-cta {
+      display: inline-block; background: #fff; color: var(--cafe);
+      padding: 16px 40px; border-radius: 30px; text-decoration: none;
+      font-weight: 700; font-size: 1rem; transition: all 0.3s;
+    }
+    .hero-cta:hover { background: var(--crema); transform: translateY(-2px); }
+    .hero-note {
+      margin-top: 20px; color: rgba(255,255,255,0.7); font-size: 0.85rem;
+    }
+    .hero-note strong { color: var(--dorado); }
+
+    /* HORNO INFO */
+    .horno-info {
+      background: var(--beige); padding: 60px 24px;
+    }
+    .horno-grid {
+      max-width: 1200px; margin: 0 auto;
+      display: grid; grid-template-columns: repeat(4, 1fr); gap: 30px; text-align: center;
+    }
+    .horno-item h3 {
+      font-family: 'Cormorant Garamond', serif; font-size: 2.2rem; color: var(--cafe); margin-bottom: 4px;
+    }
+    .horno-item p { color: var(--cafe-suave); font-size: 0.88rem; }
+
+    /* CÓMO PEDIR */
+    .como-pedir { padding: 100px 24px; max-width: 1200px; margin: 0 auto; }
+    .section-header { text-align: center; margin-bottom: 60px; }
+    .section-header h2 { font-family: 'Cormorant Garamond', serif; font-size: 2.6rem; color: var(--cafe); margin-bottom: 10px; }
+    .section-header p { color: var(--cafe-suave); font-size: 1.05rem; }
+    .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; }
+    .step {
+      text-align: center; padding: 40px 28px; background: var(--beige); border-radius: 20px;
+      position: relative;
+    }
+    .step-num {
+      width: 48px; height: 48px; background: var(--cafe); color: #fff;
+      border-radius: 50%; display: flex; align-items: center; justify-content: center;
+      font-weight: 700; font-size: 1.1rem; margin: 0 auto 20px;
+    }
+    .step h3 { font-size: 1.15rem; color: var(--cafe); margin-bottom: 8px; }
+    .step p { font-size: 0.9rem; color: var(--gris); }
+
+    /* PRODUCTOS DESTACADOS */
+    .productos { background: var(--blanco); padding: 100px 24px; }
+    .productos-inner { max-width: 1200px; margin: 0 auto; }
+    .productos-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; margin-top: 50px;
+    }
+    .producto {
+      border-radius: 16px; overflow: hidden; background: var(--beige);
+      transition: all 0.3s;
+    }
+    .producto:hover { transform: translateY(-6px); box-shadow: 0 20px 50px rgba(92,61,46,0.12); }
+    .producto-img { height: 220px; overflow: hidden; }
+    .producto-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s; }
+    .producto:hover .producto-img img { transform: scale(1.05); }
+    .producto-info { padding: 24px; }
+    .producto-info h3 { font-size: 1.1rem; color: var(--cafe); margin-bottom: 6px; }
+    .producto-info p { font-size: 0.88rem; color: var(--cafe-suave); margin-bottom: 12px; }
+    .producto-precio { font-weight: 700; color: var(--cafe); }
+    .producto-precio span { font-size: 0.8rem; color: #999; font-weight: 400; }
+
+    /* PASTELES */
+    .pasteles {
+      background: url('https://images.unsplash.com/photo-1555507036-ab1f4038024a?auto=format&fit=crop&w=1200&q=80') center/cover no-repeat;
+      position: relative; padding: 100px 24px;
+    }
+    .pasteles::before {
+      content: ''; position: absolute; inset: 0;
+      background: linear-gradient(to right, rgba(92,61,46,0.92) 0%, rgba(92,61,46,0.75) 100%);
+    }
+    .pasteles-inner {
+      position: relative; z-index: 2; max-width: 1200px; margin: 0 auto;
+      display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center;
+    }
+    .pasteles-text h2 {
+      font-family: 'Cormorant Garamond', serif; font-size: 2.6rem; color: #fff; margin-bottom: 16px;
+    }
+    .pasteles-text h2 em { color: var(--dorado); font-style: italic; }
+    .pasteles-text p { color: rgba(255,255,255,0.85); margin-bottom: 20px; font-size: 1.05rem; }
+    .pasteles-list { list-style: none; margin-bottom: 28px; }
+    .pasteles-list li {
+      padding: 6px 0; padding-left: 28px; position: relative;
+      color: rgba(255,255,255,0.9); font-size: 0.95rem;
+    }
+    .pasteles-list li::before { content: '✓'; position: absolute; left: 0; color: var(--dorado); font-weight: 700; }
+    .pasteles-cta {
+      background: var(--dorado); color: var(--cafe); padding: 14px 32px; border-radius: 30px;
+      text-decoration: none; font-weight: 700; display: inline-block; transition: all 0.3s;
+    }
+    .pasteles-cta:hover { background: #fff; }
+
+    /* TESTIMONIOS */
+    .testimonios { padding: 100px 24px; max-width: 1200px; margin: 0 auto; }
+    .testimonios-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; margin-top: 50px;
+    }
+    .testimonio {
+      background: var(--beige); padding: 32px; border-radius: 16px;
+    }
+    .testimonio-stars { color: var(--dorado); font-size: 1.1rem; margin-bottom: 14px; letter-spacing: 2px; }
+    .testimonio p { font-size: 0.95rem; color: var(--gris); margin-bottom: 20px; line-height: 1.7; font-style: italic; }
+    .testimonio-autor { display: flex; align-items: center; gap: 12px; }
+    .testimonio-avatar {
+      width: 44px; height: 44px; border-radius: 50%;
+      background: var(--crema); display: flex; align-items: center; justify-content: center;
+      font-weight: 700; color: var(--cafe); font-size: 0.9rem;
+    }
+    .testimonio-autor div strong { font-size: 0.9rem; color: var(--cafe); }
+    .testimonio-autor div span { font-size: 0.8rem; color: #999; }
+
+    /* CONTACTO -->
+    .contacto { background: var(--cafe); padding: 80px 24px; }
+    .contacto-inner {
+      max-width: 1200px; margin: 0 auto;
+      display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start;
+    }
+    .contacto-info h2 {
+      font-family: 'Cormorant Garamond', serif; font-size: 2.4rem; color: #fff; margin-bottom: 12px;
+    }
+    .contacto-info > p { color: rgba(255,255,255,0.85); margin-bottom: 28px; }
+    .contacto-item {
+      display: flex; align-items: flex-start; gap: 14px; margin-bottom: 16px;
+    }
+    .contacto-item strong { display: block; color: var(--dorado); font-size: 0.85rem; margin-bottom: 2px; }
+    .contacto-item span { color: rgba(255,255,255,0.85); font-size: 0.9rem; }
+    .contacto-form {
+      background: #fff; padding: 40px; border-radius: 16px;
+    }
+    .contacto-form h3 { font-size: 1.15rem; color: var(--cafe); margin-bottom: 20px; }
+    .form-group { margin-bottom: 16px; }
+    .form-group label { display: block; font-size: 0.78rem; font-weight: 600; color: var(--gris); margin-bottom: 6px; text-transform: uppercase; letter-spacing: 0.5px; }
+    .form-group input, .form-group select, .form-group textarea {
+      width: 100%; padding: 12px 14px; border: 2px solid #eee; border-radius: 10px;
+      font-family: 'DM Sans', sans-serif; font-size: 0.95rem; transition: border-color 0.3s;
+    }
+    .form-group input:focus, .form-group select:focus, .form-group textarea:focus { outline: none; border-color: var(--dorado); }
+    .form-group textarea { resize: vertical; min-height: 100px; }
+    .submit-btn {
+      width: 100%; padding: 14px; background: var(--cafe); color: #fff;
+      border: none; border-radius: 10px; font-size: 1rem; font-weight: 700;
+      cursor: pointer; transition: all 0.3s; font-family: 'DM Sans', sans-serif;
+    }
+    .submit-btn:hover { background: var(--cafe-claro); }
+
+    /* FOOTER */
+    footer { background: var(--cafe); color: rgba(255,255,255,0.6); padding: 50px 24px 24px; border-top: 1px solid rgba(255,255,255,0.1); }
+    .footer-inner { max-width: 1200px; margin: 0 auto; }
+    .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px; margin-bottom: 40px; }
+    .footer-brand .logo-text { color: #fff; font-size: 1.3rem; }
+    .footer-brand p { margin-top: 12px; font-size: 0.88rem; line-height: 1.7; max-width: 320px; }
+    .footer-col h4 { color: var(--dorado); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 16px; }
+    .footer-col a { color: rgba(255,255,255,0.6); text-decoration: none; display: block; padding: 4px 0; font-size: 0.88rem; transition: color 0.3s; }
+    .footer-col a:hover { color: var(--dorado); }
+    .footer-bottom { border-top: 1px solid rgba(255,255,255,0.1); padding-top: 24px; text-align: center; font-size: 0.78rem; }
+
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+      .horno-grid { grid-template-columns: repeat(2, 1fr); }
+      .steps { grid-template-columns: 1fr; }
+      .productos-grid { grid-template-columns: repeat(2, 1fr); }
+      .pasteles-inner { grid-template-columns: 1fr; }
+      .testimonios-grid { grid-template-columns: 1fr; }
+      .contacto-inner { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr; }
+      .hero h1 { font-size: 3rem; }
+    }
+    @media (max-width: 600px) {
+      nav, .cta-header { display: none; }
+      .menu-toggle { display: block; }
+      .productos-grid { grid-template-columns: 1fr; }
+      .horno-grid { grid-template-columns: 1fr 1fr; }
+      .hero h1 { font-size: 2.4rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="demo-badge">DEMO — Esta es una muestra de tu futura página web. Contáctanos para activarla con tu dominio propio.</div>
+
+  <header>
+    <div class="header-container">
+      <a href="#" class="logo">
+        <div class="logo-mark">I</div>
+        <div class="logo-text">Panadería Imperial<span>Pan fresco desde 2010</span></div>
+      </a>
+      <nav>
+        <ul>
+          <li><a href="#productos">Pan del día</a></li>
+          <li><a href="#pasteles">Pasteles</a></li>
+          <li><a href="#testimonios">Clientes</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+      </nav>
+      <a href="tel:7225661938" class="cta-header">Pedir ahora</a>
+      <div class="menu-toggle" onclick="document.querySelector('nav').classList.toggle('active')">☰</div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero" id="inicio">
+    <div class="hero-bg"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <div class="hero-tag">Colonia Azteca, Toluca</div>
+      <h1>El aroma del pan <em>recién horneado</em> espera por ti</h1>
+      <p class="hero-sub">Cada madrugada encendemos el horno para que tu familia disfrute bolillos crujientes, conchas esponjosas y pasteles con el sabor de siempre. Desde 2010 endulzando Toluca.</p>
+      <a href="tel:7225661938" class="hero-cta">Haz tu pedido por WhatsApp</a>
+      <p class="hero-note">Pasteles personalizados con <strong>48 horas de anticipación</strong> · Mayoreo para restaurantes</p>
+    </div>
+  </section>
+
+  <!-- HORNO INFO -->
+  <section class="horno-info">
+    <div class="horno-grid">
+      <div class="horno-item"><h3>5:00 AM</h3><p>Primera hornada del día</p></div>
+      <div class="horno-item"><h3>15+</h3><p>Años de tradición</p></div>
+      <div class="horno-item"><h3>300+</h3><p>Familias atendidas por semana</p></div>
+      <div class="horno-item"><h3>48h</h3><p>Anticipación para pasteles</p></div>
+    </div>
+  </section>
+
+  <!-- CÓMO PEDIR -->
+  <section class="como-pedir" id="como-pedir">
+    <div class="section-header">
+      <h2>Así de fácil es pedir</h2>
+      <p>Tres pasos para tener pan fresco en tu mesa</p>
+    </div>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <h3>Escríbenos por WhatsApp</h3>
+        <p>Manda tu lista al 722-566-1938. Dinos qué pan necesitas y para cuándo.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <h3>Confirmamos tu pedido</h3>
+        <p>Te confirmamos disponibilidad, precio total y hora de entrega o recolección.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <h3>Recibe pan calientito</h3>
+        <p>Pasa a recoger a partir de las 6:00 AM o pide entrega en zonas cercanas a Colonia Azteca.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRODUCTOS -->
+  <section class="productos" id="productos">
+    <div class="productos-inner">
+      <div class="section-header">
+        <h2>Pan artesanal del día</h2>
+        <p>Horneado cada madrugada con recetas tradicionales</p>
+      </div>
+      <div class="productos-grid">
+        <div class="producto">
+          <div class="producto-img">
+            <img src="https://images.unsplash.com/photo-1549931319-a545dcf3bc73?auto=format&fit=crop&w=600&q=80" alt="Bolillo y telera">
+          </div>
+          <div class="producto-info">
+            <h3>Bolillo y Telera</h3>
+            <p>Crujiente por fuera, suave por dentro. El pan de cada día de las familias toluqueñas.</p>
+            <div class="producto-precio">$2.50 <span>c/u</span></div>
+          </div>
+        </div>
+        <div class="producto">
+          <div class="producto-img">
+            <img src="https://images.unsplash.com/photo-1555507036-ab1f4038024a?auto=format&fit=crop&w=600&q=80" alt="Conchas y pan dulce">
+          </div>
+          <div class="producto-info">
+            <h3>Conchas y Pan Dulce</h3>
+            <p>Concha de vainilla, chocolate, oreja, mantecada y más variedad todos los días.</p>
+            <div class="producto-precio">$8 - $15 <span>c/u</span></div>
+          </div>
+        </div>
+        <div class="producto">
+          <div class="producto-img">
+            <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=600&q=80" alt="Pasteles personalizados">
+          </div>
+          <div class="producto-info">
+            <h3>Pasteles Personalizados</h3>
+            <p>Cumpleaños, bodas, XV años. Desde $350. Cotiza con 48 horas de anticipación.</p>
+            <div class="producto-precio">Desde $350 <span>c/u</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PASTELES -->
+  <section class="pasteles" id="pasteles">
+    <div class="pasteles-inner">
+      <div class="pasteles-text">
+        <h2>Pasteles que hacen <em>inolvidables</em> tus celebraciones</h2>
+        <p>Desde un pastel de cumpleaños sencillo hasta una mesa de postres completa. En Imperial decoramos con buttercream, fondant o crema chantilly según tu estilo y presupuesto.</p>
+        <ul class="pasteles-list">
+          <li>Pasteles desde 15 porciones hasta 100+</li>
+          <li>Decoración personalizada con foto impresa</li>
+          <li>Mesa de postres para eventos</li>
+          <li>Pan para restaurantes y cafeterías (mayoreo)</li>
+        </ul>
+        <a href="tel:7225661938" class="pasteles-cta">Cotiza tu pastel ahora</a>
+      </div>
+      <div></div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIOS -->
+  <section class="testimonios" id="testimonios">
+    <div class="section-header">
+      <h2>Lo que dicen nuestros clientes</h2>
+      <p>Familias de la Colonia Azteca y negocios locales que confían en nosotros</p>
+    </div>
+    <div class="testimonios-grid">
+      <div class="testimonio">
+        <div class="testimonio-stars">★★★★★</div>
+        <p>"El pastel de XV años de mi hija quedó espectacular. Tres pisos, decorado con flores de azúcar y el sabor de vainilla con fresa que todos pidieron receta. Gracias por hacerla sentir princesa."</p>
+        <div class="testimonio-autor">
+          <div class="testimonio-avatar">GR</div>
+          <div><strong>Guadalupe Ramírez</strong><span>Colonia Azteca, Toluca</span></div>
+        </div>
+      </div>
+      <div class="testimonio">
+        <div class="testimonio-stars">★★★★★</div>
+        <p>"Soy dueño de una cafetería en el centro y llevo 3 años comprando el pan de molde y las conchas para el desayuno. Siempre puntual, siempre fresco. Mis clientes notan la diferencia."</p>
+        <div class="testimonio-autor">
+          <div class="testimonio-avatar">AO</div>
+          <div><strong>Arturo Olvera Pineda</strong><span>Cafetería "El Rincón", Toluca Centro</span></div>
+        </div>
+      </div>
+      <div class="testimonio">
+        <div class="testimonio-stars">★★★★★</div>
+        <p>"El bolillo es el mejor de la zona. Crujiente, con el tamaño justo y no se deshace en la salsa. Mi esposo dice que sabe a pan de antes. Llevamos 8 años comprando aquí."</p>
+        <div class="testimonio-autor">
+          <div class="testimonio-avatar">MV</div>
+          <div><strong>Martha Vilchis</strong><span>Colonia Francisco Murguía</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACTO -->
+  <section class="contacto" id="contacto">
+    <div class="contacto-inner">
+      <div class="contacto-info">
+        <h2>Visítanos en la Colonia Azteca</h2>
+        <p>Estamos en Calle Mextli esquina con Tizoc. Horno caliente desde las 5:00 AM.</p>
+        <div class="contacto-item">
+          <div>📞</div>
+          <div><strong>Teléfono / WhatsApp</strong><span>722-566-1938</span></div>
+        </div>
+        <div class="contacto-item">
+          <div>📍</div>
+          <div><strong>Dirección</strong><span>Calle Mextli, Calle Tizoc, Colonia Azteca, Toluca, Edo. de México</span></div>
+        </div>
+        <div class="contacto-item">
+          <div>🕐</div>
+          <div><strong>Horario</strong><span>Lun a Sáb: 5:00 AM — 9:00 PM<br>Domingo: 6:00 AM — 2:00 PM</span></div>
+        </div>
+        <div class="contacto-item">
+          <div>🎂</div>
+          <div><strong>Pasteles personalizados</strong><span>Pide con 48 horas de anticipación mínima</span></div>
+        </div>
+      </div>
+      <div class="contacto-form">
+        <h3>Haz tu pedido</h3>
+        <form>
+          <div class="form-group">
+            <label>Nombre</label>
+            <input type="text" placeholder="Tu nombre">
+          </div>
+          <div class="form-group">
+            <label>Teléfono</label>
+            <input type="tel" placeholder="722-000-0000">
+          </div>
+          <div class="form-group">
+            <label>Tipo de pedido</label>
+            <select>
+              <option>Pan del día</option>
+              <option>Pastel personalizado</option>
+              <option>Pedido al mayoreo</option>
+              <option>Mesa de postres</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Detalles del pedido</label>
+            <textarea placeholder="¿Qué necesitas y para cuándo?"></textarea>
+          </div>
+          <button type="button" class="submit-btn">Enviar pedido por WhatsApp</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="logo-text">Panadería y Pastelería Imperial</div>
+          <p>El aroma y sabor de siempre en la Colonia Azteca de Toluca. Pan fresco cada madrugada, pasteles con amor para tus celebraciones.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Productos</h4>
+          <a href="#productos">Pan artesanal</a>
+          <a href="#productos">Pan dulce</a>
+          <a href="#pasteles">Pasteles personalizados</a>
+          <a href="#pasteles">Mayoreo para negocios</a>
+        </div>
+        <div class="footer-col">
+          <h4>Contacto</h4>
+          <a href="tel:7225661938">722-566-1938</a>
+          <a href="#contacto">WhatsApp</a>
+          <a href="#contacto">Colonia Azteca, Toluca</a>
+        </div>
+      </div>
+      <div class="footer-bottom">© 2025 Panadería y Pastelería Imperial — Todos los derechos reservados</div>
+    </div>
+  </footer>
+
+</body>
+</html>

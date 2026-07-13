@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Despacho Juridico Lic. Herminio Peralta Coronel | Abogado en Oaxaca</title>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Source+Sans+3:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{--gold:#c5a059;--gold-light:#e8d5a3;--indigo:#1a1a2e;--indigo-light:#2a2a4e;--gray:#6b6b7b;--light:#f8f9fa;--white:#fff;}
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{font-family:'Source Sans 3',sans-serif;color:var(--indigo);background:var(--white);line-height:1.7;}
+  img{max-width:100%;display:block;}
+
+  .demo-badge{position:fixed;top:0;left:0;width:100%;z-index:9999;background:var(--indigo);color:rgba(255,255,255,0.85);text-align:center;padding:10px 18px;font-size:0.78rem;font-weight:600;letter-spacing:0.5px;border-bottom:1px solid rgba(255,255,255,0.1);}
+  .demo-badge a{color:var(--gold);text-decoration:underline;}
+
+  header{position:fixed;top:38px;left:0;width:100%;background:rgba(255,255,255,0.98);backdrop-filter:blur(20px);z-index:1000;border-bottom:1px solid rgba(0,0,0,0.05);}
+  .header-container{max-width:1200px;margin:0 auto;padding:16px 28px;display:flex;align-items:center;justify-content:space-between;}
+  .logo{font-family:'Libre Baskerville',serif;font-size:1.15rem;font-weight:700;color:var(--indigo);display:flex;align-items:center;gap:12px;}
+  .logo-line{width:1px;height:28px;background:var(--gold);}
+  .logo-sub{font-family:'Source Sans 3',sans-serif;font-size:0.75rem;font-weight:400;color:var(--gray);letter-spacing:2px;text-transform:uppercase;}
+  nav ul{display:flex;gap:36px;list-style:none;align-items:center;}
+  nav a{font-weight:600;font-size:0.85rem;color:var(--indigo);text-decoration:none;letter-spacing:0.5px;transition:color .3s;}
+  nav a:hover{color:var(--gold);}
+  .btn-header{background:var(--indigo);color:var(--gold);padding:12px 24px;border-radius:4px;font-weight:700;font-size:0.8rem;text-decoration:none;transition:all .3s;letter-spacing:1px;text-transform:uppercase;}
+  .btn-header:hover{background:var(--gold);color:var(--indigo);}
+  .menu-toggle{display:none;flex-direction:column;gap:4px;background:none;border:none;cursor:pointer;}
+  .menu-toggle span{width:24px;height:2px;background:var(--indigo);border-radius:2px;}
+
+  /* HERO */
+  .hero{margin-top:90px;display:grid;grid-template-columns:1.1fr 0.9fr;min-height:92vh;align-items:center;background:var(--indigo);position:relative;overflow:hidden;}
+  .hero::before{content:'';position:absolute;right:0;top:0;width:35%;height:100%;background:linear-gradient(180deg,var(--gold-light) 0%,var(--gold) 100%);opacity:0.06;}
+  .hero-content{padding:80px 24px 80px 8%;max-width:620px;position:relative;z-index:2;}
+  .hero-eyebrow{color:var(--gold);font-size:0.75rem;letter-spacing:3px;text-transform:uppercase;font-weight:700;margin-bottom:24px;}
+  .hero h1{font-family:'Libre Baskerville',serif;font-size:2.8rem;line-height:1.3;color:#fff;margin-bottom:24px;}
+  .hero h1 em{font-style:italic;color:var(--gold);}
+  .hero p{color:rgba(255,255,255,0.75);font-size:1.05rem;margin-bottom:36px;line-height:1.8;max-width:500px;}
+  .hero-cta{display:flex;gap:16px;flex-wrap:wrap;}
+  .btn-primary{background:var(--gold);color:var(--indigo);padding:16px 36px;border-radius:4px;font-weight:700;font-size:0.9rem;text-decoration:none;display:inline-flex;align-items:center;gap:10px;transition:all .3s;letter-spacing:1px;}
+  .btn-primary:hover{background:var(--gold-light);transform:translateY(-2px);}
+  .btn-secondary{background:transparent;color:#fff;padding:16px 36px;border-radius:4px;font-weight:700;font-size:0.9rem;border:1px solid rgba(255,255,255,0.25);text-decoration:none;display:inline-flex;align-items:center;gap:10px;transition:all .3s;letter-spacing:1px;}
+  .btn-secondary:hover{border-color:var(--gold);color:var(--gold);}
+  .hero-image{position:relative;padding:40px 8% 40px 0;z-index:2;}
+  .hero-image img{width:100%;height:500px;object-fit:cover;opacity:0.8;}
+  .hero-image::after{content:'';position:absolute;inset:0;background:linear-gradient(90deg,var(--indigo) 0%,transparent 40%);}
+  .hero-float{position:absolute;bottom:60px;left:40px;background:var(--indigo-light);border:1px solid rgba(197,160,89,0.2);padding:24px 28px;max-width:260px;z-index:3;}
+  .hero-float .stars{color:var(--gold);font-size:0.85rem;letter-spacing:2px;margin-bottom:10px;}
+  .hero-float p{color:rgba(255,255,255,0.8);font-size:0.85rem;line-height:1.6;font-style:italic;}
+  .hero-float strong{color:var(--gold);font-size:0.82rem;display:block;margin-top:10px;}
+
+  /* TRUST */
+  .trust{padding:48px 24px;background:var(--light);border-bottom:1px solid rgba(0,0,0,0.05);}
+  .trust-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:32px;text-align:center;}
+  .trust-item h4{font-family:'Libre Baskerville',serif;font-size:1.8rem;color:var(--indigo);margin-bottom:4px;}
+  .trust-item p{color:var(--gray);font-size:0.82rem;}
+
+  /* SERVICES */
+  .services{padding:100px 24px;background:var(--white);}
+  .container{max-width:1100px;margin:0 auto;}
+  .section-eyebrow{color:var(--gold);font-size:0.75rem;letter-spacing:3px;text-transform:uppercase;font-weight:700;margin-bottom:16px;}
+  .section-title{font-family:'Libre Baskerville',serif;font-size:2.2rem;color:var(--indigo);margin-bottom:16px;line-height:1.3;}
+  .section-subtitle{color:var(--gray);font-size:1.05rem;max-width:560px;}
+  .services-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;margin-top:56px;}
+  .service-card{border:1px solid #e8e8e8;padding:40px 32px;transition:all .3s;position:relative;}
+  .service-card:hover{border-color:var(--gold);box-shadow:0 12px 40px rgba(0,0,0,0.06);}
+  .service-card::before{content:'';position:absolute;left:0;top:0;width:3px;height:0;background:var(--gold);transition:height .3s;}
+  .service-card:hover::before{height:100%;}
+  .service-num{color:var(--gold);font-size:0.75rem;letter-spacing:2px;font-weight:700;margin-bottom:16px;}
+  .service-card h3{font-family:'Libre Baskerville',serif;font-size:1.15rem;margin-bottom:12px;color:var(--indigo);}
+  .service-card p{color:var(--gray);font-size:0.92rem;line-height:1.7;}
+  .service-tag{display:inline-block;background:var(--light);color:var(--indigo);padding:4px 12px;font-size:0.72rem;font-weight:700;margin-top:16px;border:1px solid #e8e8e8;}
+
+  /* CASES */
+  .cases{padding:100px 24px;background:var(--light);}
+  .cases-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:56px;}
+  .case-card{background:#fff;padding:40px 32px;border:1px solid #e8e8e8;position:relative;transition:all .3s;}
+  .case-card:hover{transform:translateY(-4px);box-shadow:0 16px 48px rgba(0,0,0,0.06);}
+  .case-result{color:var(--gold);font-family:'Libre Baskerville',serif;font-size:2rem;margin-bottom:16px;}
+  .case-card h3{font-size:1rem;margin-bottom:12px;color:var(--indigo);}
+  .case-card p{color:var(--gray);font-size:0.9rem;line-height:1.65;}
+  .case-divider{width:40px;height:1px;background:var(--gold);margin:20px 0;}
+
+  /* TESTIMONIALS */
+  .testimonials{padding:100px 24px;background:var(--white);}
+  .testimonials-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:28px;margin-top:56px;}
+  .testimonial{background:var(--light);padding:40px 32px;position:relative;transition:all .3s;}
+  .testimonial:hover{box-shadow:0 8px 32px rgba(0,0,0,0.04);}
+  .quote-mark{color:var(--gold);font-size:3rem;font-family:serif;line-height:1;margin-bottom:16px;opacity:0.5;}
+  .testimonial p{color:var(--indigo);font-size:0.95rem;line-height:1.8;margin-bottom:28px;}
+  .testimonial-author{display:flex;align-items:center;gap:16px;}
+  .author-avatar{width:52px;height:52px;border-radius:50%;object-fit:cover;border:2px solid var(--gold);}
+  .author-name{font-weight:700;font-size:0.9rem;color:var(--indigo);}
+  .author-detail{font-size:0.82rem;color:var(--gray);margin-top:2px;}
+  .author-tag{background:var(--gold);color:var(--indigo);padding:2px 10px;font-size:0.68rem;font-weight:700;display:inline-block;margin-top:4px;}
+
+  /* CTA */
+  .cta-section{background:var(--indigo);padding:80px 24px;text-align:center;position:relative;overflow:hidden;}
+  .cta-section::before{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23c5a059' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");}
+  .cta-section h2{font-family:'Libre Baskerville',serif;font-size:2.4rem;color:#fff;margin-bottom:16px;position:relative;z-index:2;}
+  .cta-section p{color:rgba(255,255,255,0.7);font-size:1.05rem;margin-bottom:32px;position:relative;z-index:2;max-width:560px;margin-left:auto;margin-right:auto;}
+  .cta-section .btn-primary{background:var(--gold);color:var(--indigo);position:relative;z-index:2;}
+  .cta-section .btn-primary:hover{background:var(--gold-light);}
+
+  /* CONTACT */
+  .contact{padding:100px 24px;background:var(--white);}
+  .contact-grid{display:grid;grid-template-columns:1.2fr 0.8fr;gap:64px;align-items:start;}
+  .contact-info h3{font-family:'Libre Baskerville',serif;font-size:1.5rem;margin-bottom:20px;color:var(--indigo);}
+  .contact-info p{color:var(--gray);margin-bottom:32px;line-height:1.7;}
+  .info-item{display:flex;align-items:flex-start;gap:16px;margin-bottom:24px;padding-bottom:24px;border-bottom:1px solid #e8e8e8;}
+  .info-item:last-child{border-bottom:none;}
+  .info-icon{width:48px;height:48px;background:var(--light);display:grid;place-items:center;flex-shrink:0;border:1px solid #e8e8e8;}
+  .info-icon svg{width:20px;height:20px;color:var(--gold);}
+  .info-item h4{font-size:0.95rem;color:var(--indigo);margin-bottom:4px;font-weight:700;}
+  .info-item p{color:var(--gray);font-size:0.9rem;line-height:1.6;}
+  .contact-card{background:var(--indigo);padding:48px 36px;color:#fff;position:relative;overflow:hidden;}
+  .contact-card::before{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23c5a059' fill-opacity='0.05' fill-rule='evenodd'%3E%3Cpath d='M0 40L40 0H20L0 20M40 40V20L20 40'/%3E%3C/g%3E%3C/svg%3E");}
+  .contact-card h4{font-family:'Libre Baskerville',serif;font-size:1.3rem;margin-bottom:12px;position:relative;z-index:2;}
+  .contact-card p{color:rgba(255,255,255,0.7);font-size:0.9rem;line-height:1.6;margin-bottom:24px;position:relative;z-index:2;}
+  .contact-card .phone{font-size:1.4rem;font-weight:700;color:var(--gold);position:relative;z-index:2;}
+  .contact-card .hours{color:rgba(255,255,255,0.6);font-size:0.85rem;margin-top:8px;position:relative;z-index:2;}
+
+  /* FOOTER */
+  footer{background:var(--indigo);padding:50px 24px 28px;}
+  .footer-content{max-width:1100px;margin:0 auto;text-align:center;}
+  .footer-brand{font-family:'Libre Baskerville',serif;font-size:1.2rem;color:#fff;margin-bottom:8px;}
+  .footer-brand span{color:var(--gold);}
+  footer p{color:rgba(255,255,255,0.4);font-size:0.85rem;}
+  footer .socials{display:flex;justify-content:center;gap:16px;margin:20px 0;}
+  footer .socials a{width:40px;height:40px;background:rgba(255,255,255,0.06);display:grid;place-items:center;color:#fff;transition:all .3s;}
+  footer .socials a:hover{background:var(--gold);color:var(--indigo);}
+
+  @media(max-width:900px){
+    .hero{grid-template-columns:1fr;min-height:auto;}
+    .hero-content{padding:60px 24px 40px;}
+    .hero-image{padding:0 24px 40px;}
+    .hero-image::after{background:linear-gradient(0deg,var(--indigo) 0%,transparent 50%);}
+    .hero-float{left:24px;bottom:60px;}
+    .trust-inner{grid-template-columns:repeat(2,1fr);}
+    .services-grid{grid-template-columns:1fr;}
+    .cases-grid{grid-template-columns:1fr;}
+    .testimonials-grid{grid-template-columns:1fr;}
+    .contact-grid{grid-template-columns:1fr;}
+  }
+  @media(max-width:768px){
+    .menu-toggle{display:flex;}
+    nav{position:absolute;top:100%;left:0;width:100%;background:#fff;max-height:0;overflow:hidden;transition:max-height .35s;}
+    nav.active{max-height:400px;box-shadow:0 10px 30px rgba(0,0,0,0.08);}
+    nav ul{flex-direction:column;gap:0;padding:12px 0;}
+    nav ul li a{display:block;padding:14px 24px;width:100%;}
+    .hero h1{font-size:2.2rem;}
+    .hero-cta{flex-direction:column;}
+    .hero-cta a{width:100%;justify-content:center;}
+    .section-title{font-size:1.8rem;}
+    .trust-inner{grid-template-columns:1fr;gap:20px;}
+  }
+</style>
+</head>
+<body>
+
+<div class="demo-badge">DEMO — Esta es una muestra de tu futura pagina web. <a href="#contacto">Contactanos para activarla.</a></div>
+
+<header>
+  <div class="header-container">
+    <div class="logo">
+      <div>PERALTA CORONEL</div>
+      <div class="logo-line"></div>
+      <div class="logo-sub">Abogados</div>
+    </div>
+    <button class="menu-toggle" onclick="document.querySelector('nav').classList.toggle('active')"><span></span><span></span><span></span></button>
+    <nav>
+      <ul>
+        <li><a href="#inicio">Inicio</a></li>
+        <li><a href="#servicios">Areas</a></li>
+        <li><a href="#casos">Casos</a></li>
+        <li><a href="#testimonios">Clientes</a></li>
+        <li><a href="#contacto" class="btn-header">Consulta Gratis</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<section class="hero" id="inicio">
+  <div class="hero-content">
+    <div class="hero-eyebrow">Despacho Juridico en Oaxaca de Juarez</div>
+    <h1>Problemas legales que <em>no te dejan dormir</em> Los resolvemos</h1>
+    <p>El Lic. Herminio Peralta Coronel tiene mas de 15 anos defendiendo los derechos de familias y empresas en Oaxaca. Primera consulta gratuita. Sin compromiso. Sin letra pequena. Llevamos 340+ casos resueltos con exito.</p>
+    <div class="hero-cta">
+      <a href="#contacto" class="btn-primary">Agenda Consulta Gratis</a>
+      <a href="#servicios" class="btn-secondary">Ver Areas de Practica</a>
+    </div>
+  </div>
+  <div class="hero-image">
+    <img src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=800&q=80" alt="Despacho juridico">
+    <div class="hero-float">
+      <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <p>"El Lic. Peralta resolvio mi divorcio en 3 meses cuando otro abogado lo tenia estancado desde hace 2 anos. Profesional y humano."</p>
+      <strong>— Laura Vazquez, Centro Oaxaca</strong>
+    </div>
+  </div>
+</section>
+
+<div class="trust">
+  <div class="trust-inner">
+    <div class="trust-item"><h4>15+</h4><p>Anos de experiencia</p></div>
+    <div class="trust-item"><h4>340+</h4><p>Casos resueltos</p></div>
+    <div class="trust-item"><h4>5</h4><p>Areas de practica</p></div>
+    <div class="trust-item"><h4>1ra</h4><p>Consulta gratuita</p></div>
+  </div>
+</div>
+
+<section class="services" id="servicios">
+  <div class="container">
+    <div class="section-eyebrow">Areas de Practica</div>
+    <h2 class="section-title">DEFENSA LEGAL EN LAS AREAS QUE MAS NECESITAS</h2>
+    <p class="section-subtitle">No prometemos lo que no podemos cumplir. Te decimos la verdad desde la primera consulta.</p>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-num">01</div>
+        <h3>Derecho Familiar</h3>
+        <p>Divorcios, pension alimenticia, custodia de menores, adopciones y testamentos. Entendemos que cada familia es unica y tratamos cada caso con la sensibilidad que merece.</p>
+        <span class="service-tag">Desde $3,500 MXN</span>
+      </div>
+      <div class="service-card">
+        <div class="service-num">02</div>
+        <h3>Derecho Civil y Mercantil</h3>
+        <p>Contratos, propiedad, responsabilidad civil, recuperacion de cartera y asesoria a pequenas empresas. Protegemos tu patrimonio y tu negocio.</p>
+        <span class="service-tag">Cotiza tu caso</span>
+      </div>
+      <div class="service-card">
+        <div class="service-num">03</div>
+        <h3>Derecho Laboral</h3>
+        <p>Despidos injustificados, reclamaciones de prestaciones, asesoria a empleadores y trabajadores. Conocemos la ley y la aplicamos a tu favor.</p>
+        <span class="service-tag">Contingencia disponible</span>
+      </div>
+      <div class="service-card">
+        <div class="service-num">04</div>
+        <h3>Derecho Administrativo</h3>
+        <p>Amparos, recursos administrativos, defensa ante dependencias gubernamentales y tramites. Navegamos la burocracia para ti.</p>
+        <span class="service-tag">Desde $5,000 MXN</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cases" id="casos">
+  <div class="container">
+    <div class="section-eyebrow">Resultados</div>
+    <h2 class="section-title">CASOS DE EXITO RECIENTES</h2>
+    <p class="section-subtitle">Resultados concretos, no promesas vacias.</p>
+    <div class="cases-grid">
+      <div class="case-card">
+        <div class="case-result">3 meses</div>
+        <h3>Divorcio Contencioso</h3>
+        <div class="case-divider"></div>
+        <p>Cliente tenia su divorcio estancado desde hace 2 anos con otro despacho. Lo resolvimos en 3 meses, incluyendo la pension alimenticia y el regimen de visitas.</p>
+      </div>
+      <div class="case-card">
+        <div class="case-result">$180,000</div>
+        <h3>Recuperacion de Cartera</h3>
+        <div class="case-divider"></div>
+        <p>Pequena empresa constructora con deuda impaga desde hace 18 meses. Recuperamos el 100% del capital mas intereses legales en 6 meses.</p>
+      </div>
+      <div class="case-card">
+        <div class="case-result">Protegido</div>
+        <h3>Defensa Laboral</h3>
+        <div class="case-divider"></div>
+        <p>Trabajador despedido despues de 8 anos de servicio. Conseguimos la reposicion con salarios caidos y prestaciones de ley.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="testimonials" id="testimonios">
+  <div class="container">
+    <div class="section-eyebrow">Testimonios</div>
+    <h2 class="section-title">LO QUE DICEN NUESTROS CLIENTES</h2>
+    <div class="testimonials-grid">
+      <div class="testimonial">
+        <div class="quote-mark">"</div>
+        <p>"El Lic. Peralta resolvio mi divorcio en 3 meses cuando otro abogado lo tenia estancado desde hace 2 anos. Me explico cada paso, nunca me dejo en la oscuridad. Profesional y humano a la vez."</p>
+        <div class="testimonial-author">
+          <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=100&q=80" class="author-avatar" alt="Laura">
+          <div>
+            <div class="author-name">Laura Vazquez</div>
+            <div class="author-detail">Centro, Oaxaca de Juarez</div>
+            <span class="author-tag">Derecho Familiar</span>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial">
+        <div class="quote-mark">"</div>
+        <p>"Recuperamos $180,000 que un cliente no queria pagar desde hace ano y medio. El Lic. Peralta fue directo, sin rodeos, y consiguio el resultado en 6 meses. Me cobro lo que me dijo desde el principio."</p>
+        <div class="testimonial-author">
+          <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=100&q=80" class="author-avatar" alt="Ernesto">
+          <div>
+            <div class="author-name">Ernesto Cabrera</div>
+            <div class="author-detail">Constructora del Sur, Oaxaca</div>
+            <span class="author-tag">Derecho Mercantil</span>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial">
+        <div class="quote-mark">"</div>
+        <p>"Me despidieron injustamente despues de 8 anos. Otro abogado me dijo que mejor firmara la renuncia. El Lic. Peralta me dijo que tenia caso, y tenia razon. Me reinstalaron con todos mis salarios."</p>
+        <div class="testimonial-author">
+          <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=100&q=80" class="author-avatar" alt="Miguel">
+          <div>
+            <div class="author-name">Miguel Angel Torres</div>
+            <div class="author-detail">Colonia Reforma, Oaxaca</div>
+            <span class="author-tag">Derecho Laboral</span>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial">
+        <div class="quote-mark">"</div>
+        <p>"Mi esposo fallecio y no sabia como tramitar la sucesion. El Lic. Peralta me guio paso a paso. En 4 meses todo estaba resuelto. Me cobro un precio justo cuando otros me pedian el doble."</p>
+        <div class="testimonial-author">
+          <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=100&q=80" class="author-avatar" alt="Dolores">
+          <div>
+            <div class="author-name">Dolores Sanchez</div>
+            <div class="author-detail">Colonia Candiani, Oaxaca</div>
+            <span class="author-tag">Sucesiones</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-section">
+  <h2>NO ESPERES MAS PARA RESOLVER TU PROBLEMA</h2>
+  <p>Primera consulta gratuita de 30 minutos. Te escuchamos, evaluamos tu caso y te decimos la verdad sin costo.</p>
+  <a href="#contacto" class="btn-primary">Agenda Tu Consulta Gratis</a>
+</section>
+
+<section class="contact" id="contacto">
+  <div class="container">
+    <div class="contact-grid">
+      <div class="contact-info">
+        <div class="section-eyebrow">Contacto</div>
+        <h3>Visitanos en el Centro de Oaxaca</h3>
+        <p>El despacho esta ubicado estrategicamente en Avenida Independencia 308, en el corazon de Oaxaca. Facil acceso y estacionamiento cercano.</p>
+        <div class="info-item">
+          <div class="info-icon">
+            <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+          </div>
+          <div><h4>Direccion</h4><p>Avenida Independencia 308, Colonia Centro, CP 68000, Oaxaca de Juarez, Oaxaca</p></div>
+        </div>
+        <div class="info-item">
+          <div class="info-icon">
+            <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+          </div>
+          <div><h4>Telefono</h4><p>951 516 0540</p></div>
+        </div>
+        <div class="info-item">
+          <div class="info-icon">
+            <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          </div>
+          <div><h4>Horario de Atencion</h4><p>Lunes a Viernes: 9:00 - 14:00 y 16:00 - 19:00<br>Sabados: 9:00 - 13:00</p></div>
+        </div>
+      </div>
+      <div class="contact-card">
+        <h4>Consulta Gratuita</h4>
+        <p>Agenda tu primera consulta de 30 minutos sin costo. Evaluamos tu caso y te damos un plan de accion claro.</p>
+        <div class="phone">951 516 0540</div>
+        <div class="hours">Llamadas: Lun-Vie 9:00-19:00</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-content">
+    <div class="footer-brand">PERALTA <span>CORONEL</span></div>
+    <div class="socials">
+      <a href="#"><svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
+      <a href="#"><svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
+      <a href="#"><svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.149-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.3A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.13 1.521 5.889L0 24l6.304-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
+    </div>
+    <p>&copy; 2025 Despacho Juridico del Lic. Herminio Peralta Coronel. Todos los derechos reservados.</p>
+  </div>
+</footer>
+
+</body>
+</html>

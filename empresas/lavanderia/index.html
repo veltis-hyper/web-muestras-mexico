@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lavanderia Vasquez | Ropa Fresca en 24h en Oaxaca</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{--accent:#0ea5e9;--dark:#0f172a;--light:#f0f9ff;--cream:#fff8f0;--gray:#64748b;--white:#fff;}
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{font-family:'Inter',sans-serif;color:var(--dark);background:var(--white);line-height:1.6;}
+  img{max-width:100%;display:block;}
+
+  .demo-badge{position:fixed;top:0;left:0;width:100%;z-index:9999;background:var(--dark);color:rgba(255,255,255,0.85);text-align:center;padding:10px 18px;font-size:0.78rem;font-weight:600;letter-spacing:0.5px;border-bottom:1px solid rgba(255,255,255,0.1);}
+  .demo-badge a{color:var(--accent);text-decoration:underline;}
+
+  header{position:fixed;top:38px;left:0;width:100%;background:rgba(255,255,255,0.98);backdrop-filter:blur(20px);z-index:1000;border-bottom:1px solid rgba(0,0,0,0.05);}
+  .header-container{max-width:1200px;margin:0 auto;padding:16px 28px;display:flex;align-items:center;justify-content:space-between;}
+  .logo{font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:700;color:var(--dark);display:flex;align-items:center;gap:10px;}
+  .logo-icon{width:40px;height:40px;background:var(--accent);border-radius:50%;display:grid;place-items:center;color:#fff;font-size:1.1rem;}
+  nav ul{display:flex;gap:36px;list-style:none;align-items:center;}
+  nav a{font-weight:600;font-size:0.88rem;color:var(--dark);text-decoration:none;transition:color .3s;}
+  nav a:hover{color:var(--accent);}
+  .btn-header{background:var(--accent);color:#fff;padding:10px 22px;border-radius:100px;font-weight:700;font-size:0.82rem;text-decoration:none;transition:all .3s;}
+  .btn-header:hover{transform:translateY(-2px);box-shadow:0 4px 16px rgba(14,165,231,0.25);}
+  .menu-toggle{display:none;flex-direction:column;gap:4px;background:none;border:none;cursor:pointer;}
+  .menu-toggle span{width:24px;height:2.5px;background:var(--dark);border-radius:2px;}
+
+  /* HERO */
+  .hero{margin-top:90px;display:grid;grid-template-columns:1.2fr 0.8fr;min-height:92vh;align-items:center;background:var(--light);position:relative;overflow:hidden;}
+  .hero-pattern{position:absolute;right:0;top:0;width:50%;height:100%;background:linear-gradient(135deg,rgba(14,165,231,0.06) 0%,rgba(14,165,231,0.02) 100%);border-radius:0 0 0 120px;}
+  .hero-content{padding:80px 24px 80px 8%;max-width:640px;position:relative;z-index:2;}
+  .hero-badge{display:inline-flex;align-items:center;gap:8px;background:var(--accent);color:#fff;padding:8px 16px;border-radius:100px;font-size:0.78rem;font-weight:700;margin-bottom:28px;}
+  .hero h1{font-family:'Playfair Display',serif;font-size:3.6rem;line-height:1.15;color:var(--dark);margin-bottom:20px;}
+  .hero h1 em{font-style:italic;color:var(--accent);}
+  .hero p{color:var(--gray);font-size:1.1rem;margin-bottom:36px;line-height:1.7;max-width:480px;}
+  .hero-cta{display:flex;gap:16px;flex-wrap:wrap;}
+  .btn-primary{background:var(--accent);color:#fff;padding:16px 36px;border-radius:100px;font-weight:800;font-size:0.95rem;text-decoration:none;display:inline-flex;align-items:center;gap:10px;transition:all .3s;box-shadow:0 8px 24px rgba(14,165,231,0.25);}
+  .btn-primary:hover{transform:translateY(-3px);box-shadow:0 12px 32px rgba(14,165,231,0.35);}
+  .btn-secondary{background:var(--white);color:var(--dark);padding:16px 36px;border-radius:100px;font-weight:700;font-size:0.95rem;border:2px solid #e2e8f0;text-decoration:none;display:inline-flex;align-items:center;gap:10px;transition:all .3s;}
+  .btn-secondary:hover{border-color:var(--accent);color:var(--accent);}
+  .hero-image{position:relative;padding:40px 8% 40px 0;z-index:2;}
+  .hero-image img{width:100%;height:500px;object-fit:cover;border-radius:24px;box-shadow:0 40px 80px rgba(0,0,0,0.12);}
+  .hero-float-card{position:absolute;bottom:60px;left:-30px;background:#fff;padding:20px 24px;border-radius:16px;box-shadow:0 20px 60px rgba(0,0,0,0.1);max-width:220px;}
+  .hero-float-card .stars{color:var(--accent);font-size:0.9rem;margin-bottom:6px;}
+  .hero-float-card p{font-size:0.82rem;color:var(--gray);line-height:1.5;}
+  .hero-float-card strong{color:var(--dark);font-size:0.85rem;}
+
+  /* TRUST BAR */
+  .trust-bar{background:var(--dark);padding:40px 24px;}
+  .trust-bar-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:32px;text-align:center;}
+  .trust-item h4{font-family:'Playfair Display',serif;font-size:1.6rem;color:#fff;margin-bottom:4px;}
+  .trust-item p{color:rgba(255,255,255,0.6);font-size:0.82rem;}
+
+  /* HOW IT WORKS */
+  .how{padding:100px 24px;background:var(--white);}
+  .container{max-width:1100px;margin:0 auto;}
+  .section-label{text-transform:uppercase;font-size:0.78rem;letter-spacing:2.5px;font-weight:700;color:var(--accent);margin-bottom:12px;}
+  .section-title{font-family:'Playfair Display',serif;font-size:2.6rem;color:var(--dark);margin-bottom:16px;}
+  .section-subtitle{color:var(--gray);font-size:1.05rem;max-width:560px;}
+  .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:40px;margin-top:56px;}
+  .step{background:var(--light);padding:40px 28px;border-radius:20px;text-align:center;transition:transform .3s,box-shadow .3s;}
+  .step:hover{transform:translateY(-8px);box-shadow:0 24px 60px rgba(0,0,0,0.08);}
+  .step-icon{width:72px;height:72px;margin:0 auto 24px;background:#fff;border-radius:50%;display:grid;place-items:center;box-shadow:0 8px 24px rgba(14,165,231,0.15);}
+  .step-icon svg{width:32px;height:32px;color:var(--accent);}
+  .step h3{font-size:1.1rem;margin-bottom:10px;color:var(--dark);}
+  .step p{color:var(--gray);font-size:0.92rem;line-height:1.65;}
+  .step-tag{background:var(--accent);color:#fff;padding:4px 12px;border-radius:100px;font-size:0.72rem;font-weight:800;display:inline-block;margin-top:16px;}
+
+  /* SERVICES */
+  .services{padding:100px 24px;background:var(--cream);}
+  .services-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;margin-top:56px;}
+  .service-card{background:#fff;padding:36px;border-radius:20px;box-shadow:0 8px 32px rgba(0,0,0,0.04);border:1px solid rgba(0,0,0,0.04);display:flex;gap:20px;align-items:flex-start;transition:all .3s;}
+  .service-card:hover{transform:translateY(-4px);box-shadow:0 16px 48px rgba(0,0,0,0.08);}
+  .service-icon{width:56px;height:56px;background:var(--light);border-radius:16px;display:grid;place-items:center;flex-shrink:0;}
+  .service-icon svg{width:26px;height:26px;color:var(--accent);}
+  .service-content h3{font-size:1.05rem;margin-bottom:8px;color:var(--dark);}
+  .service-content p{color:var(--gray);font-size:0.9rem;line-height:1.6;}
+  .service-price{color:var(--accent);font-weight:800;font-size:0.95rem;margin-top:8px;}
+  .service-time{font-size:0.82rem;color:var(--gray);margin-top:4px;}
+
+  /* TESTIMONIALS */
+  .testimonials{padding:100px 24px;background:var(--white);}
+  .testimonials-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:56px;}
+  .testimonial{background:var(--light);padding:36px 28px;border-radius:20px;position:relative;transition:all .3s;}
+  .testimonial:hover{transform:translateY(-4px);}
+  .stars{color:var(--accent);font-size:1rem;margin-bottom:16px;letter-spacing:2px;}
+  .testimonial p{color:var(--dark);font-size:0.93rem;line-height:1.75;margin-bottom:24px;font-style:italic;}
+  .testimonial-author{display:flex;align-items:center;gap:14px;}
+  .author-avatar{width:48px;height:48px;border-radius:50%;object-fit:cover;}
+  .author-name{font-weight:700;font-size:0.9rem;color:var(--dark);}
+  .author-detail{font-size:0.82rem;color:var(--gray);margin-top:2px;}
+  .quote-mark{position:absolute;top:16px;right:20px;font-size:3rem;color:var(--accent);opacity:0.1;font-family:serif;line-height:1;}
+
+  /* CTA */
+  .cta-section{background:var(--accent);padding:80px 24px;text-align:center;position:relative;overflow:hidden;}
+  .cta-section h2{font-family:'Playfair Display',serif;font-size:2.8rem;color:#fff;margin-bottom:16px;position:relative;z-index:2;}
+  .cta-section p{color:rgba(255,255,255,0.9);font-size:1.1rem;margin-bottom:32px;position:relative;z-index:2;}
+  .cta-section .btn-primary{background:#fff;color:var(--accent);position:relative;z-index:2;box-shadow:0 8px 24px rgba(0,0,0,0.15);}
+  .cta-section .btn-primary:hover{background:var(--light);}
+
+  /* CONTACT */
+  .contact{padding:100px 24px;background:var(--white);}
+  .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start;}
+  .contact-info h3{font-family:'Playfair Display',serif;font-size:1.6rem;margin-bottom:20px;color:var(--dark);}
+  .contact-info p{color:var(--gray);margin-bottom:28px;line-height:1.7;}
+  .info-item{display:flex;align-items:flex-start;gap:16px;margin-bottom:20px;}
+  .info-icon{width:48px;height:48px;background:var(--light);border-radius:14px;display:grid;place-items:center;flex-shrink:0;}
+  .info-icon svg{width:22px;height:22px;color:var(--accent);}
+  .info-item h4{font-size:0.95rem;color:var(--dark);margin-bottom:4px;}
+  .info-item p{color:var(--gray);font-size:0.9rem;}
+  .contact-image{border-radius:24px;overflow:hidden;position:relative;height:100%;min-height:400px;}
+  .contact-image img{width:100%;height:100%;object-fit:cover;}
+  .contact-image-overlay{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,0.7));padding:40px 32px;}
+  .contact-image-overlay h4{color:#fff;font-size:1.1rem;margin-bottom:4px;}
+  .contact-image-overlay p{color:rgba(255,255,255,0.8);font-size:0.88rem;}
+
+  /* FOOTER */
+  footer{background:var(--dark);padding:50px 24px 28px;}
+  .footer-content{max-width:1100px;margin:0 auto;text-align:center;}
+  .footer-brand{font-family:'Playfair Display',serif;font-size:1.4rem;color:#fff;margin-bottom:8px;}
+  footer p{color:rgba(255,255,255,0.4);font-size:0.85rem;}
+  footer .socials{display:flex;justify-content:center;gap:16px;margin:20px 0;}
+  footer .socials a{width:40px;height:40px;background:rgba(255,255,255,0.06);border-radius:50%;display:grid;place-items:center;color:#fff;transition:all .3s;}
+  footer .socials a:hover{background:var(--accent);transform:translateY(-3px);}
+
+  @media(max-width:900px){
+    .hero{grid-template-columns:1fr;min-height:auto;}
+    .hero-content{padding:60px 24px 40px;}
+    .hero-image{padding:0 24px 40px;}
+    .trust-bar-inner{grid-template-columns:repeat(2,1fr);}
+    .steps{grid-template-columns:1fr;}
+    .services-grid{grid-template-columns:1fr;}
+    .testimonials-grid{grid-template-columns:1fr;}
+    .contact-grid{grid-template-columns:1fr;}
+    .hero h1{font-size:2.8rem;}
+  }
+  @media(max-width:768px){
+    .menu-toggle{display:flex;}
+    nav{position:absolute;top:100%;left:0;width:100%;background:#fff;max-height:0;overflow:hidden;transition:max-height .35s;}
+    nav.active{max-height:400px;box-shadow:0 10px 30px rgba(0,0,0,0.08);}
+    nav ul{flex-direction:column;gap:0;padding:12px 0;}
+    nav ul li a{display:block;padding:14px 24px;width:100%;}
+    .hero h1{font-size:2.4rem;}
+    .hero-cta{flex-direction:column;}
+    .hero-cta a{width:100%;justify-content:center;}
+    .section-title{font-size:2rem;}
+    .trust-bar-inner{grid-template-columns:1fr;gap:20px;}
+  }
+</style>
+</head>
+<body>
+
+<div class="demo-badge">DEMO — Esta es una muestra de tu futura pagina web. <a href="#contacto">Contactanos para activarla.</a></div>
+
+<header>
+  <div class="header-container">
+    <div class="logo"><div class="logo-icon">V</div>Lavanderia Vasquez</div>
+    <button class="menu-toggle" onclick="document.querySelector('nav').classList.toggle('active')"><span></span><span></span><span></span></button>
+    <nav>
+      <ul>
+        <li><a href="#inicio">Inicio</a></li>
+        <li><a href="#como-pedir">Como Pedir</a></li>
+        <li><a href="#servicios">Servicios</a></li>
+        <li><a href="#testimonios">Testimonios</a></li>
+        <li><a href="#contacto" class="btn-header">Pedir Servicio</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<section class="hero" id="inicio">
+  <div class="hero-pattern"></div>
+  <div class="hero-content">
+    <div class="hero-badge">Entrega en 24-48 horas garantizada</div>
+    <h1>Tu ropa <em>fresca y limpia</em> sin salir de casa</h1>
+    <p>En Lavanderia Vasquez cuidamos cada prenda como si fuera nuestra. Mas de 10 anos en Oaxaca. Servicio a domicilio en zona centro. Tu ropa lista en 24h sin moverte de tu casa.</p>
+    <div class="hero-cta">
+      <a href="#contacto" class="btn-primary">Pedir Recoleccion Ahora</a>
+      <a href="#servicios" class="btn-secondary">Ver Precios</a>
+    </div>
+  </div>
+  <div class="hero-image">
+    <img src="https://images.unsplash.com/photo-1582735689369-4fe89b58e1c6?auto=format&fit=crop&w=800&q=80" alt="Ropa limpia y fresca">
+    <div class="hero-float-card">
+      <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <p>"La unica lavanderia en Oaxaca que realmente cuida mis blusas de seda. Ropa impecable siempre."</p>
+      <strong>— Lucia Morales</strong>
+    </div>
+  </div>
+</section>
+
+<div class="trust-bar">
+  <div class="trust-bar-inner">
+    <div class="trust-item"><h4>10+</h4><p>Anos de experiencia</p></div>
+    <div class="trust-item"><h4>3,200+</h4><p>Prendas al mes</p></div>
+    <div class="trust-item"><h4>24h</h4><p>Entrega express</p></div>
+    <div class="trust-item"><h4>100%</h4><p>Satisfaccion garantizada</p></div>
+  </div>
+</div>
+
+<section class="how" id="como-pedir">
+  <div class="container">
+    <div class="section-label">Como Funciona</div>
+    <h2 class="section-title">TU ROPA LIMPIA EN 3 PASOS</h2>
+    <p class="section-subtitle">Recoleccion a domicilio, limpieza profesional y entrega sin que tu muevas un dedo.</p>
+    <div class="steps">
+      <div class="step">
+        <div class="step-icon">
+          <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+        </div>
+        <h3>Mandas WhatsApp</h3>
+        <p>Nos escribes con tu direccion en la zona centro de Oaxaca. En menos de 30 minutos pasamos por tu ropa. No necesitas salir.</p>
+        <span class="step-tag">Gratis</span>
+      </div>
+      <div class="step">
+        <div class="step-icon">
+          <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M14.121 14.121L19 19m-7-7l7-7m-7 7l-2.879 2.879M12 12L9.121 9.121m0 5.758a3 3 0 10-4.243 4.243 3 3 0 004.243-4.243zm0-5.758a3 3 0 10-4.243-4.243 3 3 0 004.243 4.243z"/></svg>
+        </div>
+        <h3>Lavamos con cuidado</h3>
+        <p>Separamos por colores, telas y tipo de suciedad. Usamos productos hipoalergenicos. Prendas delicadas a mano.</p>
+        <span class="step-tag">24h</span>
+      </div>
+      <div class="step">
+        <div class="step-icon">
+          <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M5 13l4 4L19 7"/></svg>
+        </div>
+        <h3>Entregamos en tu puerta</h3>
+        <p>Ropa limpia, planchada y doblada. Lista para guardar directamente. Pagas al recibir. Sin suscripciones ni compromisos.</p>
+        <span class="step-tag">Listo</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="services" id="servicios">
+  <div class="container">
+    <div class="section-label">Servicios</div>
+    <h2 class="section-title">TODO PARA TU GUARDARROPA</h2>
+    <p class="section-subtitle">Precios claros, sin cargos ocultos. El cuidado que tu ropa merece.</p>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon">
+          <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/></svg>
+        </div>
+        <div class="service-content">
+          <h3>Lavado en Seco y al Agua</h3>
+          <p>Tratamos cada prenda segun su tela. Detergentes hipoalergenicos que cuidan las fibras y tu piel.</p>
+          <div class="service-price">Desde $45/kg</div>
+          <div class="service-time">Entrega: 24h</div>
+        </div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">
+          <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/></svg>
+        </div>
+        <div class="service-content">
+          <h3>Planchado Profesional</h3>
+          <p>Acabado impecable para oficina, eventos y uso diario. Entrega lista para vestir directamente.</p>
+          <div class="service-price">Desde $35/pieza</div>
+          <div class="service-time">Express: 4h</div>
+        </div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">
+          <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8v13m0-13V6a2 2 0 112 2h-2zm0 0V5.5A2.5 2.5 0 109.5 8H12zm-7 4h14M5 12a2 2 0 110-4h14a2 2 0 110 4M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7"/></svg>
+        </div>
+        <div class="service-content">
+          <h3>Tintoreria Especializada</h3>
+          <p>Trajes, vestidos de gala, chamarras de piel, edredones. Limpieza experta sin danar las fibras.</p>
+          <div class="service-price">Desde $120</div>
+          <div class="service-time">Entrega: 48h</div>
+        </div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">
+          <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
+        </div>
+        <div class="service-content">
+          <h3>Entrega a Domicilio</h3>
+          <p>Recoleccion y entrega en zona centro de Oaxaca. Sin costo adicional en pedidos mayores a $200.</p>
+          <div class="service-price">Gratis en pedidos +$200</div>
+          <div class="service-time">Zona Centro Oaxaca</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="testimonials" id="testimonios">
+  <div class="container">
+    <div class="section-label">Testimonios</div>
+    <h2 class="section-title">LO QUE DICEN NUESTRAS CLIENTAS</h2>
+    <div class="testimonials-grid">
+      <div class="testimonial">
+        <div class="quote-mark">"</div>
+        <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p>"Llevo 3 anos usando Lavanderia Vasquez. Mis blusas de seda y trajes de lino llegan impecables. Nunca me han manchado ni encogido nada. El servicio a domicilio me salva semanalmente."</p>
+        <div class="testimonial-author">
+          <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=100&q=80" class="author-avatar" alt="Lucia">
+          <div><div class="author-name">Lucia Morales</div><div class="author-detail">Colonia Cuauhtemoc, Oaxaca</div></div>
+        </div>
+      </div>
+      <div class="testimonial">
+        <div class="quote-mark">"</div>
+        <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p>"La tinoreria salvo mi vestido de XV anos. Otros me dijeron que ya no se podia. Vasquez lo dejo como nuevo en 2 dias. Son los unicos que confio con prendas especiales."</p>
+        <div class="testimonial-author">
+          <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=100&q=80" class="author-avatar" alt="Carmen">
+          <div><div class="author-name">Carmen Espinosa</div><div class="author-detail">Centro, Oaxaca de Juarez</div></div>
+        </div>
+      </div>
+      <div class="testimonial">
+        <div class="quote-mark">"</div>
+        <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p>"Tengo 2 hijos pequenos y trabajo todo el dia. El servicio a domicilio es un salvavidas. Recogen mi ropa, la lavan, planchan y entregan. Todo en 24 horas. Excelente relacion calidad-precio."</p>
+        <div class="testimonial-author">
+          <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=100&q=80" class="author-avatar" alt="Patricia">
+          <div><div class="author-name">Patricia Jimenez</div><div class="author-detail">Colonia Reforma, Oaxaca</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-section">
+  <h2>TU ROPA NO PUEDE ESPERAR</h2>
+  <p>Recoleccion hoy, entrega manana. Sin moverte de casa.</p>
+  <a href="#contacto" class="btn-primary">Pedir Recoleccion Ahora</a>
+</section>
+
+<section class="contact" id="contacto">
+  <div class="container">
+    <div class="contact-grid">
+      <div class="contact-info">
+        <div class="section-label">Contacto</div>
+        <h3>Visitanos o Pide a Domicilio</h3>
+        <p>Estamos en Calle de Sexta Oriente 105, Colonia Cuauhtemoc, Oaxaca. Tambien recogemos y entregamos en zona centro sin costo adicional.</p>
+        <div class="info-item">
+          <div class="info-icon">
+            <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+          </div>
+          <div><h4>Direccion</h4><p>Calle de Sexta Oriente 105, Colonia Cuauhtemoc, CP 68030, Oaxaca</p></div>
+        </div>
+        <div class="info-item">
+          <div class="info-icon">
+            <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+          </div>
+          <div><h4>WhatsApp</h4><p>Proximamente disponible</p></div>
+        </div>
+        <div class="info-item">
+          <div class="info-icon">
+            <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          </div>
+          <div><h4>Horario</h4><p>Lun a Sab: 8:00 - 20:00 | Dom: 9:00 - 14:00</p></div>
+        </div>
+      </div>
+      <div class="contact-image">
+        <img src="https://images.unsplash.com/photo-1558618047-1f9210ad57c2?auto=format&fit=crop&w=800&q=80" alt="Lavanderia">
+        <div class="contact-image-overlay">
+          <h4>Lavanderia Vasquez</h4>
+          <p>Sexta Oriente 105, Colonia Cuauhtemoc, Oaxaca</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-content">
+    <div class="footer-brand">Lavanderia Vasquez</div>
+    <div class="socials">
+      <a href="#"><svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
+      <a href="#"><svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
+      <a href="#"><svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.149-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.3A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.13 1.521 5.889L0 24l6.304-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
+    </div>
+    <p>&copy; 2025 Lavanderia Vasquez. Todos los derechos reservados.</p>
+  </div>
+</footer>
+
+</body>
+</html>

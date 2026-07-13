@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Taller Mecánico La Fortuna | Llantas y Mantenimiento en Toluca</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --rojo: #C41E24;
+      --rojo-oscuro: #9A181D;
+      --azul-noche: #0B1628;
+      --azul-medio: #1A2A42;
+      --gris: #8A93A3;
+      --blanco: #FFFFFF;
+      --crema: #F4F5F7;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', sans-serif; color: #333; line-height: 1.6; background: var(--blanco); }
+
+    .demo-badge {
+      background: var(--rojo); color: var(--blanco); text-align: center;
+      padding: 8px 20px; font-size: 0.78rem; font-weight: 500; letter-spacing: 0.5px;
+      position: sticky; top: 0; z-index: 2000;
+    }
+
+    header {
+      background: var(--azul-noche); position: sticky; top: 32px; z-index: 1000;
+    }
+    .header-container {
+      max-width: 1200px; margin: 0 auto; padding: 14px 24px;
+      display: flex; justify-content: space-between; align-items: center;
+    }
+    .logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+    .logo-mark {
+      width: 40px; height: 40px; background: var(--rojo); border-radius: 6px;
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Bebas Neue', sans-serif; color: #fff; font-size: 1.4rem; letter-spacing: 1px;
+    }
+    .logo-text { font-family: 'Bebas Neue', sans-serif; font-size: 1.5rem; color: #fff; letter-spacing: 1px; }
+    .logo-text span { color: var(--rojo); }
+    nav ul { display: flex; list-style: none; gap: 32px; }
+    nav a { text-decoration: none; color: var(--gris); font-weight: 500; font-size: 0.88rem; transition: color 0.3s; text-transform: uppercase; letter-spacing: 0.5px; }
+    nav a:hover { color: var(--blanco); }
+    .cta-header {
+      background: var(--rojo); color: #fff; padding: 10px 22px; border-radius: 4px;
+      text-decoration: none; font-weight: 600; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.5px;
+      transition: all 0.3s;
+    }
+    .cta-header:hover { background: var(--rojo-oscuro); }
+    .menu-toggle { display: none; font-size: 1.5rem; color: #fff; cursor: pointer; }
+
+    /* HERO */
+    .hero {
+      position: relative; min-height: 92vh; display: flex; align-items: center; overflow: hidden;
+      background: var(--azul-noche);
+    }
+    .hero-bg {
+      position: absolute; right: 0; top: 0; bottom: 0; width: 55%;
+      background: url('https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?auto=format&fit=crop&w=1200&q=80') center/cover no-repeat;
+    }
+    .hero-bg::before {
+      content: ''; position: absolute; inset: 0;
+      background: linear-gradient(to right, var(--azul-noche) 0%, transparent 60%);
+    }
+    .hero-content {
+      position: relative; z-index: 2; max-width: 1200px; margin: 0 auto; padding: 80px 24px;
+      width: 100%;
+    }
+    .hero-inner { max-width: 560px; }
+    .hero-tag {
+      display: inline-block; border: 1px solid var(--rojo); color: var(--rojo);
+      padding: 5px 14px; border-radius: 4px; font-size: 0.75rem; font-weight: 600;
+      text-transform: uppercase; letter-spacing: 1px; margin-bottom: 24px;
+    }
+    .hero h1 {
+      font-family: 'Bebas Neue', sans-serif; font-size: 4.2rem; color: #fff;
+      line-height: 1.05; letter-spacing: 1px; margin-bottom: 20px;
+    }
+    .hero h1 em { color: var(--rojo); font-style: normal; }
+    .hero-sub { font-size: 1.1rem; color: var(--gris); margin-bottom: 32px; line-height: 1.7; }
+    .hero-cta {
+      display: inline-block; background: var(--rojo); color: #fff;
+      padding: 16px 40px; border-radius: 4px; text-decoration: none;
+      font-weight: 700; font-size: 1rem; transition: all 0.3s; text-transform: uppercase; letter-spacing: 0.5px;
+    }
+    .hero-cta:hover { background: var(--rojo-oscuro); transform: translateY(-2px); }
+    .hero-guarantee {
+      margin-top: 28px; display: flex; align-items: center; gap: 12px;
+      color: var(--gris); font-size: 0.85rem;
+    }
+    .hero-guarantee strong { color: #fff; }
+
+    /* PROCESO */
+    .proceso { background: var(--crema); padding: 100px 24px; }
+    .proceso-inner { max-width: 1200px; margin: 0 auto; }
+    .section-header { text-align: center; margin-bottom: 60px; }
+    .section-header h2 { font-family: 'Bebas Neue', sans-serif; font-size: 2.8rem; color: var(--azul-noche); letter-spacing: 1px; margin-bottom: 10px; }
+    .section-header p { color: var(--gris); font-size: 1.05rem; }
+    .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; }
+    .step { text-align: center; }
+    .step-icon {
+      width: 80px; height: 80px; background: var(--azul-noche); border-radius: 50%;
+      display: flex; align-items: center; justify-content: center; margin: 0 auto 20px;
+      color: var(--rojo); font-size: 1.8rem; font-weight: 700; border: 3px solid var(--rojo);
+    }
+    .step h3 { font-size: 1.15rem; color: var(--azul-noche); margin-bottom: 8px; font-weight: 700; }
+    .step p { font-size: 0.9rem; color: var(--gris); }
+
+    /* SERVICIOS CON PRECIOS */
+    .servicios { padding: 100px 24px; max-width: 1200px; margin: 0 auto; }
+    .servicios-grid {
+      display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; margin-top: 50px;
+    }
+    .servicio {
+      display: grid; grid-template-columns: 200px 1fr; border: 1px solid #e5e7eb; border-radius: 8px; overflow: hidden;
+      transition: all 0.3s;
+    }
+    .servicio:hover { box-shadow: 0 15px 40px rgba(0,0,0,0.1); transform: translateY(-4px); }
+    .servicio-img { min-height: 180px; background: var(--crema); }
+    .servicio-img img { width: 100%; height: 100%; object-fit: cover; }
+    .servicio-info { padding: 24px; display: flex; flex-direction: column; justify-content: center; }
+    .servicio-info h3 { font-size: 1.1rem; color: var(--azul-noche); margin-bottom: 6px; }
+    .servicio-info p { font-size: 0.88rem; color: var(--gris); margin-bottom: 12px; }
+    .servicio-precio { font-weight: 700; color: var(--rojo); font-size: 1.1rem; }
+    .servicio-precio span { font-size: 0.8rem; color: #999; font-weight: 400; }
+    .servicio-tag {
+      display: inline-block; background: var(--crema); color: var(--azul-noche);
+      padding: 3px 10px; border-radius: 4px; font-size: 0.7rem; font-weight: 600;
+      text-transform: uppercase; margin-bottom: 10px; width: fit-content;
+    }
+
+    /* TESTIMONIOS */
+    .testimonios { background: var(--azul-noche); padding: 100px 24px; }
+    .testimonios-inner { max-width: 1200px; margin: 0 auto; }
+    .testimonios .section-header h2 { color: #fff; }
+    .testimonios .section-header p { color: var(--gris); }
+    .testimonios-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 50px;
+    }
+    .testimonio {
+      background: var(--azul-medio); padding: 32px; border-radius: 8px;
+      border-left: 4px solid var(--rojo);
+    }
+    .testimonio-stars { color: #FFD700; font-size: 1rem; margin-bottom: 14px; letter-spacing: 2px; }
+    .testimonio p { font-size: 0.92rem; color: #C5CDD9; margin-bottom: 20px; line-height: 1.7; font-style: italic; }
+    .testimonio-autor { display: flex; align-items: center; gap: 12px; }
+    .testimonio-avatar {
+      width: 42px; height: 42px; border-radius: 50%;
+      background: var(--rojo); display: flex; align-items: center; justify-content: center;
+      font-weight: 700; color: #fff; font-size: 0.85rem;
+    }
+    .testimonio-autor div strong { font-size: 0.88rem; color: #fff; }
+    .testimonio-autor div span { font-size: 0.78rem; color: var(--gris); }
+
+    /* GARANTÍA */
+    .garantia {
+      background: var(--rojo); padding: 60px 24px; text-align: center;
+    }
+    .garantia h2 {
+      font-family: 'Bebas Neue', sans-serif; font-size: 2.4rem; color: #fff; letter-spacing: 1px; margin-bottom: 12px;
+    }
+    .garantia p { color: rgba(255,255,255,0.9); font-size: 1.1rem; max-width: 600px; margin: 0 auto 28px; }
+    .garantia-cta {
+      background: #fff; color: var(--rojo); padding: 14px 36px; border-radius: 4px;
+      text-decoration: none; font-weight: 700; display: inline-block; transition: all 0.3s;
+    }
+    .garantia-cta:hover { background: var(--crema); }
+
+    /* CONTACTO */
+    .contacto { padding: 100px 24px; max-width: 1200px; margin: 0 auto; }
+    .contacto-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; }
+    .contacto-info h2 { font-family: 'Bebas Neue', sans-serif; font-size: 2.4rem; color: var(--azul-noche); letter-spacing: 1px; margin-bottom: 12px; }
+    .contacto-info > p { color: var(--gris); margin-bottom: 28px; }
+    .contacto-item {
+      display: flex; align-items: flex-start; gap: 14px; margin-bottom: 18px;
+      padding: 16px; background: var(--crema); border-radius: 8px;
+    }
+    .contacto-item strong { display: block; color: var(--azul-noche); font-size: 0.85rem; margin-bottom: 2px; text-transform: uppercase; letter-spacing: 0.5px; }
+    .contacto-item span { color: var(--gris); font-size: 0.9rem; }
+    .mapa-placeholder {
+      height: 200px; background: #e5e7eb; border-radius: 8px; margin-top: 20px;
+      display: flex; align-items: center; justify-content: center; color: var(--gris); font-size: 0.9rem;
+    }
+    .contacto-form {
+      background: var(--crema); padding: 40px; border-radius: 8px;
+    }
+    .contacto-form h3 { font-size: 1.15rem; color: var(--azul-noche); margin-bottom: 20px; font-weight: 700; }
+    .form-group { margin-bottom: 18px; }
+    .form-group label { display: block; font-size: 0.78rem; font-weight: 600; color: var(--gris); margin-bottom: 6px; text-transform: uppercase; letter-spacing: 0.5px; }
+    .form-group input, .form-group select, .form-group textarea {
+      width: 100%; padding: 12px 14px; border: 2px solid #ddd; border-radius: 6px;
+      font-family: 'Inter', sans-serif; font-size: 0.95rem; transition: border-color 0.3s; background: #fff;
+    }
+    .form-group input:focus, .form-group select:focus, .form-group textarea:focus { outline: none; border-color: var(--rojo); }
+    .form-group textarea { resize: vertical; min-height: 100px; }
+    .submit-btn {
+      width: 100%; padding: 14px; background: var(--azul-noche); color: #fff;
+      border: none; border-radius: 6px; font-size: 0.95rem; font-weight: 700;
+      cursor: pointer; transition: all 0.3s; font-family: 'Inter', sans-serif; text-transform: uppercase; letter-spacing: 0.5px;
+    }
+    .submit-btn:hover { background: var(--azul-medio); }
+
+    /* FOOTER */
+    footer { background: var(--azul-noche); color: var(--gris); padding: 50px 24px 24px; }
+    .footer-inner { max-width: 1200px; margin: 0 auto; }
+    .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px; margin-bottom: 40px; }
+    .footer-brand .logo-text { color: #fff; font-size: 1.3rem; }
+    .footer-brand p { margin-top: 12px; font-size: 0.88rem; line-height: 1.7; max-width: 320px; }
+    .footer-col h4 { color: #fff; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 16px; }
+    .footer-col a { color: var(--gris); text-decoration: none; display: block; padding: 4px 0; font-size: 0.88rem; transition: color 0.3s; }
+    .footer-col a:hover { color: var(--rojo); }
+    .footer-bottom { border-top: 1px solid var(--azul-medio); padding-top: 24px; text-align: center; font-size: 0.78rem; color: #555; }
+
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+      .hero-bg { width: 100%; opacity: 0.25; }
+      .hero-bg::before { background: linear-gradient(to bottom, var(--azul-noche) 0%, var(--azul-noche) 40%, transparent 100%); }
+      .hero-inner { max-width: 100%; text-align: center; }
+      .hero-guarantee { justify-content: center; }
+      .steps { grid-template-columns: 1fr; }
+      .servicios-grid { grid-template-columns: 1fr; }
+      .servicio { grid-template-columns: 1fr; }
+      .testimonios-grid { grid-template-columns: 1fr; }
+      .contacto-grid { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 600px) {
+      nav, .cta-header { display: none; }
+      .menu-toggle { display: block; }
+      .hero h1 { font-size: 3rem; }
+      .stats-grid { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="demo-badge">DEMO — Esta es una muestra de tu futura página web. Contáctanos para activarla con tu dominio propio.</div>
+
+  <header>
+    <div class="header-container">
+      <a href="#" class="logo">
+        <div class="logo-mark">LF</div>
+        <div class="logo-text">Taller <span>La Fortuna</span></div>
+      </a>
+      <nav>
+        <ul>
+          <li><a href="#servicios">Servicios</a></li>
+          <li><a href="#proceso">Cómo funciona</a></li>
+          <li><a href="#testimonios">Reseñas</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+      </nav>
+      <a href="https://wa.me/" class="cta-header">Cotiza gratis</a>
+      <div class="menu-toggle" onclick="document.querySelector('nav').classList.toggle('active')">☰</div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero" id="inicio">
+    <div class="hero-bg"></div>
+    <div class="hero-content">
+      <div class="hero-inner">
+        <div class="hero-tag">Desde 2010 en Calzada del Pacífico</div>
+        <h1>¿Te dejaron <em>plantado</em> con tu auto otra vez?</h1>
+        <p class="hero-sub">Llanta ponchada, frenos chirriando o aceite sucio — en Taller La Fortuna te atendemos en menos de 30 min. Diagnóstico claro, presupuesto sin sorpresas y trabajos con garantía de 3 meses.</p>
+        <a href="#contacto" class="hero-cta">Cotiza gratis en 24h</a>
+        <div class="hero-guarantee">
+          <span>🛡️</span> <strong>Garantía de 3 meses</strong> en todos los servicios · Más de 3,200 autos atendidos
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESO -->
+  <section class="proceso" id="proceso">
+    <div class="proceso-inner">
+      <div class="section-header">
+        <h2>Cómo funciona</h2>
+        <p>Tres pasos simples para volver a la carretera sin dolores de cabeza</p>
+      </div>
+      <div class="steps">
+        <div class="step">
+          <div class="step-icon">1</div>
+          <h3>Cuéntanos el problema</h3>
+          <p>Llámanos o escríbenos por WhatsApp. Te damos un estimado de costo y tiempo antes de que traigas el auto.</p>
+        </div>
+        <div class="step">
+          <div class="step-icon">2</div>
+          <h3>Diagnóstico honesto</h3>
+          <p>Revisamos tu auto sin costo. Te explicamos qué necesita, qué no, y cuánto cuesta. Sin presión.</p>
+        </div>
+        <div class="step">
+          <div class="step-icon">3</div>
+          <h3>Reparación garantizada</h3>
+          <p>Trabajamos mientras esperas (la mayoría en 30-60 min). Te entregamos tu auto con garantía por escrito.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICIOS -->
+  <section class="servicios" id="servicios">
+    <div class="section-header">
+      <h2>Servicios con precio claro</h2>
+      <p>Sin sorpresas. Sin costos ocultos. Paga solo lo que necesitas.</p>
+    </div>
+    <div class="servicios-grid">
+      <div class="servicio">
+        <div class="servicio-img">
+          <img src="https://images.unsplash.com/photo-1578844251758-2f71da64c96f?auto=format&fit=crop&w=400&q=80" alt="Vulcanización de llantas">
+        </div>
+        <div class="servicio-info">
+          <span class="servicio-tag">Express</span>
+          <h3>Vulcanización y Parche</h3>
+          <p>Reparación de ponchaduras en llantas de auto, camioneta o moto. Mientras esperas.</p>
+          <div class="servicio-precio">$80 - $150 <span>por llanta</span></div>
+        </div>
+      </div>
+      <div class="servicio">
+        <div class="servicio-img">
+          <img src="https://images.unsplash.com/photo-1487754180451-c456f719a1fc?auto=format&fit=crop&w=400&q=80" alt="Mantenimiento automotriz">
+        </div>
+        <div class="servicio-info">
+          <span class="servicio-tag">Preventivo</span>
+          <h3>Cambio de Aceite y Filtros</h3>
+          <p>Aceite sintético o mineral, filtro de aceite, aire y combustible. Revisión de niveles incluida.</p>
+          <div class="servicio-precio">$350 - $650 <span>según auto</span></div>
+        </div>
+      </div>
+      <div class="servicio">
+        <div class="servicio-img">
+          <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=400&q=80" alt="Balanceo y alineación">
+        </div>
+        <div class="servicio-info">
+          <span class="servicio-tag">Seguridad</span>
+          <h3>Balanceo y Alineación</h3>
+          <p>Balanceo de llantas y alineación computarizada. Tu auto recto y sin vibraciones.</p>
+          <div class="servicio-precio">$250 - $400 <span>paquete</span></div>
+        </div>
+      </div>
+      <div class="servicio">
+        <div class="servicio-img">
+          <img src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=400&q=80" alt="Frenos automotriz">
+        </div>
+        <div class="servicio-info">
+          <span class="servicio-tag">Urgente</span>
+          <h3>Frenos Completos</h3>
+          <p>Cambio de balatas, discos, rectificación y líquido de frenos. Garantía de 3 meses.</p>
+          <div class="servicio-precio">$450 - $1,200 <span>según auto</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIOS -->
+  <section class="testimonios" id="testimonios">
+    <div class="testimonios-inner">
+      <div class="section-header">
+        <h2>Lo que dicen nuestros clientes</h2>
+        <p>Más de 3,200 autos atendidos en 15 años. Esto es lo que cuentan de nosotros.</p>
+      </div>
+      <div class="testimonios-grid">
+        <div class="testimonio">
+          <div class="testimonio-stars">★★★★★</div>
+          <p>"Me cobraron exactamente lo que me dijeron por teléfono. Cambio de aceite en 25 minutos mientras tomé un café. En otros talleres me han salido con 'sorpresas' de $2,000. Aquí son honestos."</p>
+          <div class="testimonio-autor">
+            <div class="testimonio-avatar">RF</div>
+            <div><strong>Roberto Flores Camacho</strong><span>VW Jetta 2018 — Toluca Centro</span></div>
+          </div>
+        </div>
+        <div class="testimonio">
+          <div class="testimonio-stars">★★★★★</div>
+          <p>"Llevé mi camioneta porque chirriaban los frenos. Me explicaron que solo necesitaba rectificación y no balatas nuevas. Me ahorraron $800. Eso es honestidad que no se ve en cualquier lado."</p>
+          <div class="testimonio-autor">
+            <div class="testimonio-avatar">LG</div>
+            <div><strong>Luis García Mendoza</strong><span>Nissan NP300 — Metepec</span></div>
+          </div>
+        </div>
+        <div class="testimonio">
+          <div class="testimonio-stars">★★★★★</div>
+          <p>"Mi esposo y yo llevamos los dos autos aquí desde hace 6 años. Nunca nos han fallado. El balanceo quedó perfecto y el precio es justo. Recomendados al 100%."</p>
+          <div class="testimonio-autor">
+            <div class="testimonio-avatar">IS</div>
+            <div><strong>Irma Sánchez de la Cruz</strong><span>Chevrolet Spark y Aveo — San Mateo Atenco</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GARANTÍA -->
+  <section class="garantia">
+    <h2>Tu auto en manos de confianza</h2>
+    <p>Si no quedas satisfecho con el servicio, lo rehacemos sin costo. Así de seguros estamos de nuestro trabajo.</p>
+    <a href="#contacto" class="garantia-cta">Agenda tu cita ahora</a>
+  </section>
+
+  <!-- CONTACTO -->
+  <section class="contacto" id="contacto">
+    <div class="contacto-grid">
+      <div class="contacto-info">
+        <h2>Visítanos en Calzada del Pacífico</h2>
+        <p>Estamos en Calle Plateros, a un costado de la gasolinera. Estacionamiento disponible.</p>
+        <div class="contacto-item">
+          <div>📍</div>
+          <div><strong>Dirección</strong><span>Calzada del Pacífico, Calle Plateros, Toluca, Edo. de México</span></div>
+        </div>
+        <div class="contacto-item">
+          <div>🕐</div>
+          <div><strong>Horario</strong><span>Lun a Vie: 8:00 AM — 6:00 PM<br>Sábado: 8:00 AM — 4:00 PM</span></div>
+        </div>
+        <div class="contacto-item">
+          <div>📱</div>
+          <div><strong>WhatsApp</strong><span>Cotización inmediata y geolocalización</span></div>
+        </div>
+        <div class="mapa-placeholder">Mapa de ubicación — Google Maps</div>
+      </div>
+      <div class="contacto-form">
+        <h3>Solicita tu cotización</h3>
+        <form>
+          <div class="form-group">
+            <label>Tu nombre</label>
+            <input type="text" placeholder="¿Cómo te llamas?">
+          </div>
+          <div class="form-group">
+            <label>Teléfono</label>
+            <input type="tel" placeholder="722-000-0000">
+          </div>
+          <div class="form-group">
+            <label>Tipo de servicio</label>
+            <select>
+              <option>Reparación de llantas</option>
+              <option>Cambio de aceite</option>
+              <option>Frenos</option>
+              <option>Balanceo/alineación</option>
+              <option>Diagnóstico general</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Marca y modelo de tu auto</label>
+            <input type="text" placeholder="Ej. Nissan Versa 2019">
+          </div>
+          <div class="form-group">
+            <label>¿Qué le pasa a tu auto?</label>
+            <textarea placeholder="Descríbenos el problema lo más detallado posible"></textarea>
+          </div>
+          <button type="button" class="submit-btn">Enviar cotización</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="logo-text">Taller Mecánico La Fortuna</div>
+          <p>Tu taller de confianza en Toluca desde 2010. Reparación de llantas y mantenimiento automotriz con honestidad, precios justos y garantía real.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Servicios</h4>
+          <a href="#servicios">Vulcanización</a>
+          <a href="#servicios">Cambio de aceite</a>
+          <a href="#servicios">Frenos</a>
+          <a href="#servicios">Balanceo y alineación</a>
+        </div>
+        <div class="footer-col">
+          <h4>Contacto</h4>
+          <a href="#contacto">WhatsApp</a>
+          <a href="#contacto">Calzada del Pacífico</a>
+          <a href="#contacto">Lun-Vie 8AM-6PM</a>
+        </div>
+      </div>
+      <div class="footer-bottom">© 2025 Taller Mecánico La Fortuna — Todos los derechos reservados</div>
+    </div>
+  </footer>
+
+</body>
+</html>

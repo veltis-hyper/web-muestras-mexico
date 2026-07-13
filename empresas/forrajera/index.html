@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FORRAJERA DR | Medicamentos Veterinarios y Alimentos para Granja en Querétaro</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --forest: #14532d;
+      --earth: #92400e;
+      --sand: #d4a373;
+      --cream: #f7f9f4;
+      --white: #ffffff;
+      --ink: #1c1917;
+      --slate: #57534e;
+      --card: #ffffff;
+    }
+    * { margin:0; padding:0; box-sizing:border-box; }
+    html { scroll-behavior: smooth; }
+    body { font-family:'Inter',sans-serif; background:var(--cream); color:var(--ink); line-height:1.6; overflow-x:hidden; }
+
+    .demo-badge { position:fixed; bottom:20px; right:20px; z-index:9999; background:var(--forest); color:#fff; padding:10px 20px; border-radius:8px; font-weight:600; font-size:12px; letter-spacing:0.5px; border:1px solid rgba(255,255,255,0.2); box-shadow:0 4px 20px rgba(20,83,45,0.3); cursor:pointer; transition:all .3s; }
+    .demo-badge:hover { background:var(--earth); }
+
+    header { position:fixed; top:0; left:0; right:0; z-index:1000; background:rgba(255,255,255,0.95); backdrop-filter:blur(16px); border-bottom:1px solid rgba(20,83,45,0.08); }
+    .header-inner { max-width:1200px; margin:0 auto; padding:14px 28px; display:flex; align-items:center; justify-content:space-between; }
+    .logo { display:flex; align-items:center; gap:10px; font-weight:800; font-size:20px; color:var(--forest); letter-spacing:-0.5px; font-family:'Merriweather',serif; }
+    .logo-icon { width:40px; height:40px; background:var(--forest); border-radius:10px; display:flex; align-items:center; justify-content:center; color:var(--sand); font-weight:700; font-size:18px; }
+    nav ul { display:flex; gap:36px; list-style:none; align-items:center; }
+    nav a { color:var(--slate); text-decoration:none; font-weight:500; font-size:14px; transition:color .2s; }
+    nav a:hover { color:var(--forest); }
+    .btn-header { padding:10px 24px; background:var(--forest); color:#fff; font-weight:600; font-size:13px; border-radius:8px; text-decoration:none; transition:all .2s; }
+    .btn-header:hover { background:var(--earth); }
+    .mobile-toggle { display:none; background:none; border:none; font-size:24px; cursor:pointer; color:var(--forest); }
+
+    /* Hero with real background photo */
+    .hero { position:relative; min-height:100vh; display:flex; align-items:center; padding:100px 28px 80px; overflow:hidden; }
+    .hero-bg { position:absolute; inset:0; z-index:-1; }
+    .hero-bg img { width:100%; height:100%; object-fit:cover; }
+    .hero-bg::after { content:''; position:absolute; inset:0; background:linear-gradient(90deg, rgba(20,83,45,0.92) 0%, rgba(20,83,45,0.7) 50%, rgba(20,83,45,0.4) 100%); }
+    .hero-inner { max-width:1200px; margin:0 auto; width:100%; display:grid; grid-template-columns:1.1fr 1fr; gap:64px; align-items:center; }
+    .hero-content { max-width:560px; }
+    .hero-tag { display:inline-flex; align-items:center; gap:8px; background:rgba(212,163,115,0.2); color:var(--sand); padding:8px 18px; border-radius:50px; font-size:13px; font-weight:600; margin-bottom:24px; border:1px solid rgba(212,163,115,0.3); }
+    .hero h1 { font-family:'Merriweather',serif; font-size:clamp(36px,4.5vw,52px); font-weight:700; color:#fff; line-height:1.15; margin-bottom:20px; }
+    .hero h1 span { color:var(--sand); }
+    .hero p { font-size:17px; color:rgba(255,255,255,0.85); line-height:1.7; margin-bottom:32px; }
+    .hero-cta { display:flex; gap:14px; flex-wrap:wrap; align-items:center; }
+    .btn-primary { padding:16px 32px; background:var(--sand); color:var(--forest); font-weight:700; font-size:15px; border-radius:10px; text-decoration:none; transition:all .2s; display:inline-flex; align-items:center; gap:8px; border:none; cursor:pointer; }
+    .btn-primary:hover { background:#fff; transform:translateY(-2px); box-shadow:0 10px 30px rgba(0,0,0,0.2); }
+    .btn-secondary { padding:16px 32px; background:transparent; color:#fff; font-weight:700; font-size:15px; border-radius:10px; text-decoration:none; border:2px solid rgba(255,255,255,0.3); transition:all .2s; }
+    .btn-secondary:hover { border-color:#fff; background:rgba(255,255,255,0.1); }
+    .hero-card { background:rgba(255,255,255,0.1); backdrop-filter:blur(12px); border:1px solid rgba(255,255,255,0.15); border-radius:16px; padding:32px; }
+    .hero-card h3 { font-family:'Merriweather',serif; font-size:18px; color:var(--sand); margin-bottom:16px; }
+    .hero-card-item { display:flex; align-items:center; gap:12px; margin-bottom:12px; }
+    .hero-card-item .dot { width:8px; height:8px; background:var(--sand); border-radius:50%; flex-shrink:0; }
+    .hero-card-item span { font-size:14px; color:rgba(255,255,255,0.9); }
+
+    /* Stats bar */
+    .stats-bar { background:var(--white); border-bottom:1px solid rgba(20,83,45,0.08); padding:40px 28px; }
+    .stats-inner { max-width:1000px; margin:0 auto; display:grid; grid-template-columns:repeat(4,1fr); gap:32px; text-align:center; }
+    .stats-inner div strong { display:block; font-size:32px; font-weight:800; color:var(--forest); }
+    .stats-inner div span { font-size:13px; color:var(--slate); font-weight:500; }
+
+    /* Problems we solve */
+    .problems { padding:100px 28px; }
+    .problems-inner { max-width:1100px; margin:0 auto; }
+    .problems-header { text-align:center; margin-bottom:64px; }
+    .problems-header h2 { font-family:'Merriweather',serif; font-size:36px; font-weight:700; color:var(--forest); margin-bottom:12px; }
+    .problems-header p { color:var(--slate); font-size:17px; }
+    .problems-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:24px; }
+    .problem-card { display:flex; gap:20px; background:var(--card); border:1px solid #e7e5e4; border-radius:16px; padding:32px; transition:all .3s; }
+    .problem-card:hover { border-color:var(--forest); box-shadow:0 10px 30px rgba(20,83,45,0.08); transform:translateY(-4px); }
+    .problem-icon { width:56px; height:56px; background:var(--cream); border-radius:14px; display:flex; align-items:center; justify-content:center; font-size:24px; flex-shrink:0; }
+    .problem-card h3 { font-size:17px; font-weight:700; color:var(--forest); margin-bottom:8px; }
+    .problem-card p { font-size:14px; color:var(--slate); line-height:1.6; }
+
+    /* Products by category */
+    .products { padding:100px 28px; background:#fff; }
+    .products-inner { max-width:1200px; margin:0 auto; }
+    .cat-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:28px; margin-top:48px; }
+    .cat-card { border-radius:16px; overflow:hidden; border:1px solid #e7e5e4; transition:all .3s; }
+    .cat-card:hover { transform:translateY(-6px); box-shadow:0 20px 50px rgba(0,0,0,0.08); }
+    .cat-img { height:200px; position:relative; overflow:hidden; }
+    .cat-img img { width:100%; height:100%; object-fit:cover; transition:transform .4s; }
+    .cat-card:hover .cat-img img { transform:scale(1.05); }
+    .cat-img .overlay { position:absolute; inset:0; background:linear-gradient(0deg, rgba(20,83,45,0.7), transparent); }
+    .cat-img h3 { position:absolute; bottom:16px; left:16px; color:#fff; font-size:20px; font-weight:700; font-family:'Merriweather',serif; }
+    .cat-body { padding:24px; }
+    .cat-body ul { list-style:none; }
+    .cat-body li { padding:8px 0; font-size:14px; color:var(--slate); border-bottom:1px solid #f5f5f4; display:flex; justify-content:space-between; }
+    .cat-body li:last-child { border-bottom:none; }
+
+    /* How to order */
+    .how { padding:100px 28px; background:var(--cream); }
+    .how-inner { max-width:1000px; margin:0 auto; }
+    .how-header { text-align:center; margin-bottom:64px; }
+    .how-header h2 { font-family:'Merriweather',serif; font-size:36px; font-weight:700; color:var(--forest); margin-bottom:12px; }
+    .how-header p { color:var(--slate); font-size:17px; }
+    .how-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:40px; }
+    .how-step { text-align:center; }
+    .how-step-num { width:60px; height:60px; background:var(--forest); color:#fff; font-weight:800; font-size:20px; border-radius:50%; display:flex; align-items:center; justify-content:center; margin:0 auto 24px; border:4px solid var(--sand); }
+    .how-step h3 { font-size:18px; font-weight:700; color:var(--forest); margin-bottom:10px; }
+    .how-step p { font-size:14px; color:var(--slate); line-height:1.6; }
+
+    /* Testimonials */
+    .testimonials { padding:100px 28px; background:#fff; }
+    .testimonials-inner { max-width:1100px; margin:0 auto; }
+    .testi-header { text-align:center; margin-bottom:64px; }
+    .testi-header h2 { font-family:'Merriweather',serif; font-size:36px; font-weight:700; color:var(--forest); margin-bottom:12px; }
+    .testi-header p { color:var(--slate); font-size:17px; }
+    .testi-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:28px; }
+    .testi-card { background:var(--cream); border:1px solid #e7e5e4; border-radius:16px; padding:32px; position:relative; }
+    .testi-card::before { content:'"'; position:absolute; top:12px; left:16px; font-size:56px; color:var(--sand); font-family:Georgia,serif; opacity:0.5; line-height:1; }
+    .testi-stars { color:var(--earth); font-size:16px; letter-spacing:2px; margin-bottom:16px; }
+    .testi-text { font-size:15px; color:var(--slate); line-height:1.7; margin-bottom:20px; position:relative; z-index:1; }
+    .testi-author { display:flex; align-items:center; gap:12px; }
+    .testi-avatar { width:44px; height:44px; border-radius:50%; background:var(--forest); display:flex; align-items:center; justify-content:center; color:#fff; font-weight:700; font-size:16px; }
+    .testi-author div strong { font-size:14px; color:var(--forest); }
+    .testi-author div span { font-size:12px; color:var(--slate); }
+
+    /* Contact */
+    .contact { padding:100px 28px; }
+    .contact-inner { max-width:900px; margin:0 auto; background:var(--forest); border-radius:20px; padding:64px; display:grid; grid-template-columns:1fr 1fr; gap:48px; align-items:center; }
+    .contact-left h2 { font-family:'Merriweather',serif; font-size:32px; font-weight:700; color:#fff; margin-bottom:16px; }
+    .contact-left p { color:rgba(255,255,255,0.8); font-size:16px; line-height:1.7; margin-bottom:32px; }
+    .contact-item { display:flex; align-items:flex-start; gap:14px; margin-bottom:20px; }
+    .contact-item-icon { width:40px; height:40px; background:rgba(212,163,115,0.2); border-radius:10px; display:flex; align-items:center; justify-content:center; color:var(--sand); font-size:16px; flex-shrink:0; }
+    .contact-item div strong { font-size:15px; color:#fff; display:block; margin-bottom:2px; }
+    .contact-item div span { font-size:14px; color:rgba(255,255,255,0.7); }
+    .whatsapp-btn { display:inline-flex; align-items:center; gap:10px; padding:14px 28px; background:var(--sand); color:var(--forest); font-weight:700; font-size:15px; border-radius:10px; text-decoration:none; margin-top:8px; transition:all .2s; }
+    .whatsapp-btn:hover { background:#fff; transform:translateY(-2px); }
+    .contact-form { display:flex; flex-direction:column; gap:16px; }
+    .contact-form input, .contact-form textarea, .contact-form select { padding:14px 18px; border:2px solid rgba(255,255,255,0.15); border-radius:10px; font-family:inherit; font-size:15px; transition:all .2s; background:rgba(255,255,255,0.08); color:#fff; }
+    .contact-form input::placeholder, .contact-form textarea::placeholder, .contact-form select { color:rgba(255,255,255,0.5); }
+    .contact-form input:focus, .contact-form textarea:focus, .contact-form select:focus { outline:none; border-color:var(--sand); background:rgba(255,255,255,0.12); }
+    .contact-form button { padding:14px; background:var(--sand); color:var(--forest); font-weight:700; font-size:15px; border:none; border-radius:10px; cursor:pointer; transition:all .2s; }
+    .contact-form button:hover { background:#fff; }
+
+    /* Footer */
+    footer { background:var(--forest); padding:40px 28px 24px; border-top:1px solid rgba(255,255,255,0.1); }
+    .footer-inner { max-width:1200px; margin:0 auto; display:flex; justify-content:space-between; align-items:center; }
+    .footer-logo { font-family:'Merriweather',serif; font-weight:700; font-size:18px; color:#fff; }
+    .footer-copy { color:rgba(255,255,255,0.5); font-size:13px; }
+
+    @media (max-width:900px) {
+      .hero-inner { grid-template-columns:1fr; }
+      .hero-card { display:none; }
+      .stats-inner { grid-template-columns:repeat(2,1fr); }
+      .problems-grid { grid-template-columns:1fr; }
+      .cat-grid { grid-template-columns:1fr; }
+      .how-grid { grid-template-columns:1fr; }
+      .testi-grid { grid-template-columns:1fr; }
+      .contact-inner { grid-template-columns:1fr; padding:40px 28px; }
+      .footer-inner { flex-direction:column; gap:12px; text-align:center; }
+      nav ul { display:none; position:absolute; top:100%; left:0; right:0; background:#fff; flex-direction:column; padding:20px; gap:16px; border-bottom:1px solid #e7e5e4; }
+      nav ul.active { display:flex; }
+      .mobile-toggle { display:block; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="demo-badge">DEMO — Activa tu web hoy</div>
+
+  <header>
+    <div class="header-inner">
+      <div class="logo"><div class="logo-icon">F</div> FORRAJERA DR</div>
+      <button class="mobile-toggle" onclick="document.querySelector('nav ul').classList.toggle('active')">☰</button>
+      <nav>
+        <ul>
+          <li><a href="#inicio">Inicio</a></li>
+          <li><a href="#productos">Productos</a></li>
+          <li><a href="#pedido">Cómo pedir</a></li>
+          <li><a href="#testimonios">Clientes</a></li>
+          <li><a href="#contacto" class="btn-header">Cotizar ahora</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero" id="inicio">
+    <div class="hero-bg">
+      <img src="https://images.unsplash.com/photo-1500595046743-cd271d694d30?auto=format&fit=crop&w=1600&q=80" alt="Ganado en campo">
+    </div>
+    <div class="hero-inner">
+      <div class="hero-content">
+        <div class="hero-tag">Servicio a ranchos del semi-desierto queretano</div>
+        <h1>Sin vacunas a tiempo, tu inversión ganadera <span>se pierde en horas</span></h1>
+        <p>FORRAJERA DR lleva medicamentos veterinarios de registro COFEPRIS, alimentos concentrados y equipos directamente a tu rancho. Asesoría técnica incluida sin costo. Entrega programada en 24-48h.</p>
+        <div class="hero-cta">
+          <a href="#contacto" class="btn-primary">Cotiza tu pedido →</a>
+          <a href="#productos" class="btn-secondary">Ver catálogo</a>
+        </div>
+      </div>
+      <div class="hero-card">
+        <h3>¿Qué necesitas hoy?</h3>
+        <div class="hero-card-item"><div class="dot"></div><span>Vacunas y antiparasitarios</span></div>
+        <div class="hero-card-item"><div class="dot"></div><span>Alimentos concentrados</span></div>
+        <div class="hero-card-item"><div class="dot"></div><span>Suplementos minerales</span></div>
+        <div class="hero-card-item"><div class="dot"></div><span>Equipos veterinarios</span></div>
+        <div class="hero-card-item"><div class="dot"></div><span>Entrega programada a rancho</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="stats-bar">
+    <div class="stats-inner">
+      <div><strong>15+</strong><span>años en el campo</span></div>
+      <div><strong>280+</strong><span>ranchos atendidos</span></div>
+      <div><strong>48h</strong><span>entrega programada</span></div>
+      <div><strong>100%</strong><span>productos COFEPRIS</span></div>
+    </div>
+  </section>
+
+  <section class="problems">
+    <div class="problems-inner">
+      <div class="problems-header">
+        <h2>¿Qué problema resolvemos?</h2>
+        <p>Sabemos lo que enfrenta el ganadero del semi-desierto. Por eso existimos.</p>
+      </div>
+      <div class="problems-grid">
+        <div class="problem-card">
+          <div class="problem-icon">🚚</div>
+          <div><h3>"Los productos nunca llegan a mi rancho"</h3><p>Llevamos tu pedido hasta la puerta de tu corral. Rutas definidas a las comunidades agrícolas de San Juan del Río, La Valla y zonas aledañas. No necesitas salir de tu propiedad.</p></div>
+        </div>
+        <div class="problem-card">
+          <div class="problem-icon">💊</div>
+          <div><h3>"No sé qué vacuna le toca a mi ganado"</h3><p>Nuestro veterinario asesor te acompaña en cada compra. Te dice qué producto, cuándo aplicarlo y en qué dosis. La asesoría es gratuita, siempre.</p></div>
+        </div>
+        <div class="problem-card">
+          <div class="problem-icon">💰</div>
+          <div><h3>"Compro por volumen pero pago precio de menudeo"</h3><p>Descuentos escalonados por volumen. Desde 5 bolsas de alimento ya aplicas precio especial. Granjas con contrato anual reciben hasta 18% de descuento.</p></div>
+        </div>
+        <div class="problem-card">
+          <div class="problem-icon">⚠️</div>
+          <div><h3>"Compré un antiparasitario y no funcionó"</h3><p>Todos nuestros medicamentos tienen registro COFEPRIS vigente. Trabajamos solo con laboratorios certificados: MSD, Zoetis, Elanco, Virbac. Calidad garantizada.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="products" id="productos">
+    <div class="products-inner">
+      <div class="problems-header">
+        <h2>Catálogo por categoría</h2>
+        <p>Todo con registro COFEPRIS, fichas técnicas disponibles y asesoría incluida.</p>
+      </div>
+      <div class="cat-grid">
+        <div class="cat-card">
+          <div class="cat-img">
+            <img src="https://images.unsplash.com/photo-1574943320219-553eb213f72d?auto=format&fit=crop&w=600&q=80" alt="Aves de corral">
+            <div class="overlay"></div>
+            <h3>Avicultura</h3>
+          </div>
+          <div class="cat-body">
+            <ul>
+              <li>Vacunas Newcastle + Gumboro <span>Desde $180</span></li>
+              <li>Antiparasitarios internos <span>Desde $95</span></li>
+              <li>Alimento iniciador pollos <span>$385/bolsa</span></li>
+              <li>Vitaminas y electrolitos <span>Desde $120</span></li>
+            </ul>
+          </div>
+        </div>
+        <div class="cat-card">
+          <div class="cat-img">
+            <img src="https://images.unsplash.com/photo-1501004318641-b39e1e36a5fb?auto=format&fit=crop&w=600&q=80" alt="Ganado bovino">
+            <div class="overlay"></div>
+            <h3>Bovinos</h3>
+          </div>
+          <div class="cat-body">
+            <ul>
+              <li>Vacunas clostridiales <span>Desde $220</span></li>
+              <li>Antiparasitarios externos <span>Desde $145</span></li>
+              <li>Alimento concentrado engorda <span>$420/bolsa</span></li>
+              <li>Suplementos minerales <span>Desde $280</span></li>
+            </ul>
+          </div>
+        </div>
+        <div class="cat-card">
+          <div class="cat-img">
+            <img src="https://images.unsplash.com/photo-1516467508483-a7212febe31a?auto=format&fit=crop&w=600&q=80" alt="Ganado porcino">
+            <div class="overlay"></div>
+            <h3>Porcinos</h3>
+          </div>
+          <div class="cat-body">
+            <ul>
+              <li>Vacunas circovirus + parvovirus <span>Desde $195</span></li>
+              <li>Antiparasitarios ivermectina <span>Desde $110</span></li>
+              <li>Alimento premix porcino <span>$395/bolsa</span></li>
+              <li>Equipos: jeringas, agujas <span>Desde $85</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="how" id="pedido">
+    <div class="how-inner">
+      <div class="how-header">
+        <h2>Cómo pedir a tu rancho</h2>
+        <p>En 3 pasos, sin salir de tu propiedad. Funciona para ranchos de cualquier tamaño.</p>
+      </div>
+      <div class="how-grid">
+        <div class="how-step">
+          <div class="how-step-num">1</div>
+          <h3>Envíanos tu lista por WhatsApp</h3>
+          <p>Cuéntanos cuántas cabezas tienes, qué tipo de ganado y qué necesitas. Nuestro asesor te recomienda los productos exactos y te da precio con descuento.</p>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">2</div>
+          <h3>Confirmamos fecha de entrega</h3>
+          <p>Tenemos rutas fijas: martes y jueves para zonas norte, miércoles y viernes para zonas sur. Programamos tu entrega y confirmamos el día exacto.</p>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">3</div>
+          <h3>Recibe en tu rancho y paga</h3>
+          <p>Pago contra entrega en efectivo o transferencia. Recibes factura, fichas técnicas de cada producto y garantía de origen. Todo documentado.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="testimonials" id="testimonios">
+    <div class="testimonials-inner">
+      <div class="testi-header">
+        <h2>Lo que dicen los ganaderos</h2>
+        <p>Más de 280 ranchos del semi-desierto queretano confían en FORRAJERA DR.</p>
+      </div>
+      <div class="testi-grid">
+        <div class="testi-card">
+          <div class="testi-stars">★★★★★</div>
+          <p class="testi-text">Llevo 8 años comprando aquí. Mi rancho está a 40 min de la carretera y siempre llegan. Lo que más valoro es que el veterinario me dice exactamente qué vacuna le toca a mis becerros cada mes.</p>
+          <div class="testi-author">
+            <div class="testi-avatar">RM</div>
+            <div><strong>Rodrigo Mendoza</strong><span>Ganadero, Rancho El Capulín</span></div>
+          </div>
+        </div>
+        <div class="testi-card">
+          <div class="testi-stars">★★★★★</div>
+          <p class="testi-text">Antes iba a la ciudad y traía productos que no sabía si eran originales. Aquí me dieron fichas técnicas de todo, registro COFEPRIS y un descuento del 15% por comprar 10 bolsas de concentrado al mes.</p>
+          <div class="testi-author">
+            <div class="testi-avatar">AL</div>
+            <div><strong>Alejandra López</strong><span>Avicultora, 12,000 aves</span></div>
+          </div>
+        </div>
+        <div class="testi-card">
+          <div class="testi-stars">★★★★★</div>
+          <p class="testi-text">Tuve un brote de parasitosis en mis cerdos y en 24 horas tenía el antiparasitario en mi granja. Me salvaron la inversión de 6 meses. Eso no tiene precio.</p>
+          <div class="testi-author">
+            <div class="testi-avatar">JC</div>
+            <div><strong>Juan Carlos Ramírez</strong><span>Porcicultor, La Valla</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="contacto">
+    <div class="contact-inner">
+      <div class="contact-left">
+        <h2>Cotiza tu pedido sin costo</h2>
+        <p>Completa el formulario y nuestro asesor veterinario te contacta en menos de 2 horas con precios, disponibilidad y fecha de entrega.</p>
+        <div class="contact-item">
+          <div class="contact-item-icon">📍</div>
+          <div><strong>Ubicación</strong><span>Av. Emiliano Zapata, La Valla, SJR, Qro.</span></div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-item-icon">📞</div>
+          <div><strong>Teléfono</strong><span>427 150 0702</span></div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-item-icon">🕐</div>
+          <div><strong>Horario</strong><span>Lun-Vie: 8am-6pm, Sáb: 8am-2pm</span></div>
+        </div>
+        <a href="#" class="whatsapp-btn">💬 Cotizar por WhatsApp ahora</a>
+      </div>
+      <form class="contact-form" onsubmit="event.preventDefault(); alert('¡Gracias! Te contactamos en 2 horas. Demostración.');">
+        <input type="text" placeholder="Tu nombre" required>
+        <input type="tel" placeholder="Teléfono" required>
+        <select>
+          <option>Tipo de ganado</option>
+          <option>Bovinos</option>
+          <option>Porcinos</option>
+          <option>Aves de corral</option>
+          <option>Múltiples</option>
+        </select>
+        <input type="text" placeholder="Número aproximado de cabezas">
+        <textarea placeholder="¿Qué productos necesitas?"></textarea>
+        <button type="submit">Cotizar pedido — Te contactamos en 2h</button>
+      </form>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-logo">FORRAJERA DR</div>
+      <div class="footer-copy">© 2025 FORRAJERA DR — Medicamentos veterinarios y alimentos para granja en Querétaro</div>
+    </div>
+  </footer>
+
+  <script>
+    window.addEventListener('scroll', () => {
+      document.querySelector('header').classList.toggle('scrolled', window.scrollY > 20);
+    });
+  </script>
+
+</body>
+</html>

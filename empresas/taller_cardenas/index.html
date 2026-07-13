@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TALLER CARDENAS | Maquinado CNC de Precisión en Veracruz</title>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy: #0A1628;
+      --navy-light: #132238;
+      --steel: #5A6B7C;
+      --orange: #E87722;
+      --orange-light: #F09340;
+      --ice: #F0F4F8;
+      --white: #FFFFFF;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', sans-serif; color: #333; line-height: 1.6; background: var(--white); }
+
+    .demo-badge {
+      background: var(--orange); color: var(--white); text-align: center;
+      padding: 8px 20px; font-size: 0.78rem; font-weight: 500; letter-spacing: 0.5px;
+      position: sticky; top: 0; z-index: 2000;
+    }
+
+    header {
+      background: var(--navy); position: sticky; top: 32px; z-index: 1000;
+    }
+    .header-container {
+      max-width: 1200px; margin: 0 auto; padding: 14px 24px;
+      display: flex; justify-content: space-between; align-items: center;
+    }
+    .logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+    .logo-mark {
+      width: 40px; height: 40px; background: var(--orange); border-radius: 4px;
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Space Grotesk', sans-serif; color: #fff; font-size: 1.1rem; font-weight: 700;
+    }
+    .logo-text { font-family: 'Space Grotesk', sans-serif; font-size: 1.3rem; color: #fff; font-weight: 700; letter-spacing: 1px; }
+    nav ul { display: flex; list-style: none; gap: 32px; }
+    nav a { text-decoration: none; color: var(--steel); font-weight: 500; font-size: 0.85rem; transition: color 0.3s; text-transform: uppercase; letter-spacing: 0.5px; }
+    nav a:hover { color: var(--orange); }
+    .cta-header {
+      background: var(--orange); color: #fff; padding: 10px 22px; border-radius: 4px;
+      text-decoration: none; font-weight: 600; font-size: 0.8rem; transition: all 0.3s; text-transform: uppercase; letter-spacing: 0.5px;
+    }
+    .cta-header:hover { background: var(--orange-light); }
+    .menu-toggle { display: none; font-size: 1.5rem; color: #fff; cursor: pointer; }
+
+    /* HERO */
+    .hero {
+      position: relative; min-height: 92vh; display: flex; align-items: center; overflow: hidden;
+      background: var(--navy);
+    }
+    .hero-bg {
+      position: absolute; right: 0; top: 0; bottom: 0; width: 50%;
+      background: url('https://images.unsplash.com/photo-1565043666747-69f6646db940?auto=format&fit=crop&w=1200&q=80') center/cover no-repeat;
+    }
+    .hero-bg::before {
+      content: ''; position: absolute; inset: 0;
+      background: linear-gradient(to right, var(--navy) 0%, transparent 60%);
+    }
+    .hero-content {
+      position: relative; z-index: 2; max-width: 1200px; margin: 0 auto; padding: 80px 24px;
+      width: 100%;
+    }
+    .hero-inner { max-width: 580px; }
+    .hero-label {
+      display: inline-block; background: rgba(232,119,34,0.15); color: var(--orange);
+      padding: 6px 16px; border-radius: 4px; font-size: 0.75rem; font-weight: 600;
+      text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 24px; border: 1px solid rgba(232,119,34,0.3);
+    }
+    .hero h1 {
+      font-family: 'Space Grotesk', sans-serif; font-size: 3.6rem; color: #fff;
+      line-height: 1.1; margin-bottom: 20px; font-weight: 700;
+    }
+    .hero h1 em { color: var(--orange); font-style: normal; }
+    .hero-sub { font-size: 1.05rem; color: var(--steel); margin-bottom: 32px; line-height: 1.7; }
+    .hero-cta {
+      display: inline-block; background: var(--orange); color: #fff;
+      padding: 16px 36px; border-radius: 4px; text-decoration: none;
+      font-weight: 700; font-size: 0.95rem; transition: all 0.3s; text-transform: uppercase; letter-spacing: 0.5px;
+    }
+    .hero-cta:hover { background: var(--orange-light); transform: translateY(-2px); }
+    .hero-stats {
+      margin-top: 40px; display: flex; gap: 32px; flex-wrap: wrap;
+    }
+    .hero-stat h4 { font-family: 'Space Grotesk', sans-serif; font-size: 1.8rem; color: #fff; }
+    .hero-stat p { color: var(--steel); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.5px; }
+
+    /* TRUST BAR */
+    .trust-bar {
+      background: var(--ice); padding: 40px 24px; border-bottom: 1px solid #e0e4e8;
+    }
+    .trust-grid {
+      max-width: 1200px; margin: 0 auto;
+      display: grid; grid-template-columns: repeat(4, 1fr); gap: 30px; text-align: center;
+    }
+    .trust-item h4 { font-family: 'Space Grotesk', sans-serif; font-size: 1.6rem; color: var(--navy); }
+    .trust-item p { color: var(--steel); font-size: 0.85rem; margin-top: 4px; }
+
+    /* SERVICIOS */
+    .servicios { padding: 100px 24px; max-width: 1200px; margin: 0 auto; }
+    .section-header { text-align: center; margin-bottom: 60px; }
+    .section-header h2 { font-family: 'Space Grotesk', sans-serif; font-size: 2.4rem; color: var(--navy); margin-bottom: 10px; }
+    .section-header p { color: var(--steel); font-size: 1.05rem; }
+    .servicios-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 50px;
+    }
+    .servicio {
+      background: var(--white); border: 1px solid #e0e4e8; border-radius: 8px;
+      padding: 32px; transition: all 0.3s; position: relative;
+    }
+    .servicio:hover { box-shadow: 0 15px 40px rgba(0,0,0,0.08); transform: translateY(-4px); border-color: var(--orange); }
+    .servicio-num {
+      position: absolute; top: 16px; right: 20px;
+      font-family: 'Space Grotesk', sans-serif; font-size: 2.5rem; color: rgba(10,22,40,0.05); font-weight: 700;
+    }
+    .servicio h3 { font-size: 1.1rem; color: var(--navy); margin-bottom: 10px; font-weight: 700; }
+    .servicio p { font-size: 0.88rem; color: var(--steel); margin-bottom: 16px; }
+    .servicio-list { list-style: none; }
+    .servicio-list li {
+      padding: 4px 0; padding-left: 18px; position: relative;
+      font-size: 0.82rem; color: #555;
+    }
+    .servicio-list li::before { content: '—'; position: absolute; left: 0; color: var(--orange); font-weight: 700; }
+
+    /* PORTAFOLIO / CAPACIDADES */
+    .capacidades {
+      background: var(--navy); padding: 100px 24px;
+    }
+    .capacidades-inner { max-width: 1200px; margin: 0 auto; }
+    .capacidades .section-header h2 { color: #fff; }
+    .capacidades .section-header p { color: var(--steel); }
+    .capacidades-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 50px; align-items: center;
+    }
+    .capacidades-img {
+      border-radius: 8px; overflow: hidden; height: 400px;
+    }
+    .capacidades-img img { width: 100%; height: 100%; object-fit: cover; }
+    .capacidades-list { list-style: none; }
+    .capacidades-list li {
+      padding: 14px 0; border-bottom: 1px solid var(--navy-light);
+      display: flex; justify-content: space-between; align-items: center;
+    }
+    .capacidades-list li span { color: #fff; font-size: 0.95rem; }
+    .capacidades-list li strong { color: var(--orange); font-size: 0.9rem; font-weight: 600; }
+
+    /* PROCESO COTIZACIÓN */
+    .proceso-cotizacion { background: var(--ice); padding: 100px 24px; }
+    .proceso-inner { max-width: 1200px; margin: 0 auto; }
+    .proceso-steps {
+      display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; margin-top: 50px;
+    }
+    .proceso-step {
+      text-align: center; padding: 32px 20px; background: var(--white); border-radius: 8px;
+      border: 1px solid #e0e4e8; position: relative;
+    }
+    .proceso-step::after {
+      content: '→'; position: absolute; right: -20px; top: 50%; transform: translateY(-50%);
+      color: var(--orange); font-size: 1.2rem; font-weight: 700;
+    }
+    .proceso-step:last-child::after { display: none; }
+    .proceso-step .num {
+      width: 40px; height: 40px; background: var(--orange); color: #fff;
+      border-radius: 50%; display: flex; align-items: center; justify-content: center;
+      font-weight: 700; font-size: 0.9rem; margin: 0 auto 16px;
+    }
+    .proceso-step h3 { font-size: 1rem; color: var(--navy); margin-bottom: 6px; }
+    .proceso-step p { font-size: 0.85rem; color: var(--steel); }
+
+    /* TESTIMONIOS B2B */
+    .testimonios { padding: 100px 24px; max-width: 1200px; margin: 0 auto; }
+    .testimonios-grid {
+      display: grid; grid-template-columns: repeat(2, 1fr); gap: 28px; margin-top: 50px;
+    }
+    .testimonio {
+      background: var(--ice); padding: 32px; border-radius: 8px;
+      border-left: 4px solid var(--orange);
+    }
+    .testimonio-stars { color: var(--orange); font-size: 1rem; margin-bottom: 14px; letter-spacing: 2px; }
+    .testimonio p { font-size: 0.95rem; color: #444; margin-bottom: 20px; line-height: 1.7; font-style: italic; }
+    .testimonio-autor { display: flex; align-items: center; gap: 12px; }
+    .testimonio-avatar {
+      width: 44px; height: 44px; border-radius: 50%;
+      background: var(--navy); display: flex; align-items: center; justify-content: center;
+      font-weight: 700; color: #fff; font-size: 0.85rem;
+    }
+    .testimonio-autor div strong { font-size: 0.9rem; color: var(--navy); }
+    .testimonio-autor div span { font-size: 0.8rem; color: var(--steel); }
+
+    /* CTA BANNER */
+    .cta-banner {
+      background: var(--orange); padding: 80px 24px; text-align: center;
+    }
+    .cta-banner h2 {
+      font-family: 'Space Grotesk', sans-serif; font-size: 2.4rem; color: #fff; margin-bottom: 12px;
+    }
+    .cta-banner p { color: rgba(255,255,255,0.9); font-size: 1.1rem; max-width: 600px; margin: 0 auto 28px; }
+    .cta-banner-btn {
+      background: var(--navy); color: #fff; padding: 16px 40px; border-radius: 4px;
+      text-decoration: none; font-weight: 700; display: inline-block; transition: all 0.3s;
+      text-transform: uppercase; letter-spacing: 0.5px;
+    }
+    .cta-banner-btn:hover { background: var(--navy-light); }
+
+    /* CONTACTO */
+    .contacto { padding: 100px 24px; max-width: 1200px; margin: 0 auto; }
+    .contacto-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; }
+    .contacto-info h2 { font-family: 'Space Grotesk', sans-serif; font-size: 2.2rem; color: var(--navy); margin-bottom: 12px; }
+    .contacto-info > p { color: var(--steel); margin-bottom: 28px; }
+    .contacto-item {
+      display: flex; align-items: flex-start; gap: 14px; margin-bottom: 18px;
+      padding: 16px; background: var(--ice); border-radius: 8px;
+    }
+    .contacto-item strong { display: block; color: var(--navy); font-size: 0.8rem; margin-bottom: 2px; text-transform: uppercase; letter-spacing: 0.5px; }
+    .contacto-item span { color: var(--steel); font-size: 0.9rem; }
+    .contacto-form {
+      background: var(--ice); padding: 40px; border-radius: 8px;
+    }
+    .contacto-form h3 { font-size: 1.1rem; color: var(--navy); margin-bottom: 20px; font-weight: 700; }
+    .form-group { margin-bottom: 18px; }
+    .form-group label { display: block; font-size: 0.75rem; font-weight: 600; color: var(--steel); margin-bottom: 6px; text-transform: uppercase; letter-spacing: 0.5px; }
+    .form-group input, .form-group textarea {
+      width: 100%; padding: 12px 14px; border: 2px solid #d0d5db; border-radius: 6px;
+      font-family: 'Inter', sans-serif; font-size: 0.95rem; transition: border-color 0.3s; background: #fff;
+    }
+    .form-group input:focus, .form-group textarea:focus { outline: none; border-color: var(--orange); }
+    .form-group textarea { resize: vertical; min-height: 120px; }
+    .submit-btn {
+      width: 100%; padding: 14px; background: var(--navy); color: #fff;
+      border: none; border-radius: 6px; font-size: 0.95rem; font-weight: 700;
+      cursor: pointer; transition: all 0.3s; font-family: 'Inter', sans-serif; text-transform: uppercase; letter-spacing: 0.5px;
+    }
+    .submit-btn:hover { background: var(--navy-light); }
+
+    /* FOOTER */
+    footer { background: var(--navy); color: var(--steel); padding: 50px 24px 24px; }
+    .footer-inner { max-width: 1200px; margin: 0 auto; }
+    .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px; margin-bottom: 40px; }
+    .footer-brand .logo-text { color: #fff; font-size: 1.2rem; }
+    .footer-brand p { margin-top: 12px; font-size: 0.85rem; line-height: 1.7; max-width: 320px; }
+    .footer-col h4 { color: #fff; font-size: 0.78rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 16px; }
+    .footer-col a { color: var(--steel); text-decoration: none; display: block; padding: 4px 0; font-size: 0.85rem; transition: color 0.3s; }
+    .footer-col a:hover { color: var(--orange); }
+    .footer-bottom { border-top: 1px solid var(--navy-light); padding-top: 24px; text-align: center; font-size: 0.75rem; color: #555; }
+
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+      .hero-bg { width: 100%; opacity: 0.2; }
+      .hero-bg::before { background: linear-gradient(to bottom, var(--navy) 0%, var(--navy) 40%, transparent 100%); }
+      .hero-inner { max-width: 100%; }
+      .trust-grid { grid-template-columns: repeat(2, 1fr); }
+      .servicios-grid { grid-template-columns: 1fr; }
+      .capacidades-grid { grid-template-columns: 1fr; }
+      .capacidades-img { height: 250px; }
+      .proceso-steps { grid-template-columns: 1fr; }
+      .proceso-step::after { display: none; }
+      .testimonios-grid { grid-template-columns: 1fr; }
+      .contacto-grid { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 600px) {
+      nav, .cta-header { display: none; }
+      .menu-toggle { display: block; }
+      .hero h1 { font-size: 2.6rem; }
+      .trust-grid { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="demo-badge">DEMO — Esta es una muestra de tu futura página web. Contáctanos para activarla con tu dominio propio.</div>
+
+  <header>
+    <div class="header-container">
+      <a href="#" class="logo">
+        <div class="logo-mark">TC</div>
+        <div class="logo-text">TALLER CARDENAS</div>
+      </a>
+      <nav>
+        <ul>
+          <li><a href="#servicios">Servicios</a></li>
+          <li><a href="#capacidades">Capacidades</a></li>
+          <li><a href="#proceso">Cotizar</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+      </nav>
+      <a href="#contacto" class="cta-header">Solicitar cotización</a>
+      <div class="menu-toggle" onclick="document.querySelector('nav').classList.toggle('active')">☰</div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero" id="inicio">
+    <div class="hero-bg"></div>
+    <div class="hero-content">
+      <div class="hero-inner">
+        <div class="hero-label">Maquinado Industrial · Veracruz, Ver.</div>
+        <h1>¿Tu producción se detiene por <em>falta de piezas</em>?</h1>
+        <p class="hero-sub">En TALLER CARDENAS maquinamos piezas metálicas con tolerancias de ±0.01mm. Fresado CNC, torneado y rectificado para mantener tu línea de producción activa sin retrasos.</p>
+        <a href="#contacto" class="hero-cta">Cotiza con planos en 24h</a>
+        <div class="hero-stats">
+          <div class="hero-stat"><h4>12+</h4><p>Años de experiencia</p></div>
+          <div class="hero-stat"><h4>850+</h4><p>Piezas entregadas</p></div>
+          <div class="hero-stat"><h4>±0.01mm</h4><p>Tolerancia garantizada</p></div>
+          <div class="hero-stat"><h4>48h</h4><p>Tiempo promedio</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRUST BAR -->
+  <section class="trust-bar">
+    <div class="trust-grid">
+      <div class="trust-item"><h4>±0.01mm</h4><p>Tolerancia de precisión</p></div>
+      <div class="trust-item"><h4>3</h4><p>Centros de maquinado CNC</p></div>
+      <div class="trust-item"><h4>48h</h4><p>Tiempo promedio de entrega</p></div>
+      <div class="trust-item"><h4>100%</h4><p>Piezas inspeccionadas</p></div>
+    </div>
+  </section>
+
+  <!-- SERVICIOS -->
+  <section class="servicios" id="servicios">
+    <div class="section-header">
+      <h2>Servicios de maquinado</h2>
+      <p>De tu plano a pieza terminada. Atendemos industria petroquímica, naval, automotriz y más.</p>
+    </div>
+    <div class="servicios-grid">
+      <div class="servicio">
+        <div class="servicio-num">01</div>
+        <h3>Fresado CNC</h3>
+        <p>Centros de mecanizado de 3 ejes para operaciones de contorneado, ranurado, taladrado y roscado en piezas complejas.</p>
+        <ul class="servicio-list">
+          <li>Tolerancia: ±0.01mm</li>
+          <li>Materiales: acero, aluminio, bronce</li>
+          <li>Desde 1 pieza hasta series medianas</li>
+        </ul>
+      </div>
+      <div class="servicio">
+        <div class="servicio-num">02</div>
+        <h3>Torneado CNC</h3>
+        <p>Tornos CNC de precisión para ejes, bujes, tapones, racores y piezas cilíndricas con acabados Ra 0.8.</p>
+        <ul class="servicio-list">
+          <li>Diámetros: 5mm a 300mm</li>
+          <li>Longitud máxima: 500mm</li>
+          <li>Roscado métrico e imperial</li>
+        </ul>
+      </div>
+      <div class="servicio">
+        <div class="servicio-num">03</div>
+        <h3>Piezas a Medida</h3>
+        <p>Fabricación desde tu plano CAD, muestra física o descripción técnica. Te asesoramos en material y proceso óptimo.</p>
+        <ul class="servicio-list">
+          <li>Asesoría técnica gratuita</li>
+          <li>Prueba de prototipo disponible</li>
+          <li>Certificado de calidad incluido</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- CAPACIDADES -->
+  <section class="capacidades" id="capacidades">
+    <div class="capacidades-inner">
+      <div class="section-header">
+        <h2>Nuestras capacidades</h2>
+        <p>Equipo profesional para proyectos de cualquier escala</p>
+      </div>
+      <div class="capacidades-grid">
+        <div class="capacidades-img">
+          <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=800&q=80" alt="Maquinado CNC de precisión">
+        </div>
+        <ul class="capacidades-list">
+          <li><span>Centro de mecanizado CNC vertical</span><strong>3 ejes · 800x400mm</strong></li>
+          <li><span>Torno CNC de precisión</span><strong>Ø300 x 500mm</strong></li>
+          <li><span>Torno convencional</span><strong>Ø400 x 1000mm</strong></li>
+          <li><span>Fresadora universal</span><strong>1000x300mm</strong></li>
+          <li><span>Rectificadora plana</span><strong>300x150mm</strong></li>
+          <li><span>Taladro radial</span><strong>Ø40mm</strong></li>
+          <li><span>Soldadura MIG/TIG/Eléctrica</span><strong>Acero, aluminio, inox</strong></li>
+          <li><span>Inspección con micrómetros y calibres</span><strong>Certificado incluido</strong></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESO COTIZACIÓN -->
+  <section class="proceso-cotizacion" id="proceso">
+    <div class="proceso-inner">
+      <div class="section-header">
+        <h2>Cómo cotizar tu pieza</h2>
+        <p>En cuatro pasos simples, de tu plano a pieza terminada</p>
+      </div>
+      <div class="proceso-steps">
+        <div class="proceso-step">
+          <div class="num">1</div>
+          <h3>Envía tu plano</h3>
+          <p>Sube tu archivo CAD (DXF, DWG, STEP) o fotografía de tu muestra por WhatsApp o correo.</p>
+        </div>
+        <div class="proceso-step">
+          <div class="num">2</div>
+          <h3>Recibe cotización</h3>
+          <p>En menos de 24 horas te enviamos precio, tiempo de entrega y recomendación de material.</p>
+        </div>
+        <div class="proceso-step">
+          <div class="num">3</div>
+          <h3>Aprobación y producción</h3>
+          <p>Una vez aprobada, programamos tu pieza en nuestro equipo CNC con prioridad confirmada.</p>
+        </div>
+        <div class="proceso-step">
+          <div class="num">4</div>
+          <h3>Entrega con certificado</h3>
+          <p>Recibe tu pieza con inspección dimensional y certificado de calidad. Garantía de 30 días.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIOS -->
+  <section class="testimonios" id="testimonios">
+    <div class="section-header">
+      <h2>Empresas que confían en nosotros</h2>
+      <p>Clientes industriales del puerto de Veracruz y zona conurbada</p>
+    </div>
+    <div class="testimonios-grid">
+      <div class="testimonio">
+        <div class="testimonio-stars">★★★★★</div>
+        <p>"Llevamos 4 años trabajando con Taller Cárdenas para piezas de repuesto de nuestras bombas. La tolerancia es impecable y siempre cumplen los tiempos de entrega. Un proveedor confiable para mantener nuestra operación."</p>
+        <div class="testimonio-autor">
+          <div class="testimonio-avatar">JM</div>
+          <div><strong>Ing. Jorge Martínez Aguilar</strong><span>Gerente de Mantenimiento · Petrochem Veracruz</span></div>
+        </div>
+      </div>
+      <div class="testimonio">
+        <div class="testimonio-stars">★★★★★</div>
+        <p>"Necesitábamos 50 racores de acero inoxidable en 72 horas para un barco en dique seco. No solo cumplieron el tiempo, sino que la calidad superó la de nuestro proveedor anterior. Ahora son nuestro taller de cabecera."</p>
+        <div class="testimonio-autor">
+          <div class="testimonio-avatar">CV</div>
+          <div><strong>Cap. Carlos Vega Romero</strong><span>Director · Naval Services del Golfo</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA BANNER -->
+  <section class="cta-banner">
+    <h2>¿Tienes un plano listo?</h2>
+    <p>Recibe tu cotización en menos de 24 horas. Sin compromiso. Asesoría técnica gratuita incluida.</p>
+    <a href="#contacto" class="cta-banner-btn">Enviar plano para cotizar</a>
+  </section>
+
+  <!-- CONTACTO -->
+  <section class="contacto" id="contacto">
+    <div class="contacto-grid">
+      <div class="contacto-info">
+        <h2>Contáctanos</h2>
+        <p>Atendemos empresas industriales del puerto de Veracruz y zona conurbada. Cotizaciones sin compromiso.</p>
+        <div class="contacto-item">
+          <div>📍</div>
+          <div><strong>Ubicación</strong><span>Veracruz, Veracruz — Zona industrial del puerto</span></div>
+        </div>
+        <div class="contacto-item">
+          <div>🕐</div>
+          <div><strong>Horario</strong><span>Lun a Vie: 8:00 AM — 6:00 PM<br>Sábado: 8:00 AM — 2:00 PM</span></div>
+        </div>
+        <div class="contacto-item">
+          <div>📎</div>
+          <div><strong>Envío de planos</strong><span>WhatsApp Business o correo electrónico</span></div>
+        </div>
+        <div class="contacto-item">
+          <div>✓</div>
+          <div><strong>Garantía</strong><span>30 días en todas las piezas. Rehacemos sin costo si no cumple especificaciones.</span></div>
+        </div>
+      </div>
+      <div class="contacto-form">
+        <h3>Solicita tu cotización</h3>
+        <form>
+          <div class="form-group">
+            <label>Empresa / Nombre</label>
+            <input type="text" placeholder="Nombre de tu empresa o contacto">
+          </div>
+          <div class="form-group">
+            <label>Correo electrónico</label>
+            <input type="email" placeholder="correo@empresa.com">
+          </div>
+          <div class="form-group">
+            <label>Teléfono</label>
+            <input type="tel" placeholder="Tu número de contacto">
+          </div>
+          <div class="form-group">
+            <label>Descripción del proyecto</label>
+            <textarea placeholder="Describe el tipo de pieza, material, cantidad y tolerancias requeridas. Si tienes plano, indícalo."></textarea>
+          </div>
+          <button type="button" class="submit-btn">Enviar solicitud de cotización</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="logo-text">TALLER CARDENAS</div>
+          <p>Maquinado industrial de precisión en Veracruz. Piezas metálicas a medida con tolerancias exactas para mantener tu producción activa.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Servicios</h4>
+          <a href="#servicios">Fresado CNC</a>
+          <a href="#servicios">Torneado CNC</a>
+          <a href="#servicios">Piezas a medida</a>
+          <a href="#capacidades">Capacidades</a>
+        </div>
+        <div class="footer-col">
+          <h4>Contacto</h4>
+          <a href="#contacto">Solicitar cotización</a>
+          <a href="#contacto">WhatsApp Business</a>
+          <a href="#contacto">Veracruz, Ver.</a>
+        </div>
+      </div>
+      <div class="footer-bottom">© 2025 TALLER CARDENAS — Todos los derechos reservados</div>
+    </div>
+  </footer>
+
+</body>
+</html>

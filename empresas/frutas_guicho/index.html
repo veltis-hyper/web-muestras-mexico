@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Frutas y Verduras Guicho Puebla | Entrega el Mismo D&iacute;a</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=DM+Serif+Display&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --forest: #14532d;
+      --forest-dark: #0a3319;
+      --earth: #d4a373;
+      --earth-light: #e9c496;
+      --natural: #f7f9f4;
+      --terracotta: #e76f51;
+      --white: #ffffff;
+      --text: #1a2e35;
+      --text-light: #5a6f78;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Inter', sans-serif; color: var(--text); line-height: 1.6; overflow-x: hidden; }
+    html { scroll-behavior: smooth; }
+
+    .demo-badge {
+      background: var(--terracotta); color: var(--white);
+      text-align: center; padding: 10px 20px;
+      font-size: 0.8rem; font-weight: 700;
+      position: fixed; top: 0; left: 0; right: 0; z-index: 2000;
+    }
+
+    header {
+      position: fixed; top: 38px; left: 0; right: 0;
+      background: rgba(255,255,255,0.98); backdrop-filter: blur(12px);
+      z-index: 1000; border-bottom: 1px solid rgba(20,83,45,0.08);
+    }
+    .header-inner { max-width: 1200px; margin: 0 auto; padding: 16px 25px; display: flex; align-items: center; justify-content: space-between; }
+    .logo { display: flex; align-items: center; gap: 10px; font-family: 'DM Serif Display', serif; font-size: 1.25rem; color: var(--forest-dark); }
+    .logo svg { width: 36px; height: 36px; fill: var(--forest); }
+    nav ul { display: flex; gap: 32px; list-style: none; }
+    nav a { text-decoration: none; color: var(--text); font-weight: 500; font-size: 0.9rem; transition: color 0.2s; }
+    nav a:hover { color: var(--forest); }
+    .btn-nav { background: var(--forest); color: var(--white); padding: 10px 22px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 0.85rem; transition: all 0.2s; }
+    .btn-nav:hover { background: var(--forest-dark); }
+    .mobile-menu-btn { display: none; background: none; border: none; font-size: 1.4rem; cursor: pointer; color: var(--text); }
+
+    .hero {
+      min-height: 100vh; display: flex; align-items: center;
+      background: linear-gradient(105deg, rgba(20,83,45,0.92) 0%, rgba(10,51,25,0.75) 50%, rgba(20,83,45,0.88) 100%),
+                  url('https://images.unsplash.com/photo-1610832958506-aa56368176cf?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+      position: relative; padding: 160px 25px 100px;
+    }
+    .hero-content { max-width: 650px; position: relative; z-index: 1; }
+    .hero-tag { display: inline-flex; align-items: center; gap: 8px; background: rgba(231,111,81,0.15); color: #ffd4c7; padding: 8px 18px; border-radius: 50px; font-size: 0.8rem; font-weight: 600; margin-bottom: 24px; border: 1px solid rgba(231,111,81,0.3); }
+    .hero h1 { font-family: 'DM Serif Display', serif; font-size: 3.4rem; color: var(--white); line-height: 1.1; margin-bottom: 22px; }
+    .hero h1 em { color: var(--earth-light); font-style: normal; }
+    .hero p { font-size: 1.15rem; color: rgba(255,255,255,0.85); margin-bottom: 32px; max-width: 520px; line-height: 1.6; }
+    .btn-primary { display: inline-flex; align-items: center; gap: 10px; background: var(--terracotta); color: var(--white); padding: 16px 32px; border-radius: 10px; font-weight: 700; font-size: 1rem; text-decoration: none; transition: all 0.2s; border: none; cursor: pointer; }
+    .btn-primary:hover { background: #d45a3d; transform: translateY(-2px); box-shadow: 0 10px 30px rgba(231,111,81,0.3); }
+    .hero-urgency { display: flex; align-items: center; gap: 10px; margin-top: 24px; font-size: 0.85rem; color: rgba(255,255,255,0.7); }
+    .hero-urgency span { background: rgba(255,255,255,0.15); padding: 6px 14px; border-radius: 50px; }
+
+    .numbers-strip { background: var(--forest-dark); padding: 50px 25px; }
+    .numbers-grid { max-width: 1000px; margin: 0 auto; display: grid; grid-template-columns: repeat(4, 1fr); gap: 30px; text-align: center; }
+    .number-item strong { font-size: 2.2rem; font-weight: 800; color: var(--earth-light); display: block; }
+    .number-item span { font-size: 0.85rem; color: rgba(255,255,255,0.7); }
+
+    section { padding: 90px 25px; }
+    .container { max-width: 1100px; margin: 0 auto; }
+    .section-title { text-align: center; margin-bottom: 55px; }
+    .section-title h2 { font-family: 'DM Serif Display', serif; font-size: 2.4rem; color: var(--text); margin-bottom: 12px; }
+    .section-title p { color: var(--text-light); max-width: 550px; margin: 0 auto; font-size: 1.05rem; }
+
+    .products { background: var(--natural); }
+    .product-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 25px; }
+    .product-card { background: var(--white); border-radius: 16px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.04); transition: all 0.3s; }
+    .product-card:hover { transform: translateY(-6px); box-shadow: 0 16px 48px rgba(0,0,0,0.08); }
+    .product-card img { width: 100%; height: 200px; object-fit: cover; }
+    .product-info { padding: 24px; }
+    .product-info h3 { font-size: 1.1rem; margin-bottom: 6px; }
+    .product-info .price { font-size: 1.25rem; font-weight: 800; color: var(--terracotta); margin-bottom: 8px; }
+    .product-info p { font-size: 0.85rem; color: var(--text-light); margin-bottom: 14px; }
+    .product-info .btn-small { display: inline-block; background: var(--forest); color: var(--white); padding: 10px 20px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 0.85rem; transition: all 0.2s; }
+    .product-info .btn-small:hover { background: var(--forest-dark); }
+
+    .process { background: var(--white); }
+    .process-steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
+    .step { background: var(--natural); border-radius: 16px; padding: 40px 30px; text-align: center; position: relative; }
+    .step-num { position: absolute; top: -18px; left: 50%; transform: translateX(-50%); width: 36px; height: 36px; background: var(--forest); color: var(--white); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 0.9rem; }
+    .step h3 { font-size: 1.1rem; margin: 10px 0 10px; color: var(--text); }
+    .step p { font-size: 0.9rem; color: var(--text-light); }
+
+    .testimonials { background: var(--natural); }
+    .testi-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 25px; }
+    .testi-card { background: var(--white); border-radius: 16px; padding: 35px 30px; box-shadow: 0 4px 20px rgba(0,0,0,0.04); }
+    .stars { color: #f4a261; font-size: 1.1rem; margin-bottom: 14px; letter-spacing: 2px; }
+    .testi-card p { font-size: 0.9rem; color: var(--text); line-height: 1.7; margin-bottom: 18px; font-style: italic; }
+    .testi-author { display: flex; align-items: center; gap: 12px; }
+    .testi-author .avatar { width: 44px; height: 44px; border-radius: 50%; background: var(--forest); color: var(--white); display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1rem; }
+    .testi-author div strong { font-size: 0.95rem; color: var(--text); }
+    .testi-author div span { font-size: 0.8rem; color: var(--text-light); }
+
+    .about-section { background: var(--white); }
+    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center; }
+    .about-img { border-radius: 16px; overflow: hidden; height: 380px; }
+    .about-img img { width: 100%; height: 100%; object-fit: cover; }
+    .about-content h2 { font-family: 'DM Serif Display', serif; font-size: 2.2rem; margin-bottom: 18px; }
+    .about-content p { color: var(--text-light); margin-bottom: 16px; line-height: 1.7; }
+    .feature-list { list-style: none; margin-top: 20px; }
+    .feature-list li { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; font-size: 0.95rem; }
+    .feature-list li::before { content: ''; width: 20px; height: 20px; background: var(--forest); border-radius: 50%; flex-shrink: 0; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white'%3E%3Cpath d='M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z'/%3E%3C/svg%3E"); background-size: 14px; background-position: center; background-repeat: no-repeat; }
+
+    .contact-section { background: linear-gradient(135deg, var(--forest-dark), var(--forest)); color: var(--white); padding: 80px 25px; }
+    .contact-grid { max-width: 1000px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: start; }
+    .contact-info h3 { font-size: 1.6rem; margin-bottom: 24px; font-family: 'DM Serif Display', serif; }
+    .info-row { display: flex; align-items: flex-start; gap: 14px; margin-bottom: 20px; }
+    .info-row svg { width: 22px; height: 22px; fill: var(--earth-light); flex-shrink: 0; margin-top: 3px; }
+    .info-row div strong { display: block; font-size: 0.95rem; margin-bottom: 2px; }
+    .info-row div span { font-size: 0.9rem; color: rgba(255,255,255,0.7); }
+    .contact-form { background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.12); border-radius: 16px; padding: 40px; }
+    .form-group { margin-bottom: 18px; }
+    .form-group label { display: block; font-size: 0.85rem; margin-bottom: 6px; color: rgba(255,255,255,0.8); }
+    .form-group input, .form-group textarea { width: 100%; padding: 13px 16px; border: 1px solid rgba(255,255,255,0.15); border-radius: 10px; background: rgba(255,255,255,0.07); color: var(--white); font-size: 0.95rem; font-family: 'Inter', sans-serif; transition: all 0.2s; }
+    .form-group input:focus, .form-group textarea:focus { outline: none; border-color: var(--earth-light); background: rgba(255,255,255,0.1); }
+    .form-group textarea { min-height: 100px; resize: vertical; }
+    .contact-form .btn-primary { width: 100%; justify-content: center; margin-top: 6px; }
+
+    footer { background: #061f0e; color: rgba(255,255,255,0.5); padding: 40px 25px; text-align: center; font-size: 0.85rem; }
+    footer .footer-logo { font-family: 'DM Serif Display', serif; font-size: 1.2rem; color: var(--white); margin-bottom: 10px; }
+
+    @media (max-width: 768px) {
+      .hero h1 { font-size: 2.2rem; }
+      .numbers-grid { grid-template-columns: repeat(2, 1fr); }
+      .product-grid, .process-steps, .testi-grid, .contact-grid, .about-grid { grid-template-columns: 1fr; }
+      nav ul { display: none; position: absolute; top: 100%; left: 0; right: 0; background: var(--white); flex-direction: column; padding: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); gap: 15px; }
+      nav ul.active { display: flex; }
+      .mobile-menu-btn { display: block; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="demo-badge">DEMO &mdash; Esta es una muestra de tu futura p&aacute;gina. Cont&aacute;ctanos para activarla.</div>
+
+<header>
+  <div class="header-inner">
+    <div class="logo">
+      <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+      Frutas y Verduras Guicho
+    </div>
+    <button class="mobile-menu-btn" onclick="document.querySelector('nav ul').classList.toggle('active')">&#9776;</button>
+    <nav>
+      <ul>
+        <li><a href="#inicio">Inicio</a></li>
+        <li><a href="#productos">Productos</a></li>
+        <li><a href="#proceso">C&oacute;mo pedir</a></li>
+        <li><a href="#testimonios">Clientes</a></li>
+        <li><a href="#contacto" class="btn-nav">Manda tu lista</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<section class="hero" id="inicio">
+  <div class="hero-content">
+    <div class="hero-tag">22 a&ntilde;os en el Mercado Amalucan, Puebla</div>
+    <h1>&iquest;Tienes 20 min para ir al mercado? <em>Nosotros lo hacemos por ti</em></h1>
+    <p>Cesta de frutas y verduras personalizada, seleccionada a mano en el mercado y entregada el mismo d&iacute;a en tu casa u oficina en Puebla. Sin apps, sin comisiones, sin sorpresas.</p>
+    <a href="#contacto" class="btn-primary">Manda tu lista por WhatsApp &rarr;</a>
+    <div class="hero-urgency">
+      <span>Entrega en 2 horas</span>
+      <span>+500 familias</span>
+      <span>100% de temporada</span>
+    </div>
+  </div>
+</section>
+
+<div class="numbers-strip">
+  <div class="numbers-grid">
+    <div class="number-item"><strong>22</strong><span>a&ntilde;os de tradici&oacute;n</span></div>
+    <div class="number-item"><strong>+500</strong><span>familias atendidas</span></div>
+    <div class="number-item"><strong>2h</strong><span>de pedido a entrega</span></div>
+    <div class="number-item"><strong>100%</strong><span>productos de temporada</span></div>
+  </div>
+</div>
+
+<section class="products" id="productos">
+  <div class="container">
+    <div class="section-title">
+      <h2>Lo m&aacute;s pedido esta semana</h2>
+      <p>Precios de mercado actualizados. Pregunta por disponibilidad.</p>
+    </div>
+    <div class="product-grid">
+      <div class="product-card">
+        <img src="https://images.unsplash.com/photo-1600850056064-a773749a9a?auto=format&fit=crop&w=800&q=80" alt="Fruta de temporada">
+        <div class="product-info">
+          <h3>Fruta de Temporada</h3>
+          <div class="price">Desde $35/kg</div>
+          <p>Fresa, mango, pl&aacute;tano, manzana, pera, uva. Seleccionada a mano en el Mercado Amalucan.</p>
+          <a href="#contacto" class="btn-small">Pedir ahora</a>
+        </div>
+      </div>
+      <div class="product-card">
+        <img src="https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=800&q=80" alt="Verdura fresca">
+        <div class="product-info">
+          <h3>Verdura Fresca</h3>
+          <div class="price">Desde $25/kg</div>
+          <p>Lechuga, jitomate, cebolla, chile, cilantro, zanahoria, pepino. Reci&eacute;n llegada del campo.</p>
+          <a href="#contacto" class="btn-small">Pedir ahora</a>
+        </div>
+      </div>
+      <div class="product-card">
+        <img src="https://images.unsplash.com/photo-1610832958506-aa56368176cf?auto=format&fit=crop&w=800&q=80" alt="Cesta familiar">
+        <div class="product-info">
+          <h3>Cesta Familiar Semanal</h3>
+          <div class="price">$450/semana</div>
+          <p>12kg de frutas y verduras mixtas para una familia de 4. Personalizable seg&uacute;n tus gustos.</p>
+          <a href="#contacto" class="btn-small">Suscribirme</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="process" id="proceso">
+  <div class="container">
+    <div class="section-title">
+      <h2>C&oacute;mo pedir</h2>
+      <p>Tan f&aacute;cil como mandar un mensaje</p>
+    </div>
+    <div class="process-steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <h3>Manda tu lista por WhatsApp</h3>
+        <p>Escribe lo que necesitas: "2kg de jitomate, 1 kg de cebolla, 1 pi&ntilde;a...". No importa si es larga, nosotros lo leemos.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <h3>Seleccionamos lo mejor</h3>
+        <p>Compramos tu lista personalmente en el Mercado Amalucan. Picamos lo que necesites, preparamos ensaladas si lo pides.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <h3>Recibe en tu puerta</h3>
+        <p>Entrega en la zona metropolitana de Puebla. Pagas al recibir. Recibas un mensaje cuando estemos en camino.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="testimonials" id="testimonios">
+  <div class="container">
+    <div class="section-title">
+      <h2>Lo que dicen nuestros clientes</h2>
+      <p>Familias, oficinas y restaurantes de Puebla</p>
+    </div>
+    <div class="testi-grid">
+      <div class="testi-card">
+        <div class="stars">&#9733; &#9733; &#9733; &#9733; &#9733;</div>
+        <p>"Les mando mi lista por WhatsApp y en 2 horas tengo todo en mi casa. Las fresas son las mejores de Puebla. Ya no pierdo tiempo en el super."</p>
+        <div class="testi-author">
+          <div class="avatar">CR</div>
+          <div><strong>Carmen Beatriz Ruiz</strong><span>Mam&aacute; de 3 hijos, La Paz</span></div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <div class="stars">&#9733; &#9733; &#9733; &#9733; &#9733;</div>
+        <p>"Nos surten de fruta para jugos en el caf&eacute;. Nunca nos ha fallado. La pi&ntilde;a es dulce de verdad, no como la del supermercado."</p>
+        <div class="testi-author">
+          <div class="avatar">AP</div>
+          <div><strong>Andr&eacute;s P&eacute;rez</strong><span>Due&ntilde;o, Caf&eacute; Org&aacute;nico</span></div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <div class="stars">&#9733; &#9733; &#9733; &#9733; &#9733;</div>
+        <p>"Recomiendo a Guicho a todos mis pacientes. Productos reales, sin pesticidas, con sabor. La diferencia entre un jitomate de mercado y uno de super es enorme."</p>
+        <div class="testi-author">
+          <div class="avatar">SH</div>
+          <div><strong>Sof&iacute;a Hern&aacute;ndez</strong><span>Nutri&oacute;loga, Puebla</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="about-section">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-img">
+        <img src="https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=800&q=80" alt="Mercado Amalucan">
+      </div>
+      <div class="about-content">
+        <h2>22 a&ntilde;os en el Mercado Amalucan</h2>
+        <p>Frutas y Verduras Guicho es un negocio familiar con m&aacute;s de dos d&eacute;cadas en el Mercado P&uacute;blico Amalucan de Puebla. Construimos nuestra reputaci&oacute;n kilo a kilo, cliente a cliente.</p>
+        <p>Ahora llevamos la frescura del mercado a tu puerta. No somos una app. Somos tu vecino del mercado que ahora tambi&eacute;n reparte.</p>
+        <ul class="feature-list">
+          <li>Seleccionamos cada producto a mano</li>
+          <li>Conocemos a nuestros productores de campo</li>
+          <li>Entrega el mismo d&iacute;a en Puebla</li>
+          <li>Precio de mercado, sin comisiones</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="contact-section" id="contacto">
+  <div class="contact-grid">
+    <div class="contact-info">
+      <h3>Haz tu pedido hoy</h3>
+      <div class="info-row">
+        <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+        <div><strong>Ubicaci&oacute;n</strong><span>Boulevard Xonacatepec 122, Mercado P&uacute;blico Amalucan, Local 282-296, Col. Manuel Rivera Anaya, Puebla, C.P. 72309</span></div>
+      </div>
+      <div class="info-row">
+        <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+        <div><strong>Tel&eacute;fono</strong><span>222 287 8880</span></div>
+      </div>
+      <div class="info-row">
+        <svg viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-1.99.9-1.99 2L2 22l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zM9 11H7V9h2v2zm4 0h-2V9h2v2zm4 0h-2V9h2v2z"/></svg>
+        <div><strong>WhatsApp Business</strong><span>Pedidos r&aacute;pidos: responden en 5 min</span></div>
+      </div>
+      <div class="info-row">
+        <svg viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/></svg>
+        <div><strong>Horario</strong><span>Lunes a Domingo: 7:00 AM - 6:00 PM</span></div>
+      </div>
+      <div class="info-row">
+        <svg viewBox="0 0 24 24"><path d="M18.92 6.01C18.72 5.42 18.16 5 17.5 5h-11c-.66 0-1.21.42-1.42 1.01L3 12v8c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h12v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-8l-2.08-5.99zM6.5 16c-.83 0-1.5-.67-1.5-1.5S5.67 13 6.5 13s1.5.67 1.5 1.5S7.33 16 6.5 16zm11 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zM5 11l1.5-4.5h11L19 11H5z"/></svg>
+        <div><strong>Entregas</strong><span>Zona metropolitana de Puebla. &iexcl;El mismo d&iacute;a!</span></div>
+      </div>
+    </div>
+    <div class="contact-form">
+      <div class="form-group">
+        <label for="nombre">Nombre</label>
+        <input type="text" id="nombre" placeholder="Tu nombre">
+      </div>
+      <div class="form-group">
+        <label for="telefono">Tel&eacute;fono</label>
+        <input type="tel" id="telefono" placeholder="(222) XXX-XXXX">
+      </div>
+      <div class="form-group">
+        <label for="direccion">Direcci&oacute;n de entrega</label>
+        <input type="text" id="direccion" placeholder="Colonia, calle, n&uacute;mero...">
+      </div>
+      <div class="form-group">
+        <label for="pedido">Tu pedido</label>
+        <textarea id="pedido" placeholder="&iquest;Qu&eacute; frutas y verduras necesitas? O pide la Cesta Familiar..."></textarea>
+      </div>
+      <button class="btn-primary">Enviar pedido ahora &rarr;</button>
+      <p style="text-align:center; margin-top:14px; font-size:0.8rem; color:rgba(255,255,255,0.5);">Te confirmamos en 5 min con precio y hora de entrega</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-logo">Frutas y Verduras Guicho</div>
+  <p>Del Mercado Amalucan a tu puerta. 22 a&ntilde;os de frescura.</p>
+  <p>&copy; 2025 Frutas y Verduras Guicho — Todos los derechos reservados</p>
+</footer>
+
+</body>
+</html>

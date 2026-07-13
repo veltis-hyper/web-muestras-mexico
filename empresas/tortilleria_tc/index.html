@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tortillería Tollocan | Tortillas de Nixtamal Frescas en Toluca</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=DM+Serif+Display&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --maiz: #C8940F;
+      --maiz-claro: #E5B84A;
+      --verde: #3D6B2A;
+      --verde-oscuro: #2A4D1B;
+      --crema: #FDF8EE;
+      --tierra: #6B4423;
+      --negro: #1A1A1A;
+      --gris: #555;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'DM Sans', sans-serif; color: var(--negro); line-height: 1.6; background: var(--crema); }
+
+    /* DEMO BADGE */
+    .demo-badge {
+      background: var(--tierra); color: #fff;
+      text-align: center; padding: 8px 20px;
+      font-size: 0.78rem; font-weight: 500; letter-spacing: 0.5px;
+      position: sticky; top: 0; z-index: 2000;
+    }
+
+    /* HEADER */
+    header {
+      background: rgba(253,248,238,0.96); backdrop-filter: blur(10px);
+      position: sticky; top: 32px; z-index: 1000;
+      border-bottom: 1px solid rgba(200,148,15,0.15);
+    }
+    .header-container {
+      max-width: 1200px; margin: 0 auto; padding: 14px 24px;
+      display: flex; justify-content: space-between; align-items: center;
+    }
+    .logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+    .logo-mark {
+      width: 40px; height: 40px; background: var(--maiz); border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'DM Serif Display', serif; color: #fff; font-size: 1.3rem;
+    }
+    .logo-text { font-family: 'DM Serif Display', serif; font-size: 1.35rem; color: var(--tierra); }
+    .logo-text span { color: var(--verde); font-size: 0.75rem; display: block; font-family: 'DM Sans', sans-serif; font-weight: 500; letter-spacing: 2px; text-transform: uppercase; margin-top: -4px; }
+    nav ul { display: flex; list-style: none; gap: 32px; }
+    nav a { text-decoration: none; color: var(--gris); font-weight: 500; font-size: 0.9rem; transition: color 0.3s; }
+    nav a:hover { color: var(--maiz); }
+    .cta-header {
+      background: var(--verde); color: #fff; padding: 10px 22px; border-radius: 30px;
+      text-decoration: none; font-weight: 600; font-size: 0.85rem; transition: all 0.3s;
+    }
+    .cta-header:hover { background: var(--verde-oscuro); transform: translateY(-2px); }
+    .menu-toggle { display: none; font-size: 1.5rem; cursor: pointer; }
+
+    /* HERO */
+    .hero {
+      position: relative; min-height: 92vh; display: flex; align-items: center;
+      overflow: hidden;
+    }
+    .hero-bg {
+      position: absolute; inset: 0;
+      background: url('https://images.unsplash.com/photo-1565299585323-38d6b0865b47?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+    }
+    .hero-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(to right, rgba(26,26,26,0.88) 0%, rgba(26,26,26,0.65) 50%, rgba(26,26,26,0.3) 100%);
+    }
+    .hero-content {
+      position: relative; z-index: 2; max-width: 1200px; margin: 0 auto; padding: 60px 24px;
+      width: 100%;
+    }
+    .hero-tag {
+      display: inline-block; background: var(--maiz); color: #1a1a1a;
+      padding: 6px 18px; border-radius: 20px; font-size: 0.8rem; font-weight: 700;
+      letter-spacing: 1px; text-transform: uppercase; margin-bottom: 24px;
+    }
+    .hero h1 {
+      font-family: 'DM Serif Display', serif; font-size: 3.8rem; color: #fff;
+      line-height: 1.1; max-width: 600px; margin-bottom: 24px;
+    }
+    .hero h1 em { color: var(--maiz-claro); font-style: normal; }
+    .hero-sub {
+      font-size: 1.15rem; color: rgba(255,255,255,0.85); max-width: 500px;
+      margin-bottom: 36px; font-weight: 400;
+    }
+    .hero-cta-group { display: flex; gap: 16px; flex-wrap: wrap; align-items: center; }
+    .cta-primary {
+      background: var(--maiz); color: #1a1a1a; padding: 16px 36px; border-radius: 6px;
+      text-decoration: none; font-weight: 700; font-size: 1rem;
+      transition: all 0.3s; display: inline-block;
+    }
+    .cta-primary:hover { background: var(--maiz-claro); transform: translateY(-2px); }
+    .cta-secondary {
+      color: #fff; padding: 16px 32px; border: 2px solid rgba(255,255,255,0.3);
+      border-radius: 6px; text-decoration: none; font-weight: 600; font-size: 1rem;
+      transition: all 0.3s; display: inline-block;
+    }
+    .cta-secondary:hover { border-color: #fff; background: rgba(255,255,255,0.1); }
+    .hero-trust {
+      margin-top: 40px; display: flex; align-items: center; gap: 20px; flex-wrap: wrap;
+    }
+    .hero-trust-item { display: flex; align-items: center; gap: 8px; color: rgba(255,255,255,0.7); font-size: 0.85rem; }
+    .hero-trust-item strong { color: var(--maiz-claro); font-size: 1.1rem; }
+
+    /* NÚMEROS */
+    .stats-bar {
+      background: var(--verde); padding: 40px 24px;
+    }
+    .stats-grid {
+      max-width: 1200px; margin: 0 auto;
+      display: grid; grid-template-columns: repeat(4, 1fr); gap: 30px; text-align: center;
+    }
+    .stat-item h3 { font-family: 'DM Serif Display', serif; font-size: 2.4rem; color: var(--maiz-claro); }
+    .stat-item p { color: rgba(255,255,255,0.85); font-size: 0.9rem; margin-top: 4px; }
+
+    /* CÓMO FUNCIONA */
+    .como-funciona { padding: 100px 24px; max-width: 1200px; margin: 0 auto; }
+    .section-header { text-align: center; margin-bottom: 60px; }
+    .section-header h2 {
+      font-family: 'DM Serif Display', serif; font-size: 2.6rem; color: var(--tierra); margin-bottom: 12px;
+    }
+    .section-header p { color: var(--gris); font-size: 1.05rem; max-width: 500px; margin: 0 auto; }
+    .steps-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px;
+    }
+    .step {
+      text-align: center; padding: 40px 24px; background: #fff; border-radius: 16px;
+      border: 1px solid rgba(200,148,15,0.12); position: relative;
+    }
+    .step-num {
+      position: absolute; top: -18px; left: 50%; transform: translateX(-50%);
+      width: 36px; height: 36px; background: var(--maiz); color: #1a1a1a;
+      border-radius: 50%; display: flex; align-items: center; justify-content: center;
+      font-weight: 700; font-size: 0.9rem;
+    }
+    .step h3 { font-size: 1.15rem; margin: 12px 0 8px; color: var(--tierra); }
+    .step p { font-size: 0.9rem; color: var(--gris); }
+
+    /* PRODUCTOS */
+    .productos { background: #fff; padding: 100px 24px; }
+    .productos-inner { max-width: 1200px; margin: 0 auto; }
+    .productos-grid {
+      display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; margin-top: 50px;
+    }
+    .producto-card {
+      border-radius: 16px; overflow: hidden; border: 1px solid #eee;
+      transition: all 0.3s;
+    }
+    .producto-card:hover { transform: translateY(-6px); box-shadow: 0 20px 50px rgba(0,0,0,0.1); }
+    .producto-img { height: 180px; background: var(--crema); overflow: hidden; }
+    .producto-img img { width: 100%; height: 100%; object-fit: cover; }
+    .producto-info { padding: 20px; }
+    .producto-info h3 { font-size: 1.05rem; color: var(--tierra); margin-bottom: 6px; }
+    .producto-info p { font-size: 0.85rem; color: var(--gris); margin-bottom: 12px; }
+    .precio { font-weight: 700; color: var(--verde); font-size: 1rem; }
+    .precio span { font-size: 0.8rem; color: #999; font-weight: 400; }
+    .producto-tag {
+      display: inline-block; background: var(--crema); color: var(--tierra);
+      padding: 4px 12px; border-radius: 12px; font-size: 0.75rem; font-weight: 500; margin-bottom: 10px;
+    }
+
+    /* MAYOREO BANNER */
+    .mayoreo-banner {
+      background: url('https://images.unsplash.com/photo-1551754655-cd27e38d2076?auto=format&fit=crop&w=1200&q=80') center/cover no-repeat;
+      position: relative; padding: 80px 24px;
+    }
+    .mayoreo-banner::before {
+      content: ''; position: absolute; inset: 0;
+      background: linear-gradient(to right, rgba(42,77,27,0.92) 0%, rgba(42,77,27,0.75) 100%);
+    }
+    .mayoreo-content {
+      position: relative; z-index: 2; max-width: 1200px; margin: 0 auto;
+      display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center;
+    }
+    .mayoreo-text h2 {
+      font-family: 'DM Serif Display', serif; font-size: 2.4rem; color: #fff; margin-bottom: 16px;
+    }
+    .mayoreo-text h2 em { color: var(--maiz-claro); font-style: normal; }
+    .mayoreo-text p { color: rgba(255,255,255,0.85); margin-bottom: 20px; font-size: 1.05rem; }
+    .mayoreo-list { list-style: none; margin-bottom: 28px; }
+    .mayoreo-list li {
+      padding: 6px 0; padding-left: 28px; position: relative;
+      color: rgba(255,255,255,0.9); font-size: 0.95rem;
+    }
+    .mayoreo-list li::before { content: '✓'; position: absolute; left: 0; color: var(--maiz-claro); font-weight: 700; }
+    .mayoreo-cta {
+      background: var(--maiz); color: #1a1a1a; padding: 14px 32px; border-radius: 6px;
+      text-decoration: none; font-weight: 700; display: inline-block; transition: all 0.3s;
+    }
+    .mayoreo-cta:hover { background: var(--maiz-claro); }
+
+    /* TESTIMONIOS */
+    .testimonios { padding: 100px 24px; max-width: 1200px; margin: 0 auto; }
+    .testimonios-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; margin-top: 50px;
+    }
+    .testimonio {
+      background: #fff; padding: 32px; border-radius: 16px;
+      border: 1px solid rgba(200,148,15,0.1);
+    }
+    .testimonio-stars { color: var(--maiz); font-size: 1.1rem; margin-bottom: 14px; letter-spacing: 2px; }
+    .testimonio p { font-size: 0.95rem; color: var(--gris); margin-bottom: 20px; line-height: 1.7; font-style: italic; }
+    .testimonio-autor { display: flex; align-items: center; gap: 12px; }
+    .testimonio-avatar {
+      width: 44px; height: 44px; border-radius: 50%;
+      background: var(--crema); display: flex; align-items: center; justify-content: center;
+      font-weight: 700; color: var(--tierra); font-size: 0.9rem;
+    }
+    .testimonio-autor div strong { font-size: 0.9rem; color: var(--tierra); }
+    .testimonio-autor div span { font-size: 0.8rem; color: #999; }
+
+    /* CONTACTO */
+    .contacto { background: var(--verde); padding: 80px 24px; }
+    .contacto-inner {
+      max-width: 1200px; margin: 0 auto;
+      display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center;
+    }
+    .contacto-info h2 {
+      font-family: 'DM Serif Display', serif; font-size: 2.4rem; color: #fff; margin-bottom: 16px;
+    }
+    .contacto-info > p { color: rgba(255,255,255,0.85); margin-bottom: 28px; }
+    .contacto-item {
+      display: flex; align-items: flex-start; gap: 14px; margin-bottom: 18px;
+    }
+    .contacto-item .icon { font-size: 1.3rem; }
+    .contacto-item strong { display: block; color: var(--maiz-claro); font-size: 0.9rem; margin-bottom: 2px; }
+    .contacto-item span { color: rgba(255,255,255,0.85); font-size: 0.9rem; }
+    .contacto-form {
+      background: #fff; padding: 40px; border-radius: 16px;
+    }
+    .contacto-form h3 { font-size: 1.2rem; color: var(--tierra); margin-bottom: 20px; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .form-group { margin-bottom: 16px; }
+    .form-group label { display: block; font-size: 0.8rem; font-weight: 600; color: var(--gris); margin-bottom: 6px; text-transform: uppercase; letter-spacing: 0.5px; }
+    .form-group input, .form-group select, .form-group textarea {
+      width: 100%; padding: 12px 14px; border: 2px solid #eee; border-radius: 8px;
+      font-family: 'DM Sans', sans-serif; font-size: 0.95rem; transition: border-color 0.3s;
+    }
+    .form-group input:focus, .form-group select:focus, .form-group textarea:focus { outline: none; border-color: var(--maiz); }
+    .form-group textarea { resize: vertical; min-height: 100px; }
+    .submit-btn {
+      width: 100%; padding: 14px; background: var(--maiz); color: #1a1a1a;
+      border: none; border-radius: 8px; font-size: 1rem; font-weight: 700;
+      cursor: pointer; transition: all 0.3s; font-family: 'DM Sans', sans-serif;
+    }
+    .submit-btn:hover { background: var(--maiz-claro); }
+
+    /* FOOTER */
+    footer { background: var(--negro); color: #888; padding: 50px 24px 24px; }
+    .footer-inner { max-width: 1200px; margin: 0 auto; }
+    .footer-grid {
+      display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px; margin-bottom: 40px;
+    }
+    .footer-brand .logo-text { color: var(--maiz-claro); font-size: 1.3rem; }
+    .footer-brand p { margin-top: 12px; font-size: 0.9rem; line-height: 1.7; max-width: 320px; }
+    .footer-col h4 { color: #fff; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 16px; }
+    .footer-col a { color: #888; text-decoration: none; display: block; padding: 5px 0; font-size: 0.9rem; transition: color 0.3s; }
+    .footer-col a:hover { color: var(--maiz-claro); }
+    .footer-bottom { border-top: 1px solid #333; padding-top: 24px; text-align: center; font-size: 0.8rem; color: #666; }
+
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+      .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 24px; }
+      .productos-grid { grid-template-columns: repeat(2, 1fr); }
+      .steps-grid { grid-template-columns: 1fr; }
+      .testimonios-grid { grid-template-columns: 1fr; }
+      .mayoreo-content, .contacto-inner { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr; }
+      .hero h1 { font-size: 2.6rem; }
+    }
+    @media (max-width: 600px) {
+      nav, .cta-header { display: none; }
+      .menu-toggle { display: block; }
+      .productos-grid { grid-template-columns: 1fr; }
+      .stats-grid { grid-template-columns: 1fr 1fr; }
+      .hero h1 { font-size: 2.2rem; }
+      .form-row { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="demo-badge">DEMO — Esta es una muestra de tu futura página web. Contáctanos para activarla con tu dominio propio.</div>
+
+  <header>
+    <div class="header-container">
+      <a href="#" class="logo">
+        <div class="logo-mark">T</div>
+        <div class="logo-text">Tortillería Tollocan<span>Desde 2010</span></div>
+      </a>
+      <nav>
+        <ul>
+          <li><a href="#productos">Productos</a></li>
+          <li><a href="#mayoreo">Mayoreo</a></li>
+          <li><a href="#testimonios">Clientes</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+      </nav>
+      <a href="tel:7222777032" class="cta-header">Llamar ahora</a>
+      <div class="menu-toggle" onclick="document.querySelector('nav').classList.toggle('active')">☰</div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero" id="inicio">
+    <div class="hero-bg"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <div class="hero-tag">Entrega el mismo día en Toluca</div>
+      <h1>¿Cansado de tortillas que <em>saben a plástico</em>?</h1>
+      <p class="hero-sub">En Tortillería Tollocan moliendo nixtamal cada mañana desde 2010. Tortillas calientitas, masa fresca y totopos crujientes con el sabor casero que tus antojitos merecen.</p>
+      <div class="hero-cta-group">
+        <a href="tel:7222777032" class="cta-primary">Pide por WhatsApp — Responden en 5 min</a>
+        <a href="#productos" class="cta-secondary">Ver precios</a>
+      </div>
+      <div class="hero-trust">
+        <div class="hero-trust-item"><strong>15+</strong> años de tradición</div>
+        <div class="hero-trust-item"><strong>500+</strong> familias atendidas</div>
+        <div class="hero-trust-item"><strong>6:00 AM</strong> molienda diaria</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <section class="stats-bar">
+    <div class="stats-grid">
+      <div class="stat-item"><h3>15+</h3><p>Años elaborando tortillas</p></div>
+      <div class="stat-item"><h3>2,000+</h3><p>Kilos vendidos por semana</p></div>
+      <div class="stat-item"><h3>6:00 AM</h3><p>Inicio de molienda diaria</p></div>
+      <div class="stat-item"><h3>30 min</h3><p>Desde tu pedido hasta la entrega</p></div>
+    </div>
+  </section>
+
+  <!-- CÓMO PEDIR -->
+  <section class="como-funciona" id="como-pedir">
+    <div class="section-header">
+      <h2>Así de fácil es pedir</h2>
+      <p>Tres pasos para tener tortillas frescas en tu mesa hoy mismo</p>
+    </div>
+    <div class="steps-grid">
+      <div class="step">
+        <div class="step-num">1</div>
+        <h3>Escríbenos por WhatsApp</h3>
+        <p>Manda tu pedido por kilo al 722-277-7032. Dinos qué necesitas: tortillas, masa, totopos o quesadillas.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <h3>Confirmamos y preparamos</h3>
+        <p>Te confirmamos disponibilidad y precio. Tu pedido entra en la molienda de la siguiente hornada.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <h3>Recibe en tu puerta</h3>
+        <p>Entrega a domicilio en zonas cercanas a Paseo Tollocan o pasa a recoger calientito.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRODUCTOS -->
+  <section class="productos" id="productos">
+    <div class="productos-inner">
+      <div class="section-header">
+        <h2>Productos del día</h2>
+        <p>Elaborados con maíz 100% mexicano y nixtamal tradicional</p>
+      </div>
+      <div class="productos-grid">
+        <div class="producto-card">
+          <div class="producto-img">
+            <img src="https://images.unsplash.com/photo-1613514785913-1e23401d95ac?auto=format&fit=crop&w=600&q=80" alt="Tortillas de maíz frescas">
+          </div>
+          <div class="producto-info">
+            <span class="producto-tag">Más vendido</span>
+            <h3>Tortillas de Maíz</h3>
+            <p>Por kilo o medio kilo. Recién salidas del comal, sin conservadores.</p>
+            <div class="precio">$22 <span>pesos/kg</span></div>
+          </div>
+        </div>
+        <div class="producto-card">
+          <div class="producto-img">
+            <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=600&q=80" alt="Masa de nixtamal">
+          </div>
+          <div class="producto-info">
+            <span class="producto-tag">Para tus antojitos</span>
+            <h3>Masa de Nixtamal</h3>
+            <p>Molienda diaria para tamales, sopes, gorditas y más.</p>
+            <div class="precio">$18 <span>pesos/kg</span></div>
+          </div>
+        </div>
+        <div class="producto-card">
+          <div class="producto-img">
+            <img src="https://images.unsplash.com/photo-1541544744-375c0369c07c?auto=format&fit=crop&w=600&q=80" alt="Totopos y snacks">
+          </div>
+          <div class="producto-info">
+            <span class="producto-tag">Crujientes</span>
+            <h3>Totopos y Quesadillas</h3>
+            <p>Totopos horneados y quesadillas precocidas listas para freír.</p>
+            <div class="precio">$35 <span>pesos/bolsa</span></div>
+          </div>
+        </div>
+        <div class="producto-card">
+          <div class="producto-img">
+            <img src="https://images.unsplash.com/photo-1534352956036-cd81e27fed21?auto=format&fit=crop&w=600&q=80" alt="Tacos dorados">
+          </div>
+          <div class="producto-info">
+            <span class="producto-tag">Mayoreo</span>
+            <h3>Pedidos al Mayoreo</h3>
+            <p>Precios especiales para restaurantes, fondas y tiendas.</p>
+            <div class="precio">Cotizar <span>desde 20 kg</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MAYOREO -->
+  <section class="mayoreo-banner" id="mayoreo">
+    <div class="mayoreo-content">
+      <div class="mayoreo-text">
+        <h2>¿Tienes un restaurante o <em>fonda en Toluca?</em></h2>
+        <p>Abastece tu negocio con tortillas frescas todos los días. Entrega programada, precios de mayoreo y facturación disponible.</p>
+        <ul class="mayoreo-list">
+          <li>Precio especial desde 20 kg por día</li>
+          <li>Entrega puntual de lunes a sábado</li>
+          <li>Crédito para clientes frecuentes</li>
+          <li>Factura CFDI incluida</li>
+        </ul>
+        <a href="tel:7222777032" class="mayoreo-cta">Cotiza tu abasto mensual</a>
+      </div>
+      <div></div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIOS -->
+  <section class="testimonios" id="testimonios">
+    <div class="section-header">
+      <h2>Lo que dicen nuestros clientes</h2>
+      <p>Familias y negocios de Toluca que ya probaron la diferencia</p>
+    </div>
+    <div class="testimonios-grid">
+      <div class="testimonio">
+        <div class="testimonio-stars">★★★★★</div>
+        <p>"Desde que compramos aquí, mis hijos notaron la diferencia. Las tortillas duran más blanditas y el sabor es el de antes, como las de mi abuela. Pedimos 3 kg cada tercer día."</p>
+        <div class="testimonio-autor">
+          <div class="testimonio-avatar">MR</div>
+          <div><strong>María Elena Ríos</strong><span>Colonia Seminario, Toluca</span></div>
+        </div>
+      </div>
+      <div class="testimonio">
+        <div class="testimonio-stars">★★★★★</div>
+        <p>"Llevo 4 años abasteciendo mi fonda con tortillas de Tollocan. Nunca me han fallado en la entrega y mis clientes siempre preguntan dónde compro. El mayoreo me ahorra buen dinero."</p>
+        <div class="testimonio-autor">
+          <div class="testimonio-avatar">JG</div>
+          <div><strong>José Guadalupe Hernández</strong><span>Fonda "Doña Lupe", Centro Toluca</span></div>
+        </div>
+      </div>
+      <div class="testimonio">
+        <div class="testimonio-stars">★★★★★</div>
+        <p>"La masa para tamales es lo mejor. Muy manejable y con sabor auténtico. Mi pedido de Navidad fue de 15 kg y todo salió perfecto. Los recomiendo al 100%."</p>
+        <div class="testimonio-autor">
+          <div class="testimonio-avatar">CP</div>
+          <div><strong>Carmen Patricia Morales</strong><span>San Mateo Atenco</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACTO -->
+  <section class="contacto" id="contacto">
+    <div class="contacto-inner">
+      <div class="contacto-info">
+        <h2>Haz tu pedido hoy</h2>
+        <p>Estamos en Avenida Paseo Tollocan, Calle Andrés Quintana Roo. Lunes a sábado desde las 6:00 AM.</p>
+        <div class="contacto-item">
+          <div class="icon">📞</div>
+          <div><strong>Teléfono / WhatsApp</strong><span>722-277-7032</span></div>
+        </div>
+        <div class="contacto-item">
+          <div class="icon">📍</div>
+          <div><strong>Dirección</strong><span>Avenida Paseo Tollocan, Calle Andrés Quintana Roo, Toluca, Edo. de México</span></div>
+        </div>
+        <div class="contacto-item">
+          <div class="icon">🕐</div>
+          <div><strong>Horario</strong><span>Lun a Sáb: 6:00 AM — 3:00 PM<br>Domingo: 6:00 AM — 12:00 PM</span></div>
+        </div>
+        <div class="contacto-item">
+          <div class="icon">🚚</div>
+          <div><strong>Entrega</strong><span>Recoge en tienda o pide entrega a domicilio en zonas cercanas</span></div>
+        </div>
+      </div>
+      <div class="contacto-form">
+        <h3>Envía tu pedido</h3>
+        <form>
+          <div class="form-row">
+            <div class="form-group">
+              <label>Nombre</label>
+              <input type="text" placeholder="Tu nombre">
+            </div>
+            <div class="form-group">
+              <label>Teléfono</label>
+              <input type="tel" placeholder="722-000-0000">
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Producto</label>
+            <select>
+              <option>Tortillas de maíz</option>
+              <option>Masa de nixtamal</option>
+              <option>Totopos</option>
+              <option>Mayoreo (restaurante/negocio)</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Cantidad y detalles</label>
+            <textarea placeholder="¿Cuántos kilos? ¿Necesitas entrega a domicilio?"></textarea>
+          </div>
+          <button type="button" class="submit-btn">Enviar pedido por WhatsApp</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="logo-text">Tortillería Tollocan</div>
+          <p>El auténtico sabor del nixtamal en Toluca desde 2010. Molienda diaria, producto fresco y la calidez de un negocio familiar.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Productos</h4>
+          <a href="#productos">Tortillas frescas</a>
+          <a href="#productos">Masa de nixtamal</a>
+          <a href="#productos">Totopos y snacks</a>
+          <a href="#mayoreo">Venta al mayoreo</a>
+        </div>
+        <div class="footer-col">
+          <h4>Contacto</h4>
+          <a href="tel:7222777032">722-277-7032</a>
+          <a href="#contacto">WhatsApp</a>
+          <a href="#contacto">Paseo Tollocan, Toluca</a>
+        </div>
+      </div>
+      <div class="footer-bottom">© 2025 Tortillería Tollocan — Todos los derechos reservados</div>
+    </div>
+  </footer>
+
+</body>
+</html>

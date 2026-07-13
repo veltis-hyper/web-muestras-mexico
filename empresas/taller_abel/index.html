@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Taller Mecanico Abel Garcia — Diagnostico Honesto en Capultitlan, Toluca</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --azul-noche: #0d1b2a;
+      --azul-medio: #1b2838;
+      --rojo: #e63946;
+      --hueso: #f1faee;
+      --gris: #8892b0;
+      --blanco: #ffffff;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', sans-serif; color: var(--azul-noche); background: var(--hueso); line-height: 1.65; }
+
+    .demo-badge {
+      position: fixed; bottom: 20px; right: 20px; z-index: 9999;
+      background: rgba(13,27,42,0.92); color: #fff; padding: 10px 18px; border-radius: 8px;
+      font-size: 0.8rem; font-weight: 500; backdrop-filter: blur(10px); max-width: 260px; text-align: center;
+    }
+
+    header {
+      position: fixed; top: 0; left: 0; width: 100%; z-index: 1000;
+      background: rgba(241,250,238,0.96); backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(13,27,42,0.06);
+    }
+    .header-container { max-width: 1200px; margin: 0 auto; padding: 0 24px; display: flex; align-items: center; justify-content: space-between; height: 72px; }
+    .logo { font-family: 'Oswald', sans-serif; font-weight: 700; font-size: 1.4rem; color: var(--azul-noche); text-transform: uppercase; letter-spacing: 1px; }
+    .logo span { color: var(--rojo); }
+    nav ul { display: flex; gap: 32px; list-style: none; align-items: center; }
+    nav a { text-decoration: none; color: var(--azul-noche); font-weight: 500; font-size: 0.92rem; transition: color 0.3s; }
+    nav a:hover { color: var(--rojo); }
+    .btn-nav { background: var(--rojo); color: #fff !important; padding: 11px 24px; border-radius: 4px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; font-size: 0.85rem; }
+    .menu-toggle { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; }
+    .menu-toggle span { width: 24px; height: 2.5px; background: var(--azul-noche); border-radius: 2px; }
+
+    .hero {
+      min-height: 100vh; display: flex; align-items: center;
+      background: linear-gradient(rgba(13,27,42,0.8), rgba(13,27,42,0.6)), url('https://images.unsplash.com/photo-1625047509168-a7026f36de04?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+      position: relative; padding: 120px 24px 80px;
+    }
+    .hero-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+    .hero-content { animation: fadeInUp 1s ease; }
+    @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+    .hero h1 { font-family: 'Oswald', sans-serif; font-size: 3.4rem; color: #fff; line-height: 1.05; margin-bottom: 20px; text-transform: uppercase; }
+    .hero h1 em { color: var(--rojo); font-style: normal; }
+    .hero-sub { font-size: 1.1rem; color: rgba(255,255,255,0.85); margin-bottom: 32px; }
+    .hero-cta { display: flex; gap: 14px; flex-wrap: wrap; }
+    .btn-main { background: var(--rojo); color: #fff; padding: 16px 32px; border-radius: 4px; text-decoration: none; font-weight: 700; font-size: 0.95rem; text-transform: uppercase; letter-spacing: 0.5px; transition: transform 0.3s; display: inline-block; }
+    .btn-main:hover { transform: translateY(-2px); }
+    .btn-ghost { background: rgba(255,255,255,0.1); color: #fff; padding: 16px 32px; border-radius: 4px; text-decoration: none; font-weight: 600; border: 1px solid rgba(255,255,255,0.3); transition: background 0.3s; display: inline-block; }
+    .btn-ghost:hover { background: rgba(255,255,255,0.2); }
+    .hero-img { border-radius: 8px; overflow: hidden; box-shadow: 0 30px 60px rgba(0,0,0,0.4); animation: fadeInUp 1s ease 0.2s both; }
+    .hero-img img { width: 100%; height: 380px; object-fit: cover; display: block; }
+    .hero-badges { display: flex; gap: 20px; margin-top: 32px; }
+    .hero-badge-item { display: flex; align-items: center; gap: 8px; color: rgba(255,255,255,0.7); font-size: 0.85rem; }
+    .hero-badge-item::before { content: ''; width: 6px; height: 6px; background: var(--rojo); border-radius: 50%; }
+
+    .como-funciona { background: var(--blanco); padding: 90px 24px; }
+    .como-inner { max-width: 1000px; margin: 0 auto; }
+    .como-header { text-align: center; margin-bottom: 56px; }
+    .como-header h2 { font-family: 'Oswald', sans-serif; font-size: 2.2rem; text-transform: uppercase; }
+    .como-header p { color: var(--gris); }
+    .pasos { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
+    .paso { text-align: center; padding: 32px; border: 1px solid rgba(0,0,0,0.06); border-radius: 12px; }
+    .paso-num { font-family: 'Oswald', sans-serif; font-size: 2.5rem; color: var(--rojo); font-weight: 700; line-height: 1; margin-bottom: 12px; }
+    .paso h3 { font-size: 1.05rem; margin-bottom: 6px; }
+    .paso p { font-size: 0.88rem; color: var(--gris); }
+
+    .servicios { padding: 100px 24px; max-width: 1200px; margin: 0 auto; }
+    .servicios-header { text-align: center; margin-bottom: 56px; }
+    .servicios-header h2 { font-family: 'Oswald', sans-serif; font-size: 2.2rem; text-transform: uppercase; }
+    .servicios-header p { color: var(--gris); }
+    .serv-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
+    .serv-card { background: var(--blanco); padding: 32px; border-radius: 12px; border: 1px solid rgba(0,0,0,0.05); display: flex; gap: 20px; align-items: flex-start; transition: box-shadow 0.3s; }
+    .serv-card:hover { box-shadow: 0 10px 40px rgba(0,0,0,0.06); }
+    .serv-icon { width: 52px; height: 52px; background: var(--azul-noche); border-radius: 8px; display: flex; align-items: center; justify-content: center; color: #fff; font-size: 1.3rem; flex-shrink: 0; }
+    .serv-info h3 { font-size: 1.1rem; font-weight: 700; margin-bottom: 6px; }
+    .serv-info p { font-size: 0.9rem; color: var(--gris); margin-bottom: 10px; }
+    .serv-precio { font-size: 0.85rem; font-weight: 600; color: var(--rojo); text-transform: uppercase; }
+
+    .garantia { background: var(--azul-noche); color: #fff; padding: 80px 24px; }
+    .garantia-inner { max-width: 1000px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+    .garantia-text h2 { font-family: 'Oswald', sans-serif; font-size: 2.4rem; text-transform: uppercase; margin-bottom: 16px; }
+    .garantia-text p { color: rgba(255,255,255,0.7); margin-bottom: 24px; }
+    .garantia-list { list-style: none; }
+    .garantia-list li { display: flex; align-items: center; gap: 12px; margin-bottom: 14px; color: rgba(255,255,255,0.85); }
+    .garantia-list li::before { content: ''; width: 8px; height: 8px; background: var(--rojo); border-radius: 50%; flex-shrink: 0; }
+    .garantia-img { border-radius: 8px; overflow: hidden; }
+    .garantia-img img { width: 100%; height: 320px; object-fit: cover; display: block; }
+
+    .testimonios { padding: 100px 24px; max-width: 1100px; margin: 0 auto; }
+    .testimonios-header { text-align: center; margin-bottom: 48px; }
+    .testimonios-header h2 { font-family: 'Oswald', sans-serif; font-size: 2.2rem; text-transform: uppercase; }
+    .testi-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .testi-card { background: var(--blanco); border: 1px solid rgba(0,0,0,0.05); padding: 28px; border-radius: 12px; }
+    .testi-stars { color: var(--rojo); font-size: 1.1rem; margin-bottom: 14px; }
+    .testi-card p { font-size: 0.9rem; color: #444; margin-bottom: 18px; line-height: 1.7; }
+    .testi-autor { display: flex; align-items: center; gap: 12px; }
+    .testi-avatar { width: 40px; height: 40px; background: var(--azul-noche); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #fff; font-weight: 700; font-size: 0.8rem; }
+    .testi-autor div strong { font-size: 0.9rem; }
+    .testi-autor div span { font-size: 0.78rem; color: var(--gris); }
+
+    .cta-final { background: var(--rojo); color: #fff; padding: 80px 24px; text-align: center; }
+    .cta-final h2 { font-family: 'Oswald', sans-serif; font-size: 2.4rem; text-transform: uppercase; margin-bottom: 12px; }
+    .cta-final p { font-size: 1.1rem; color: rgba(255,255,255,0.85); margin-bottom: 28px; }
+    .btn-white { background: #fff; color: var(--rojo); padding: 16px 40px; border-radius: 4px; text-decoration: none; font-weight: 700; font-size: 1rem; text-transform: uppercase; letter-spacing: 0.5px; display: inline-block; transition: transform 0.3s; }
+    .btn-white:hover { transform: translateY(-2px); }
+
+    footer { background: var(--azul-noche); color: rgba(255,255,255,0.4); padding: 50px 24px 24px; }
+    .footer-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px; }
+    .footer-brand .logo { color: #fff; margin-bottom: 12px; }
+    .footer-brand p { font-size: 0.85rem; line-height: 1.7; }
+    .footer-col h4 { color: #fff; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 16px; }
+    .footer-col a { display: block; color: rgba(255,255,255,0.35); text-decoration: none; font-size: 0.85rem; margin-bottom: 8px; transition: color 0.3s; }
+    .footer-col a:hover { color: var(--rojo); }
+    .footer-bottom { max-width: 1100px; margin: 32px auto 0; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.06); text-align: center; font-size: 0.75rem; color: rgba(255,255,255,0.25); }
+
+    @media (max-width: 900px) {
+      .hero-inner { grid-template-columns: 1fr; }
+      .hero-img { display: none; }
+      .garantia-inner { grid-template-columns: 1fr; }
+      .serv-grid { grid-template-columns: 1fr; }
+      .pasos, .testi-grid { grid-template-columns: repeat(2, 1fr); }
+      .footer-inner { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 768px) {
+      .menu-toggle { display: flex; }
+      nav { position: absolute; top: 72px; left: 0; width: 100%; background: var(--hueso); max-height: 0; overflow: hidden; transition: max-height 0.4s; }
+      nav.active { max-height: 350px; border-bottom: 1px solid rgba(13,27,42,0.06); }
+      nav ul { flex-direction: column; padding: 20px 24px; gap: 16px; align-items: flex-start; }
+      .hero h1 { font-size: 2.6rem; }
+      .pasos, .testi-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="demo-badge">DEMO — Muestra de tu futura pagina web. Contactanos para activarla.</div>
+
+  <header>
+    <div class="header-container">
+      <div class="logo">Abel <span>Garcia</span></div>
+      <button class="menu-toggle" onclick="document.querySelector('nav').classList.toggle('active')">
+        <span></span><span></span><span></span>
+      </button>
+      <nav>
+        <ul>
+          <li><a href="#inicio">Inicio</a></li>
+          <li><a href="#servicios">Servicios</a></li>
+          <li><a href="#garantia">Garantia</a></li>
+          <li><a href="#contacto" class="btn-nav">Agenda cita</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero" id="inicio">
+    <div class="hero-inner">
+      <div class="hero-content">
+        <h1>Diagnostico <em>honesto</em>. Reparacion de verdad.</h1>
+        <p class="hero-sub">Cansado de talleres que te cobran por cosas que no necesitas? En Abel Garcia te decimos exactamente que tiene tu auto y cuanto cuesta arreglarlo. Sin sorpresas, sin cargos ocultos. Mas de 12 anos en Capultitlan.</p>
+        <div class="hero-cta">
+          <a href="tel:7225881961" class="btn-main">Cotiza gratis: 722 588 1961</a>
+          <a href="#servicios" class="btn-ghost">Ver servicios y precios</a>
+        </div>
+        <div class="hero-badges">
+          <div class="hero-badge-item">Diagnostico sin costo</div>
+          <div class="hero-badge-item">Garantia por escrito</div>
+          <div class="hero-badge-item">Repuestos de calidad</div>
+        </div>
+      </div>
+      <div class="hero-img">
+        <img src="https://images.unsplash.com/photo-1487754180451-c456f719a1fc?auto=format&fit=crop&w=800&q=80" alt="Taller mecanico profesional">
+      </div>
+    </div>
+  </section>
+
+  <section class="como-funciona">
+    <div class="como-inner">
+      <div class="como-header">
+        <h2>Como funciona</h2>
+        <p>Tres pasos. Cero sorpresas en la cuenta.</p>
+      </div>
+      <div class="pasos">
+        <div class="paso">
+          <div class="paso-num">01</div>
+          <h3>Agenda tu cita</h3>
+          <p>Llamanos o escribenos por WhatsApp. Te damos horario el mismo dia o al siguiente.</p>
+        </div>
+        <div class="paso">
+          <div class="paso-num">02</div>
+          <h3>Diagnostico real</h3>
+          <p>Revisamos tu auto con scanner y prueba de ruta. Te explicamos el problema en simple.</p>
+        </div>
+        <div class="paso">
+          <div class="paso-num">03</div>
+          <h3>Reparacion con garantia</h3>
+          <p>Reparamos con tu autorizacion. Te entregamos tu auto funcionando y una garantia por escrito.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="servicios" id="servicios">
+    <div class="servicios-header">
+      <h2>Servicios y precios</h2>
+      <p>Sabes cuanto vas a pagar antes de que toquemos tu auto</p>
+    </div>
+    <div class="serv-grid">
+      <div class="serv-card">
+        <div class="serv-icon">&#128269;</div>
+        <div class="serv-info">
+          <h3>Diagnostico Especializado</h3>
+          <p>Scanner, revision de 30 puntos y prueba de ruta. Sabras exactamente que le pasa a tu auto.</p>
+          <div class="serv-precio">Sin costo con reparacion</div>
+        </div>
+      </div>
+      <div class="serv-card">
+        <div class="serv-icon">&#128295;</div>
+        <div class="serv-info">
+          <h3>Cambio de Aceite y Filtros</h3>
+          <p>Aceite semisintetico, filtro de aceite, filtro de aire y revision de niveles.</p>
+          <div class="serv-precio">Desde $650</div>
+        </div>
+      </div>
+      <div class="serv-card">
+        <div class="serv-icon">&#128737;</div>
+        <div class="serv-info">
+          <h3>Frenos Completos</h3>
+          <p>Cambio de balatas, rectificado de discos, liquido de frenos y revision de cilindros.</p>
+          <div class="serv-precio">Desde $1,200</div>
+        </div>
+      </div>
+      <div class="serv-card">
+        <div class="serv-icon">&#9881;</div>
+        <div class="serv-info">
+          <h3>Alineacion y Balanceo</h3>
+          <p>Correccion de geometria, balanceo de 4 ruedas y revision de suspension.</p>
+          <div class="serv-precio">Desde $450</div>
+        </div>
+      </div>
+      <div class="serv-card">
+        <div class="serv-icon">&#128663;</div>
+        <div class="serv-info">
+          <h3>Revision Previa a Verificacion</h3>
+          <p>Revisamos escape, luces, frenos, suspension y emisiones para que pases sin problemas.</p>
+          <div class="serv-precio">Desde $350</div>
+        </div>
+      </div>
+      <div class="serv-card">
+        <div class="serv-icon">&#128736;</div>
+        <div class="serv-info">
+          <h3>Reparacion de Motor y Transmision</h3>
+          <p>Fallas mayores, sobrecalentamiento, ruidos extraños. Diagnostico previo y presupuesto fijo.</p>
+          <div class="serv-precio">Cotizacion sin costo</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="garantia" id="garantia">
+    <div class="garantia-inner">
+      <div class="garantia-text">
+        <h2>Por que confiar en nosotros</h2>
+        <p>No vendemos servicios que no necesitas. Primero diagnosticamos, despues explicamos y, con tu autorizacion, reparamos. Asi funciona un taller honesto.</p>
+        <ul class="garantia-list">
+          <li>Diagnostico completo sin costo si reparas con nosotros</li>
+          <li>Presupuesto por escrito antes de empezar cualquier trabajo</li>
+          <li>3 meses de garantia en mano de obra y repuestos</li>
+          <li>Repuestos originales o de marca certificada</li>
+          <li>+2,000 autos reparados en Capultitlan desde 2013</li>
+        </ul>
+      </div>
+      <div class="garantia-img">
+        <img src="https://images.unsplash.com/photo-1530046339160-ce3e530c7d2f?auto=format&fit=crop&w=800&q=80" alt="Mecanico trabajando">
+      </div>
+    </div>
+  </section>
+
+  <section class="testimonios">
+    <div class="testimonios-header">
+      <h2>Clientes de Capultitlan que regresan</h2>
+    </div>
+    <div class="testi-grid">
+      <div class="testi-card">
+        <div class="testi-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p>"Me querian cobrar $8,000 por una 'reparacion mayor' en otro taller. Vine con Abel, el diagnostico real fue un sensor de $850 pesos. Me salvo miles. Ahora solo vengo aqui."</p>
+        <div class="testi-autor">
+          <div class="testi-avatar">JL</div>
+          <div><strong>Javier Lopez</strong><span>Taxista, Capultitlan</span></div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p>"Llevo mi sedan desde 2018. Cambios de aceite, balatas, alineacion... siempre me dicen el precio exacto antes de empezar. Cumplen los tiempos y el auto queda perfecto."</p>
+        <div class="testi-autor">
+          <div class="testi-avatar">MR</div>
+          <div><strong>Mariana Ruiz</strong><span>Maestra, San Mateo Atenco</span></div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p>"Mi camioneta de trabajo se apagaba en semaforos. Dos talleres no supieron que era. Abel encontro el problema en 20 minutos: una valvula EGR sucia. $1,200 y solucionado."</p>
+        <div class="testi-autor">
+          <div class="testi-avatar">FC</div>
+          <div><strong>Fernando Cruz</strong><span>Constructor, Toluca</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-final" id="contacto">
+    <h2>No arriesgues tu auto con cualquiera</h2>
+    <p>Agenda tu diagnostico gratuito. En 30 minutos sabras exactamente que necesita tu vehiculo.</p>
+    <a href="tel:7225881961" class="btn-white">Llamar ahora: 722 588 1961</a>
+  </section>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div class="logo">Abel <span>Garcia</span></div>
+        <p>Taller mecanico de confianza en Capultitlan, Toluca. Diagnostico honesto, repuestos de calidad y garantia por escrito en cada reparacion.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Servicios</h4>
+        <a href="#">Diagnostico</a>
+        <a href="#">Mantenimiento</a>
+        <a href="#">Frenos</a>
+        <a href="#">Alineacion</a>
+      </div>
+      <div class="footer-col">
+        <h4>Contacto</h4>
+        <a href="tel:7225881961">722 588 1961</a>
+        <a href="#">WhatsApp</a>
+        <a href="#">Capultitlan, Toluca</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      © 2025 Taller Mecanico Abel Garcia — Toluca, Estado de Mexico.
+    </div>
+  </footer>
+
+</body>
+</html>

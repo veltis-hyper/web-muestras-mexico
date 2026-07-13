@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tortilleria Gonzalez — Tortillas 100% Nixtamalizadas en Toluca | 15 anos de tradicion</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --verde-bosque: #14532d;
+      --verde-claro: #2d6a4f;
+      --tierra: #d4a373;
+      --crema: #f7f9f4;
+      --blanco: #ffffff;
+      --negro: #1a1a1a;
+      --gris: #666666;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', sans-serif; color: var(--negro); background: var(--crema); line-height: 1.65; }
+
+    .demo-badge {
+      position: fixed; bottom: 20px; right: 20px; z-index: 9999;
+      background: rgba(20,83,45,0.92); color: #fff; padding: 10px 18px; border-radius: 8px;
+      font-size: 0.8rem; font-weight: 500; backdrop-filter: blur(10px); max-width: 260px; text-align: center;
+    }
+
+    header {
+      position: fixed; top: 0; left: 0; width: 100%; z-index: 1000;
+      background: rgba(247,249,244,0.96); backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(20,83,45,0.08);
+    }
+    .header-container { max-width: 1200px; margin: 0 auto; padding: 0 24px; display: flex; align-items: center; justify-content: space-between; height: 72px; }
+    .logo { font-family: 'Merriweather', serif; font-weight: 900; font-size: 1.3rem; color: var(--verde-bosque); }
+    .logo span { color: var(--tierra); }
+    nav ul { display: flex; gap: 32px; list-style: none; align-items: center; }
+    nav a { text-decoration: none; color: var(--negro); font-weight: 500; font-size: 0.92rem; transition: color 0.3s; }
+    nav a:hover { color: var(--verde-bosque); }
+    .btn-nav { background: var(--verde-bosque); color: #fff !important; padding: 11px 24px; border-radius: 50px; font-weight: 600; }
+    .menu-toggle { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; }
+    .menu-toggle span { width: 24px; height: 2.5px; background: var(--negro); border-radius: 2px; }
+
+    .hero {
+      min-height: 100vh; display: flex; align-items: center;
+      background: linear-gradient(rgba(20,83,45,0.7), rgba(20,83,45,0.5)), url('https://images.unsplash.com/photo-1596797038530-2c107229654b?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+      position: relative; padding: 120px 24px 80px;
+    }
+    .hero-inner { max-width: 1100px; margin: 0 auto; text-align: center; animation: fadeInUp 1s ease; }
+    @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+    .hero-tag { display: inline-block; background: var(--tierra); color: var(--negro); padding: 6px 18px; border-radius: 50px; font-size: 0.78rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 24px; }
+    .hero h1 { font-family: 'Merriweather', serif; font-size: 3.6rem; color: #fff; line-height: 1.1; margin-bottom: 20px; font-weight: 900; }
+    .hero h1 em { color: var(--tierra); font-style: normal; }
+    .hero-sub { font-size: 1.15rem; color: rgba(255,255,255,0.9); margin-bottom: 36px; max-width: 600px; margin-left: auto; margin-right: auto; }
+    .btn-main { background: var(--tierra); color: var(--negro); padding: 16px 36px; border-radius: 50px; text-decoration: none; font-weight: 700; font-size: 1rem; transition: transform 0.3s; display: inline-block; }
+    .btn-main:hover { transform: translateY(-2px); }
+    .btn-ghost { background: rgba(255,255,255,0.15); color: #fff; padding: 16px 36px; border-radius: 50px; text-decoration: none; font-weight: 600; border: 1px solid rgba(255,255,255,0.3); backdrop-filter: blur(10px); transition: background 0.3s; display: inline-block; }
+    .btn-ghost:hover { background: rgba(255,255,255,0.25); }
+    .hero-cta { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+    .hero-trust { display: flex; gap: 48px; justify-content: center; margin-top: 48px; }
+    .hero-trust div { text-align: center; }
+    .hero-trust strong { display: block; font-size: 2rem; color: #fff; font-family: 'Merriweather', serif; }
+    .hero-trust span { font-size: 0.8rem; color: rgba(255,255,255,0.7); }
+
+    .proceso { padding: 100px 24px; max-width: 1100px; margin: 0 auto; }
+    .proceso-header { text-align: center; margin-bottom: 56px; }
+    .proceso-header h2 { font-family: 'Merriweather', serif; font-size: 2.4rem; margin-bottom: 8px; }
+    .proceso-header p { color: var(--gris); }
+    .proceso-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
+    .proceso-card { text-align: center; padding: 28px 20px; }
+    .proceso-num { font-family: 'Merriweather', serif; font-size: 3rem; color: var(--tierra); font-weight: 900; line-height: 1; margin-bottom: 12px; }
+    .proceso-card h3 { font-size: 1.05rem; margin-bottom: 6px; }
+    .proceso-card p { font-size: 0.88rem; color: var(--gris); }
+
+    .productos { background: var(--blanco); padding: 100px 24px; }
+    .productos-inner { max-width: 1100px; margin: 0 auto; }
+    .productos-header { text-align: center; margin-bottom: 56px; }
+    .productos-header h2 { font-family: 'Merriweather', serif; font-size: 2.4rem; margin-bottom: 8px; }
+    .productos-header p { color: var(--gris); }
+    .prod-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+    .prod-card { background: var(--crema); border-radius: 20px; padding: 36px 28px; text-align: center; border: 1px solid rgba(20,83,45,0.08); transition: transform 0.3s; }
+    .prod-card:hover { transform: translateY(-5px); }
+    .prod-card .icon { font-size: 2.5rem; margin-bottom: 16px; }
+    .prod-card h3 { font-size: 1.15rem; font-weight: 700; margin-bottom: 8px; }
+    .prod-card p { font-size: 0.9rem; color: var(--gris); margin-bottom: 16px; }
+    .prod-card .precio { font-family: 'Merriweather', serif; font-size: 1.5rem; color: var(--verde-bosque); font-weight: 900; }
+    .prod-card .precio span { font-size: 0.85rem; color: var(--gris); font-weight: 400; display: block; margin-top: 4px; }
+
+    .historia { padding: 100px 24px; }
+    .historia-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+    .historia-img { border-radius: 20px; overflow: hidden; }
+    .historia-img img { width: 100%; height: 400px; object-fit: cover; display: block; }
+    .historia-text h2 { font-family: 'Merriweather', serif; font-size: 2.2rem; margin-bottom: 20px; }
+    .historia-text p { color: #444; margin-bottom: 16px; }
+    .historia-stats { display: flex; gap: 32px; margin-top: 32px; }
+    .historia-stats div strong { display: block; font-size: 1.8rem; color: var(--verde-bosque); font-family: 'Merriweather', serif; }
+    .historia-stats div span { font-size: 0.85rem; color: var(--gris); }
+
+    .testimonios { background: var(--verde-bosque); color: #fff; padding: 100px 24px; }
+    .testimonios-inner { max-width: 1100px; margin: 0 auto; }
+    .testimonios-header { text-align: center; margin-bottom: 56px; }
+    .testimonios-header h2 { font-family: 'Merriweather', serif; font-size: 2.4rem; }
+    .testi-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+    .testi-card { background: rgba(255,255,255,0.08); padding: 32px; border-radius: 16px; backdrop-filter: blur(10px); }
+    .testi-stars { color: var(--tierra); font-size: 1.1rem; margin-bottom: 14px; }
+    .testi-card p { font-size: 0.92rem; color: rgba(255,255,255,0.85); margin-bottom: 20px; line-height: 1.7; }
+    .testi-autor { display: flex; align-items: center; gap: 12px; }
+    .testi-avatar { width: 42px; height: 42px; background: var(--tierra); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--negro); font-weight: 700; font-size: 0.85rem; }
+    .testi-autor div strong { font-size: 0.9rem; }
+    .testi-autor div span { font-size: 0.78rem; color: rgba(255,255,255,0.6); }
+
+    .contacto { padding: 100px 24px; max-width: 1000px; margin: 0 auto; }
+    .contacto-header { text-align: center; margin-bottom: 48px; }
+    .contacto-header h2 { font-family: 'Merriweather', serif; font-size: 2.4rem; margin-bottom: 8px; }
+    .contacto-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+    .contacto-info { background: var(--blanco); padding: 40px; border-radius: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.04); }
+    .contacto-info h3 { font-size: 1.2rem; margin-bottom: 24px; }
+    .info-row { display: flex; align-items: flex-start; gap: 16px; margin-bottom: 20px; }
+    .info-row .dot { width: 10px; height: 10px; background: var(--tierra); border-radius: 50%; margin-top: 6px; flex-shrink: 0; }
+    .info-row h4 { font-size: 0.95rem; margin-bottom: 2px; }
+    .info-row p { font-size: 0.9rem; color: var(--gris); }
+    .contacto-form { background: var(--blanco); padding: 40px; border-radius: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.04); }
+    .contacto-form h3 { font-size: 1.2rem; margin-bottom: 24px; }
+    .form-group { margin-bottom: 16px; }
+    .form-group label { display: block; font-size: 0.85rem; font-weight: 600; margin-bottom: 6px; color: #444; }
+    .form-group input, .form-group textarea { width: 100%; padding: 12px 16px; border: 1.5px solid #e5e5e5; border-radius: 10px; font-family: 'Inter', sans-serif; font-size: 0.95rem; transition: border-color 0.3s; }
+    .form-group input:focus, .form-group textarea:focus { outline: none; border-color: var(--verde-bosque); }
+    .form-group textarea { resize: vertical; min-height: 100px; }
+    .btn-submit { background: var(--verde-bosque); color: #fff; padding: 14px; border-radius: 10px; border: none; font-weight: 600; font-size: 1rem; cursor: pointer; width: 100%; transition: background 0.3s; }
+    .btn-submit:hover { background: var(--verde-claro); }
+
+    footer { background: var(--negro); color: rgba(255,255,255,0.5); padding: 50px 24px 24px; }
+    .footer-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px; }
+    .footer-brand .logo { color: #fff; margin-bottom: 12px; }
+    .footer-brand p { font-size: 0.88rem; line-height: 1.7; }
+    .footer-col h4 { color: #fff; font-size: 0.9rem; margin-bottom: 16px; }
+    .footer-col a { display: block; color: rgba(255,255,255,0.4); text-decoration: none; font-size: 0.85rem; margin-bottom: 8px; transition: color 0.3s; }
+    .footer-col a:hover { color: var(--tierra); }
+    .footer-bottom { max-width: 1100px; margin: 32px auto 0; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.06); text-align: center; font-size: 0.78rem; color: rgba(255,255,255,0.3); }
+
+    @media (max-width: 900px) {
+      .proceso-grid { grid-template-columns: repeat(2, 1fr); }
+      .prod-grid, .testi-grid { grid-template-columns: repeat(2, 1fr); }
+      .historia-inner { grid-template-columns: 1fr; }
+      .contacto-grid { grid-template-columns: 1fr; }
+      .footer-inner { grid-template-columns: 1fr; }
+      .hero h1 { font-size: 2.8rem; }
+    }
+    @media (max-width: 768px) {
+      .menu-toggle { display: flex; }
+      nav { position: absolute; top: 72px; left: 0; width: 100%; background: var(--crema); max-height: 0; overflow: hidden; transition: max-height 0.4s; }
+      nav.active { max-height: 350px; border-bottom: 1px solid rgba(20,83,45,0.08); }
+      nav ul { flex-direction: column; padding: 20px 24px; gap: 16px; align-items: flex-start; }
+      .hero h1 { font-size: 2.2rem; }
+      .hero-trust { gap: 24px; }
+      .proceso-grid, .prod-grid, .testi-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="demo-badge">DEMO — Muestra de tu futura pagina web. Contactanos para activarla.</div>
+
+  <header>
+    <div class="header-container">
+      <div class="logo">Tortilleria <span>Gonzalez</span></div>
+      <button class="menu-toggle" onclick="document.querySelector('nav').classList.toggle('active')">
+        <span></span><span></span><span></span>
+      </button>
+      <nav>
+        <ul>
+          <li><a href="#inicio">Inicio</a></li>
+          <li><a href="#proceso">Proceso</a></li>
+          <li><a href="#productos">Productos</a></li>
+          <li><a href="#contacto" class="btn-nav">Pide: 722 203 8888</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero" id="inicio">
+    <div class="hero-inner">
+      <div class="hero-tag">Colonia Americas, Toluca</div>
+      <h1>La tortilla que tu <em>mesa merece</em></h1>
+      <p class="hero-sub">15 anos elaborando tortillas de maiz 100% nixtamalizadas en Toluca. Maiz de la region, proceso tradicional y sabor autentico. Para tu casa, tu negocio o tu taqueria.</p>
+      <div class="hero-cta">
+        <a href="tel:7222038888" class="btn-main">Llamar: 722 203 8888</a>
+        <a href="#productos" class="btn-ghost">Ver precios</a>
+      </div>
+      <div class="hero-trust">
+        <div><strong>15+</strong><span>anos de tradicion</span></div>
+        <div><strong>2,500kg</strong><span>de tortilla al mes</span></div>
+        <div><strong>365 dias</strong><span>de frescura</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="proceso" id="proceso">
+    <div class="proceso-header">
+      <h2>De la tierra a tu mesa</h2>
+      <p>Asi hacemos cada tortilla con el proceso tradicional que preserva el sabor autentico</p>
+    </div>
+    <div class="proceso-grid">
+      <div class="proceso-card">
+        <div class="proceso-num">01</div>
+        <h3>Seleccion de maiz</h3>
+        <p>Maiz criollo de productores de la region del Estado de Mexico. Grano seleccionado a mano.</p>
+      </div>
+      <div class="proceso-card">
+        <div class="proceso-num">02</div>
+        <h3>Nixtamalizacion</h3>
+        <p>Cocido en cal al estilo tradicional. Este proceso antiguo libera nutrientes y da el sabor caracteristico.</p>
+      </div>
+      <div class="proceso-card">
+        <div class="proceso-num">03</div>
+        <h3>Molienda en piedra</h3>
+        <p>Molimos el nixtamal en piedra volcanica para obtener la masa con la textura perfecta.</p>
+      </div>
+      <div class="proceso-card">
+        <div class="proceso-num">04</div>
+        <h3>Formado a mano</h3>
+        <p>Cada tortilla se forma y cuece el mismo dia. Sin conservadores, sin harina de trigo.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="productos" id="productos">
+    <div class="productos-inner">
+      <div class="productos-header">
+        <h2>Nuestros productos y precios</h2>
+        <p>Venta por kilo, mayoreo y servicio de molienda</p>
+      </div>
+      <div class="prod-grid">
+        <div class="prod-card">
+          <div class="icon">&#127805;</div>
+          <h3>Tortillas de Maiz</h3>
+          <p>Por kilo. Hechas el mismo dia. Calientitas y con el sabor de antes.</p>
+          <div class="precio">$22 <span>el kilo</span></div>
+        </div>
+        <div class="prod-card">
+          <div class="icon">&#9851;</div>
+          <h3>Molienda de Nixtamal</h3>
+          <p>Servicio de molienda para negocios, fondas y hogares. Por kilo de maiz.</p>
+          <div class="precio">$8 <span>por kg molido</span></div>
+        </div>
+        <div class="prod-card">
+          <div class="icon">&#128230;</div>
+          <h3>Venta por Mayoreo</h3>
+          <p>Para taquerias, restaurantes y comedores. Precio especial desde 10kg.</p>
+          <div class="precio">$18 <span>el kilo (10kg+)</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="historia">
+    <div class="historia-inner">
+      <div class="historia-img">
+        <img src="https://images.unsplash.com/photo-1562967960-700cbc4d6b7f?auto=format&fit=crop&w=800&q=80" alt="Tortillas de maiz frescas">
+      </div>
+      <div class="historia-text">
+        <h2>Una tradicion que se hereda</h2>
+        <p>En Tortilleria Gonzalez empezamos en 2009 con una metate y un sueno: llevar a cada mesa de Toluca el sabor autentico de la tortilla nixtamalizada. Hoy seguimos usando el mismo proceso de siempre, porque sabemos que la calidad no necesita atajos.</p>
+        <p>Nuestro maiz viene de productores del Estado de Mexico. Lo nixtamalizamos diariamente, lo molimos en piedra y lo convertimos en tortillas que mantienen frescura hasta la cena. No usamos harina de trigo ni conservadores: solo maiz, cal, agua y tradicion.</p>
+        <div class="historia-stats">
+          <div><strong>15+</strong><span>anos de tradicion</span></div>
+          <div><strong>40+</strong><span>negocios abastecidos</span></div>
+          <div><strong>100%</strong><span>maiz natural</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="testimonios">
+    <div class="testimonios-inner">
+      <div class="testimonios-header">
+        <h2>Lo que dicen nuestros clientes</h2>
+      </div>
+      <div class="testi-grid">
+        <div class="testi-card">
+          <div class="testi-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p>"Desde que cambie a las tortillas de Gonzalez, mis clientes notaron la diferencia. Dicen que saben a las de antes. Les compro 15kg diarios para mi taqueria y nunca me fallan."</p>
+          <div class="testi-autor">
+            <div class="testi-avatar">RM</div>
+            <div><strong>Roberto Martinez</strong><span>Taqueria El Guero, Toluca</span></div>
+          </div>
+        </div>
+        <div class="testi-card">
+          <div class="testi-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p>"Llevo mi maiz a moler desde hace 6 anos. Siempre limpio, rapido y con la textura perfecta para mis tamales. La familia Gonzalez sabe lo que hace."</p>
+          <div class="testi-autor">
+            <div class="testi-avatar">EP</div>
+            <div><strong>Elena Paredes</strong><span>Vendedora de tamales, Col. Americas</span></div>
+          </div>
+        </div>
+        <div class="testi-card">
+          <div class="testi-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p>"Compro para mi casa. Mis nietos dicen que aqui saben mejor las quesadillas. Frescas, suaves y duran toda la semana sin ponerse duras. Totalmente recomendadas."</p>
+          <div class="testi-autor">
+            <div class="testi-avatar">CS</div>
+            <div><strong>Carmen Sanchez</strong><span>Cliente desde 2015, Toluca</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contacto" id="contacto">
+    <div class="contacto-header">
+      <h2>Haz tu pedido o visitanos</h2>
+      <p>Atendemos de lunes a sabado desde las 5 de la manana</p>
+    </div>
+    <div class="contacto-grid">
+      <div class="contacto-info">
+        <h3>Informacion de contacto</h3>
+        <div class="info-row">
+          <div class="dot"></div>
+          <div><h4>Telefono</h4><p>722 203 8888</p></div>
+        </div>
+        <div class="info-row">
+          <div class="dot"></div>
+          <div><h4>Ubicacion</h4><p>Avenida Mexico, Calle Republica de Honduras, Colonia Americas, Toluca</p></div>
+        </div>
+        <div class="info-row">
+          <div class="dot"></div>
+          <div><h4>Horarios</h4><p>Lunes a Sabado: 5:00 AM - 3:00 PM<br>Domingo: 6:00 AM - 1:00 PM</p></div>
+        </div>
+        <div class="info-row">
+          <div class="dot"></div>
+          <div><h4>WhatsApp</h4><p>Escribenos para pedidos para llevar o servicio de molienda</p></div>
+        </div>
+      </div>
+      <div class="contacto-form">
+        <h3>Solicita informacion</h3>
+        <form onsubmit="event.preventDefault(); alert('Gracias por tu mensaje. Te contactaremos pronto.');">
+          <div class="form-group"><label>Nombre</label><input type="text" placeholder="Tu nombre"></div>
+          <div class="form-group"><label>Telefono</label><input type="tel" placeholder="722 000 0000"></div>
+          <div class="form-group"><label>Que necesitas?</label><textarea placeholder="Tortillas, molienda o mayoreo..."></textarea></div>
+          <button type="submit" class="btn-submit">Enviar mensaje</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div class="logo">Tortilleria <span>Gonzalez</span></div>
+        <p>Tortillas de maiz 100% nixtamalizadas en Toluca, Estado de Mexico. Tradicion, frescura y sabor autentico en cada tortilla.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Productos</h4>
+        <a href="#">Tortillas por kilo</a>
+        <a href="#">Molienda de nixtamal</a>
+        <a href="#">Venta por mayoreo</a>
+      </div>
+      <div class="footer-col">
+        <h4>Contacto</h4>
+        <a href="tel:7222038888">722 203 8888</a>
+        <a href="#">WhatsApp</a>
+        <a href="#">Col. Americas, Toluca</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      © 2025 Tortilleria Gonzalez — Toluca, Estado de Mexico.
+    </div>
+  </footer>
+
+</body>
+</html>

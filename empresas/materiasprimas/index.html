@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Materias Primas El Angel — Todo para Reposteria en Oaxaca | Precios de Mayoreo</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=DM+Serif+Display&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --cereza: #C9184A;
+      --rosa: #FF4D6D;
+      --dorado: #C9A227;
+      --crema: #FFF8F5;
+      --blanco: #ffffff;
+      --negro: #2B0A12;
+      --gris: #7a6b6e;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'DM Sans', sans-serif; color: var(--negro); background: var(--blanco); line-height: 1.65; }
+
+    .demo-badge {
+      position: fixed; bottom: 20px; right: 20px; z-index: 9999;
+      background: rgba(43,10,18,0.9); color: #fff; padding: 10px 18px; border-radius: 8px;
+      font-size: 0.8rem; font-weight: 500; backdrop-filter: blur(10px); max-width: 260px; text-align: center;
+    }
+
+    header {
+      position: fixed; top: 0; left: 0; width: 100%; z-index: 1000;
+      background: rgba(255,255,255,0.96); backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(201,24,74,0.08);
+    }
+    .header-container { max-width: 1200px; margin: 0 auto; padding: 0 24px; display: flex; align-items: center; justify-content: space-between; height: 72px; }
+    .logo { font-family: 'DM Serif Display', serif; font-size: 1.4rem; color: var(--cereza); }
+    .logo span { color: var(--dorado); }
+    nav ul { display: flex; gap: 28px; list-style: none; align-items: center; }
+    nav a { text-decoration: none; color: var(--negro); font-weight: 500; font-size: 0.92rem; transition: color 0.3s; }
+    nav a:hover { color: var(--cereza); }
+    .btn-nav { background: var(--cereza); color: #fff !important; padding: 11px 24px; border-radius: 50px; font-weight: 600; }
+    .menu-toggle { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; }
+    .menu-toggle span { width: 24px; height: 2.5px; background: var(--negro); border-radius: 2px; }
+
+    .hero {
+      min-height: 100vh; display: flex; align-items: center;
+      background: linear-gradient(rgba(43,10,18,0.75), rgba(43,10,18,0.5)), url('https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+      position: relative; padding: 120px 24px 80px;
+    }
+    .hero-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+    .hero-content { animation: fadeInUp 1s ease; }
+    @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+    .hero-tag { display: inline-block; background: var(--dorado); color: var(--negro); padding: 6px 16px; border-radius: 50px; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 20px; }
+    .hero h1 { font-family: 'DM Serif Display', serif; font-size: 3.2rem; color: #fff; line-height: 1.1; margin-bottom: 20px; }
+    .hero h1 em { color: var(--rosa); font-style: normal; }
+    .hero-sub { font-size: 1.1rem; color: rgba(255,255,255,0.88); margin-bottom: 32px; }
+    .hero-cta { display: flex; gap: 14px; flex-wrap: wrap; }
+    .btn-main { background: var(--rosa); color: #fff; padding: 15px 32px; border-radius: 50px; text-decoration: none; font-weight: 700; font-size: 0.95rem; transition: transform 0.3s; display: inline-block; }
+    .btn-main:hover { transform: translateY(-2px); }
+    .btn-gold { background: var(--dorado); color: var(--negro); padding: 15px 32px; border-radius: 50px; text-decoration: none; font-weight: 700; font-size: 0.95rem; transition: transform 0.3s; display: inline-block; }
+    .btn-gold:hover { transform: translateY(-2px); }
+    .hero-img { border-radius: 24px; overflow: hidden; box-shadow: 0 30px 60px rgba(0,0,0,0.3); animation: fadeInUp 1s ease 0.2s both; }
+    .hero-img img { width: 100%; height: 420px; object-fit: cover; display: block; }
+
+    .trust-bar { background: var(--crema); padding: 32px 24px; }
+    .trust-inner { max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-around; text-align: center; }
+    .trust-item strong { display: block; font-size: 1.8rem; color: var(--cereza); font-weight: 700; }
+    .trust-item span { font-size: 0.85rem; color: var(--gris); }
+
+    .productos { padding: 100px 24px; max-width: 1200px; margin: 0 auto; }
+    .productos-header { text-align: center; margin-bottom: 56px; }
+    .productos-header h2 { font-family: 'DM Serif Display', serif; font-size: 2.4rem; margin-bottom: 8px; }
+    .productos-header p { color: var(--gris); }
+    .productos-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+    .prod-card { background: #fff; border-radius: 20px; overflow: hidden; box-shadow: 0 10px 40px rgba(0,0,0,0.05); border: 1px solid rgba(0,0,0,0.04); transition: transform 0.3s; }
+    .prod-card:hover { transform: translateY(-6px); }
+    .prod-card img { width: 100%; height: 200px; object-fit: cover; }
+    .prod-info { padding: 24px; }
+    .prod-info h3 { font-size: 1.1rem; font-weight: 700; margin-bottom: 6px; }
+    .prod-info p { font-size: 0.88rem; color: var(--gris); margin-bottom: 14px; }
+    .prod-precio { font-size: 0.95rem; font-weight: 700; color: var(--cereza); }
+    .prod-precio span { font-size: 0.8rem; color: var(--gris); font-weight: 400; }
+
+    .como-pedir { background: var(--crema); padding: 90px 24px; }
+    .como-pedir-inner { max-width: 1000px; margin: 0 auto; }
+    .como-pedir-header { text-align: center; margin-bottom: 48px; }
+    .como-pedir-header h2 { font-family: 'DM Serif Display', serif; font-size: 2.2rem; }
+    .como-pedir-header p { color: var(--gris); }
+    .pasos { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
+    .paso { text-align: center; }
+    .paso-icon { width: 64px; height: 64px; background: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; font-size: 1.5rem; box-shadow: 0 8px 20px rgba(0,0,0,0.05); }
+    .paso h3 { font-size: 1.05rem; margin-bottom: 6px; }
+    .paso p { font-size: 0.9rem; color: var(--gris); }
+
+    .testimonios { padding: 100px 24px; max-width: 1100px; margin: 0 auto; }
+    .testimonios-header { text-align: center; margin-bottom: 48px; }
+    .testimonios-header h2 { font-family: 'DM Serif Display', serif; font-size: 2.4rem; }
+    .testi-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .testi-card { background: #fff; border: 1px solid rgba(0,0,0,0.06); padding: 32px; border-radius: 16px; }
+    .testi-stars { color: var(--dorado); font-size: 1.1rem; margin-bottom: 14px; }
+    .testi-card p { font-size: 0.92rem; color: #444; margin-bottom: 20px; line-height: 1.7; }
+    .testi-autor { display: flex; align-items: center; gap: 12px; }
+    .testi-avatar { width: 42px; height: 42px; background: var(--cereza); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #fff; font-weight: 700; font-size: 0.85rem; }
+    .testi-autor div strong { font-size: 0.9rem; }
+    .testi-autor div span { font-size: 0.78rem; color: var(--gris); }
+
+    .garantia { background: var(--negro); color: #fff; padding: 80px 24px; text-align: center; }
+    .garantia-inner { max-width: 700px; margin: 0 auto; }
+    .garantia h2 { font-family: 'DM Serif Display', serif; font-size: 2.2rem; margin-bottom: 16px; }
+    .garantia p { color: rgba(255,255,255,0.75); font-size: 1.05rem; margin-bottom: 28px; }
+    .garantia-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 40px; }
+    .garantia-item { background: rgba(255,255,255,0.05); padding: 28px; border-radius: 16px; }
+    .garantia-item h3 { color: var(--dorado); font-size: 1rem; margin-bottom: 6px; }
+    .garantia-item p { font-size: 0.85rem; color: rgba(255,255,255,0.6); margin: 0; }
+
+    footer { background: #1a0a0e; color: rgba(255,255,255,0.55); padding: 60px 24px 30px; }
+    .footer-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 48px; }
+    .footer-brand .logo { color: #fff; margin-bottom: 14px; }
+    .footer-brand p { font-size: 0.88rem; line-height: 1.7; }
+    .footer-col h4 { color: #fff; font-size: 0.95rem; margin-bottom: 18px; }
+    .footer-col a { display: block; color: rgba(255,255,255,0.45); text-decoration: none; font-size: 0.88rem; margin-bottom: 10px; transition: color 0.3s; }
+    .footer-col a:hover { color: var(--rosa); }
+    .footer-bottom { max-width: 1200px; margin: 36px auto 0; padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.06); text-align: center; font-size: 0.78rem; color: rgba(255,255,255,0.3); }
+
+    @media (max-width: 900px) {
+      .hero-inner { grid-template-columns: 1fr; }
+      .hero-img { display: none; }
+      .productos-grid, .pasos, .testi-grid, .garantia-grid { grid-template-columns: repeat(2, 1fr); }
+      .footer-inner { grid-template-columns: 1fr; }
+      .trust-inner { flex-wrap: wrap; gap: 20px; }
+    }
+    @media (max-width: 768px) {
+      .menu-toggle { display: flex; }
+      nav { position: absolute; top: 72px; left: 0; width: 100%; background: #fff; max-height: 0; overflow: hidden; transition: max-height 0.4s; }
+      nav.active { max-height: 350px; border-bottom: 1px solid rgba(201,24,74,0.08); }
+      nav ul { flex-direction: column; padding: 20px 24px; gap: 16px; align-items: flex-start; }
+      .hero h1 { font-size: 2.4rem; }
+      .productos-grid, .pasos, .testi-grid, .garantia-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="demo-badge">DEMO — Muestra de tu futura pagina web. Contactanos para activarla.</div>
+
+  <header>
+    <div class="header-container">
+      <div class="logo">El <span>Angel</span></div>
+      <button class="menu-toggle" onclick="document.querySelector('nav').classList.toggle('active')">
+        <span></span><span></span><span></span>
+      </button>
+      <nav>
+        <ul>
+          <li><a href="#inicio">Inicio</a></li>
+          <li><a href="#productos">Catalogo</a></li>
+          <li><a href="#como-pedir">Como pedir</a></li>
+          <li><a href="#contacto" class="btn-nav">WhatsApp: 951 516 0319</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero" id="inicio">
+    <div class="hero-inner">
+      <div class="hero-content">
+        <div class="hero-tag">Colonia Centro, Oaxaca</div>
+        <h1>Todo para tu <em>reposteria</em> sin salir de Oaxaca</h1>
+        <p class="hero-sub">Chocolates, harinas, moldes, empaques y mas de 500 productos en stock. Precios de mayoreo desde tu primera compra. Asesoramos a reposteros y panaderos de Oaxaca desde hace 15 anos.</p>
+        <div class="hero-cta">
+          <a href="#productos" class="btn-main">Ver catalogo</a>
+          <a href="https://wa.me/529515160319" class="btn-gold">Pedir por WhatsApp</a>
+        </div>
+      </div>
+      <div class="hero-img">
+        <img src="https://images.unsplash.com/photo-1558618666-fcd25c85f82e?auto=format&fit=crop&w=800&q=80" alt="Materias primas para reposteria">
+      </div>
+    </div>
+  </section>
+
+  <section class="trust-bar">
+    <div class="trust-inner">
+      <div class="trust-item"><strong>500+</strong><span>productos en stock</span></div>
+      <div class="trust-item"><strong>15 anos</strong><span>sirviendo reposteros</span></div>
+      <div class="trust-item"><strong>24h</strong><span>entrega en Oaxaca capital</span></div>
+      <div class="trust-item"><strong>Desde 1 pza</strong><span>precio de mayoreo</span></div>
+    </div>
+  </section>
+
+  <section class="productos" id="productos">
+    <div class="productos-header">
+      <h2>Lo mas buscado</h2>
+      <p>Estos son los productos que nuestros clientes compran cada semana</p>
+    </div>
+    <div class="productos-grid">
+      <div class="prod-card">
+        <img src="https://images.unsplash.com/photo-1606312619070-d48b4c652a52?auto=format&fit=crop&w=800&q=80" alt="Chocolate para mesa">
+        <div class="prod-info">
+          <h3>Chocolate para Mesa Ibarra</h3>
+          <p>Chocolate tradicional mexicano para mesa, 540g. Ideal para postres y bebidas calientes.</p>
+          <div class="prod-precio">$45 <span>mayoreo $38</span></div>
+        </div>
+      </div>
+      <div class="prod-card">
+        <img src="https://images.unsplash.com/photo-1586444248902-2f64eddc13df?auto=format&fit=crop&w=800&q=80" alt="Harina para pastel">
+        <div class="prod-info">
+          <h3>Harina para Pastel Trigal</h3>
+          <p>Harina de trigo especial para reposteria. Bolsa de 1kg. Suavidad garantizada.</p>
+          <div class="prod-precio">$28 <span>mayoreo $24</span></div>
+        </div>
+      </div>
+      <div class="prod-card">
+        <img src="https://images.unsplash.com/photo-1606890737304-57a1ca8a5b62?auto=format&fit=crop&w=800&q=80" alt="Moldes de reposteria">
+        <div class="prod-info">
+          <h3>Molde para Pastel Redondo</h3>
+          <p>Aluminio antiadherente, 24cm diametro. Resistente y facil de desmoldar.</p>
+          <div class="prod-precio">$85 <span>mayoreo $72</span></div>
+        </div>
+      </div>
+      <div class="prod-card">
+        <img src="https://images.unsplash.com/photo-1590080875515-8a3a8dc5735e?auto=format&fit=crop&w=800&q=80" alt="Azucar glass">
+        <div class="prod-info">
+          <h3>Azucar Glass 1kg</h3>
+          <p>Azucar refinada en polvo para decoracion de pasteles y preparacion de glaseados.</p>
+          <div class="prod-precio">$32 <span>mayoreo $27</span></div>
+        </div>
+      </div>
+      <div class="prod-card">
+        <img src="https://images.unsplash.com/photo-1621303837174-89787a7d4729?auto=format&fit=crop&w=800&q=80" alt="Cobertura de chocolate">
+        <div class="prod-info">
+          <h3>Cobertura de Chocolate 1kg</h3>
+          <p>Chocolate para fundir y cubrir. Ideal para bombones, fresas con crema y trufas.</p>
+          <div class="prod-precio">$120 <span>mayoreo $105</span></div>
+        </div>
+      </div>
+      <div class="prod-card">
+        <img src="https://images.unsplash.com/photo-1563729784474-d77dbb933a9e?auto=format&fit=crop&w=800&q=80" alt="Cajas para pastel">
+        <div class="prod-info">
+          <h3>Caja para Pastel con Ventana</h3>
+          <p>Caja blanca con ventana transparente, 25x25x15cm. Presenta tus pasteles con estilo.</p>
+          <div class="prod-precio">$18 <span>mayoreo $14</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="como-pedir" id="como-pedir">
+    <div class="como-pedir-inner">
+      <div class="como-pedir-header">
+        <h2>Como comprar en 3 pasos</h2>
+        <p>Sin filas, sin complicaciones. Pedido directo por WhatsApp.</p>
+      </div>
+      <div class="pasos">
+        <div class="paso">
+          <div class="paso-icon">1</div>
+          <h3>Mandanos tu lista</h3>
+          <p>Escríbenos por WhatsApp con los productos que necesitas y las cantidades. Te confirmamos disponibilidad en minutos.</p>
+        </div>
+        <div class="paso">
+          <div class="paso-icon">2</div>
+          <h3>Recibe tu cotizacion</h3>
+          <p>Te enviamos precios con descuento de mayoreo. No hay compra minima: desde 1 pieza ya tienes precio especial.</p>
+        </div>
+        <div class="paso">
+          <div class="paso-icon">3</div>
+          <h3>Recoge o te llevamos</h3>
+          <p>Pasa por el local en Centro o te enviamos a domicilio en Oaxaca capital. Entrega en 24 horas habiles.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="testimonios" id="testimonios">
+    <div class="testimonios-header">
+      <h2>Reposteros que nos recomiendan</h2>
+    </div>
+    <div class="testi-grid">
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <p>"Llevo 4 anos comprandoles todo para mi negocio de pasteles. Nunca me han faltado productos y los precios de mayoreo son los mejores de Oaxaca. El equipo me asesora cuando quiero probar algo nuevo."</p>
+        <div class="testi-autor">
+          <div class="testi-avatar">CM</div>
+          <div><strong>Carmen Morales</strong><span>Pasteleria Dulce Hogar, Oaxaca</span></div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <p>"Empece mi negocio de brownies hace 8 meses y El Angel me ha acompanado desde el primer dia. Me explicaron que chocolate usar y como calcular mis costos. Hoy vendo mas de 200 brownies a la semana."</p>
+        <div class="testi-autor">
+          <div class="testi-avatar">AR</div>
+          <div><strong>Andres Rios</strong><span>Brownies Oaxaca, emprendedor</span></div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <p>"La variedad de moldes y empaques es increible. Antes tenia que ir a 3 tiendas distintas. Aqui encuentro todo: desde la harina hasta la caja para entregar. Me ahorran horas cada semana."</p>
+        <div class="testi-autor">
+          <div class="testi-avatar">PM</div>
+          <div><strong>Patricia Mendez</strong><span>Repostera desde casa, Col. Centro</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="garantia" id="contacto">
+    <div class="garantia-inner">
+      <h2>Tu creatividad, nuestra materia prima</h2>
+      <p>¿Necesitas algo que no ves en el catalogo? Escribenos. Traemos productos especiales por pedido con entrega garantizada.</p>
+      <a href="https://wa.me/529515160319" class="btn-main">Cotiza gratis por WhatsApp</a>
+      <div class="garantia-grid">
+        <div class="garantia-item">
+          <h3>Precio de mayoreo</h3>
+          <p>Desde 1 pieza. Sin compra minima.</p>
+        </div>
+        <div class="garantia-item">
+          <h3>Asesoria gratis</h3>
+          <p>Te ayudamos a elegir lo mejor.</p>
+        </div>
+        <div class="garantia-item">
+          <h3>Entrega 24h</h3>
+          <p>En Oaxaca capital y alrededores.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div class="logo">Materias Primas <span>El Angel</span></div>
+        <p>El surtido mas completo de insumos para reposteria en Oaxaca de Juarez. Precios de mayoreo, asesoria personalizada y entrega a domicilio.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Categorias</h4>
+        <a href="#">Chocolates</a>
+        <a href="#">Harinas y azucares</a>
+        <a href="#">Moldes y utensilios</a>
+        <a href="#">Empaques</a>
+      </div>
+      <div class="footer-col">
+        <h4>Contacto</h4>
+        <a href="tel:9515160319">951 516 0319</a>
+        <a href="#">WhatsApp</a>
+        <a href="#">Colonia Centro, Oaxaca</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      © 2025 Materias Primas El Angel — Oaxaca de Juarez.
+    </div>
+  </footer>
+
+</body>
+</html>
