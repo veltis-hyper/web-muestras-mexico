@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SERALUM | Portones y Herrería de Autor en Mérida</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Cinzel:wght@600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --color-primary: #1a1a2e;
+    --color-gold: #c9a227;
+    --color-gold-light: #e8c84a;
+    --color-cream: #f5f3ef;
+    --color-dark: #0f0f1a;
+    --color-text: #2d2d3a;
+    --color-muted: #6b6b7b;
+    --shadow: 0 12px 40px rgba(0,0,0,0.1);
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Inter', sans-serif; color: var(--color-text); background: #fff; line-height: 1.7; }
+
+  .demo-badge {
+    position: fixed; bottom: 24px; right: 24px;
+    background: rgba(26,26,46,0.9); color: var(--color-gold);
+    padding: 10px 20px; border-radius: 8px; font-size: 0.78rem; font-weight: 600;
+    z-index: 9999; backdrop-filter: blur(8px); border: 1px solid rgba(201,162,39,0.3);
+    letter-spacing: 0.3px;
+  }
+  .demo-badge span { color: #fff; font-weight: 700; }
+
+  header {
+    position: fixed; top: 0; left: 0; right: 0;
+    background: rgba(255,255,255,0.95); backdrop-filter: blur(12px);
+    box-shadow: 0 1px 20px rgba(0,0,0,0.05); z-index: 1000;
+  }
+  .header-container { max-width: 1200px; margin: 0 auto; padding: 0 28px; display: flex; align-items: center; justify-content: space-between; height: 72px; }
+  .logo { display: flex; align-items: center; gap: 12px; font-family: 'Cinzel', serif; font-weight: 700; font-size: 1.3rem; color: var(--color-primary); text-decoration: none; }
+  .logo-mark { width: 38px; height: 38px; background: var(--color-primary); border-radius: 8px; display: flex; align-items: center; justify-content: center; }
+  .logo-mark svg { width: 22px; height: 22px; fill: var(--color-gold); }
+  nav ul { display: flex; list-style: none; gap: 36px; }
+  nav a { text-decoration: none; color: var(--color-text); font-weight: 600; font-size: 0.88rem; transition: color 0.3s; }
+  nav a:hover { color: var(--color-gold); }
+  .menu-toggle { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 8px; }
+  .menu-toggle span { width: 24px; height: 2.5px; background: var(--color-primary); border-radius: 2px; }
+  .btn-header { padding: 10px 24px; background: var(--color-primary); color: var(--color-gold); text-decoration: none; font-weight: 700; font-size: 0.85rem; border-radius: 6px; transition: all 0.3s; }
+  .btn-header:hover { background: var(--color-gold); color: var(--color-primary); }
+
+  .hero {
+    min-height: 100vh; display: flex; align-items: center;
+    background: linear-gradient(90deg, rgba(15,15,26,0.92) 0%, rgba(15,15,26,0.75) 50%, rgba(15,15,26,0.4) 100%),
+                url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1600&q=80');
+    background-size: cover; background-position: center;
+    padding: 100px 28px 80px;
+  }
+  .hero-grid { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 60px; align-items: center; }
+  .hero-content { color: #fff; }
+  .hero-tag { display: inline-block; border: 1px solid var(--color-gold); color: var(--color-gold); padding: 6px 18px; border-radius: 50px; font-size: 0.8rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 24px; }
+  .hero h1 { font-family: 'Cinzel', serif; font-size: 3rem; font-weight: 700; line-height: 1.15; margin-bottom: 20px; }
+  .hero h1 em { color: var(--color-gold-light); font-style: normal; }
+  .hero p { font-size: 1.1rem; opacity: 0.85; margin-bottom: 32px; max-width: 520px; line-height: 1.8; }
+  .hero-cta { display: flex; gap: 16px; flex-wrap: wrap; }
+  .btn-primary { padding: 16px 36px; background: var(--color-gold); color: var(--color-dark); text-decoration: none; font-weight: 800; font-size: 0.95rem; border-radius: 6px; transition: all 0.3s; display: inline-block; }
+  .btn-primary:hover { background: var(--color-gold-light); transform: translateY(-2px); }
+  .btn-outline { padding: 16px 36px; border: 2px solid rgba(255,255,255,0.4); color: #fff; text-decoration: none; font-weight: 700; font-size: 0.95rem; border-radius: 6px; transition: all 0.3s; display: inline-block; }
+  .btn-outline:hover { border-color: var(--color-gold); color: var(--color-gold); }
+  .hero-trust { margin-top: 40px; display: flex; gap: 32px; }
+  .hero-trust div { text-align: center; }
+  .hero-trust strong { display: block; font-size: 1.6rem; font-weight: 800; color: var(--color-gold); }
+  .hero-trust span { font-size: 0.8rem; opacity: 0.7; }
+  .hero-img { border-radius: 12px; overflow: hidden; box-shadow: 0 30px 60px rgba(0,0,0,0.3); }
+  .hero-img img { width: 100%; height: 420px; object-fit: cover; display: block; }
+
+  section { padding: 100px 28px; }
+  .container { max-width: 1140px; margin: 0 auto; }
+
+  .process { background: var(--color-cream); }
+  .section-title { font-family: 'Cinzel', serif; font-size: 2.2rem; color: var(--color-primary); margin-bottom: 12px; text-align: center; }
+  .section-subtitle { text-align: center; color: var(--color-muted); margin-bottom: 60px; max-width: 600px; margin-left: auto; margin-right: auto; }
+  .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; }
+  .step { text-align: center; }
+  .step-num { width: 56px; height: 56px; background: var(--color-primary); color: var(--color-gold); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 1.2rem; margin: 0 auto 20px; }
+  .step h3 { font-size: 1.1rem; font-weight: 700; margin-bottom: 10px; color: var(--color-primary); }
+  .step p { font-size: 0.92rem; color: var(--color-muted); }
+
+  .services-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 28px; }
+  .service-card {
+    display: flex; gap: 20px; padding: 28px; border-radius: 12px;
+    border: 1px solid #e8e8ee; transition: all 0.3s;
+  }
+  .service-card:hover { border-color: var(--color-gold); box-shadow: var(--shadow); transform: translateY(-4px); }
+  .service-card img { width: 120px; height: 90px; object-fit: cover; border-radius: 8px; flex-shrink: 0; }
+  .service-card h3 { font-size: 1.05rem; font-weight: 700; margin-bottom: 6px; color: var(--color-primary); }
+  .service-card p { font-size: 0.88rem; color: var(--color-muted); margin-bottom: 8px; }
+  .service-card .price { font-size: 0.85rem; font-weight: 700; color: var(--color-gold); }
+
+  .testimonials { background: var(--color-primary); color: #fff; }
+  .testimonials .section-title { color: #fff; }
+  .testimonials .section-subtitle { color: rgba(255,255,255,0.6); }
+  .testi-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+  .testi-card { background: rgba(255,255,255,0.06); padding: 32px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.08); }
+  .stars { color: var(--color-gold); font-size: 1.1rem; margin-bottom: 16px; }
+  .testi-card p { font-size: 0.95rem; line-height: 1.7; margin-bottom: 20px; opacity: 0.9; }
+  .testi-author { display: flex; align-items: center; gap: 12px; }
+  .testi-author-img { width: 44px; height: 44px; border-radius: 50%; background: var(--color-gold); display: flex; align-items: center; justify-content: center; color: var(--color-primary); font-weight: 800; font-size: 0.9rem; }
+  .testi-author strong { display: block; font-size: 0.9rem; }
+  .testi-author span { font-size: 0.78rem; opacity: 0.6; }
+
+  .guarantee { background: var(--color-cream); text-align: center; }
+  .guarantee h2 { font-family: 'Cinzel', serif; font-size: 2rem; color: var(--color-primary); margin-bottom: 16px; }
+  .guarantee p { max-width: 600px; margin: 0 auto 32px; color: var(--color-muted); }
+  .guarantee-badge { display: inline-flex; align-items: center; gap: 12px; padding: 16px 32px; background: #fff; border-radius: 50px; box-shadow: var(--shadow); border: 2px solid var(--color-gold); }
+  .guarantee-badge strong { font-size: 1.1rem; color: var(--color-primary); }
+  .guarantee-badge span { font-size: 0.85rem; color: var(--color-muted); }
+
+  .contact { background: #fff; }
+  .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; }
+  .contact-info h3 { font-family: 'Cinzel', serif; font-size: 1.5rem; margin-bottom: 24px; }
+  .contact-row { display: flex; gap: 16px; margin-bottom: 20px; }
+  .contact-row .icon { width: 44px; height: 44px; background: var(--color-cream); border-radius: 10px; display: flex; align-items: center; justify-content: center; color: var(--color-gold); font-size: 1.1rem; flex-shrink: 0; }
+  .contact-row strong { display: block; font-size: 0.9rem; margin-bottom: 2px; }
+  .contact-row span { font-size: 0.88rem; color: var(--color-muted); }
+  .contact-form { background: #fff; padding: 40px; border-radius: 12px; box-shadow: 0 0 0 1px #e8e8ee; }
+  .form-group { margin-bottom: 18px; }
+  .form-group label { display: block; font-weight: 600; font-size: 0.8rem; color: var(--color-primary); margin-bottom: 6px; text-transform: uppercase; letter-spacing: 0.5px; }
+  .form-group input, .form-group textarea { width: 100%; padding: 14px 16px; border: 2px solid #e8e8ee; border-radius: 8px; font-family: inherit; font-size: 0.95rem; transition: border-color 0.3s; }
+  .form-group input:focus, .form-group textarea:focus { outline: none; border-color: var(--color-gold); }
+  .form-group textarea { resize: vertical; min-height: 100px; }
+  .btn-submit { width: 100%; padding: 16px; background: var(--color-primary); color: var(--color-gold); border: none; border-radius: 8px; font-family: inherit; font-weight: 800; font-size: 1rem; cursor: pointer; transition: all 0.3s; }
+  .btn-submit:hover { background: var(--color-dark); }
+
+  .whatsapp-float {
+    position: fixed; bottom: 24px; left: 24px;
+    width: 56px; height: 56px; background: #25d366; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    box-shadow: 0 4px 20px rgba(37,211,102,0.4); z-index: 9998; transition: transform 0.3s; text-decoration: none;
+  }
+  .whatsapp-float:hover { transform: scale(1.1); }
+  .whatsapp-float svg { width: 28px; height: 28px; fill: #fff; }
+
+  footer { background: var(--color-dark); color: rgba(255,255,255,0.6); padding: 50px 28px 24px; }
+  .footer-content { max-width: 1140px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px; margin-bottom: 40px; }
+  .footer-brand .logo { color: #fff; margin-bottom: 12px; }
+  .footer-brand p { font-size: 0.88rem; line-height: 1.7; }
+  .footer-links h4 { color: #fff; font-size: 0.95rem; margin-bottom: 16px; }
+  .footer-links ul { list-style: none; }
+  .footer-links li { margin-bottom: 8px; }
+  .footer-links a { color: rgba(255,255,255,0.5); text-decoration: none; font-size: 0.85rem; transition: color 0.3s; }
+  .footer-links a:hover { color: var(--color-gold); }
+  .footer-bottom { text-align: center; padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.06); font-size: 0.8rem; }
+
+  @media (max-width: 900px) {
+    .hero-grid { grid-template-columns: 1fr; }
+    .hero-img { display: none; }
+    .steps { grid-template-columns: 1fr; }
+    .services-grid { grid-template-columns: 1fr; }
+    .testi-grid { grid-template-columns: 1fr; }
+    .contact-grid { grid-template-columns: 1fr; }
+    .footer-content { grid-template-columns: 1fr; text-align: center; }
+    .menu-toggle { display: flex; }
+    nav { display: none; position: absolute; top: 72px; left: 0; right: 0; background: #fff; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+    nav.active { display: block; }
+    nav ul { flex-direction: column; padding: 20px; gap: 0; }
+    nav li { border-bottom: 1px solid #eee; }
+    nav a { display: block; padding: 14px 0; }
+    .btn-header { display: none; }
+    .hero h1 { font-size: 2.2rem; }
+  }
+</style>
+</head>
+<body>
+
+<div class="demo-badge"><span>DEMO</span> — Activa tu página web hoy</div>
+
+<header>
+  <div class="header-container">
+    <a href="#" class="logo">
+      <div class="logo-mark"><svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div>
+      SERALUM
+    </a>
+    <div class="menu-toggle" onclick="document.querySelector('nav').classList.toggle('active')">
+      <span></span><span></span><span></span>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="#inicio">Inicio</a></li>
+        <li><a href="#como-funciona">Proceso</a></li>
+        <li><a href="#servicios">Servicios</a></li>
+        <li><a href="#testimonios">Clientes</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+    </nav>
+    <a href="#contacto" class="btn-header">Cotizar ahora</a>
+  </div>
+</header>
+
+<section class="hero" id="inicio">
+  <div class="hero-grid">
+    <div class="hero-content">
+      <div class="hero-tag">Ciudad Caucel, Mérida</div>
+      <h1>Tu portón se oxida cada año y <em>vuelves a pagar</em>. En SERALUM lo fabricamos con acero anticorrosivo que dura décadas.</h1>
+      <p>Portones, rejas y barandales hechos a medida con materiales especiales para el clima tropical de Yucatán. Instalación incluida. Garantía de 5 años por escrito.</p>
+      <div class="hero-cta">
+        <a href="#contacto" class="btn-primary">Cotiza gratis en 24 horas</a>
+        <a href="#servicios" class="btn-outline">Ver trabajos</a>
+      </div>
+      <div class="hero-trust">
+        <div><strong>12+</strong><span>años de experiencia</span></div>
+        <div><strong>340+</strong><span>portones fabricados</span></div>
+        <div><strong>5</strong><span>años de garantía</span></div>
+      </div>
+    </div>
+    <div class="hero-img">
+      <img src="https://images.unsplash.com/photo-1558618666-fcd25c85f82e?auto=format&fit=crop&w=800&q=80" alt="Portón de herrería artesanal">
+    </div>
+  </div>
+</section>
+
+<section class="process" id="como-funciona">
+  <div class="container">
+    <h2 class="section-title">Así de fácil es tu proyecto</h2>
+    <p class="section-subtitle">En 3 pasos tienes tu portón, reja o barandal listo e instalado.</p>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <h3>Nos cuentas tu idea</h3>
+        <p>Nos envías medidas, fotos del espacio y el estilo que te gusta. Te damos asesoría sin costo por WhatsApp o en tu casa.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <h3>Recibes diseño y precio</h3>
+        <p>En 24 horas te entregamos un boceto digital con precio exacto. Sin sorpresas. Sin costos ocultos.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <h3>Fabricamos e instalamos</h3>
+        <p>De 5 a 10 días hábiles para entrega. Instalación incluida en Mérida. Te entregamos tu garantía por escrito.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="services" id="servicios">
+  <div class="container">
+    <h2 class="section-title">Lo que fabricamos</h2>
+    <p class="section-subtitle">Cada pieza es única. Usamos acero al carbón tratado con pintura electrostática anticorrosiva para clima tropical.</p>
+    <div class="services-grid">
+      <div class="service-card">
+        <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&w=400&q=80" alt="Soldadura de portón">
+        <div>
+          <h3>Portones eléctricos y manuales</h3>
+          <p>Corredizos, abatibles, levadizos y enrollables. Con motor o manual. Diseño a tu gusto.</p>
+          <span class="price">Desde $18,500 con instalación</span>
+        </div>
+      </div>
+      <div class="service-card">
+        <img src="https://images.unsplash.com/photo-1558618666-fcd25c85f82e?auto=format&fit=crop&w=400&q=80" alt="Rejas de seguridad">
+        <div>
+          <h3>Rejas de protección para ventanas</h3>
+          <p>Rejas modernas, minimalistas o con diseño decorativo. Seguridad sin perder luz ni vista.</p>
+          <span class="price">Desde $2,800 por ventana</span>
+        </div>
+      </div>
+      <div class="service-card">
+        <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=400&q=80" alt="Barandal de herrería">
+        <div>
+          <h3>Barandales y escaleras metálicas</h3>
+          <p>Barandales de cristal con herrería, escaleras de caracol y rectas. Acabados en pintura o cromo.</p>
+          <span class="price">Desde $4,500 por metro</span>
+        </div>
+      </div>
+      <div class="service-card">
+        <img src="https://images.unsplash.com/photo-1590644365607-1c5a78f89f36?auto=format&fit=crop&w=400&q=80" alt="Estructura metálica">
+        <div>
+          <h3>Estructuras: techos, pergolas y toldos</h3>
+          <p>Aluminio o acero galvanizado. Resistentes a viento, sol y lluvia del Caribe.</p>
+          <span class="price">Desde $350/m2 instalado</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="testimonials" id="testimonios">
+  <div class="container">
+    <h2 class="section-title">Lo que dicen nuestros clientes</h2>
+    <p class="section-subtitle">Más de 340 familias en Mérida confían en SERALUM.</p>
+    <div class="testi-grid">
+      <div class="testi-card">
+        <div class="stars">★★★★★</div>
+        <p>"Llevaba 3 portones en 8 años porque se oxidaban. El de SERALUM ya tiene 4 años y sigue como nuevo. La inversión se paga sola."</p>
+        <div class="testi-author">
+          <div class="testi-author-img">JR</div>
+          <div><strong>Jorge Rodríguez</strong><span>Residencial Pensiones, Mérida</span></div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <div class="stars">★★★★★</div>
+        <p>"Me asesoraron bien, llegaron a medir el mismo día y en una semana ya tenía mi barandal instalado. Todo muy profesional."</p>
+        <div class="testi-author">
+          <div class="testi-author-img">MC</div>
+          <div><strong>María del Carmen León</strong><span>Fracc. Las Américas</span></div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <div class="stars">★★★★★</div>
+        <p>"Les pedí un diseño moderno para mi reja frontal. El resultado superó lo que imaginé. Me dan seguridad y se ve elegante."</p>
+        <div class="testi-author">
+          <div class="testi-author-img">AP</div>
+          <div><strong>Antonio Pacheco</strong><span>Col. Miguel Hidalgo</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="guarantee">
+  <div class="container">
+    <h2>Garantía de 5 años por escrito</h2>
+    <p>Si tu portón, reja o barandal presenta óxido, deformación o falla de fabricación en los primeros 5 años, lo reparamos o reemplazamos sin costo.</p>
+    <div class="guarantee-badge">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#c9a227" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+      <div><strong>Garantía SERALUM 5 años</strong><span>Valida en toda la península de Yucatán</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contacto">
+  <div class="container">
+    <div class="contact-grid">
+      <div class="contact-info">
+        <h3>Cotiza tu proyecto hoy</h3>
+        <p style="color:var(--color-muted);margin-bottom:28px;">Respondenos en menos de 24 horas. La cotización es completamente gratis y sin compromiso.</p>
+        <div class="contact-row">
+          <div class="icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+          <div><strong>Ubicación</strong><span>Ciudad Caucel, Mérida, Yucatán. Atendemos toda la ciudad.</span></div>
+        </div>
+        <div class="contact-row">
+          <div class="icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div>
+          <div><strong>Horario</strong><span>Lunes a Viernes: 8:00 AM – 6:00 PM<br>Sábados: 8:00 AM – 2:00 PM</span></div>
+        </div>
+        <div class="contact-row">
+          <div class="icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg></div>
+          <div><strong>WhatsApp</strong><span>Escríbenos y te respondemos en menos de 1 hora</span></div>
+        </div>
+      </div>
+      <form class="contact-form" onsubmit="event.preventDefault(); alert('¡Gracias! Te contactaremos en menos de 24 horas con tu cotización.');">
+        <div class="form-group">
+          <label>Nombre completo</label>
+          <input type="text" placeholder="Tu nombre" required>
+        </div>
+        <div class="form-group">
+          <label>Teléfono</label>
+          <input type="tel" placeholder="999 123 4567" required>
+        </div>
+        <div class="form-group">
+          <label>¿Qué necesitas?</label>
+          <input type="text" placeholder="Ej: Portón para cochera de 4m x 2.5m" required>
+        </div>
+        <div class="form-group">
+          <label>Colonia</label>
+          <input type="text" placeholder="¿En qué colonia estás?" required>
+        </div>
+        <button type="submit" class="btn-submit">Quiero mi cotización gratis</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<a href="#" class="whatsapp-float" title="Cotizar por WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<footer>
+  <div class="footer-content">
+    <div class="footer-brand">
+      <a href="#" class="logo"><div class="logo-mark"><svg viewBox="0 0 24 24" style="width:18px;height:18px;fill:var(--color-gold)"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div> SERALUM</a>
+      <p>Herrería y aluminio de autor en Mérida, Yucatán. Portones, rejas, barandales y estructuras con garantía de 5 años.</p>
+    </div>
+    <div class="footer-links">
+      <h4>Navegación</h4>
+      <ul>
+        <li><a href="#inicio">Inicio</a></li>
+        <li><a href="#como-funciona">Proceso</a></li>
+        <li><a href="#servicios">Servicios</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+    </div>
+    <div class="footer-links">
+      <h4>Servicios</h4>
+      <ul>
+        <li><a href="#">Portones</a></li>
+        <li><a href="#">Rejas</a></li>
+        <li><a href="#">Barandales</a></li>
+        <li><a href="#">Estructuras</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p> SERALUM Servicio de Aluminio y Herrería — Todos los derechos reservados</p>
+  </div>
+</footer>
+
+</body>
+</html>

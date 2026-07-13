@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AUTO SPA | Lavado Premium en 30 Min en Mérida</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Bebas+Neue&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --color-primary: #0d1b2a;
+    --color-red: #e63946;
+    --color-red-dark: #c1121f;
+    --color-bone: #f1faee;
+    --color-sky: #a8dadc;
+    --color-text: #1d3557;
+    --color-muted: #6b7b8e;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Inter', sans-serif; color: var(--color-text); background: #fff; line-height: 1.7; }
+
+  .demo-badge {
+    position: fixed; bottom: 24px; right: 24px;
+    background: rgba(13,27,42,0.92); color: var(--color-bone);
+    padding: 10px 20px; border-radius: 8px; font-size: 0.78rem; font-weight: 600;
+    z-index: 9999; backdrop-filter: blur(8px); border: 1px solid rgba(230,57,70,0.3);
+  }
+  .demo-badge span { color: var(--color-red); font-weight: 700; }
+
+  header {
+    position: fixed; top: 0; left: 0; right: 0;
+    background: rgba(255,255,255,0.97); backdrop-filter: blur(12px);
+    box-shadow: 0 1px 20px rgba(0,0,0,0.05); z-index: 1000;
+  }
+  .header-container { max-width: 1200px; margin: 0 auto; padding: 0 28px; display: flex; align-items: center; justify-content: space-between; height: 72px; }
+  .logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+  .logo-mark { font-family: 'Bebas Neue', sans-serif; font-size: 1.8rem; color: var(--color-red); line-height: 1; }
+  .logo-text { font-weight: 800; font-size: 1.1rem; color: var(--color-primary); letter-spacing: 1px; }
+  nav ul { display: flex; list-style: none; gap: 32px; }
+  nav a { text-decoration: none; color: var(--color-text); font-weight: 600; font-size: 0.87rem; transition: color 0.3s; }
+  nav a:hover { color: var(--color-red); }
+  .menu-toggle { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 8px; }
+  .menu-toggle span { width: 24px; height: 2.5px; background: var(--color-primary); border-radius: 2px; }
+  .btn-header { padding: 10px 24px; background: var(--color-red); color: #fff; text-decoration: none; font-weight: 700; font-size: 0.85rem; border-radius: 6px; transition: all 0.3s; }
+  .btn-header:hover { background: var(--color-red-dark); }
+
+  .hero {
+    min-height: 100vh; display: flex; align-items: center;
+    background: linear-gradient(105deg, rgba(13,27,42,0.92) 0%, rgba(13,27,42,0.7) 45%, rgba(13,27,42,0.3) 100%),
+                url('https://images.unsplash.com/photo-1520340356584-ef7a19b1d3ed?auto=format&fit=crop&w=1600&q=80');
+    background-size: cover; background-position: center;
+    padding: 100px 28px 60px;
+  }
+  .hero-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center; }
+  .hero-content { color: #fff; }
+  .hero-promo { display: inline-flex; align-items: center; gap: 8px; background: var(--color-red); color: #fff; padding: 8px 18px; border-radius: 6px; font-weight: 800; font-size: 0.85rem; margin-bottom: 24px; animation: pulse 2s infinite; }
+  @keyframes pulse { 0%,100%{transform:scale(1)} 50%{transform:scale(1.03)} }
+  .hero h1 { font-family: 'Bebas Neue', sans-serif; font-size: 4.2rem; line-height: 1.05; margin-bottom: 16px; letter-spacing: 1px; }
+  .hero h1 span { color: var(--color-red); }
+  .hero-lead { font-size: 1.15rem; opacity: 0.85; margin-bottom: 32px; line-height: 1.7; max-width: 480px; }
+  .hero-list { list-style: none; margin-bottom: 32px; }
+  .hero-list li { padding: 6px 0; padding-left: 28px; position: relative; font-size: 0.95rem; opacity: 0.9; }
+  .hero-list li::before { content: ''; position: absolute; left: 0; top: 12px; width: 14px; height: 2px; background: var(--color-red); }
+  .btn-cta { padding: 18px 40px; background: var(--color-red); color: #fff; text-decoration: none; font-weight: 800; font-size: 1rem; border-radius: 6px; transition: all 0.3s; display: inline-block; box-shadow: 0 6px 25px rgba(230,57,70,0.35); }
+  .btn-cta:hover { background: #fff; color: var(--color-red); }
+  .hero-right { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .hero-right img { width: 100%; height: 200px; object-fit: cover; border-radius: 10px; }
+  .hero-right img:first-child { grid-column: span 2; height: 260px; }
+
+  section { padding: 90px 28px; }
+  .container { max-width: 1140px; margin: 0 auto; }
+
+  .how-it-works { background: var(--color-bone); }
+  .section-title { font-family: 'Bebas Neue', sans-serif; font-size: 2.6rem; color: var(--color-primary); margin-bottom: 8px; text-align: center; letter-spacing: 1px; }
+  .section-subtitle { text-align: center; color: var(--color-muted); margin-bottom: 50px; }
+  .steps-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
+  .step-card { background: #fff; padding: 36px 28px; border-radius: 12px; text-align: center; box-shadow: 0 4px 20px rgba(0,0,0,0.04); }
+  .step-icon { width: 60px; height: 60px; background: var(--color-primary); color: var(--color-red); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 16px; font-family: 'Bebas Neue', sans-serif; font-size: 1.6rem; }
+  .step-card h3 { font-size: 1.05rem; font-weight: 700; margin-bottom: 8px; }
+  .step-card p { font-size: 0.88rem; color: var(--color-muted); }
+
+  .pricing { background: #fff; }
+  .pricing-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+  .price-card { border-radius: 14px; overflow: hidden; border: 2px solid #e8ecf1; transition: all 0.3s; position: relative; }
+  .price-card:hover { transform: translateY(-6px); border-color: var(--color-red); box-shadow: 0 20px 50px rgba(0,0,0,0.08); }
+  .price-card.popular { border-color: var(--color-red); }
+  .popular-badge { position: absolute; top: 0; right: 0; background: var(--color-red); color: #fff; padding: 6px 14px; font-size: 0.75rem; font-weight: 700; border-radius: 0 0 0 10px; }
+  .price-header { background: var(--color-primary); color: #fff; padding: 28px; text-align: center; }
+  .price-header h3 { font-family: 'Bebas Neue', sans-serif; font-size: 1.6rem; letter-spacing: 1px; margin-bottom: 4px; }
+  .price-amount { font-size: 2.4rem; font-weight: 800; }
+  .price-amount span { font-size: 0.9rem; font-weight: 400; }
+  .price-body { padding: 28px; }
+  .price-body ul { list-style: none; }
+  .price-body li { padding: 10px 0; border-bottom: 1px solid #f0f0f0; font-size: 0.9rem; }
+  .price-body li::before { content: '✓ '; color: var(--color-red); font-weight: 800; }
+  .price-cta { display: block; padding: 14px; background: var(--color-primary); color: #fff; text-align: center; text-decoration: none; font-weight: 700; transition: background 0.3s; }
+  .price-card.popular .price-cta { background: var(--color-red); }
+  .price-cta:hover { background: var(--color-red); }
+
+  .testimonials { background: var(--color-primary); color: #fff; }
+  .testimonials .section-title { color: #fff; }
+  .testimonials .section-subtitle { color: var(--color-sky); }
+  .testi-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+  .testi-box { background: rgba(255,255,255,0.05); padding: 30px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.08); }
+  .testi-stars { color: #ffd700; margin-bottom: 14px; font-size: 1.1rem; }
+  .testi-box p { font-size: 0.93rem; line-height: 1.7; margin-bottom: 18px; opacity: 0.92; }
+  .testi-person { display: flex; align-items: center; gap: 12px; }
+  .testi-avatar { width: 42px; height: 42px; border-radius: 50%; background: var(--color-red); display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 0.85rem; }
+  .testi-person strong { font-size: 0.88rem; }
+  .testi-person span { font-size: 0.75rem; opacity: 0.6; display: block; }
+
+  .trust-strip { background: var(--color-bone); padding: 50px 28px; }
+  .trust-grid { max-width: 1140px; margin: 0 auto; display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; text-align: center; }
+  .trust-item strong { display: block; font-family: 'Bebas Neue', sans-serif; font-size: 2rem; color: var(--color-red); }
+  .trust-item span { font-size: 0.82rem; color: var(--color-muted); }
+
+  .contact { background: #fff; }
+  .contact-wrap { max-width: 700px; margin: 0 auto; text-align: center; }
+  .contact-wrap h2 { font-family: 'Bebas Neue', sans-serif; font-size: 2.4rem; margin-bottom: 8px; letter-spacing: 1px; }
+  .contact-wrap > p { color: var(--color-muted); margin-bottom: 32px; }
+  .contact-info-bar { display: flex; justify-content: center; gap: 40px; margin-bottom: 40px; flex-wrap: wrap; }
+  .info-chip { display: flex; align-items: center; gap: 10px; }
+  .info-chip .dot { width: 10px; height: 10px; background: var(--color-red); border-radius: 50%; }
+  .info-chip span { font-size: 0.88rem; color: var(--color-muted); }
+  .contact-form-inline { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; max-width: 600px; margin: 0 auto; }
+  .contact-form-inline input, .contact-form-inline select { padding: 14px 16px; border: 2px solid #e8ecf1; border-radius: 8px; font-family: inherit; font-size: 0.95rem; }
+  .contact-form-inline input:focus, .contact-form-inline select:focus { outline: none; border-color: var(--color-red); }
+  .contact-form-inline .full { grid-column: span 2; }
+  .btn-big { padding: 16px; background: var(--color-red); color: #fff; border: none; border-radius: 8px; font-family: inherit; font-weight: 800; font-size: 1rem; cursor: pointer; transition: all 0.3s; }
+  .btn-big:hover { background: var(--color-red-dark); }
+
+  .map-strip { background: var(--color-bone); padding: 40px 28px; text-align: center; }
+  .map-strip p { color: var(--color-muted); font-size: 0.9rem; }
+
+  footer { background: var(--color-primary); color: rgba(255,255,255,0.55); padding: 40px 28px 20px; }
+  .footer-inner { max-width: 1140px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; }
+  .footer-brand { font-weight: 800; color: #fff; font-size: 1.1rem; }
+  .footer-links { display: flex; gap: 24px; }
+  .footer-links a { color: rgba(255,255,255,0.5); text-decoration: none; font-size: 0.85rem; }
+  .footer-links a:hover { color: var(--color-sky); }
+
+  @media (max-width: 900px) {
+    .hero-inner { grid-template-columns: 1fr; }
+    .hero-right { display: none; }
+    .steps-row { grid-template-columns: 1fr; }
+    .pricing-grid { grid-template-columns: 1fr; }
+    .testi-row { grid-template-columns: 1fr; }
+    .trust-grid { grid-template-columns: 1fr 1fr; }
+    .contact-form-inline { grid-template-columns: 1fr; }
+    .contact-form-inline .full { grid-column: span 1; }
+    .menu-toggle { display: flex; }
+    nav { display: none; position: absolute; top: 72px; left: 0; right: 0; background: #fff; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+    nav.active { display: block; }
+    nav ul { flex-direction: column; padding: 20px; gap: 0; }
+    nav li { border-bottom: 1px solid #eee; }
+    nav a { display: block; padding: 14px 0; }
+    .btn-header { display: none; }
+    .hero h1 { font-size: 2.8rem; }
+    .footer-inner { flex-direction: column; text-align: center; }
+  }
+</style>
+</head>
+<body>
+
+<div class="demo-badge"><span>DEMO</span> — Activa tu página web hoy</div>
+
+<header>
+  <div class="header-container">
+    <a href="#" class="logo">
+      <span class="logo-mark">AUTO</span>
+      <span class="logo-text">SPA</span>
+    </a>
+    <div class="menu-toggle" onclick="document.querySelector('nav').classList.toggle('active')">
+      <span></span><span></span><span></span>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="#inicio">Inicio</a></li>
+        <li><a href="#como-funciona">Proceso</a></li>
+        <li><a href="#paquetes">Paquetes</a></li>
+        <li><a href="#contacto">Agendar</a></li>
+      </ul>
+    </nav>
+    <a href="#contacto" class="btn-header">Agendar cita</a>
+  </div>
+</header>
+
+<section class="hero" id="inicio">
+  <div class="hero-inner">
+    <div class="hero-content">
+      <div class="hero-promo">Tu primer lavado 20% OFF</div>
+      <h1>Deja de perder <span>2 horas</span> lavando tu auto en casa. Nosotros lo dejamos impecable en 30 min.</h1>
+      <p class="hero-lead">En Auto Spa Mérida usamos productos biodegradables, técnicos certificados y equipos de presión profesional. Tu auto brilla, tú descansas.</p>
+      <ul class="hero-list">
+        <li>Sin esperar horas en la fila</li>
+        <li>Productos que no dañan la pintura</li>
+        <li>Resultado de concesionario</li>
+      </ul>
+      <a href="#contacto" class="btn-cta">Agenda tu cita ahora</a>
+    </div>
+    <div class="hero-right">
+      <img src="https://images.unsplash.com/photo-1601362840469-51e4d8d58785?auto=format&fit=crop&w=800&q=80" alt="Auto limpio brillante">
+      <img src="https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?auto=format&fit=crop&w=400&q=80" alt="Detallado de auto">
+      <img src="https://images.unsplash.com/photo-1551522435-a13afa10f103?auto=format&fit=crop&w=400&q=80" alt="Limpieza interior">
+    </div>
+  </div>
+</section>
+
+<section class="how-it-works" id="como-funciona">
+  <div class="container">
+    <h2 class="section-title">EN 3 PASOS, TU AUTO BRILLA</h2>
+    <p class="section-subtitle">Así de sencillo es agendar y recibir tu servicio en Auto Spa.</p>
+    <div class="steps-row">
+      <div class="step-card">
+        <div class="step-icon">1</div>
+        <h3>Agenda por WhatsApp o teléfono</h3>
+        <p>Dinos el día y hora que prefieres. Confirmamos tu cita en menos de 5 minutos.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-icon">2</div>
+        <h3>Llegas y nosotros nos encargamos</h3>
+        <p>En Avenida Colón, zona centro. Estacionas y en 30 min tu auto está listo.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-icon">3</div>
+        <h3>Recoges tu auto como nuevo</h3>
+        <p>Pago en efectivo o transferencia. Te llevas tu auto brillante y con aroma fresco.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="pricing" id="paquetes">
+  <div class="container">
+    <h2 class="section-title">ELIGE TU PLAN</h2>
+    <p class="section-subtitle">Precios transparentes. Sin cargos ocultos. Todos incluyen productos biodegradables.</p>
+    <div class="pricing-grid">
+      <div class="price-card">
+        <div class="price-header">
+          <h3>BASICO</h3>
+          <div class="price-amount">$150<span> / lavado</span></div>
+        </div>
+        <div class="price-body">
+          <ul>
+            <li>Lavado exterior con espuma</li>
+            <li>Aspirado de interiores</li>
+            <li>Limpieza de vidrios</li>
+            <li>Aromatizante</li>
+            <li>Duración: 20 min</li>
+          </ul>
+        </div>
+        <a href="#contacto" class="price-cta">Agendar</a>
+      </div>
+      <div class="price-card popular">
+        <div class="popular-badge">MAS ELEGIDO</div>
+        <div class="price-header">
+          <h3>PREMIUM</h3>
+          <div class="price-amount">$280<span> / lavado</span></div>
+        </div>
+        <div class="price-body">
+          <ul>
+            <li>Todo el plan Básico</li>
+            <li>Encerado de carrocería</li>
+            <li>Limpieza de tablero y consola</li>
+            <li>Limpieza profunda de rines</li>
+            <li>Tratamiento de cuero/vinil</li>
+            <li>Duración: 35 min</li>
+          </ul>
+        </div>
+        <a href="#contacto" class="price-cta">Agendar</a>
+      </div>
+      <div class="price-card">
+        <div class="price-header">
+          <h3>CERAMICO</h3>
+          <div class="price-amount">$450<span> / servicio</span></div>
+        </div>
+        <div class="price-body">
+          <ul>
+            <li>Todo el plan Premium</li>
+            <li>Coating cerámico aplicado</li>
+            <li>Corrección de pintura leve</li>
+            <li>Protección UV 6 meses</li>
+            <li>Garantía de brillo</li>
+            <li>Duración: 60 min</li>
+          </ul>
+        </div>
+        <a href="#contacto" class="price-cta">Agendar</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="trust-strip">
+  <div class="trust-grid">
+    <div class="trust-item"><strong>30</strong><span>minutos promedio</span></div>
+    <div class="trust-item"><strong>5,200+</strong><span>autos atendidos</span></div>
+    <div class="trust-item"><strong>8</strong><span>años en Mérida</span></div>
+    <div class="trust-item"><strong>100%</strong><span>productos biodegradables</span></div>
+  </div>
+</section>
+
+<section class="testimonials">
+  <div class="container">
+    <h2 class="section-title">CLIENTES QUE REGRESAN</h2>
+    <p class="section-subtitle">Mas de 5,200 autos atendidos en 8 años en Mérida.</p>
+    <div class="testi-row">
+      <div class="testi-box">
+        <div class="testi-stars">★★★★★</div>
+        <p>"Llevaba mi camioneta a 3 autolavados distintos y ninguno dejaba los vidrios bien. En Auto Spa desde la primera vez quedé sorprendido. Ahora solo vengo aquí."</p>
+        <div class="testi-person">
+          <div class="testi-avatar">RF</div>
+          <div><strong>Roberto Fernández</strong><span>Arquitecto, Mérida</span></div>
+        </div>
+      </div>
+      <div class="testi-box">
+        <div class="testi-stars">★★★★★</div>
+        <p>"Trabajo en avenida Colón y dejo mi auto en el lavado antes de entrar a la oficina. En 30 min ya está listo y yo ni me entero. El servicio express es real."</p>
+        <div class="testi-person">
+          <div class="testi-avatar">LG</div>
+          <div><strong>Luisa Gómez</strong><span>Contadora, Centro</span></div>
+        </div>
+      </div>
+      <div class="testi-box">
+        <div class="testi-stars">★★★★★</div>
+        <p>"El plan cerámico vale cada peso. Mi auto lleva 3 meses con el brillo intacto y la lluvia no le deja manchas. Lo recomiendo a todos mis amigos."</p>
+        <div class="testi-person">
+          <div class="testi-avatar">CM</div>
+          <div><strong>Carlos Méndez</strong><span>Ingeniero, Ciudad Caucel</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contacto">
+  <div class="contact-wrap">
+    <h2>AGENDA TU CITA AHORA</h2>
+    <p>Escoge tu paquete y elige la fecha. Te confirmamos en menos de 5 minutos por WhatsApp.</p>
+    <div class="contact-info-bar">
+      <div class="info-chip"><div class="dot"></div><span>Avenida Colón, Zona Centro</span></div>
+      <div class="info-chip"><div class="dot"></div><span>Lun-Sab: 8am - 8pm</span></div>
+      <div class="info-chip"><div class="dot"></div><span>Dom: 9am - 4pm</span></div>
+    </div>
+    <form class="contact-form-inline" onsubmit="event.preventDefault(); alert('¡Cita solicitada! Te contactaremos en menos de 5 minutos para confirmar.');">
+      <input type="text" placeholder="Tu nombre" required>
+      <input type="tel" placeholder="Teléfono" required>
+      <select class="full">
+        <option>Básico - $150</option>
+        <option>Premium - $280</option>
+        <option>Cerámico - $450</option>
+      </select>
+      <input type="date" class="full" required>
+      <button type="submit" class="btn-big full">Agendar mi cita</button>
+    </form>
+  </div>
+</section>
+
+<div class="map-strip">
+  <p>Estamos en Avenida Colón, Zona Centro de Mérida. Fácil acceso y estacionamiento disponible.</p>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">AUTO SPA Mérida</div>
+    <div class="footer-links">
+      <a href="#inicio">Inicio</a>
+      <a href="#paquetes">Paquetes</a>
+      <a href="#contacto">Agendar</a>
+    </div>
+    <div style="font-size:0.8rem;"> AUTO SPA Mérida — Todos los derechos reservados</div>
+  </div>
+</footer>
+
+</body>
+</html>
