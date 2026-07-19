@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Email Profesional - Web Muestras México</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500;600&display=swap');
+    body { margin:0; padding:0; background:#0f0f0f; font-family:'Inter',Arial,sans-serif; }
+    .container { max-width:680px; margin:0 auto; background:#ffffff; border-radius:12px; overflow:hidden; }
+    .header { background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); padding:48px 40px; text-align:center; }
+    .header h1 { font-family:'Playfair Display',Georgia,serif; color:#d4af37; font-size:32px; margin:0 0 12px; }
+    .header p { color:#a0a0b0; font-size:16px; margin:0; }
+    .badge { display:inline-block; background:#d4af37; color:#1a1a2e; padding:6px 18px; border-radius:20px; font-size:12px; font-weight:600; letter-spacing:1px; text-transform:uppercase; margin-top:16px; }
+    .hero { padding:40px; background:#fafafa; text-align:center; }
+    .hero h2 { font-family:'Playfair Display',serif; color:#1a1a2e; font-size:24px; margin:0 0 16px; }
+    .hero p { color:#555; font-size:16px; line-height:1.7; margin:0 0 24px; }
+    .cta-button { display:inline-block; background:#1a1a2e; color:#d4af37; padding:16px 40px; border-radius:8px; text-decoration:none; font-weight:600; font-size:16px; letter-spacing:0.5px; transition:all 0.3s; }
+    .cta-button:hover { background:#d4af37; color:#1a1a2e; }
+    .preview { padding:40px; background:#ffffff; }
+    .preview-box { border:2px solid #eee; border-radius:12px; padding:24px; text-align:center; background: linear-gradient(180deg, #fafafa 0%, #ffffff 100%); }
+    .preview-box img { max-width:100%; border-radius:8px; box-shadow:0 8px 32px rgba(0,0,0,0.1); }
+    .preview-box h3 { color:#1a1a2e; font-size:20px; margin:16px 0 8px; }
+    .preview-box p { color:#666; font-size:14px; margin:0; }
+    .features { padding:0 40px 40px; }
+    .features-grid { display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+    .feature-item { background:#f8f8f8; padding:20px; border-radius:8px; border-left:4px solid #d4af37; }
+    .feature-item h4 { color:#1a1a2e; font-size:14px; margin:0 0 8px; font-weight:600; }
+    .feature-item p { color:#666; font-size:13px; margin:0; line-height:1.5; }
+    .footer { background:#1a1a2e; padding:32px 40px; text-align:center; }
+    .footer p { color:#888; font-size:13px; margin:0 0 8px; }
+    .footer a { color:#d4af37; text-decoration:none; }
+    .social { margin-top:16px; }
+    .social a { display:inline-block; margin:0 8px; color:#d4af37; font-size:20px; text-decoration:none; }
+    .urgency { background:#fff8e1; border-left:4px solid #d4af37; padding:16px 20px; margin:0 40px 32px; border-radius:0 8px 8px 0; }
+    .urgency p { color:#8a6d0b; font-size:14px; margin:0; font-weight:500; }
+    .price { text-align:center; padding:0 40px 32px; }
+    .price-tag { display:inline-block; background:#1a1a2e; color:#d4af37; padding:12px 32px; border-radius:8px; font-size:18px; font-weight:700; }
+    .price-note { color:#999; font-size:13px; margin-top:8px; }
+    @media (max-width:600px) {
+      .features-grid { grid-template-columns:1fr; }
+      .header { padding:32px 24px; }
+      .hero, .preview, .features, .footer { padding-left:24px; padding-right:24px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Header -->
+    <div class="header">
+      <h1>Web Muestras México</h1>
+      <p>Su presencia digital, nuestra especialidad</p>
+      <div class="badge">Propuesta Exclusiva</div>
+    </div>
+
+    <!-- Hero Text -->
+    <div class="hero">
+      <h2>¿Sabía que el 78% de los clientes busca su negocio en internet antes de visitarlo?</h2>
+      <p>Hemos creado una página web de demostración personalizada para <strong>{{NOMBRE_EMPRESA}}</strong>. Una vitrina digital que muestra su negocio en su mejor versión.</p>
+      <a href="{{URL_PREVIEW}}" class="cta-button">Ver Mi Página Web de Muestra</a>
+    </div>
+
+    <!-- Preview -->
+    <div class="preview">
+      <div class="preview-box">
+        <img src="{{SCREENSHOT_URL}}" alt="Vista previa de la página web">
+        <h3>{{NOMBRE_EMPRESA}}</h3>
+        <p>Diseño profesional adaptado a su identidad y servicios</p>
+      </div>
+    </div>
+
+    <!-- Urgency -->
+    <div class="urgency">
+      <p>🎯 Esta muestra es gratuita y sin compromiso. Solo está disponible para 5 empresas de su zona esta semana.</p>
+    </div>
+
+    <!-- Features -->
+    <div class="features">
+      <div class="features-grid">
+        <div class="feature-item">
+          <h4>📱 Diseño Responsive</h4>
+          <p>Se ve perfecta en celular, tablet y computadora.</p>
+        </div>
+        <div class="feature-item">
+          <h4>⚡ Carga Ultra Rápida</h4>
+          <p>Optimizada para abrir en menos de 2 segundos.</p>
+        </div>
+        <div class="feature-item">
+          <h4>🔍 SEO Incluido</h4>
+          <p>Aparecerá en Google cuando busquen su negocio.</p>
+        </div>
+        <div class="feature-item">
+          <h4>🎨 Imágenes AI Únicas</h4>
+          <p>Fotografías generadas específicamente para su negocio.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Price -->
+    <div class="price">
+      <div class="price-tag">$3,499 MXN</div>
+      <p class="price-note">Pago único. Sin mensualidades. Dominio incluido el primer año.</p>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+      <p>Web Muestras México — Transformando negocios locales en experiencias digitales</p>
+      <p><a href="mailto:contacto@webmuestrasmexico.com">contacto@webmuestrasmexico.com</a> · <a href="tel:+521234567890">+52 1 234 567 890</a></p>
+      <div class="social">
+        <a href="#">f</a>
+        <a href="#">in</a>
+        <a href="#">@</a>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

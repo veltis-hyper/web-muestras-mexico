@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Seguimiento - Web Muestras México</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+    body { margin:0; padding:0; background:#f5f5f5; font-family:'Inter',Arial,sans-serif; }
+    .container { max-width:600px; margin:0 auto; background:#ffffff; border-radius:16px; overflow:hidden; box-shadow:0 4px 24px rgba(0,0,0,0.08); }
+    .header { background:#1a1a2e; padding:32px; text-align:center; }
+    .header h1 { color:#ffffff; font-size:22px; margin:0; font-weight:700; }
+    .header p { color:#a0a0b0; font-size:14px; margin:8px 0 0; }
+    .body { padding:40px 32px; }
+    .greeting { font-size:16px; color:#333; margin-bottom:24px; }
+    .greeting strong { color:#1a1a2e; }
+    .message { color:#555; font-size:15px; line-height:1.7; margin-bottom:24px; }
+    .message a { color:#d4af37; font-weight:600; text-decoration:underline; }
+    .box { background:#f8f8f8; border-radius:12px; padding:24px; margin-bottom:24px; border-left:4px solid #d4af37; }
+    .box h3 { color:#1a1a2e; font-size:16px; margin:0 0 12px; font-weight:700; }
+    .box ul { margin:0; padding-left:20px; color:#555; font-size:14px; line-height:1.8; }
+    .cta { text-align:center; margin:32px 0; }
+    .cta a { display:inline-block; background:#d4af37; color:#1a1a2e; padding:16px 32px; border-radius:8px; text-decoration:none; font-weight:700; font-size:15px; }
+    .cta a:hover { background:#c4a030; }
+    .signature { border-top:1px solid #eee; padding-top:24px; margin-top:24px; }
+    .signature p { color:#888; font-size:14px; margin:0; }
+    .signature strong { color:#1a1a2e; }
+    .footer { background:#f8f8f8; padding:20px 32px; text-align:center; }
+    .footer p { color:#999; font-size:12px; margin:0; }
+    @media (max-width:600px) {
+      .body { padding:24px 20px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>Web Muestras México</h1>
+      <p>Seguimiento de su propuesta personalizada</p>
+    </div>
+    <div class="body">
+      <p class="greeting">Hola <strong>{{NOMBRE_CONTACTO}}</strong>,</p>
+      <p class="message">Hace unos días le enviamos una página web de muestra diseñada exclusivamente para <strong>{{NOMBRE_EMPRESA}}</strong>. Entendemos que está ocupado, pero no quería que esta oportunidad pasara desapercibida.</p>
+      <p class="message">Cada día que pasa sin presencia digital, sus competidores están captando clientes que podrían ser suyos. El 78% de los consumidores busca en Google antes de visitar un negocio físico.</p>
+      <div class="box">
+        <h3>¿Qué incluye si decide avanzar?</h3>
+        <ul>
+          <li>Página web profesional con su marca y colores</li>
+          <li>Imágenes AI generadas específicamente para su negocio</li>
+          <li>SEO optimizado para aparecer en Google Maps</li>
+          <li>Dominio .com gratis el primer año</li>
+          <li>Hosting incluido por 12 meses</li>
+          <li>Soporte técnico prioritario</li>
+        </ul>
+      </div>
+      <div class="cta">
+        <a href="{{URL_CALENDARIO}}">Agendar una llamada de 10 minutos</a>
+      </div>
+      <p class="message" style="text-align:center; font-size:13px; color:#888;">Si no está interesado, simplemente responda "NO" y lo eliminamos de nuestra lista. Sin presión.</p>
+      <div class="signature">
+        <p><strong>Equipo Web Muestras México</strong></p>
+        <p>contacto@webmuestrasmexico.com</p>
+      </div>
+    </div>
+    <div class="footer">
+      <p>Web Muestras México © 2026 — Transformando negocios locales</p>
+    </div>
+  </div>
+</body>
+</html>

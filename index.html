@@ -26,48 +26,310 @@
   --radius-lg: 20px;
   --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
+
 * { margin: 0; padding: 0; box-sizing: border-box; }
 html { scroll-behavior: smooth; }
-body { font-family: var(--font-body); color: var(--color-dark); background: var(--color-light); line-height: 1.6; }
-@keyframes fadeInUp { from { opacity: 0; transform: translateY(40px); } to { opacity: 1; transform: translateY(0); } }
-@keyframes float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
-.animate-on-scroll { opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease, transform 0.8s ease; }
-.animate-on-scroll.visible { opacity: 1; transform: translateY(0); }
-.header { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: rgba(26,26,46,0.95); backdrop-filter: blur(20px); padding: 0 5%; height: 70px; display: flex; align-items: center; justify-content: space-between; }
-.header-logo { font-family: var(--font-display); font-size: 1.4rem; font-weight: 700; color: var(--color-primary); text-decoration: none; }
-.header-nav a { color: rgba(255,255,255,0.7); text-decoration: none; margin-left: 30px; font-size: 0.9rem; font-weight: 500; transition: var(--transition); }
-.header-nav a:hover { color: var(--color-primary); }
-.hero { min-height: 70vh; display: flex; align-items: center; justify-content: center; text-align: center; padding: 120px 5% 80px; background: linear-gradient(135deg, var(--color-dark) 0%, var(--color-dark-2) 50%, #1E3A5F 100%); position: relative; overflow: hidden; }
-.hero::before { content: ''; position: absolute; top: -30%; right: -10%; width: 600px; height: 600px; background: radial-gradient(circle, rgba(212,160,23,0.15) 0%, transparent 70%); animation: float 6s ease-in-out infinite; }
-.hero-badge { display: inline-block; background: rgba(212,160,23,0.2); border: 1px solid var(--color-primary); color: var(--color-primary); padding: 8px 24px; border-radius: 50px; font-size: 0.85rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 24px; animation: fadeInUp 0.6s ease; }
-.hero h1 { font-family: var(--font-display); font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 700; color: white; line-height: 1.1; margin-bottom: 20px; animation: fadeInUp 0.8s ease 0.2s both; }
+
+body {
+  font-family: var(--font-body);
+  color: var(--color-dark);
+  background: var(--color-light);
+  line-height: 1.6;
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.animate-on-scroll.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.header {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 1000;
+  background: rgba(26,26,46,0.95);
+  backdrop-filter: blur(20px);
+  padding: 0 5%;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header-logo {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+.header-nav a {
+  color: rgba(255,255,255,0.7);
+  text-decoration: none;
+  margin-left: 30px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: var(--transition);
+}
+
+.header-nav a:hover {
+  color: var(--color-primary);
+}
+
+.hero {
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 120px 5% 80px;
+  background: linear-gradient(135deg, var(--color-dark) 0%, var(--color-dark-2) 50%, #1E3A5F 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -30%; right: -10%;
+  width: 600px; height: 600px;
+  background: radial-gradient(circle, rgba(212,160,23,0.15) 0%, transparent 70%);
+  animation: float 6s ease-in-out infinite;
+}
+
+.hero-badge {
+  display: inline-block;
+  background: rgba(212,160,23,0.2);
+  border: 1px solid var(--color-primary);
+  color: var(--color-primary);
+  padding: 8px 24px;
+  border-radius: 50px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 24px;
+  animation: fadeInUp 0.6s ease;
+}
+
+.hero h1 {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 700;
+  color: white;
+  line-height: 1.1;
+  margin-bottom: 20px;
+  animation: fadeInUp 0.8s ease 0.2s both;
+}
+
 .hero h1 span { color: var(--color-primary); }
-.hero-subtitle { font-size: 1.15rem; color: rgba(255,255,255,0.6); max-width: 600px; margin: 0 auto 40px; animation: fadeInUp 0.8s ease 0.4s both; }
-.hero-stats { display: flex; justify-content: center; gap: 50px; margin-top: 40px; animation: fadeInUp 0.8s ease 0.6s both; }
-.hero-stat { text-align: center; }
-.hero-stat .number { font-family: var(--font-display); font-size: 2.5rem; font-weight: 700; color: var(--color-primary); line-height: 1; }
-.hero-stat .label { font-size: 0.85rem; color: rgba(255,255,255,0.5); margin-top: 4px; }
-.section { padding: 80px 5%; max-width: 1400px; margin: 0 auto; }
-.section-header { text-align: center; max-width: 700px; margin: 0 auto 60px; }
-.section-tag { display: inline-block; color: var(--color-primary); font-weight: 600; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 16px; }
-.section-title { font-family: var(--font-display); font-size: clamp(1.8rem, 3vw, 2.5rem); font-weight: 700; margin-bottom: 12px; }
-.section-subtitle { color: var(--color-gray); font-size: 1.05rem; }
-.empresas-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 24px; }
-.empresa-card { background: white; border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-sm); border: 1px solid rgba(0,0,0,0.05); transition: var(--transition); text-decoration: none; color: inherit; display: block; }
-.empresa-card:hover { transform: translateY(-8px); box-shadow: var(--shadow-xl); }
-.empresa-card-image { height: 180px; display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; }
-.empresa-card-image .overlay { position: absolute; bottom: 0; left: 0; right: 0; padding: 40px 20px 16px; background: linear-gradient(transparent, rgba(0,0,0,0.7)); color: white; }
-.empresa-card-image .overlay h3 { font-size: 1.1rem; font-weight: 700; }
-.empresa-card-city { position: absolute; top: 12px; right: 12px; background: rgba(255,255,255,0.2); backdrop-filter: blur(10px); color: white; padding: 4px 12px; border-radius: 50px; font-size: 0.75rem; font-weight: 600; }
-.empresa-card-body { padding: 24px; }
-.empresa-card-body h3 { font-size: 1.15rem; font-weight: 700; margin-bottom: 6px; color: var(--color-dark); }
-.empresa-card-body p { font-size: 0.9rem; color: var(--color-gray); margin-bottom: 16px; }
-.empresa-card-tags { display: flex; gap: 8px; flex-wrap: wrap; }
-.empresa-tag { background: var(--color-gray-light); color: var(--color-gray); padding: 4px 12px; border-radius: 50px; font-size: 0.75rem; font-weight: 500; }
+
+.hero-subtitle {
+  font-size: 1.15rem;
+  color: rgba(255,255,255,0.6);
+  max-width: 600px;
+  margin: 0 auto 40px;
+  animation: fadeInUp 0.8s ease 0.4s both;
+}
+
+.hero-stats {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  margin-top: 40px;
+  animation: fadeInUp 0.8s ease 0.6s both;
+}
+
+.hero-stat {
+  text-align: center;
+}
+
+.hero-stat .number {
+  font-family: var(--font-display);
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  line-height: 1;
+}
+
+.hero-stat .label {
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.5);
+  margin-top: 4px;
+}
+
+.section {
+  padding: 80px 5%;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.section-header {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 60px;
+}
+
+.section-tag {
+  display: inline-block;
+  color: var(--color-primary);
+  font-weight: 600;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 16px;
+}
+
+.section-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.section-subtitle {
+  color: var(--color-gray);
+  font-size: 1.05rem;
+}
+
+.empresas-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 24px;
+}
+
+.empresa-card {
+  background: white;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid rgba(0,0,0,0.05);
+  transition: var(--transition);
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.empresa-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-xl);
+}
+
+.empresa-card-image {
+  height: 180px;
+  background: linear-gradient(135deg, var(--color-dark) 0%, var(--color-dark-2) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.empresa-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: var(--transition);
+}
+
+.empresa-card:hover .empresa-card-image img {
+  transform: scale(1.05);
+}
+
+.empresa-card-image .overlay {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  padding: 40px 20px 16px;
+  background: linear-gradient(transparent, rgba(0,0,0,0.7));
+  color: white;
+}
+
+.empresa-card-city {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: rgba(255,255,255,0.2);
+  backdrop-filter: blur(10px);
+  color: white;
+  padding: 4px 12px;
+  border-radius: 50px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.empresa-card-body {
+  padding: 24px;
+}
+
+.empresa-card-body h3 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin-bottom: 6px;
+  color: var(--color-dark);
+}
+
+.empresa-card-body p {
+  font-size: 0.9rem;
+  color: var(--color-gray);
+  margin-bottom: 16px;
+}
+
+.empresa-card-tags {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.empresa-tag {
+  background: var(--color-gray-light);
+  color: var(--color-gray);
+  padding: 4px 12px;
+  border-radius: 50px;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
 .empresa-tag-web { background: #D1FAE5; color: #065F46; }
-.footer { background: var(--color-dark); color: rgba(255,255,255,0.4); text-align: center; padding: 40px 5%; }
-.footer a { color: var(--color-primary); text-decoration: none; }
-@media (max-width: 768px) { .header-nav { display: none; } .hero-stats { flex-direction: column; gap: 20px; } .empresas-grid { grid-template-columns: 1fr; } }
+.empresa-tag-ventas { background: #DBEAFE; color: #1E40AF; }
+.empresa-tag-psicologia { background: #FEF3C7; color: #92400E; }
+
+.footer {
+  background: var(--color-dark);
+  color: rgba(255,255,255,0.4);
+  text-align: center;
+  padding: 40px 5%;
+}
+
+.footer p {
+  margin-bottom: 8px;
+}
+
+.footer a {
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+@media (max-width: 768px) {
+  .header-nav { display: none; }
+  .hero-stats { flex-direction: column; gap: 20px; }
+  .empresas-grid { grid-template-columns: 1fr; }
+}
 </style>
 </head>
 <body>
@@ -91,10 +353,22 @@ body { font-family: var(--font-body); color: var(--color-dark); background: var(
       Cada página está construida para convertir visitantes en clientes.
     </p>
     <div class="hero-stats">
-      <div class="hero-stat"><div class="number">30</div><div class="label">Empresas</div></div>
-      <div class="hero-stat"><div class="number">17</div><div class="label">Giros distintos</div></div>
-      <div class="hero-stat"><div class="number">3</div><div class="label">Estados</div></div>
-      <div class="hero-stat"><div class="number">100%</div><div class="label">Personalizado</div></div>
+      <div class="hero-stat">
+        <div class="number">30</div>
+        <div class="label">Empresas</div>
+      </div>
+      <div class="hero-stat">
+        <div class="number">17</div>
+        <div class="label">Giros distintos</div>
+      </div>
+      <div class="hero-stat">
+        <div class="number">3</div>
+        <div class="label">Estados</div>
+      </div>
+      <div class="hero-stat">
+        <div class="number">100%</div>
+        <div class="label">Personalizado</div>
+      </div>
     </div>
   </div>
 </section>
@@ -105,7 +379,518 @@ body { font-family: var(--font-body); color: var(--color-dark); background: var(
     <h2 class="section-title">Todas las empresas</h2>
     <p class="section-subtitle">Haz clic en cualquier tarjeta para ver la demo en vivo</p>
   </div>
-  <div class="empresas-grid" id="grid"></div>
+  <div class="empresas-grid">
+    <a href="empresas/arquitecturando/index.html" class="empresa-card animate-on-scroll">
+      <div class="empresa-card-image">
+        <img src="empresas/arquitecturando/assets/hero.jpg" alt="Arquitecturando" onerror="this.style.display='none'">
+        <div class="overlay">
+          <h3 style="font-size:1.1rem;font-weight:700;">Arquitecturando</h3>
+        </div>
+        <span class="empresa-card-city">San Juan del Rio, Queretaro</span>
+      </div>
+      <div class="empresa-card-body">
+        <h3>Arquitecturando</h3>
+        <p>Negocio local</p>
+        <div class="empresa-card-tags">
+          <span class="empresa-tag empresa-tag-web">Web Demo</span>
+          <span class="empresa-tag">San Juan del Rio, Queretaro</span>
+        </div>
+      </div>
+    </a>
+<a href="empresas/autospa/index.html" class="empresa-card animate-on-scroll">
+      <div class="empresa-card-image">
+        <img src="empresas/autospa/assets/hero.jpg" alt="AUTO SPA" onerror="this.style.display='none'">
+        <div class="overlay">
+          <h3 style="font-size:1.1rem;font-weight:700;">AUTO SPA</h3>
+        </div>
+        <span class="empresa-card-city">México</span>
+      </div>
+      <div class="empresa-card-body">
+        <h3>AUTO SPA</h3>
+        <p>Lavado y lubricado de automoviles y camiones</p>
+        <div class="empresa-card-tags">
+          <span class="empresa-tag empresa-tag-web">Web Demo</span>
+          <span class="empresa-tag">México</span>
+        </div>
+      </div>
+    </a>
+<a href="empresas/campo_mesa/index.html" class="empresa-card animate-on-scroll">
+      <div class="empresa-card-image">
+        <img src="empresas/campo_mesa/assets/hero.jpg" alt="Campo Mesa" onerror="this.style.display='none'">
+        <div class="overlay">
+          <h3 style="font-size:1.1rem;font-weight:700;">Campo Mesa</h3>
+        </div>
+        <span class="empresa-card-city">Leon, Guanajuato</span>
+      </div>
+      <div class="empresa-card-body">
+        <h3>Campo Mesa</h3>
+        <p>Negocio local</p>
+        <div class="empresa-card-tags">
+          <span class="empresa-tag empresa-tag-web">Web Demo</span>
+          <span class="empresa-tag">Leon, Guanajuato</span>
+        </div>
+      </div>
+    </a>
+<a href="empresas/comedor/index.html" class="empresa-card animate-on-scroll">
+      <div class="empresa-card-image">
+        <img src="empresas/comedor/assets/hero.jpg" alt="Comedor" onerror="this.style.display='none'">
+        <div class="overlay">
+          <h3 style="font-size:1.1rem;font-weight:700;">Comedor</h3>
+        </div>
+        <span class="empresa-card-city">Oaxaca de Juárez, Oaxaca</span>
+      </div>
+      <div class="empresa-card-body">
+        <h3>Comedor</h3>
+        <p>Negocio local</p>
+        <div class="empresa-card-tags">
+          <span class="empresa-tag empresa-tag-web">Web Demo</span>
+          <span class="empresa-tag">Oaxaca de Juárez, Oaxaca</span>
+        </div>
+      </div>
+    </a>
+<a href="empresas/despacho/index.html" class="empresa-card animate-on-scroll">
+      <div class="empresa-card-image">
+        <img src="empresas/despacho/assets/hero.jpg" alt="Despacho" onerror="this.style.display='none'">
+        <div class="overlay">
+          <h3 style="font-size:1.1rem;font-weight:700;">Despacho</h3>
+        </div>
+        <span class="empresa-card-city">Oaxaca de Juárez, Oaxaca</span>
+      </div>
+      <div class="empresa-card-body">
+        <h3>Despacho</h3>
+        <p>Negocio local</p>
+        <div class="empresa-card-tags">
+          <span class="empresa-tag empresa-tag-web">Web Demo</span>
+          <span class="empresa-tag">Oaxaca de Juárez, Oaxaca</span>
+        </div>
+      </div>
+    </a>
+<a href="empresas/engorda_mojarras/index.html" class="empresa-card animate-on-scroll">
+      <div class="empresa-card-image">
+        <img src="empresas/engorda_mojarras/assets/hero.jpg" alt="Engorda Mojarras" onerror="this.style.display='none'">
+        <div class="overlay">
+          <h3 style="font-size:1.1rem;font-weight:700;">Engorda Mojarras</h3>
+        </div>
+        <span class="empresa-card-city">México</span>
+      </div>
+      <div class="empresa-card-body">
+        <h3>Engorda Mojarras</h3>
+        <p>Negocio local</p>
+        <div class="empresa-card-tags">
+          <span class="empresa-tag empresa-tag-web">Web Demo</span>
+          <span class="empresa-tag">México</span>
+        </div>
+      </div>
+    </a>
+<a href="empresas/floreria/index.html" class="empresa-card animate-on-scroll">
+      <div class="empresa-card-image">
+        <img src="empresas/floreria/assets/hero.jpg" alt="Floreria" onerror="this.style.display='none'">
+        <div class="overlay">
+          <h3 style="font-size:1.1rem;font-weight:700;">Floreria</h3>
+        </div>
+        <span class="empresa-card-city">Metepec, Estado de México</span>
+      </div>
+      <div class="empresa-card-body">
+        <h3>Floreria</h3>
+        <p>Negocio local</p>
+        <div class="empresa-card-tags">
+          <span class="empresa-tag empresa-tag-web">Web Demo</span>
+          <span class="empresa-tag">Metepec, Estado de México</span>
+        </div>
+      </div>
+    </a>
+<a href="empresas/forrajera/index.html" class="empresa-card animate-on-scroll">
+      <div class="empresa-card-image">
+        <img src="empresas/forrajera/assets/hero.jpg" alt="Forrajera" onerror="this.style.display='none'">
+        <div class="overlay">
+          <h3 style="font-size:1.1rem;font-weight:700;">Forrajera</h3>
+        </div>
+        <span class="empresa-card-city">San Juan del Rio, Queretaro</span>
+      </div>
+      <div class="empresa-card-body">
+        <h3>Forrajera</h3>
+        <p>Negocio local</p>
+        <div class="empresa-card-tags">
+          <span class="empresa-tag empresa-tag-web">Web Demo</span>
+          <span class="empresa-tag">San Juan del Rio, Queretaro</span>
+        </div>
+      </div>
+    </a>
+<a href="empresas/frutas_guicho/index.html" class="empresa-card animate-on-scroll">
+      <div class="empresa-card-image">
+        <img src="empresas/frutas_guicho/assets/hero.jpg" alt="Frutas Guicho" onerror="this.style.display='none'">
+        <div class="overlay">
+          <h3 style="font-size:1.1rem;font-weight:700;">Frutas Guicho</h3>
+        </div>
+        <span class="empresa-card-city">México</span>
+      </div>
+      <div class="empresa-card-body">
+        <h3>Frutas Guicho</h3>
+        <p>Negocio local</p>
+        <div class="empresa-card-tags">
+          <span class="empresa-tag empresa-tag-web">Web Demo</span>
+          <span class="empresa-tag">México</span>
+        </div>
+      </div>
+    </a>
+<a href="empresas/lavanderia/index.html" class="empresa-card animate-on-scroll">
+      <div class="empresa-card-image">
+        <img src="empresas/lavanderia/assets/hero.jpg" alt="Lavanderia" onerror="this.style.display='none'">
+        <div class="overlay">
+          <h3 style="font-size:1.1rem;font-weight:700;">Lavanderia</h3>
+        </div>
+        <span class="empresa-card-city">Oaxaca de Juárez, Oaxaca</span>
+      </div>
+      <div class="empresa-card-body">
+        <h3>Lavanderia</h3>
+        <p>Negocio local</p>
+        <div class="empresa-card-tags">
+          <span class="empresa-tag empresa-tag-web">Web Demo</span>
+          <span class="empresa-tag">Oaxaca de Juárez, Oaxaca</span>
+        </div>
+      </div>
+    </a>
+<a href="empresas/materiasprimas/index.html" class="empresa-card animate-on-scroll">
+      <div class="empresa-card-image">
+        <img src="empresas/materiasprimas/assets/hero.jpg" alt="Materiasprimas" onerror="this.style.display='none'">
+        <div class="overlay">
+          <h3 style="font-size:1.1rem;font-weight:700;">Materiasprimas</h3>
+        </div>
+        <span class="empresa-card-city">Oaxaca de Juárez, Oaxaca</span>
+      </div>
+      <div class="empresa-card-body">
+        <h3>Materiasprimas</h3>
+        <p>Negocio local</p>
+        <div class="empresa-card-tags">
+          <span class="empresa-tag empresa-tag-web">Web Demo</span>
+          <span class="empresa-tag">Oaxaca de Juárez, Oaxaca</span>
+        </div>
+      </div>
+    </a>
+<a href="empresas/minisuper/index.html" class="empresa-card animate-on-scroll">
+      <div class="empresa-card-image">
+        <img src="empresas/minisuper/assets/hero.jpg" alt="MINI SUPER SJT" onerror="this.style.display='none'">
+        <div class="overlay">
+          <h3 style="font-size:1.1rem;font-weight:700;">MINI SUPER SJT</h3>
+        </div>
+        <span class="empresa-card-city">México</span>
+      </div>
+      <div class="empresa-card-body">
+        <h3>MINI SUPER SJT</h3>
+        <p>Comercio al por menor en minisupers</p>
+        <div class="empresa-card-tags">
+          <span class="empresa-tag empresa-tag-web">Web Demo</span>
+          <span class="empresa-tag">México</span>
+        </div>
+      </div>
+    </a>
+<a href="empresas/miscelanea/index.html" class="empresa-card animate-on-scroll">
+      <div class="empresa-card-image">
+        <img src="empresas/miscelanea/assets/hero.jpg" alt="Miscelanea" onerror="this.style.display='none'">
+        <div class="overlay">
+          <h3 style="font-size:1.1rem;font-weight:700;">Miscelanea</h3>
+        </div>
+        <span class="empresa-card-city">San Juan del Rio, Queretaro</span>
+      </div>
+      <div class="empresa-card-body">
+        <h3>Miscelanea</h3>
+        <p>Negocio local</p>
+        <div class="empresa-card-tags">
+          <span class="empresa-tag empresa-tag-web">Web Demo</span>
+          <span class="empresa-tag">San Juan del Rio, Queretaro</span>
+        </div>
+      </div>
+    </a>
+<a href="empresas/panaderia_imperial/index.html" class="empresa-card animate-on-scroll">
+      <div class="empresa-card-image">
+        <img src="empresas/panaderia_imperial/assets/hero.jpg" alt="Panaderia Y Pasteleria Imperial" onerror="this.style.display='none'">
+        <div class="overlay">
+          <h3 style="font-size:1.1rem;font-weight:700;">Panaderia Y Pasteleria Imperial</h3>
+        </div>
+        <span class="empresa-card-city">Toluca, Estado de Mexico</span>
+      </div>
+      <div class="empresa-card-body">
+        <h3>Panaderia Y Pasteleria Imperial</h3>
+        <p>Panificacion tradicional y venta al por menor de p...</p>
+        <div class="empresa-card-tags">
+          <span class="empresa-tag empresa-tag-web">Web Demo</span>
+          <span class="empresa-tag">Toluca, Estado de Mexico</span>
+        </div>
+      </div>
+    </a>
+<a href="empresas/panaderia_vicky/index.html" class="empresa-card animate-on-scroll">
+      <div class="empresa-card-image">
+        <img src="empresas/panaderia_vicky/assets/hero.jpg" alt="Panaderia Vicky" onerror="this.style.display='none'">
+        <div class="overlay">
+          <h3 style="font-size:1.1rem;font-weight:700;">Panaderia Vicky</h3>
+        </div>
+        <span class="empresa-card-city">Oaxaca de Juárez, Oaxaca</span>
+      </div>
+      <div class="empresa-card-body">
+        <h3>Panaderia Vicky</h3>
+        <p>Negocio local</p>
+        <div class="empresa-card-tags">
+          <span class="empresa-tag empresa-tag-web">Web Demo</span>
+          <span class="empresa-tag">Oaxaca de Juárez, Oaxaca</span>
+        </div>
+      </div>
+    </a>
+<a href="empresas/pescadores_capi/index.html" class="empresa-card animate-on-scroll">
+      <div class="empresa-card-image">
+        <img src="empresas/pescadores_capi/assets/hero.jpg" alt="Pescadores Capi" onerror="this.style.display='none'">
+        <div class="overlay">
+          <h3 style="font-size:1.1rem;font-weight:700;">Pescadores Capi</h3>
+        </div>
+        <span class="empresa-card-city">México</span>
+      </div>
+      <div class="empresa-card-body">
+        <h3>Pescadores Capi</h3>
+        <p>Negocio local</p>
+        <div class="empresa-card-tags">
+          <span class="empresa-tag empresa-tag-web">Web Demo</span>
+          <span class="empresa-tag">México</span>
+        </div>
+      </div>
+    </a>
+<a href="empresas/pescadores_gallega/index.html" class="empresa-card animate-on-scroll">
+      <div class="empresa-card-image">
+        <img src="empresas/pescadores_gallega/assets/hero.jpg" alt="Pescadores Gallega" onerror="this.style.display='none'">
+        <div class="overlay">
+          <h3 style="font-size:1.1rem;font-weight:700;">Pescadores Gallega</h3>
+        </div>
+        <span class="empresa-card-city">México</span>
+      </div>
+      <div class="empresa-card-body">
+        <h3>Pescadores Gallega</h3>
+        <p>Negocio local</p>
+        <div class="empresa-card-tags">
+          <span class="empresa-tag empresa-tag-web">Web Demo</span>
+          <span class="empresa-tag">México</span>
+        </div>
+      </div>
+    </a>
+<a href="empresas/pescadores_indep/index.html" class="empresa-card animate-on-scroll">
+      <div class="empresa-card-image">
+        <img src="empresas/pescadores_indep/assets/hero.jpg" alt="Pescadores Indep" onerror="this.style.display='none'">
+        <div class="overlay">
+          <h3 style="font-size:1.1rem;font-weight:700;">Pescadores Indep</h3>
+        </div>
+        <span class="empresa-card-city">México</span>
+      </div>
+      <div class="empresa-card-body">
+        <h3>Pescadores Indep</h3>
+        <p>Negocio local</p>
+        <div class="empresa-card-tags">
+          <span class="empresa-tag empresa-tag-web">Web Demo</span>
+          <span class="empresa-tag">México</span>
+        </div>
+      </div>
+    </a>
+<a href="empresas/pisur/index.html" class="empresa-card animate-on-scroll">
+      <div class="empresa-card-image">
+        <img src="empresas/pisur/assets/hero.jpg" alt="PISUR" onerror="this.style.display='none'">
+        <div class="overlay">
+          <h3 style="font-size:1.1rem;font-weight:700;">PISUR</h3>
+        </div>
+        <span class="empresa-card-city">México</span>
+      </div>
+      <div class="empresa-card-body">
+        <h3>PISUR</h3>
+        <p>Comercio al por menor de articulos para albercas</p>
+        <div class="empresa-card-tags">
+          <span class="empresa-tag empresa-tag-web">Web Demo</span>
+          <span class="empresa-tag">México</span>
+        </div>
+      </div>
+    </a>
+<a href="empresas/polleria/index.html" class="empresa-card animate-on-scroll">
+      <div class="empresa-card-image">
+        <img src="empresas/polleria/assets/hero.jpg" alt="Polleria" onerror="this.style.display='none'">
+        <div class="overlay">
+          <h3 style="font-size:1.1rem;font-weight:700;">Polleria</h3>
+        </div>
+        <span class="empresa-card-city">Oaxaca de Juárez, Oaxaca</span>
+      </div>
+      <div class="empresa-card-body">
+        <h3>Polleria</h3>
+        <p>Negocio local</p>
+        <div class="empresa-card-tags">
+          <span class="empresa-tag empresa-tag-web">Web Demo</span>
+          <span class="empresa-tag">Oaxaca de Juárez, Oaxaca</span>
+        </div>
+      </div>
+    </a>
+<a href="empresas/pollos_pasadita/index.html" class="empresa-card animate-on-scroll">
+      <div class="empresa-card-image">
+        <img src="empresas/pollos_pasadita/assets/hero.jpg" alt="PELADOR DE POLLOS LA PASADITA" onerror="this.style.display='none'">
+        <div class="overlay">
+          <h3 style="font-size:1.1rem;font-weight:700;">PELADOR DE POLLOS LA PASADITA</h3>
+        </div>
+        <span class="empresa-card-city">Veracruz, Veracruz</span>
+      </div>
+      <div class="empresa-card-body">
+        <h3>PELADOR DE POLLOS LA PASADITA</h3>
+        <p>Procesamiento y venta de pollo (avicola)</p>
+        <div class="empresa-card-tags">
+          <span class="empresa-tag empresa-tag-web">Web Demo</span>
+          <span class="empresa-tag">Veracruz, Veracruz</span>
+        </div>
+      </div>
+    </a>
+<a href="empresas/restaurante/index.html" class="empresa-card animate-on-scroll">
+      <div class="empresa-card-image">
+        <img src="empresas/restaurante/assets/hero.jpg" alt="RESTAURANTE BAR EL ESCAPE" onerror="this.style.display='none'">
+        <div class="overlay">
+          <h3 style="font-size:1.1rem;font-weight:700;">RESTAURANTE BAR EL ESCAPE</h3>
+        </div>
+        <span class="empresa-card-city">México</span>
+      </div>
+      <div class="empresa-card-body">
+        <h3>RESTAURANTE BAR EL ESCAPE</h3>
+        <p>Restaurantes con servicio de preparacion de alimen...</p>
+        <div class="empresa-card-tags">
+          <span class="empresa-tag empresa-tag-web">Web Demo</span>
+          <span class="empresa-tag">México</span>
+        </div>
+      </div>
+    </a>
+<a href="empresas/seralum/index.html" class="empresa-card animate-on-scroll">
+      <div class="empresa-card-image">
+        <img src="empresas/seralum/assets/hero.jpg" alt="SERALUM SERVICIO DE ALUMINIO Y HERRERIA" onerror="this.style.display='none'">
+        <div class="overlay">
+          <h3 style="font-size:1.1rem;font-weight:700;">SERALUM SERVICIO DE ALUMINIO Y HERRERIA</h3>
+        </div>
+        <span class="empresa-card-city">México</span>
+      </div>
+      <div class="empresa-card-body">
+        <h3>SERALUM SERVICIO DE ALUMINIO Y HERRERIA</h3>
+        <p>Fabricacion de productos de herreria y aluminio</p>
+        <div class="empresa-card-tags">
+          <span class="empresa-tag empresa-tag-web">Web Demo</span>
+          <span class="empresa-tag">México</span>
+        </div>
+      </div>
+    </a>
+<a href="empresas/taller_abel/index.html" class="empresa-card animate-on-scroll">
+      <div class="empresa-card-image">
+        <img src="empresas/taller_abel/assets/hero.jpg" alt="Taller Abel" onerror="this.style.display='none'">
+        <div class="overlay">
+          <h3 style="font-size:1.1rem;font-weight:700;">Taller Abel</h3>
+        </div>
+        <span class="empresa-card-city">Toluca, Estado de México</span>
+      </div>
+      <div class="empresa-card-body">
+        <h3>Taller Abel</h3>
+        <p>Negocio local</p>
+        <div class="empresa-card-tags">
+          <span class="empresa-tag empresa-tag-web">Web Demo</span>
+          <span class="empresa-tag">Toluca, Estado de México</span>
+        </div>
+      </div>
+    </a>
+<a href="empresas/taller_cardenas/index.html" class="empresa-card animate-on-scroll">
+      <div class="empresa-card-image">
+        <img src="empresas/taller_cardenas/assets/hero.jpg" alt="TALLER CARDENAS" onerror="this.style.display='none'">
+        <div class="overlay">
+          <h3 style="font-size:1.1rem;font-weight:700;">TALLER CARDENAS</h3>
+        </div>
+        <span class="empresa-card-city">Veracruz, Veracruz</span>
+      </div>
+      <div class="empresa-card-body">
+        <h3>TALLER CARDENAS</h3>
+        <p>Maquinado de piezas metalicas para maquinaria y eq...</p>
+        <div class="empresa-card-tags">
+          <span class="empresa-tag empresa-tag-web">Web Demo</span>
+          <span class="empresa-tag">Veracruz, Veracruz</span>
+        </div>
+      </div>
+    </a>
+<a href="empresas/taller_fortuna/index.html" class="empresa-card animate-on-scroll">
+      <div class="empresa-card-image">
+        <img src="empresas/taller_fortuna/assets/hero.jpg" alt="Taller Mecanico La Fortuna" onerror="this.style.display='none'">
+        <div class="overlay">
+          <h3 style="font-size:1.1rem;font-weight:700;">Taller Mecanico La Fortuna</h3>
+        </div>
+        <span class="empresa-card-city">Toluca, Estado de Mexico</span>
+      </div>
+      <div class="empresa-card-body">
+        <h3>Taller Mecanico La Fortuna</h3>
+        <p>Reparacion menor de llantas y servicio automotriz ...</p>
+        <div class="empresa-card-tags">
+          <span class="empresa-tag empresa-tag-web">Web Demo</span>
+          <span class="empresa-tag">Toluca, Estado de Mexico</span>
+        </div>
+      </div>
+    </a>
+<a href="empresas/taller_moscos/index.html" class="empresa-card animate-on-scroll">
+      <div class="empresa-card-image">
+        <img src="empresas/taller_moscos/assets/hero.jpg" alt="Taller Moscos" onerror="this.style.display='none'">
+        <div class="overlay">
+          <h3 style="font-size:1.1rem;font-weight:700;">Taller Moscos</h3>
+        </div>
+        <span class="empresa-card-city">Mérida, Yucatán</span>
+      </div>
+      <div class="empresa-card-body">
+        <h3>Taller Moscos</h3>
+        <p>Negocio local</p>
+        <div class="empresa-card-tags">
+          <span class="empresa-tag empresa-tag-web">Web Demo</span>
+          <span class="empresa-tag">Mérida, Yucatán</span>
+        </div>
+      </div>
+    </a>
+<a href="empresas/tecnofon/index.html" class="empresa-card animate-on-scroll">
+      <div class="empresa-card-image">
+        <img src="empresas/tecnofon/assets/hero.jpg" alt="Tecnofon" onerror="this.style.display='none'">
+        <div class="overlay">
+          <h3 style="font-size:1.1rem;font-weight:700;">Tecnofon</h3>
+        </div>
+        <span class="empresa-card-city">Puebla, Puebla</span>
+      </div>
+      <div class="empresa-card-body">
+        <h3>Tecnofon</h3>
+        <p>Negocio local</p>
+        <div class="empresa-card-tags">
+          <span class="empresa-tag empresa-tag-web">Web Demo</span>
+          <span class="empresa-tag">Puebla, Puebla</span>
+        </div>
+      </div>
+    </a>
+<a href="empresas/tortilleria_gz/index.html" class="empresa-card animate-on-scroll">
+      <div class="empresa-card-image">
+        <img src="empresas/tortilleria_gz/assets/hero.jpg" alt="Tortilleria Gz" onerror="this.style.display='none'">
+        <div class="overlay">
+          <h3 style="font-size:1.1rem;font-weight:700;">Tortilleria Gz</h3>
+        </div>
+        <span class="empresa-card-city">Toluca, Estado de México</span>
+      </div>
+      <div class="empresa-card-body">
+        <h3>Tortilleria Gz</h3>
+        <p>Negocio local</p>
+        <div class="empresa-card-tags">
+          <span class="empresa-tag empresa-tag-web">Web Demo</span>
+          <span class="empresa-tag">Toluca, Estado de México</span>
+        </div>
+      </div>
+    </a>
+<a href="empresas/tortilleria_tc/index.html" class="empresa-card animate-on-scroll">
+      <div class="empresa-card-image">
+        <img src="empresas/tortilleria_tc/assets/hero.jpg" alt="Tortilleria Tollocan" onerror="this.style.display='none'">
+        <div class="overlay">
+          <h3 style="font-size:1.1rem;font-weight:700;">Tortilleria Tollocan</h3>
+        </div>
+        <span class="empresa-card-city">Toluca, Estado de Mexico</span>
+      </div>
+      <div class="empresa-card-body">
+        <h3>Tortilleria Tollocan</h3>
+        <p>Elaboracion de tortillas de maiz y molienda de nix...</p>
+        <div class="empresa-card-tags">
+          <span class="empresa-tag empresa-tag-web">Web Demo</span>
+          <span class="empresa-tag">Toluca, Estado de Mexico</span>
+        </div>
+      </div>
+    </a>
+  </div>
 </section>
 
 <section class="section" id="metodologia" style="background:var(--color-gray-light);">
@@ -121,17 +906,17 @@ body { font-family: var(--font-body); color: var(--color-dark); background: var(
         <h3 style="margin-bottom:8px;">El Regalo</h3>
         <p style="color:var(--color-gray);font-size:0.9rem;">Entregas la demo sin pedir nada. La reciprocidad psicológica se activa.</p>
       </div>
-      <div style="text-align:center;padding:30px;background:white;border-radius:var(--radius-lg);box-shadow:var(--shadow-sm);" class="animate-on-scroll">
+      <div style="text-align:center;padding:30px;background:white;border-radius:var(--radius-lg);box-shadow:var(--shadow-sm);" class="animate-on-scroll delay-1">
         <div style="width:60px;height:60px;background:var(--color-primary);color:white;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.5rem;font-weight:700;margin:0 auto 16px;">2</div>
         <h3 style="margin-bottom:8px;">El Gancho</h3>
         <p style="color:var(--color-gray);font-size:0.9rem;">Llamas para "saber qué le pareció". No vendes. Escuchas. El interés emerge solo.</p>
       </div>
-      <div style="text-align:center;padding:30px;background:white;border-radius:var(--radius-lg);box-shadow:var(--shadow-sm);" class="animate-on-scroll">
+      <div style="text-align:center;padding:30px;background:white;border-radius:var(--radius-lg);box-shadow:var(--shadow-sm);" class="animate-on-scroll delay-2">
         <div style="width:60px;height:60px;background:var(--color-primary);color:white;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.5rem;font-weight:700;margin:0 auto 16px;">3</div>
         <h3 style="margin-bottom:8px;">El Cierre</h3>
         <p style="color:var(--color-gray);font-size:0.9rem;">Oferta con urgencia real. Cierre asumido. Tomas el 50% de anticipo.</p>
       </div>
-      <div style="text-align:center;padding:30px;background:white;border-radius:var(--radius-lg);box-shadow:var(--shadow-sm);" class="animate-on-scroll">
+      <div style="text-align:center;padding:30px;background:white;border-radius:var(--radius-lg);box-shadow:var(--shadow-sm);" class="animate-on-scroll delay-3">
         <div style="width:60px;height:60px;background:var(--color-primary);color:white;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.5rem;font-weight:700;margin:0 auto 16px;">4</div>
         <h3 style="margin-bottom:8px;">La Escala</h3>
         <p style="color:var(--color-gray);font-size:0.9rem;">Entregas, pides referencias, repites con los vecinos del área.</p>
@@ -143,69 +928,19 @@ body { font-family: var(--font-body); color: var(--color-dark); background: var(
 <footer class="footer" id="contacto">
   <p><strong style="color:var(--color-primary);">Web Muestras México v2.0</strong></p>
   <p>30 demos profesionales · Diseño psicológico · Front-end impecable</p>
-  <p style="margin-top:16px;font-size:0.8rem;">Generado con <a href="#">Kimi Work</a></p>
+  <p style="margin-top:16px;font-size:0.8rem;">
+    Generado con <a href="#">Kimi Work</a> · 
+    <a href="https://github.com/veltis-hyper/web-muestras-mexico">GitHub</a>
+  </p>
 </footer>
 
 <script>
-const empresas = [
-  {slug:'arquitecturando',nombre:'Arquitecturando',giro:'Arquitectura y construcción',ciudad:'San Juan del Río, Qro',grad:'linear-gradient(135deg,#1A1A2E 0%,#16213E 100%)'},
-  {slug:'autospa',nombre:'AUTO SPA',giro:'Lavado y lubricado de autos',ciudad:'México',grad:'linear-gradient(135deg,#1e3a5f 0%,#2563eb 100%)'},
-  {slug:'campo_mesa',nombre:'Campo Mesa',giro:'Productos de nopal',ciudad:'León, Gto',grad:'linear-gradient(135deg,#166534 0%,#22c55e 100%)'},
-  {slug:'comedor',nombre:'Comedor',giro:'Comida económica',ciudad:'Oaxaca',grad:'linear-gradient(135deg,#ea580c 0%,#f97316 100%)'},
-  {slug:'despacho',nombre:'Despacho',giro:'Servicios profesionales',ciudad:'Oaxaca',grad:'linear-gradient(135deg,#1e3a5f 0%,#3b82f6 100%)'},
-  {slug:'engorda_mojarras',nombre:'Engorda Mojarras',giro:'Acuicultura',ciudad:'Veracruz',grad:'linear-gradient(135deg,#0d9488 0%,#14b8a6 100%)'},
-  {slug:'floreria',nombre:'Florería',giro:'Flores y arreglos',ciudad:'Metepec, Edomex',grad:'linear-gradient(135deg,#ec4899 0%,#f472b6 100%)'},
-  {slug:'forrajera',nombre:'Forrajera',giro:'Forrajes y veterinaria',ciudad:'San Juan del Río, Qro',grad:'linear-gradient(135deg,#15803d 0%,#22c55e 100%)'},
-  {slug:'frutas_guicho',nombre:'Frutas Guicho',giro:'Frutas y verduras',ciudad:'Puebla',grad:'linear-gradient(135deg,#16a34a 0%,#84cc16 100%)'},
-  {slug:'lavanderia',nombre:'Lavandería',giro:'Lavado y tintorería',ciudad:'Oaxaca',grad:'linear-gradient(135deg,#0284c7 0%,#38bdf8 100%)'},
-  {slug:'materiasprimas',nombre:'Materias Primas',giro:'Insumos repostería',ciudad:'Oaxaca',grad:'linear-gradient(135deg,#db2777 0%,#f472b6 100%)'},
-  {slug:'minisuper',nombre:'MINI SUPER SJT',giro:'Minisuper',ciudad:'México',grad:'linear-gradient(135deg,#dc2626 0%,#ef4444 100%)'},
-  {slug:'miscelanea',nombre:'Miscelánea',giro:'Variedades',ciudad:'San Juan del Río, Qro',grad:'linear-gradient(135deg,#be123c 0%,#f43f5e 100%)'},
-  {slug:'panaderia_imperial',nombre:'Panadería Imperial',giro:'Panadería tradicional',ciudad:'Toluca, Edomex',grad:'linear-gradient(135deg,#a16207 0%,#eab308 100%)'},
-  {slug:'panaderia_vicky',nombre:'Panadería Vicky',giro:'Panadería',ciudad:'Oaxaca',grad:'linear-gradient(135deg,#92400e 0%,#d97706 100%)'},
-  {slug:'pescadores_capi',nombre:'Pescadores Capi',giro:'Cooperativa pesquera',ciudad:'Veracruz',grad:'linear-gradient(135deg,#1e3a5f 0%,#0ea5e9 100%)'},
-  {slug:'pescadores_gallega',nombre:'Pescadores Gallega',giro:'Pesca artesanal',ciudad:'Veracruz',grad:'linear-gradient(135deg,#0f766e 0%,#14b8a6 100%)'},
-  {slug:'pescadores_indep',nombre:'Pescadores Indep',giro:'Pesca artesanal',ciudad:'Veracruz',grad:'linear-gradient(135deg,#0369a1 0%,#38bdf8 100%)'},
-  {slug:'pisur',nombre:'PISUR',giro:'Artículos para albercas',ciudad:'México',grad:'linear-gradient(135deg,#0891b2 0%,#22d3ee 100%)'},
-  {slug:'polleria',nombre:'Pollería',giro:'Venta de pollo',ciudad:'Oaxaca',grad:'linear-gradient(135deg,#f59e0b 0%,#fbbf24 100%)'},
-  {slug:'pollos_pasadita',nombre:'PELADOR LA PASADITA',giro:'Procesamiento de pollo',ciudad:'Veracruz',grad:'linear-gradient(135deg,#991b1b 0%,#ef4444 100%)'},
-  {slug:'restaurante',nombre:'RESTAURANTE BAR EL ESCAPE',giro:'Restaurante-bar',ciudad:'México',grad:'linear-gradient(135deg,#c2410c 0%,#f97316 100%)'},
-  {slug:'seralum',nombre:'SERALUM',giro:'Aluminio y herrería',ciudad:'México',grad:'linear-gradient(135deg,#374151 0%,#6b7280 100%)'},
-  {slug:'taller_abel',nombre:'Taller Abel',giro:'Taller mecánico',ciudad:'Toluca, Edomex',grad:'linear-gradient(135deg,#4b5563 0%,#9ca3af 100%)'},
-  {slug:'taller_cardenas',nombre:'TALLER CARDENAS',giro:'Maquinado industrial',ciudad:'Veracruz',grad:'linear-gradient(135deg,#1e40af 0%,#3b82f6 100%)'},
-  {slug:'taller_fortuna',nombre:'Taller La Fortuna',giro:'Servicio automotriz',ciudad:'Toluca, Edomex',grad:'linear-gradient(135deg,#991b1b 0%,#dc2626 100%)'},
-  {slug:'taller_moscos',nombre:'Taller Moscos',giro:'Bicicletas y motos',ciudad:'Mérida, Yuc',grad:'linear-gradient(135deg,#1f2937 0%,#4b5563 100%)'},
-  {slug:'tecnofon',nombre:'Tecnofon',giro:'Electrónica',ciudad:'Puebla',grad:'linear-gradient(135deg,#1e293b 0%,#475569 100%)'},
-  {slug:'tortilleria_gz',nombre:'Tortillería GZ',giro:'Tortillas de maíz',ciudad:'Toluca, Edomex',grad:'linear-gradient(135deg,#ca8a04 0%,#facc15 100%)'},
-  {slug:'tortilleria_tc',nombre:'Tortillería Tollocan',giro:'Tortillas y nixtamal',ciudad:'Toluca, Edomex',grad:'linear-gradient(135deg,#d97706 0%,#fbbf24 100%)'}
-];
-
-const grid = document.getElementById('grid');
-empresas.forEach((e, i) => {
-  const card = document.createElement('a');
-  card.href = `empresas/${e.slug}/index.html`;
-  card.className = 'empresa-card animate-on-scroll';
-  card.style.animationDelay = `${i * 0.05}s`;
-  card.innerHTML = `
-    <div class="empresa-card-image" style="background:${e.grad};">
-      <div class="overlay"><h3>${e.nombre}</h3></div>
-      <span class="empresa-card-city">${e.ciudad}</span>
-    </div>
-    <div class="empresa-card-body">
-      <h3>${e.nombre}</h3>
-      <p>${e.giro}</p>
-      <div class="empresa-card-tags">
-        <span class="empresa-tag empresa-tag-web">Web Demo</span>
-        <span class="empresa-tag">${e.ciudad}</span>
-      </div>
-    </div>
-  `;
-  grid.appendChild(card);
-});
-
 const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+  entries.forEach(entry => {
+    if (entry.isIntersecting) entry.target.classList.add('visible');
+  });
 }, { threshold: 0.1 });
+
 document.querySelectorAll('.animate-on-scroll').forEach(el => observer.observe(el));
 </script>
 

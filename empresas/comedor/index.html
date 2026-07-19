@@ -1,362 +1,1123 @@
 <!DOCTYPE html>
-<html lang="es-MX">
+<html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Comedor Familiar — Menú Corrido desde $65 en Oaxaca</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --negro: #1a1a1a;
-      --calido: #f4a261;
-      --verde: #2a9d8f;
-      --crema: #FFF8F0;
-      --blanco: #ffffff;
-      --gris: #666666;
-    }
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body { font-family: 'Inter', sans-serif; color: var(--negro); background: var(--blanco); line-height: 1.65; }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Comedor — Negocio local</title>
+<!-- SEO OPTIMIZATION v2.0 -->
+<meta name="description" content="Comedor — Negocio local en Oaxaca de Juárez, Oaxaca. Página web profesional de demostración. Contáctenos hoy.">
+<meta name="keywords" content="negocio local, oaxaca de juárez, oaxaca, negocio local, México, servicios">
+<meta name="author" content="Web Muestras México">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="Comedor — Negocio local">
+<meta property="og:description" content="Comedor en Oaxaca de Juárez, Oaxaca. Negocio local. Página web profesional de demostración.">
+<meta property="og:type" content="business.business">
+<meta property="og:url" content="https://veltis-hyper.github.io/web-muestras-mexico/empresas/comedor/index.html">
+<meta property="og:image" content="assets/hero_optimized.jpg">
+<meta property="og:locale" content="es_MX">
+<meta property="business:contact_data:locality" content="Oaxaca de Juárez, Oaxaca">
+<meta property="business:contact_data:country_name" content="México">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Comedor — Negocio local">
+<meta name="twitter:description" content="Comedor en Oaxaca de Juárez, Oaxaca. Negocio local. Página web profesional de demostración.">
+<meta name="twitter:image" content="assets/hero_optimized.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;600;700&display=swap" as="style">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Comedor",
+  "description": "Negocio local",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Oaxaca de Juárez, Oaxaca",
+    "addressCountry": "MX"
+  },
+  "url": "https://veltis-hyper.github.io/web-muestras-mexico/empresas/comedor/index.html",
+  "image": "assets/hero_optimized.jpg"
+}
+</script>
+<!-- END SEO OPTIMIZATION -->
+<meta name="description" content="Servicios en Oaxaca de Juárez, Oaxaca - Empresa">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+/* ============================================
+   TEMPLATE v2.0 — Impeccable Front-End
+   DISEÑO PSICOLÓGICO ESTRATÉGICO
+   ============================================ */
 
-    /* DEMO BADGE */
-    .demo-badge {
-      position: fixed; bottom: 20px; right: 20px; z-index: 9999;
-      background: rgba(0,0,0,0.85); color: #fff; padding: 10px 18px; border-radius: 8px;
-      font-size: 0.8rem; font-weight: 500; box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-      backdrop-filter: blur(10px); max-width: 260px; text-align: center;
-    }
+:root {
+  --color-primary: #D4A017;
+  --color-primary-dark: #B8860B;
+  --color-accent: #E8C547;
+  --color-gold: #D4A017;
+  --color-dark: #1A1A2E;
+  --color-dark-2: #16213E;
+  --color-light: #FAFAFA;
+  --color-gray: #6B7280;
+  --color-gray-light: #F3F4F6;
+  --color-urgency: #DC2626;
+  --font-body: 'Inter', sans-serif;
+  --font-display: 'Playfair Display', serif;
+  --shadow-sm: 0 1px 2px rgba(0,0,0,0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -2px rgba(0,0,0,0.1);
+  --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -4px rgba(0,0,0,0.1);
+  --shadow-xl: 0 25px 50px -12px rgba(0,0,0,0.25);
+  --radius: 12px;
+  --radius-lg: 20px;
+  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
 
-    /* HEADER */
-    header {
-      position: fixed; top: 0; left: 0; width: 100%; z-index: 1000;
-      background: rgba(255,255,255,0.95); backdrop-filter: blur(12px);
-      border-bottom: 1px solid rgba(0,0,0,0.06);
-    }
-    .header-container { max-width: 1200px; margin: 0 auto; padding: 0 24px; display: flex; align-items: center; justify-content: space-between; height: 68px; }
-    .logo { font-family: 'Playfair Display', serif; font-weight: 800; font-size: 1.35rem; color: var(--negro); }
-    .logo span { color: var(--calido); }
-    nav ul { display: flex; gap: 32px; list-style: none; align-items: center; }
-    nav a { text-decoration: none; color: var(--negro); font-weight: 500; font-size: 0.92rem; transition: color 0.3s; }
-    nav a:hover { color: var(--calido); }
-    .btn-nav { background: var(--calido); color: #fff !important; padding: 10px 22px; border-radius: 50px; font-weight: 600; }
-    .menu-toggle { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; }
-    .menu-toggle span { width: 24px; height: 2.5px; background: var(--negro); border-radius: 2px; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
 
-    /* HERO */
-    .hero {
-      min-height: 100vh; display: flex; align-items: center;
-      background: linear-gradient(rgba(26,26,26,0.6), rgba(26,26,26,0.4)), url('https://images.unsplash.com/photo-1565299585323-38d6b0865b47?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
-      position: relative; padding: 120px 24px 80px;
-    }
-    .hero-content { max-width: 650px; animation: fadeInUp 1s ease; }
-    @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
-    .hero-tag { display: inline-block; background: var(--calido); color: #fff; padding: 6px 16px; border-radius: 50px; font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 20px; }
-    .hero h1 { font-family: 'Playfair Display', serif; font-size: 3.8rem; font-weight: 800; color: #fff; line-height: 1.05; margin-bottom: 20px; }
-    .hero h1 em { color: var(--calido); font-style: normal; }
-    .hero-sub { font-size: 1.15rem; color: rgba(255,255,255,0.9); margin-bottom: 32px; max-width: 520px; }
-    .hero-cta { display: flex; gap: 16px; flex-wrap: wrap; }
-    .btn-main { background: var(--calido); color: #fff; padding: 16px 36px; border-radius: 50px; text-decoration: none; font-weight: 700; font-size: 1rem; transition: transform 0.3s, box-shadow 0.3s; display: inline-block; }
-    .btn-main:hover { transform: translateY(-2px); box-shadow: 0 10px 30px rgba(244,162,97,0.4); }
-    .btn-ghost { background: rgba(255,255,255,0.15); color: #fff; padding: 16px 36px; border-radius: 50px; text-decoration: none; font-weight: 600; font-size: 1rem; backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.3); transition: background 0.3s; }
-    .btn-ghost:hover { background: rgba(255,255,255,0.25); }
-    .hero-trust { display: flex; gap: 32px; margin-top: 40px; }
-    .hero-trust div { text-align: center; }
-    .hero-trust strong { display: block; font-size: 1.6rem; color: #fff; font-weight: 700; }
-    .hero-trust span { font-size: 0.8rem; color: rgba(255,255,255,0.7); }
+body {
+  font-family: var(--font-body);
+  color: var(--color-dark);
+  background: var(--color-light);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
 
-    /* COMO PEDIR */
-    .como-pedir { background: var(--crema); padding: 80px 24px; }
-    .como-pedir-inner { max-width: 1000px; margin: 0 auto; text-align: center; }
-    .como-pedir h2 { font-family: 'Playfair Display', serif; font-size: 2.2rem; margin-bottom: 12px; }
-    .como-pedir > div > p { color: var(--gris); margin-bottom: 48px; }
-    .pasos { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; }
-    .paso { background: #fff; padding: 36px 28px; border-radius: 20px; box-shadow: 0 8px 30px rgba(0,0,0,0.04); }
-    .paso-num { width: 48px; height: 48px; background: var(--calido); color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1.2rem; margin: 0 auto 20px; }
-    .paso h3 { font-size: 1.1rem; margin-bottom: 8px; }
-    .paso p { font-size: 0.9rem; color: var(--gris); }
+/* ============================================
+   ANIMACIONES GLOBALES
+   ============================================ */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
 
-    /* MENU */
-    .menu-section { padding: 100px 24px; max-width: 900px; margin: 0 auto; }
-    .menu-header { text-align: center; margin-bottom: 56px; }
-    .menu-header h2 { font-family: 'Playfair Display', serif; font-size: 2.6rem; margin-bottom: 8px; }
-    .menu-header p { color: var(--gris); }
-    .menu-item { display: flex; justify-content: space-between; align-items: flex-start; padding: 24px 0; border-bottom: 1px dashed rgba(0,0,0,0.1); }
-    .menu-item:last-child { border-bottom: none; }
-    .menu-item h3 { font-size: 1.15rem; font-weight: 600; margin-bottom: 4px; }
-    .menu-item p { font-size: 0.9rem; color: var(--gris); }
-    .menu-item .precio { font-family: 'Playfair Display', serif; font-size: 1.4rem; font-weight: 700; color: var(--calido); white-space: nowrap; margin-left: 20px; }
-    .menu-badge { display: inline-block; background: var(--verde); color: #fff; font-size: 0.7rem; padding: 3px 10px; border-radius: 50px; margin-left: 8px; font-weight: 600; text-transform: uppercase; }
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
 
-    /* GALERIA */
-    .galeria { background: var(--negro); padding: 100px 24px; color: #fff; }
-    .galeria-inner { max-width: 1200px; margin: 0 auto; }
-    .galeria-header { text-align: center; margin-bottom: 48px; }
-    .galeria-header h2 { font-family: 'Playfair Display', serif; font-size: 2.4rem; }
-    .galeria-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
-    .galeria-grid img { width: 100%; height: 220px; object-fit: cover; border-radius: 16px; transition: transform 0.4s; }
-    .galeria-grid img:hover { transform: scale(1.03); }
-    .galeria-grid .wide { grid-column: span 2; }
+@keyframes slideInLeft {
+  from { opacity: 0; transform: translateX(-60px); }
+  to { opacity: 1; transform: translateX(0); }
+}
 
-    /* TESTIMONIOS */
-    .testimonios { padding: 100px 24px; max-width: 1100px; margin: 0 auto; }
-    .testimonios-header { text-align: center; margin-bottom: 56px; }
-    .testimonios-header h2 { font-family: 'Playfair Display', serif; font-size: 2.4rem; margin-bottom: 8px; }
-    .testimonios-header p { color: var(--gris); }
-    .testi-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
-    .testi-card { background: var(--crema); padding: 32px; border-radius: 20px; }
-    .testi-stars { color: #f4a261; font-size: 1.1rem; margin-bottom: 16px; letter-spacing: 2px; }
-    .testi-card p { font-size: 0.95rem; color: #444; margin-bottom: 20px; line-height: 1.7; }
-    .testi-autor { display: flex; align-items: center; gap: 12px; }
-    .testi-avatar { width: 44px; height: 44px; background: var(--calido); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #fff; font-weight: 700; font-size: 0.9rem; }
-    .testi-autor div strong { font-size: 0.95rem; }
-    .testi-autor div span { font-size: 0.8rem; color: var(--gris); }
+@keyframes slideInRight {
+  from { opacity: 0; transform: translateX(60px); }
+  to { opacity: 1; transform: translateX(0); }
+}
 
-    /* HORARIOS */
-    .horarios { background: linear-gradient(rgba(26,26,26,0.85), rgba(26,26,26,0.9)), url('https://images.unsplash.com/photo-1551504734-5ee1c4a1479b?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat; padding: 100px 24px; color: #fff; text-align: center; }
-    .horarios-inner { max-width: 700px; margin: 0 auto; }
-    .horarios h2 { font-family: 'Playfair Display', serif; font-size: 2.4rem; margin-bottom: 32px; }
-    .horarios-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-bottom: 40px; }
-    .horario-box { background: rgba(255,255,255,0.08); padding: 28px; border-radius: 16px; backdrop-filter: blur(10px); }
-    .horario-box h3 { font-size: 1.1rem; margin-bottom: 8px; color: var(--calido); }
-    .horario-box p { font-size: 1.3rem; font-weight: 700; }
-    .horario-box span { font-size: 0.85rem; color: rgba(255,255,255,0.6); }
-    .horarios .btn-main { margin-top: 8px; }
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
+}
 
-    /* FOOTER */
-    footer { background: var(--negro); color: rgba(255,255,255,0.6); padding: 60px 24px 30px; }
-    .footer-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 48px; }
-    .footer-brand .logo { color: #fff; margin-bottom: 16px; }
-    .footer-brand p { font-size: 0.9rem; line-height: 1.7; }
-    .footer-col h4 { color: #fff; font-size: 1rem; margin-bottom: 20px; }
-    .footer-col a { display: block; color: rgba(255,255,255,0.5); text-decoration: none; font-size: 0.9rem; margin-bottom: 10px; transition: color 0.3s; }
-    .footer-col a:hover { color: var(--calido); }
-    .footer-bottom { max-width: 1200px; margin: 40px auto 0; padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.08); text-align: center; font-size: 0.8rem; color: rgba(255,255,255,0.35); }
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
 
-    /* RESPONSIVE */
-    @media (max-width: 900px) {
-      .pasos, .testi-grid { grid-template-columns: 1fr; }
-      .galeria-grid { grid-template-columns: repeat(2, 1fr); }
-      .galeria-grid .wide { grid-column: span 2; }
-      .horarios-grid { grid-template-columns: 1fr; }
-      .footer-inner { grid-template-columns: 1fr; text-align: center; }
-      .hero h1 { font-size: 2.6rem; }
-    }
-    @media (max-width: 768px) {
-      .menu-toggle { display: flex; }
-      nav { position: absolute; top: 68px; left: 0; width: 100%; background: #fff; max-height: 0; overflow: hidden; transition: max-height 0.4s; }
-      nav.active { max-height: 300px; border-bottom: 1px solid rgba(0,0,0,0.06); }
-      nav ul { flex-direction: column; padding: 20px 24px; gap: 16px; align-items: flex-start; }
-      .hero-cta { flex-direction: column; }
-      .hero-trust { gap: 20px; }
-      .hero-trust strong { font-size: 1.3rem; }
-      .galeria-grid { grid-template-columns: 1fr; }
-      .galeria-grid .wide { grid-column: span 1; }
-    }
-  </style>
+@keyframes pulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(220,38,38,0.4); }
+  50% { box-shadow: 0 0 0 15px rgba(220,38,38,0); }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+@keyframes countPulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.animate-on-scroll.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.delay-1 { transition-delay: 0.1s; }
+.delay-2 { transition-delay: 0.2s; }
+.delay-3 { transition-delay: 0.3s; }
+.delay-4 { transition-delay: 0.4s; }
+
+/* ============================================
+   HEADER
+   ============================================ */
+.header {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 1000;
+  background: rgba(255,255,255,0.95);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+  padding: 0 5%;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: var(--transition);
+}
+
+.header.scrolled {
+  box-shadow: var(--shadow-md);
+}
+
+.header-logo {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+.header-cta {
+  background: var(--color-urgency);
+  color: white;
+  padding: 10px 24px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+  animation: pulse 2s infinite;
+  transition: var(--transition);
+}
+
+.header-cta:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+/* ============================================
+   HERO SECTION — PSICOLOGÍA: PRIMERA IMPRESIÓN
+   ============================================ */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 100px 5% 80px;
+  background: linear-gradient(135deg, var(--color-dark) 0%, var(--color-dark-2) 50%, var(--color-primary-dark) 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -50%; right: -20%;
+  width: 800px; height: 800px;
+  background: radial-gradient(circle, rgba(212,160,23,0.1) 0%, transparent 70%);
+  animation: float 6s ease-in-out infinite;
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  bottom: -30%; left: -10%;
+  width: 600px; height: 600px;
+  background: radial-gradient(circle, rgba(255,255,255,0.03) 0%, transparent 70%);
+}
+
+.hero-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+}
+
+.hero-badge {
+  display: inline-block;
+  background: rgba(212,160,23,0.2);
+  border: 1px solid var(--color-gold);
+  color: var(--color-gold);
+  padding: 8px 20px;
+  border-radius: 50px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-bottom: 24px;
+  animation: fadeInUp 0.6s ease;
+}
+
+.hero h1 {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  font-weight: 700;
+  color: white;
+  line-height: 1.1;
+  margin-bottom: 24px;
+  animation: fadeInUp 0.8s ease 0.2s both;
+}
+
+.hero h1 span {
+  color: var(--color-gold);
+  display: block;
+}
+
+.hero-subtitle {
+  font-size: 1.2rem;
+  color: rgba(255,255,255,0.7);
+  margin-bottom: 40px;
+  max-width: 500px;
+  animation: fadeInUp 0.8s ease 0.4s both;
+}
+
+.hero-cta-group {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  animation: fadeInUp 0.8s ease 0.6s both;
+}
+
+.btn-primary {
+  background: var(--color-gold);
+  color: var(--color-dark);
+  padding: 16px 40px;
+  border-radius: var(--radius);
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1rem;
+  transition: var(--transition);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 20px 40px rgba(212,160,23,0.3);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: white;
+  padding: 16px 40px;
+  border-radius: var(--radius);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  border: 2px solid rgba(255,255,255,0.3);
+  transition: var(--transition);
+  display: inline-flex;
+  align-items: center;
+}
+
+.btn-secondary:hover {
+  background: rgba(255,255,255,0.1);
+  border-color: white;
+}
+
+.hero-image {
+  position: relative;
+  animation: scaleIn 1s ease 0.4s both;
+}
+
+.hero-image img {
+  width: 100%;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-xl);
+  transition: var(--transition);
+}
+
+.hero-image img:hover {
+  transform: scale(1.02);
+}
+
+.hero-social-proof {
+  position: absolute;
+  bottom: -20px;
+  left: -20px;
+  background: white;
+  padding: 16px 24px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-lg);
+  animation: slideInLeft 0.8s ease 0.8s both;
+}
+
+.hero-social-proof p {
+  font-size: 0.85rem;
+  color: var(--color-gray);
+}
+
+.hero-social-proof strong {
+  color: var(--color-dark);
+  font-size: 1.1rem;
+}
+
+/* ============================================
+   BARRA DE CONFIANZA — PSICOLOGÍA: AUTORIDAD
+   ============================================ */
+.trust-bar {
+  background: white;
+  padding: 40px 5%;
+  border-bottom: 1px solid var(--color-gray-light);
+}
+
+.trust-grid {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+  text-align: center;
+}
+
+.trust-item {
+  padding: 20px;
+}
+
+.trust-number {
+  font-family: var(--font-display);
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  line-height: 1;
+}
+
+.trust-label {
+  font-size: 0.9rem;
+  color: var(--color-gray);
+  margin-top: 8px;
+}
+
+/* ============================================
+   SECCIÓN SERVICIOS — PSICOLOGÍA: VALOR
+   ============================================ */
+.section {
+  padding: 100px 5%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section-header {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 60px;
+}
+
+.section-tag {
+  display: inline-block;
+  color: var(--color-primary);
+  font-weight: 600;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 16px;
+}
+
+.section-title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700;
+  color: var(--color-dark);
+  margin-bottom: 16px;
+  line-height: 1.2;
+}
+
+.section-subtitle {
+  font-size: 1.1rem;
+  color: var(--color-gray);
+}
+
+/* Cards de servicios */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+.service-card {
+  background: white;
+  border-radius: var(--radius-lg);
+  padding: 40px 30px;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid rgba(0,0,0,0.05);
+  transition: var(--transition);
+  position: relative;
+  overflow: hidden;
+}
+
+.service-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 4px;
+  background: var(--color-primary);
+  transform: scaleX(0);
+  transition: var(--transition);
+}
+
+.service-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-xl);
+}
+
+.service-card:hover::before {
+  transform: scaleX(1);
+}
+
+.service-icon {
+  width: 60px;
+  height: 60px;
+  background: var(--color-gray-light);
+  border-radius: var(--radius);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+
+.service-card h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: var(--color-dark);
+}
+
+.service-card p {
+  color: var(--color-gray);
+  font-size: 0.95rem;
+}
+
+/* ============================================
+   SECCIÓN SOBRE — PSICOLOGÍA: CONEXIÓN EMOCIONAL
+   ============================================ */
+.about-section {
+  background: var(--color-gray-light);
+  padding: 100px 5%;
+}
+
+.about-grid {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.about-image {
+  position: relative;
+}
+
+.about-image img {
+  width: 100%;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+}
+
+.about-image .experience-badge {
+  position: absolute;
+  bottom: -20px;
+  right: -20px;
+  background: var(--color-primary);
+  color: white;
+  padding: 24px 32px;
+  border-radius: var(--radius);
+  text-align: center;
+  box-shadow: var(--shadow-lg);
+}
+
+.experience-badge .number {
+  font-family: var(--font-display);
+  font-size: 2.5rem;
+  font-weight: 700;
+  display: block;
+  line-height: 1;
+}
+
+.experience-badge .label {
+  font-size: 0.85rem;
+  opacity: 0.9;
+}
+
+.about-content h2 {
+  font-family: var(--font-display);
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: var(--color-dark);
+}
+
+.about-content p {
+  color: var(--color-gray);
+  margin-bottom: 16px;
+  font-size: 1.05rem;
+}
+
+.about-features {
+  margin-top: 30px;
+}
+
+.about-feature {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.about-feature .check {
+  width: 24px;
+  height: 24px;
+  background: var(--color-gold);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 0.8rem;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.about-feature p {
+  margin: 0;
+  color: var(--color-dark);
+  font-weight: 500;
+}
+
+/* ============================================
+   TESTIMONIOS — PSICOLOGÍA: PRUEBA SOCIAL
+   ============================================ */
+.testimonials-section {
+  background: var(--color-dark);
+  padding: 100px 5%;
+  color: white;
+}
+
+.testimonials-section .section-title {
+  color: white;
+}
+
+.testimonials-section .section-subtitle {
+  color: rgba(255,255,255,0.6);
+}
+
+.testimonials-grid {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 30px;
+}
+
+.testimonial-card {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: var(--radius-lg);
+  padding: 40px;
+  backdrop-filter: blur(10px);
+  transition: var(--transition);
+}
+
+.testimonial-card:hover {
+  background: rgba(255,255,255,0.08);
+  transform: translateY(-4px);
+}
+
+.testimonial-stars {
+  color: var(--color-gold);
+  font-size: 1.2rem;
+  margin-bottom: 16px;
+}
+
+.testimonial-text {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  margin-bottom: 24px;
+  color: rgba(255,255,255,0.9);
+  font-style: italic;
+}
+
+.testimonial-author {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.testimonial-avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: var(--color-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  color: white;
+}
+
+.testimonial-name {
+  font-weight: 600;
+}
+
+.testimonial-role {
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.5);
+}
+
+/* ============================================
+   URGENCIA / CTA — PSICOLOGÍA: ESCASEZ + PÉRDIDA
+   ============================================ */
+.urgency-section {
+  background: linear-gradient(135deg, var(--color-urgency) 0%, #B91C1C 100%);
+  padding: 80px 5%;
+  text-align: center;
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.urgency-section::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+
+.urgency-content {
+  position: relative;
+  z-index: 2;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.urgency-badge {
+  display: inline-block;
+  background: rgba(255,255,255,0.2);
+  border: 1px solid rgba(255,255,255,0.3);
+  padding: 8px 20px;
+  border-radius: 50px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 24px;
+}
+
+.urgency-section h2 {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 3rem);
+  margin-bottom: 16px;
+}
+
+.urgency-section p {
+  font-size: 1.1rem;
+  opacity: 0.9;
+  margin-bottom: 32px;
+}
+
+.urgency-cta {
+  background: white;
+  color: var(--color-urgency);
+  padding: 18px 48px;
+  border-radius: var(--radius);
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1.1rem;
+  display: inline-block;
+  transition: var(--transition);
+  animation: pulse 2s infinite;
+}
+
+.urgency-cta:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+}
+
+.urgency-note {
+  margin-top: 16px;
+  font-size: 0.85rem;
+  opacity: 0.7;
+}
+
+/* ============================================
+   CONTACTO / FOOTER
+   ============================================ */
+.contact-section {
+  background: var(--color-dark);
+  color: white;
+  padding: 80px 5%;
+}
+
+.contact-grid {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+}
+
+.contact-info h2 {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.contact-info p {
+  color: rgba(255,255,255,0.6);
+  margin-bottom: 30px;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.contact-icon {
+  width: 48px;
+  height: 48px;
+  background: rgba(255,255,255,0.1);
+  border-radius: var(--radius);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+}
+
+.contact-item strong {
+  display: block;
+  font-weight: 600;
+}
+
+.contact-item span {
+  color: rgba(255,255,255,0.6);
+  font-size: 0.95rem;
+}
+
+.contact-map {
+  background: rgba(255,255,255,0.05);
+  border-radius: var(--radius-lg);
+  padding: 40px;
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+.contact-map iframe,
+.contact-map .map-placeholder {
+  width: 100%;
+  height: 300px;
+  border-radius: var(--radius);
+  border: none;
+  background: rgba(255,255,255,0.05);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255,255,255,0.4);
+  font-size: 0.9rem;
+}
+
+.footer {
+  background: #0F0F1A;
+  color: rgba(255,255,255,0.4);
+  text-align: center;
+  padding: 30px 5%;
+  font-size: 0.85rem;
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+@media (max-width: 900px) {
+  .hero-content,
+  .about-grid,
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  
+  .trust-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .hero {
+    padding: 120px 5% 60px;
+  }
+  
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+  
+  .section {
+    padding: 60px 5%;
+  }
+  
+  .header-cta {
+    padding: 8px 16px;
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .trust-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  
+  .hero-cta-group {
+    flex-direction: column;
+  }
+  
+  .btn-primary,
+  .btn-secondary {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* ============================================
+   SCROLLBAR CUSTOM
+   ============================================ */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-light);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-primary);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-primary-dark);
+}
+</style>
 </head>
 <body>
 
-  <div class="demo-badge">DEMO — Muestra de tu futura pagina web. Contactanos para activarla.</div>
+<!-- HEADER -->
+<header class="header" id="header">
+  <a href="#" class="header-logo">Comedor</a>
+  <a href="tel:Pendiente" class="header-cta">📞 Pendiente</a>
+</header>
 
-  <header>
-    <div class="header-container">
-      <div class="logo">Comedor <span>Familiar</span></div>
-      <button class="menu-toggle" onclick="document.querySelector('nav').classList.toggle('active')">
-        <span></span><span></span><span></span>
-      </button>
-      <nav>
-        <ul>
-          <li><a href="#inicio">Inicio</a></li>
-          <li><a href="#menu">Menu</a></li>
-          <li><a href="#galeria">Galeria</a></li>
-          <li><a href="#testimonios">Clientes</a></li>
-          <li><a href="#contacto" class="btn-nav">Pide por WhatsApp</a></li>
-        </ul>
-      </nav>
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-content">
+    <div>
+      <div class="hero-badge">✦ Oaxaca de Juárez, Oaxaca</div>
+      <h1>Su negocio<span>Calidad y servicio</span></h1>
+      <p class="hero-subtitle">Servicios profesionales en Oaxaca de Juárez, Oaxaca. Más de una década de experiencia respaldando a nuestra comunidad.</p>
+      <div class="hero-cta-group">
+        <a href="tel:Pendiente" class="btn-primary">📞 Llámanos ahora</a>
+        <a href="#servicios" class="btn-secondary">Conoce nuestros servicios →</a>
+      </div>
     </div>
-  </header>
+    <div class="hero-image">
+      <img src="assets/hero_optimized.jpg" alt="Comedor" loading="lazy" decoding="async">
+      <div class="hero-social-proof">
+        <p>⭐⭐⭐⭐⭐<br><strong>+500 clientes satisfechos</strong><br>en Oaxaca de Juárez, Oaxaca</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-  <section class="hero" id="inicio">
-    <div class="hero-content">
-      <div class="hero-tag">Zona Cinco Senores, Oaxaca</div>
-      <h1>Comida casera que <em>sabe a hogar</em>, desde $65 pesos</h1>
-      <p class="hero-sub">De lunes a sabado, servimos comida corrida real: sopa, guisado, arroz, frijoles y tortillas hechas a mano. Para trabajadores, estudiantes y familias que no tienen tiempo de cocinar.</p>
-      <div class="hero-cta">
-        <a href="#menu" class="btn-main">Ver menu del dia</a>
-        <a href="tel:9515165566" class="btn-ghost">Llamar: 951 516 5566</a>
-      </div>
-      <div class="hero-trust">
-        <div><strong>10+</strong><span>anos de tradicion</span></div>
-        <div><strong>3,200+</strong><span>comidas servidas al mes</span></div>
-        <div><strong>15 min</strong><span>de espera promedio</span></div>
-      </div>
+<!-- TRUST BAR — Autoridad instantánea -->
+<section class="trust-bar">
+  <div class="trust-grid">
+    <div class="trust-item animate-on-scroll">
+      <div class="trust-number">+15</div>
+      <div class="trust-label">años de experiencia</div>
     </div>
-  </section>
+    <div class="trust-item animate-on-scroll delay-1">
+      <div class="trust-number">+500</div>
+      <div class="trust-label">clientes satisfechos</div>
+    </div>
+    <div class="trust-item animate-on-scroll delay-2">
+      <div class="trust-number">4.9</div>
+      <div class="trust-label">calificación promedio</div>
+    </div>
+    <div class="trust-item animate-on-scroll delay-3">
+      <div class="trust-number">100%</div>
+      <div class="trust-label">compromiso de calidad</div>
+    </div>
+  </div>
+</section>
 
-  <section class="como-pedir">
-    <div class="como-pedir-inner">
-      <h2>Asi de facil es comer con nosotros</h2>
-      <p>Tres pasos y tienes tu comida lista</p>
-      <div class="pasos">
-        <div class="paso">
-          <div class="paso-num">1</div>
-          <h3>Revisa el menu</h3>
-          <p>Cada dia publicamos el menu corrido en WhatsApp. Sopa, guisado y agua fresca del dia.</p>
-        </div>
-        <div class="paso">
-          <div class="paso-num">2</div>
-          <h3>Haz tu pedido</h3>
-          <p>Escribenos por WhatsApp o llamanos al 951 516 5566. Pedidos para llevar listos en 10 min.</p>
-        </div>
-        <div class="paso">
-          <div class="paso-num">3</div>
-          <h3>Recoge o come aqui</h3>
-          <p>Pasa a recoger tu pedido listo o disfruta el ambiente familiar de nuestro comedor.</p>
-        </div>
-      </div>
+<!-- SERVICIOS -->
+<section class="section" id="servicios">
+  <div class="section-header animate-on-scroll">
+    <div class="section-tag">Nuestros Servicios</div>
+    <h2 class="section-title">Nuestros Servicios</h2>
+    <p class="section-subtitle">Ofrecemos servicios de la más alta calidad en Oaxaca de Juárez, Oaxaca. Cada cliente es tratado con la atención que se merece.</p>
+  </div>
+  <div class="services-grid">
+    <div class="service-card animate-on-scroll">
+      <div class="service-icon">✨</div>
+      <h3>Servicio de Calidad</h3>
+      <p>Atención personalizada y productos de primera.</p>
     </div>
-  </section>
+<div class="service-card animate-on-scroll">
+      <div class="service-icon">🚚</div>
+      <h3>Entrega a Domicilio</h3>
+      <p>Llevamos nuestros productos hasta tu puerta.</p>
+    </div>
+<div class="service-card animate-on-scroll">
+      <div class="service-icon">💬</div>
+      <h3>Atención Personalizada</h3>
+      <p>Te escuchamos y te damos exactamente lo que necesitas.</p>
+    </div>
+  </div>
+</section>
 
-  <section class="menu-section" id="menu">
-    <div class="menu-header">
-      <h2>Menu del Dia</h2>
-      <p>Precios actualizados. Cambiamos el guisado todos los dias.</p>
-    </div>
-    <div class="menu-item">
-      <div>
-        <h3>Comida Corrida Completa <span class="menu-badge">Favorito</span></h3>
-        <p>Sopa del dia + guisado + arroz o frijoles + 4 tortillas hechas a mano + agua fresca</p>
+<!-- SOBRE NOSOTROS -->
+<section class="about-section">
+  <div class="about-grid">
+    <div class="about-image animate-on-scroll">
+      <img src="assets/producto.jpg" alt="Sobre Comedor" loading="lazy" decoding="async">
+      <div class="experience-badge">
+        <span class="number">+15</span>
+        <span class="label">años de<br>experiencia</span>
       </div>
-      <div class="precio">$65</div>
     </div>
-    <div class="menu-item">
-      <div>
-        <h3>Comida Corrida Especial</h3>
-        <p>Con guisado de carne de res o pollo + postre del dia</p>
+    <div class="about-content animate-on-scroll">
+      <div class="section-tag">Sobre Nosotros</div>
+      <h2>Tradición y calidad en Oaxaca de Juárez, Oaxaca</h2>
+      <p>En nuestro negocio nos dedicamos a ofrecer servicios de excelencia. Con más de 15 años de experiencia, hemos construido una reputación basada en la calidad y el trato personalizado.</p>
+      <p>Nuestro compromiso es simple: cada cliente que entra por nuestra puerta, sale satisfecho. Esa es la filosofía que nos ha mantenido en el corazón de la comunidad.</p>
+      <div class="about-features">
+        <div class="about-feature">
+      <div class="check">✓</div>
+      <p>Productos frescos y de calidad garantizada</p>
+    </div>
+<div class="about-feature">
+      <div class="check">✓</div>
+      <p>Atención personalizada para cada cliente</p>
+    </div>
+<div class="about-feature">
+      <div class="check">✓</div>
+      <p>Precios justos y competitivos</p>
+    </div>
+<div class="about-feature">
+      <div class="check">✓</div>
+      <p>Años de experiencia respaldando nuestro trabajo</p>
+    </div>
       </div>
-      <div class="precio">$80</div>
     </div>
-    <div class="menu-item">
-      <div>
-        <h3>Desayuno Economico</h3>
-        <p>Huevos al gusto o chilaquiles + frijoles + cafe de olla o jugo + tortillas</p>
-      </div>
-      <div class="precio">$45</div>
-    </div>
-    <div class="menu-item">
-      <div>
-        <h3>Orden de Tacos (4 pzas)</h3>
-        <p>Tacos de guisado con cebolla, cilantro y salsa casera</p>
-      </div>
-      <div class="precio">$50</div>
-    </div>
-    <div class="menu-item">
-      <div>
-        <h3>Agua Fresca Grande (1L)</h3>
-        <p>Jamaica, horchata o limon. Hecha el mismo dia.</p>
-      </div>
-      <div class="precio">$18</div>
-    </div>
-    <div class="menu-item">
-      <div>
-        <h3>Pedido para Oficina <span class="menu-badge">Mayoreo</span></h3>
-        <p>5 comidas corridas o mas. Incluye descuento y entrega en zona Cinco Senores.</p>
-      </div>
-      <div class="precio">$58 c/u</div>
-    </div>
-  </section>
+  </div>
+</section>
 
-  <section class="galeria" id="galeria">
-    <div class="galeria-inner">
-      <div class="galeria-header">
-        <h2>Un vistazo a nuestra cocina</h2>
-      </div>
-      <div class="galeria-grid">
-        <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=800&q=80" alt="Comida casera oaxaquena">
-        <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=800&q=80" alt="Tacos y guisados">
-        <img class="wide" src="https://images.unsplash.com/photo-1551218808-94e220e084d2?auto=format&fit=crop&w=1200&q=80" alt="Cocina mexicana tradicional">
-      </div>
-    </div>
-  </section>
-
-  <section class="testimonios" id="testimonios">
-    <div class="testimonios-header">
-      <h2>Lo que dicen nuestros comensales</h2>
-      <p>Clientes de la zona que regresan todos los dias</p>
-    </div>
-    <div class="testi-grid">
-      <div class="testi-card">
-        <div class="testi-stars">★★★★★</div>
-        <p>"Vengo todos los dias desde hace 3 anos. La comida sabe a casa de mi abuela. Por $65 pesos te llenas y el guisado cambia diario. Nunca me ha decepcionado."</p>
-        <div class="testi-autor">
-          <div class="testi-avatar">MR</div>
-          <div><strong>Miguel Reyes</strong><span>Trabajador, zona Cinco Senores</span></div>
-        </div>
-      </div>
-      <div class="testi-card">
-        <div class="testi-stars">★★★★★</div>
-        <p>"Les encargamos la comida para la oficina todos los martes y jueves. Son puntuales, la comida llega caliente y mis companeros estan felices. El precio de mayoreo nos ayuda mucho."</p>
-        <div class="testi-autor">
-          <div class="testi-avatar">LG</div>
-          <div><strong>Laura Guzman</strong><span>Admin de oficina, Centro Oaxaca</span></div>
-        </div>
-      </div>
-      <div class="testi-card">
-        <div class="testi-stars">★★★★★</div>
-        <p>"Como estudiante, no tengo tiempo ni dinero. Aqui como completo por menos de lo que gastaria en una torta mala. Las tortillas son hechas a mano, se nota la diferencia."</p>
-        <div class="testi-autor">
-          <div class="testi-avatar">JH</div>
-          <div><strong>Jorge Hernandez</strong><span>Estudiante, UABJO</span></div>
+<!-- TESTIMONIOS — Prueba social -->
+<section class="testimonials-section">
+  <div class="section-header animate-on-scroll">
+    <div class="section-tag" style="color:var(--color-gold)">Testimonios</div>
+    <h2 class="section-title">Lo que dicen nuestros clientes</h2>
+    <p class="section-subtitle">La satisfacción de nuestros clientes es nuestro mejor respaldo</p>
+  </div>
+  <div class="testimonials-grid">
+    <div class="testimonial-card animate-on-scroll">
+      <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+      <p class="testimonial-text">"Excelente servicio, atención amable y productos de primera calidad. Totalmente recomendado."</p>
+      <div class="testimonial-author">
+        <div class="testimonial-avatar">Cs</div>
+        <div>
+          <div class="testimonial-name">Cliente satisfecho</div>
+          <div class="testimonial-role">Vecino de la zona</div>
         </div>
       </div>
     </div>
-  </section>
-
-  <section class="horarios" id="contacto">
-    <div class="horarios-inner">
-      <h2>Te esperamos con la mesa puesta</h2>
-      <div class="horarios-grid">
-        <div class="horario-box">
-          <h3>Lunes a Sabado</h3>
-          <p>7:00 AM - 6:00 PM</p>
-          <span>Comida corrida y desayunos</span>
-        </div>
-        <div class="horario-box">
-          <h3>Domingo</h3>
-          <p>8:00 AM - 4:00 PM</p>
-          <span>Solo desayunos y antojitos</span>
+<div class="testimonial-card animate-on-scroll">
+      <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+      <p class="testimonial-text">"Vengo desde hace años y nunca me han fallado. La calidad siempre es consistente."</p>
+      <div class="testimonial-author">
+        <div class="testimonial-avatar">MF</div>
+        <div>
+          <div class="testimonial-name">María F.</div>
+          <div class="testimonial-role">Compradora frecuente</div>
         </div>
       </div>
-      <p style="margin-bottom:24px;font-size:1.05rem;color:rgba(255,255,255,0.85);">Zona de Cinco Senores / Centro, Oaxaca de Juarez</p>
-      <a href="tel:9515165566" class="btn-main">Llamar ahora: 951 516 5566</a>
     </div>
-  </section>
+  </div>
+</section>
 
-  <footer>
-    <div class="footer-inner">
-      <div class="footer-brand">
-        <div class="logo">Comedor <span>Familiar</span></div>
-        <p>Comida casera, economica y deliciosa en el corazon de Oaxaca. Un lugar donde cada plato cuenta una historia. Cocinamos todos los dias con ingredientes frescos y recetas tradicionales oaxaquenas.</p>
-      </div>
-      <div class="footer-col">
-        <h4>Menu</h4>
-        <a href="#menu">Comida Corrida</a>
-        <a href="#menu">Desayunos</a>
-        <a href="#menu">Pedidos para llevar</a>
-        <a href="#menu">Oficinas y eventos</a>
-      </div>
-      <div class="footer-col">
-        <h4>Contacto</h4>
-        <a href="tel:9515165566">951 516 5566</a>
-        <a href="#">WhatsApp</a>
-        <a href="#">Cinco Senores, Oaxaca</a>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      © 2025 Comedor Familiar — Oaxaca de Juarez. Todos los derechos reservados.
-    </div>
-  </footer>
+<!-- URGENCIA — Escasez + Pérdida aversión -->
+<section class="urgency-section">
+  <div class="urgency-content">
+    <div class="urgency-badge">⚡ Oferta por tiempo limitado</div>
+    <h2>¿Listo para hacer crecer tu negocio?</h2>
+    <p>No dejes que tus competidores sigan robándose tus clientes. Cada día sin presencia digital es dinero que se pierde.</p>
+    <a href="tel:Pendiente" class="urgency-cta">📞 Llámanos ahora: Pendiente</a>
+    <p class="urgency-note">Atención personalizada • Respuesta inmediata • Oaxaca de Juárez, Oaxaca</p>
+  </div>
+</section>
 
+<!-- CONTACTO -->
+<section class="contact-section" id="contacto">
+  <div class="contact-grid">
+    <div class="contact-info">
+      <h2>Visítanos o llámanos</h2>
+      <p>Estamos listos para atenderte. Tu negocio merece crecer.</p>
+      <div class="contact-item">
+        <div class="contact-icon">📍</div>
+        <div>
+          <strong>Dirección</strong>
+          <span>Pendiente</span>
+        </div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-icon">📞</div>
+        <div>
+          <strong>Teléfono</strong>
+          <span>Pendiente</span>
+        </div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-icon">🕐</div>
+        <div>
+          <strong>Horario</strong>
+          <span>Lunes a Sábado: 8:00 AM - 8:00 PM</span>
+        </div>
+      </div>
+    </div>
+    <div class="contact-map">
+      <div class="map-placeholder">
+        🗺️ Mapa de ubicación<br>
+        <small>Pendiente</small>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  © 2026 Comedor — Negocio local | Oaxaca de Juárez, Oaxaca | Todos los derechos reservados
+</footer>
+
+<script>
+// ============================================
+// ANIMACIONES CON INTERSECTION OBSERVER
+// ============================================
+const observerOptions = { threshold: 0.1, rootMargin: '0px 0px -50px 0px' };
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, observerOptions);
+
+document.querySelectorAll('.animate-on-scroll').forEach(el => observer.observe(el));
+
+// Header scroll effect
+window.addEventListener('scroll', () => {
+  document.getElementById('header').classList.toggle('scrolled', window.scrollY > 50);
+});
+</script>
 </body>
 </html>

@@ -1,351 +1,1123 @@
 <!DOCTYPE html>
-<html lang="es-MX">
+<html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Taller Mecanico Abel Garcia — Diagnostico Honesto en Capultitlan, Toluca</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --azul-noche: #0d1b2a;
-      --azul-medio: #1b2838;
-      --rojo: #e63946;
-      --hueso: #f1faee;
-      --gris: #8892b0;
-      --blanco: #ffffff;
-    }
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body { font-family: 'Inter', sans-serif; color: var(--azul-noche); background: var(--hueso); line-height: 1.65; }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Taller Abel — Negocio local</title>
+<!-- SEO OPTIMIZATION v2.0 -->
+<meta name="description" content="Taller Abel — Negocio local en Toluca, Estado de México. Página web profesional de demostración. Contáctenos hoy.">
+<meta name="keywords" content="negocio local, toluca, estado de méxico, negocio local, México, servicios">
+<meta name="author" content="Web Muestras México">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="Taller Abel — Negocio local">
+<meta property="og:description" content="Taller Abel en Toluca, Estado de México. Negocio local. Página web profesional de demostración.">
+<meta property="og:type" content="business.business">
+<meta property="og:url" content="https://veltis-hyper.github.io/web-muestras-mexico/empresas/taller_abel/index.html">
+<meta property="og:image" content="assets/hero_optimized.jpg">
+<meta property="og:locale" content="es_MX">
+<meta property="business:contact_data:locality" content="Toluca, Estado de México">
+<meta property="business:contact_data:country_name" content="México">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Taller Abel — Negocio local">
+<meta name="twitter:description" content="Taller Abel en Toluca, Estado de México. Negocio local. Página web profesional de demostración.">
+<meta name="twitter:image" content="assets/hero_optimized.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;600;700&display=swap" as="style">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Taller Abel",
+  "description": "Negocio local",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Toluca, Estado de México",
+    "addressCountry": "MX"
+  },
+  "url": "https://veltis-hyper.github.io/web-muestras-mexico/empresas/taller_abel/index.html",
+  "image": "assets/hero_optimized.jpg"
+}
+</script>
+<!-- END SEO OPTIMIZATION -->
+<meta name="description" content="Servicios en Toluca, Estado de México - Empresa">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+/* ============================================
+   TEMPLATE v2.0 — Impeccable Front-End
+   DISEÑO PSICOLÓGICO ESTRATÉGICO
+   ============================================ */
 
-    .demo-badge {
-      position: fixed; bottom: 20px; right: 20px; z-index: 9999;
-      background: rgba(13,27,42,0.92); color: #fff; padding: 10px 18px; border-radius: 8px;
-      font-size: 0.8rem; font-weight: 500; backdrop-filter: blur(10px); max-width: 260px; text-align: center;
-    }
+:root {
+  --color-primary: #D4A017;
+  --color-primary-dark: #B8860B;
+  --color-accent: #E8C547;
+  --color-gold: #D4A017;
+  --color-dark: #1A1A2E;
+  --color-dark-2: #16213E;
+  --color-light: #FAFAFA;
+  --color-gray: #6B7280;
+  --color-gray-light: #F3F4F6;
+  --color-urgency: #DC2626;
+  --font-body: 'Inter', sans-serif;
+  --font-display: 'Playfair Display', serif;
+  --shadow-sm: 0 1px 2px rgba(0,0,0,0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -2px rgba(0,0,0,0.1);
+  --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -4px rgba(0,0,0,0.1);
+  --shadow-xl: 0 25px 50px -12px rgba(0,0,0,0.25);
+  --radius: 12px;
+  --radius-lg: 20px;
+  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
 
-    header {
-      position: fixed; top: 0; left: 0; width: 100%; z-index: 1000;
-      background: rgba(241,250,238,0.96); backdrop-filter: blur(12px);
-      border-bottom: 1px solid rgba(13,27,42,0.06);
-    }
-    .header-container { max-width: 1200px; margin: 0 auto; padding: 0 24px; display: flex; align-items: center; justify-content: space-between; height: 72px; }
-    .logo { font-family: 'Oswald', sans-serif; font-weight: 700; font-size: 1.4rem; color: var(--azul-noche); text-transform: uppercase; letter-spacing: 1px; }
-    .logo span { color: var(--rojo); }
-    nav ul { display: flex; gap: 32px; list-style: none; align-items: center; }
-    nav a { text-decoration: none; color: var(--azul-noche); font-weight: 500; font-size: 0.92rem; transition: color 0.3s; }
-    nav a:hover { color: var(--rojo); }
-    .btn-nav { background: var(--rojo); color: #fff !important; padding: 11px 24px; border-radius: 4px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; font-size: 0.85rem; }
-    .menu-toggle { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; }
-    .menu-toggle span { width: 24px; height: 2.5px; background: var(--azul-noche); border-radius: 2px; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
 
-    .hero {
-      min-height: 100vh; display: flex; align-items: center;
-      background: linear-gradient(rgba(13,27,42,0.8), rgba(13,27,42,0.6)), url('https://images.unsplash.com/photo-1625047509168-a7026f36de04?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
-      position: relative; padding: 120px 24px 80px;
-    }
-    .hero-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
-    .hero-content { animation: fadeInUp 1s ease; }
-    @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
-    .hero h1 { font-family: 'Oswald', sans-serif; font-size: 3.4rem; color: #fff; line-height: 1.05; margin-bottom: 20px; text-transform: uppercase; }
-    .hero h1 em { color: var(--rojo); font-style: normal; }
-    .hero-sub { font-size: 1.1rem; color: rgba(255,255,255,0.85); margin-bottom: 32px; }
-    .hero-cta { display: flex; gap: 14px; flex-wrap: wrap; }
-    .btn-main { background: var(--rojo); color: #fff; padding: 16px 32px; border-radius: 4px; text-decoration: none; font-weight: 700; font-size: 0.95rem; text-transform: uppercase; letter-spacing: 0.5px; transition: transform 0.3s; display: inline-block; }
-    .btn-main:hover { transform: translateY(-2px); }
-    .btn-ghost { background: rgba(255,255,255,0.1); color: #fff; padding: 16px 32px; border-radius: 4px; text-decoration: none; font-weight: 600; border: 1px solid rgba(255,255,255,0.3); transition: background 0.3s; display: inline-block; }
-    .btn-ghost:hover { background: rgba(255,255,255,0.2); }
-    .hero-img { border-radius: 8px; overflow: hidden; box-shadow: 0 30px 60px rgba(0,0,0,0.4); animation: fadeInUp 1s ease 0.2s both; }
-    .hero-img img { width: 100%; height: 380px; object-fit: cover; display: block; }
-    .hero-badges { display: flex; gap: 20px; margin-top: 32px; }
-    .hero-badge-item { display: flex; align-items: center; gap: 8px; color: rgba(255,255,255,0.7); font-size: 0.85rem; }
-    .hero-badge-item::before { content: ''; width: 6px; height: 6px; background: var(--rojo); border-radius: 50%; }
+body {
+  font-family: var(--font-body);
+  color: var(--color-dark);
+  background: var(--color-light);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
 
-    .como-funciona { background: var(--blanco); padding: 90px 24px; }
-    .como-inner { max-width: 1000px; margin: 0 auto; }
-    .como-header { text-align: center; margin-bottom: 56px; }
-    .como-header h2 { font-family: 'Oswald', sans-serif; font-size: 2.2rem; text-transform: uppercase; }
-    .como-header p { color: var(--gris); }
-    .pasos { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
-    .paso { text-align: center; padding: 32px; border: 1px solid rgba(0,0,0,0.06); border-radius: 12px; }
-    .paso-num { font-family: 'Oswald', sans-serif; font-size: 2.5rem; color: var(--rojo); font-weight: 700; line-height: 1; margin-bottom: 12px; }
-    .paso h3 { font-size: 1.05rem; margin-bottom: 6px; }
-    .paso p { font-size: 0.88rem; color: var(--gris); }
+/* ============================================
+   ANIMACIONES GLOBALES
+   ============================================ */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
 
-    .servicios { padding: 100px 24px; max-width: 1200px; margin: 0 auto; }
-    .servicios-header { text-align: center; margin-bottom: 56px; }
-    .servicios-header h2 { font-family: 'Oswald', sans-serif; font-size: 2.2rem; text-transform: uppercase; }
-    .servicios-header p { color: var(--gris); }
-    .serv-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
-    .serv-card { background: var(--blanco); padding: 32px; border-radius: 12px; border: 1px solid rgba(0,0,0,0.05); display: flex; gap: 20px; align-items: flex-start; transition: box-shadow 0.3s; }
-    .serv-card:hover { box-shadow: 0 10px 40px rgba(0,0,0,0.06); }
-    .serv-icon { width: 52px; height: 52px; background: var(--azul-noche); border-radius: 8px; display: flex; align-items: center; justify-content: center; color: #fff; font-size: 1.3rem; flex-shrink: 0; }
-    .serv-info h3 { font-size: 1.1rem; font-weight: 700; margin-bottom: 6px; }
-    .serv-info p { font-size: 0.9rem; color: var(--gris); margin-bottom: 10px; }
-    .serv-precio { font-size: 0.85rem; font-weight: 600; color: var(--rojo); text-transform: uppercase; }
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
 
-    .garantia { background: var(--azul-noche); color: #fff; padding: 80px 24px; }
-    .garantia-inner { max-width: 1000px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
-    .garantia-text h2 { font-family: 'Oswald', sans-serif; font-size: 2.4rem; text-transform: uppercase; margin-bottom: 16px; }
-    .garantia-text p { color: rgba(255,255,255,0.7); margin-bottom: 24px; }
-    .garantia-list { list-style: none; }
-    .garantia-list li { display: flex; align-items: center; gap: 12px; margin-bottom: 14px; color: rgba(255,255,255,0.85); }
-    .garantia-list li::before { content: ''; width: 8px; height: 8px; background: var(--rojo); border-radius: 50%; flex-shrink: 0; }
-    .garantia-img { border-radius: 8px; overflow: hidden; }
-    .garantia-img img { width: 100%; height: 320px; object-fit: cover; display: block; }
+@keyframes slideInLeft {
+  from { opacity: 0; transform: translateX(-60px); }
+  to { opacity: 1; transform: translateX(0); }
+}
 
-    .testimonios { padding: 100px 24px; max-width: 1100px; margin: 0 auto; }
-    .testimonios-header { text-align: center; margin-bottom: 48px; }
-    .testimonios-header h2 { font-family: 'Oswald', sans-serif; font-size: 2.2rem; text-transform: uppercase; }
-    .testi-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
-    .testi-card { background: var(--blanco); border: 1px solid rgba(0,0,0,0.05); padding: 28px; border-radius: 12px; }
-    .testi-stars { color: var(--rojo); font-size: 1.1rem; margin-bottom: 14px; }
-    .testi-card p { font-size: 0.9rem; color: #444; margin-bottom: 18px; line-height: 1.7; }
-    .testi-autor { display: flex; align-items: center; gap: 12px; }
-    .testi-avatar { width: 40px; height: 40px; background: var(--azul-noche); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #fff; font-weight: 700; font-size: 0.8rem; }
-    .testi-autor div strong { font-size: 0.9rem; }
-    .testi-autor div span { font-size: 0.78rem; color: var(--gris); }
+@keyframes slideInRight {
+  from { opacity: 0; transform: translateX(60px); }
+  to { opacity: 1; transform: translateX(0); }
+}
 
-    .cta-final { background: var(--rojo); color: #fff; padding: 80px 24px; text-align: center; }
-    .cta-final h2 { font-family: 'Oswald', sans-serif; font-size: 2.4rem; text-transform: uppercase; margin-bottom: 12px; }
-    .cta-final p { font-size: 1.1rem; color: rgba(255,255,255,0.85); margin-bottom: 28px; }
-    .btn-white { background: #fff; color: var(--rojo); padding: 16px 40px; border-radius: 4px; text-decoration: none; font-weight: 700; font-size: 1rem; text-transform: uppercase; letter-spacing: 0.5px; display: inline-block; transition: transform 0.3s; }
-    .btn-white:hover { transform: translateY(-2px); }
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
+}
 
-    footer { background: var(--azul-noche); color: rgba(255,255,255,0.4); padding: 50px 24px 24px; }
-    .footer-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px; }
-    .footer-brand .logo { color: #fff; margin-bottom: 12px; }
-    .footer-brand p { font-size: 0.85rem; line-height: 1.7; }
-    .footer-col h4 { color: #fff; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 16px; }
-    .footer-col a { display: block; color: rgba(255,255,255,0.35); text-decoration: none; font-size: 0.85rem; margin-bottom: 8px; transition: color 0.3s; }
-    .footer-col a:hover { color: var(--rojo); }
-    .footer-bottom { max-width: 1100px; margin: 32px auto 0; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.06); text-align: center; font-size: 0.75rem; color: rgba(255,255,255,0.25); }
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
 
-    @media (max-width: 900px) {
-      .hero-inner { grid-template-columns: 1fr; }
-      .hero-img { display: none; }
-      .garantia-inner { grid-template-columns: 1fr; }
-      .serv-grid { grid-template-columns: 1fr; }
-      .pasos, .testi-grid { grid-template-columns: repeat(2, 1fr); }
-      .footer-inner { grid-template-columns: 1fr; }
-    }
-    @media (max-width: 768px) {
-      .menu-toggle { display: flex; }
-      nav { position: absolute; top: 72px; left: 0; width: 100%; background: var(--hueso); max-height: 0; overflow: hidden; transition: max-height 0.4s; }
-      nav.active { max-height: 350px; border-bottom: 1px solid rgba(13,27,42,0.06); }
-      nav ul { flex-direction: column; padding: 20px 24px; gap: 16px; align-items: flex-start; }
-      .hero h1 { font-size: 2.6rem; }
-      .pasos, .testi-grid { grid-template-columns: 1fr; }
-    }
-  </style>
+@keyframes pulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(220,38,38,0.4); }
+  50% { box-shadow: 0 0 0 15px rgba(220,38,38,0); }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+@keyframes countPulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.animate-on-scroll.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.delay-1 { transition-delay: 0.1s; }
+.delay-2 { transition-delay: 0.2s; }
+.delay-3 { transition-delay: 0.3s; }
+.delay-4 { transition-delay: 0.4s; }
+
+/* ============================================
+   HEADER
+   ============================================ */
+.header {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 1000;
+  background: rgba(255,255,255,0.95);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+  padding: 0 5%;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: var(--transition);
+}
+
+.header.scrolled {
+  box-shadow: var(--shadow-md);
+}
+
+.header-logo {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+.header-cta {
+  background: var(--color-urgency);
+  color: white;
+  padding: 10px 24px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+  animation: pulse 2s infinite;
+  transition: var(--transition);
+}
+
+.header-cta:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+/* ============================================
+   HERO SECTION — PSICOLOGÍA: PRIMERA IMPRESIÓN
+   ============================================ */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 100px 5% 80px;
+  background: linear-gradient(135deg, var(--color-dark) 0%, var(--color-dark-2) 50%, var(--color-primary-dark) 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -50%; right: -20%;
+  width: 800px; height: 800px;
+  background: radial-gradient(circle, rgba(212,160,23,0.1) 0%, transparent 70%);
+  animation: float 6s ease-in-out infinite;
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  bottom: -30%; left: -10%;
+  width: 600px; height: 600px;
+  background: radial-gradient(circle, rgba(255,255,255,0.03) 0%, transparent 70%);
+}
+
+.hero-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+}
+
+.hero-badge {
+  display: inline-block;
+  background: rgba(212,160,23,0.2);
+  border: 1px solid var(--color-gold);
+  color: var(--color-gold);
+  padding: 8px 20px;
+  border-radius: 50px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-bottom: 24px;
+  animation: fadeInUp 0.6s ease;
+}
+
+.hero h1 {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  font-weight: 700;
+  color: white;
+  line-height: 1.1;
+  margin-bottom: 24px;
+  animation: fadeInUp 0.8s ease 0.2s both;
+}
+
+.hero h1 span {
+  color: var(--color-gold);
+  display: block;
+}
+
+.hero-subtitle {
+  font-size: 1.2rem;
+  color: rgba(255,255,255,0.7);
+  margin-bottom: 40px;
+  max-width: 500px;
+  animation: fadeInUp 0.8s ease 0.4s both;
+}
+
+.hero-cta-group {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  animation: fadeInUp 0.8s ease 0.6s both;
+}
+
+.btn-primary {
+  background: var(--color-gold);
+  color: var(--color-dark);
+  padding: 16px 40px;
+  border-radius: var(--radius);
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1rem;
+  transition: var(--transition);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 20px 40px rgba(212,160,23,0.3);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: white;
+  padding: 16px 40px;
+  border-radius: var(--radius);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  border: 2px solid rgba(255,255,255,0.3);
+  transition: var(--transition);
+  display: inline-flex;
+  align-items: center;
+}
+
+.btn-secondary:hover {
+  background: rgba(255,255,255,0.1);
+  border-color: white;
+}
+
+.hero-image {
+  position: relative;
+  animation: scaleIn 1s ease 0.4s both;
+}
+
+.hero-image img {
+  width: 100%;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-xl);
+  transition: var(--transition);
+}
+
+.hero-image img:hover {
+  transform: scale(1.02);
+}
+
+.hero-social-proof {
+  position: absolute;
+  bottom: -20px;
+  left: -20px;
+  background: white;
+  padding: 16px 24px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-lg);
+  animation: slideInLeft 0.8s ease 0.8s both;
+}
+
+.hero-social-proof p {
+  font-size: 0.85rem;
+  color: var(--color-gray);
+}
+
+.hero-social-proof strong {
+  color: var(--color-dark);
+  font-size: 1.1rem;
+}
+
+/* ============================================
+   BARRA DE CONFIANZA — PSICOLOGÍA: AUTORIDAD
+   ============================================ */
+.trust-bar {
+  background: white;
+  padding: 40px 5%;
+  border-bottom: 1px solid var(--color-gray-light);
+}
+
+.trust-grid {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+  text-align: center;
+}
+
+.trust-item {
+  padding: 20px;
+}
+
+.trust-number {
+  font-family: var(--font-display);
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  line-height: 1;
+}
+
+.trust-label {
+  font-size: 0.9rem;
+  color: var(--color-gray);
+  margin-top: 8px;
+}
+
+/* ============================================
+   SECCIÓN SERVICIOS — PSICOLOGÍA: VALOR
+   ============================================ */
+.section {
+  padding: 100px 5%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section-header {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 60px;
+}
+
+.section-tag {
+  display: inline-block;
+  color: var(--color-primary);
+  font-weight: 600;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 16px;
+}
+
+.section-title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700;
+  color: var(--color-dark);
+  margin-bottom: 16px;
+  line-height: 1.2;
+}
+
+.section-subtitle {
+  font-size: 1.1rem;
+  color: var(--color-gray);
+}
+
+/* Cards de servicios */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+.service-card {
+  background: white;
+  border-radius: var(--radius-lg);
+  padding: 40px 30px;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid rgba(0,0,0,0.05);
+  transition: var(--transition);
+  position: relative;
+  overflow: hidden;
+}
+
+.service-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 4px;
+  background: var(--color-primary);
+  transform: scaleX(0);
+  transition: var(--transition);
+}
+
+.service-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-xl);
+}
+
+.service-card:hover::before {
+  transform: scaleX(1);
+}
+
+.service-icon {
+  width: 60px;
+  height: 60px;
+  background: var(--color-gray-light);
+  border-radius: var(--radius);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+
+.service-card h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: var(--color-dark);
+}
+
+.service-card p {
+  color: var(--color-gray);
+  font-size: 0.95rem;
+}
+
+/* ============================================
+   SECCIÓN SOBRE — PSICOLOGÍA: CONEXIÓN EMOCIONAL
+   ============================================ */
+.about-section {
+  background: var(--color-gray-light);
+  padding: 100px 5%;
+}
+
+.about-grid {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.about-image {
+  position: relative;
+}
+
+.about-image img {
+  width: 100%;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+}
+
+.about-image .experience-badge {
+  position: absolute;
+  bottom: -20px;
+  right: -20px;
+  background: var(--color-primary);
+  color: white;
+  padding: 24px 32px;
+  border-radius: var(--radius);
+  text-align: center;
+  box-shadow: var(--shadow-lg);
+}
+
+.experience-badge .number {
+  font-family: var(--font-display);
+  font-size: 2.5rem;
+  font-weight: 700;
+  display: block;
+  line-height: 1;
+}
+
+.experience-badge .label {
+  font-size: 0.85rem;
+  opacity: 0.9;
+}
+
+.about-content h2 {
+  font-family: var(--font-display);
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: var(--color-dark);
+}
+
+.about-content p {
+  color: var(--color-gray);
+  margin-bottom: 16px;
+  font-size: 1.05rem;
+}
+
+.about-features {
+  margin-top: 30px;
+}
+
+.about-feature {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.about-feature .check {
+  width: 24px;
+  height: 24px;
+  background: var(--color-gold);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 0.8rem;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.about-feature p {
+  margin: 0;
+  color: var(--color-dark);
+  font-weight: 500;
+}
+
+/* ============================================
+   TESTIMONIOS — PSICOLOGÍA: PRUEBA SOCIAL
+   ============================================ */
+.testimonials-section {
+  background: var(--color-dark);
+  padding: 100px 5%;
+  color: white;
+}
+
+.testimonials-section .section-title {
+  color: white;
+}
+
+.testimonials-section .section-subtitle {
+  color: rgba(255,255,255,0.6);
+}
+
+.testimonials-grid {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 30px;
+}
+
+.testimonial-card {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: var(--radius-lg);
+  padding: 40px;
+  backdrop-filter: blur(10px);
+  transition: var(--transition);
+}
+
+.testimonial-card:hover {
+  background: rgba(255,255,255,0.08);
+  transform: translateY(-4px);
+}
+
+.testimonial-stars {
+  color: var(--color-gold);
+  font-size: 1.2rem;
+  margin-bottom: 16px;
+}
+
+.testimonial-text {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  margin-bottom: 24px;
+  color: rgba(255,255,255,0.9);
+  font-style: italic;
+}
+
+.testimonial-author {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.testimonial-avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: var(--color-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  color: white;
+}
+
+.testimonial-name {
+  font-weight: 600;
+}
+
+.testimonial-role {
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.5);
+}
+
+/* ============================================
+   URGENCIA / CTA — PSICOLOGÍA: ESCASEZ + PÉRDIDA
+   ============================================ */
+.urgency-section {
+  background: linear-gradient(135deg, var(--color-urgency) 0%, #B91C1C 100%);
+  padding: 80px 5%;
+  text-align: center;
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.urgency-section::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+
+.urgency-content {
+  position: relative;
+  z-index: 2;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.urgency-badge {
+  display: inline-block;
+  background: rgba(255,255,255,0.2);
+  border: 1px solid rgba(255,255,255,0.3);
+  padding: 8px 20px;
+  border-radius: 50px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 24px;
+}
+
+.urgency-section h2 {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 3rem);
+  margin-bottom: 16px;
+}
+
+.urgency-section p {
+  font-size: 1.1rem;
+  opacity: 0.9;
+  margin-bottom: 32px;
+}
+
+.urgency-cta {
+  background: white;
+  color: var(--color-urgency);
+  padding: 18px 48px;
+  border-radius: var(--radius);
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1.1rem;
+  display: inline-block;
+  transition: var(--transition);
+  animation: pulse 2s infinite;
+}
+
+.urgency-cta:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+}
+
+.urgency-note {
+  margin-top: 16px;
+  font-size: 0.85rem;
+  opacity: 0.7;
+}
+
+/* ============================================
+   CONTACTO / FOOTER
+   ============================================ */
+.contact-section {
+  background: var(--color-dark);
+  color: white;
+  padding: 80px 5%;
+}
+
+.contact-grid {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+}
+
+.contact-info h2 {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.contact-info p {
+  color: rgba(255,255,255,0.6);
+  margin-bottom: 30px;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.contact-icon {
+  width: 48px;
+  height: 48px;
+  background: rgba(255,255,255,0.1);
+  border-radius: var(--radius);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+}
+
+.contact-item strong {
+  display: block;
+  font-weight: 600;
+}
+
+.contact-item span {
+  color: rgba(255,255,255,0.6);
+  font-size: 0.95rem;
+}
+
+.contact-map {
+  background: rgba(255,255,255,0.05);
+  border-radius: var(--radius-lg);
+  padding: 40px;
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+.contact-map iframe,
+.contact-map .map-placeholder {
+  width: 100%;
+  height: 300px;
+  border-radius: var(--radius);
+  border: none;
+  background: rgba(255,255,255,0.05);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255,255,255,0.4);
+  font-size: 0.9rem;
+}
+
+.footer {
+  background: #0F0F1A;
+  color: rgba(255,255,255,0.4);
+  text-align: center;
+  padding: 30px 5%;
+  font-size: 0.85rem;
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+@media (max-width: 900px) {
+  .hero-content,
+  .about-grid,
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  
+  .trust-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .hero {
+    padding: 120px 5% 60px;
+  }
+  
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+  
+  .section {
+    padding: 60px 5%;
+  }
+  
+  .header-cta {
+    padding: 8px 16px;
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .trust-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  
+  .hero-cta-group {
+    flex-direction: column;
+  }
+  
+  .btn-primary,
+  .btn-secondary {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* ============================================
+   SCROLLBAR CUSTOM
+   ============================================ */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-light);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-primary);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-primary-dark);
+}
+</style>
 </head>
 <body>
 
-  <div class="demo-badge">DEMO — Muestra de tu futura pagina web. Contactanos para activarla.</div>
+<!-- HEADER -->
+<header class="header" id="header">
+  <a href="#" class="header-logo">Taller Abel</a>
+  <a href="tel:7225881961 | Dir: Capultitlán" class="header-cta">📞 7225881961 | Dir: Capultitlán</a>
+</header>
 
-  <header>
-    <div class="header-container">
-      <div class="logo">Abel <span>Garcia</span></div>
-      <button class="menu-toggle" onclick="document.querySelector('nav').classList.toggle('active')">
-        <span></span><span></span><span></span>
-      </button>
-      <nav>
-        <ul>
-          <li><a href="#inicio">Inicio</a></li>
-          <li><a href="#servicios">Servicios</a></li>
-          <li><a href="#garantia">Garantia</a></li>
-          <li><a href="#contacto" class="btn-nav">Agenda cita</a></li>
-        </ul>
-      </nav>
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-content">
+    <div>
+      <div class="hero-badge">✦ Toluca, Estado de México</div>
+      <h1>Su negocio<span>Calidad y servicio</span></h1>
+      <p class="hero-subtitle">Servicios profesionales en Toluca, Estado de México. Más de una década de experiencia respaldando a nuestra comunidad.</p>
+      <div class="hero-cta-group">
+        <a href="tel:7225881961 | Dir: Capultitlán" class="btn-primary">📞 Llámanos ahora</a>
+        <a href="#servicios" class="btn-secondary">Conoce nuestros servicios →</a>
+      </div>
     </div>
-  </header>
+    <div class="hero-image">
+      <img src="assets/hero_optimized.jpg" alt="Taller Abel" loading="lazy" decoding="async">
+      <div class="hero-social-proof">
+        <p>⭐⭐⭐⭐⭐<br><strong>+500 clientes satisfechos</strong><br>en Toluca, Estado de México</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-  <section class="hero" id="inicio">
-    <div class="hero-inner">
-      <div class="hero-content">
-        <h1>Diagnostico <em>honesto</em>. Reparacion de verdad.</h1>
-        <p class="hero-sub">Cansado de talleres que te cobran por cosas que no necesitas? En Abel Garcia te decimos exactamente que tiene tu auto y cuanto cuesta arreglarlo. Sin sorpresas, sin cargos ocultos. Mas de 12 anos en Capultitlan.</p>
-        <div class="hero-cta">
-          <a href="tel:7225881961" class="btn-main">Cotiza gratis: 722 588 1961</a>
-          <a href="#servicios" class="btn-ghost">Ver servicios y precios</a>
-        </div>
-        <div class="hero-badges">
-          <div class="hero-badge-item">Diagnostico sin costo</div>
-          <div class="hero-badge-item">Garantia por escrito</div>
-          <div class="hero-badge-item">Repuestos de calidad</div>
-        </div>
-      </div>
-      <div class="hero-img">
-        <img src="https://images.unsplash.com/photo-1487754180451-c456f719a1fc?auto=format&fit=crop&w=800&q=80" alt="Taller mecanico profesional">
-      </div>
+<!-- TRUST BAR — Autoridad instantánea -->
+<section class="trust-bar">
+  <div class="trust-grid">
+    <div class="trust-item animate-on-scroll">
+      <div class="trust-number">+15</div>
+      <div class="trust-label">años de experiencia</div>
     </div>
-  </section>
+    <div class="trust-item animate-on-scroll delay-1">
+      <div class="trust-number">+500</div>
+      <div class="trust-label">clientes satisfechos</div>
+    </div>
+    <div class="trust-item animate-on-scroll delay-2">
+      <div class="trust-number">4.9</div>
+      <div class="trust-label">calificación promedio</div>
+    </div>
+    <div class="trust-item animate-on-scroll delay-3">
+      <div class="trust-number">100%</div>
+      <div class="trust-label">compromiso de calidad</div>
+    </div>
+  </div>
+</section>
 
-  <section class="como-funciona">
-    <div class="como-inner">
-      <div class="como-header">
-        <h2>Como funciona</h2>
-        <p>Tres pasos. Cero sorpresas en la cuenta.</p>
-      </div>
-      <div class="pasos">
-        <div class="paso">
-          <div class="paso-num">01</div>
-          <h3>Agenda tu cita</h3>
-          <p>Llamanos o escribenos por WhatsApp. Te damos horario el mismo dia o al siguiente.</p>
-        </div>
-        <div class="paso">
-          <div class="paso-num">02</div>
-          <h3>Diagnostico real</h3>
-          <p>Revisamos tu auto con scanner y prueba de ruta. Te explicamos el problema en simple.</p>
-        </div>
-        <div class="paso">
-          <div class="paso-num">03</div>
-          <h3>Reparacion con garantia</h3>
-          <p>Reparamos con tu autorizacion. Te entregamos tu auto funcionando y una garantia por escrito.</p>
-        </div>
-      </div>
+<!-- SERVICIOS -->
+<section class="section" id="servicios">
+  <div class="section-header animate-on-scroll">
+    <div class="section-tag">Nuestros Servicios</div>
+    <h2 class="section-title">Nuestros Servicios</h2>
+    <p class="section-subtitle">Ofrecemos servicios de la más alta calidad en Toluca, Estado de México. Cada cliente es tratado con la atención que se merece.</p>
+  </div>
+  <div class="services-grid">
+    <div class="service-card animate-on-scroll">
+      <div class="service-icon">✨</div>
+      <h3>Servicio de Calidad</h3>
+      <p>Atención personalizada y productos de primera.</p>
     </div>
-  </section>
+<div class="service-card animate-on-scroll">
+      <div class="service-icon">🚚</div>
+      <h3>Entrega a Domicilio</h3>
+      <p>Llevamos nuestros productos hasta tu puerta.</p>
+    </div>
+<div class="service-card animate-on-scroll">
+      <div class="service-icon">💬</div>
+      <h3>Atención Personalizada</h3>
+      <p>Te escuchamos y te damos exactamente lo que necesitas.</p>
+    </div>
+  </div>
+</section>
 
-  <section class="servicios" id="servicios">
-    <div class="servicios-header">
-      <h2>Servicios y precios</h2>
-      <p>Sabes cuanto vas a pagar antes de que toquemos tu auto</p>
-    </div>
-    <div class="serv-grid">
-      <div class="serv-card">
-        <div class="serv-icon">&#128269;</div>
-        <div class="serv-info">
-          <h3>Diagnostico Especializado</h3>
-          <p>Scanner, revision de 30 puntos y prueba de ruta. Sabras exactamente que le pasa a tu auto.</p>
-          <div class="serv-precio">Sin costo con reparacion</div>
-        </div>
-      </div>
-      <div class="serv-card">
-        <div class="serv-icon">&#128295;</div>
-        <div class="serv-info">
-          <h3>Cambio de Aceite y Filtros</h3>
-          <p>Aceite semisintetico, filtro de aceite, filtro de aire y revision de niveles.</p>
-          <div class="serv-precio">Desde $650</div>
-        </div>
-      </div>
-      <div class="serv-card">
-        <div class="serv-icon">&#128737;</div>
-        <div class="serv-info">
-          <h3>Frenos Completos</h3>
-          <p>Cambio de balatas, rectificado de discos, liquido de frenos y revision de cilindros.</p>
-          <div class="serv-precio">Desde $1,200</div>
-        </div>
-      </div>
-      <div class="serv-card">
-        <div class="serv-icon">&#9881;</div>
-        <div class="serv-info">
-          <h3>Alineacion y Balanceo</h3>
-          <p>Correccion de geometria, balanceo de 4 ruedas y revision de suspension.</p>
-          <div class="serv-precio">Desde $450</div>
-        </div>
-      </div>
-      <div class="serv-card">
-        <div class="serv-icon">&#128663;</div>
-        <div class="serv-info">
-          <h3>Revision Previa a Verificacion</h3>
-          <p>Revisamos escape, luces, frenos, suspension y emisiones para que pases sin problemas.</p>
-          <div class="serv-precio">Desde $350</div>
-        </div>
-      </div>
-      <div class="serv-card">
-        <div class="serv-icon">&#128736;</div>
-        <div class="serv-info">
-          <h3>Reparacion de Motor y Transmision</h3>
-          <p>Fallas mayores, sobrecalentamiento, ruidos extraños. Diagnostico previo y presupuesto fijo.</p>
-          <div class="serv-precio">Cotizacion sin costo</div>
-        </div>
+<!-- SOBRE NOSOTROS -->
+<section class="about-section">
+  <div class="about-grid">
+    <div class="about-image animate-on-scroll">
+      <img src="assets/producto.jpg" alt="Sobre Taller Abel" loading="lazy" decoding="async">
+      <div class="experience-badge">
+        <span class="number">+15</span>
+        <span class="label">años de<br>experiencia</span>
       </div>
     </div>
-  </section>
+    <div class="about-content animate-on-scroll">
+      <div class="section-tag">Sobre Nosotros</div>
+      <h2>Tradición y calidad en Toluca, Estado de México</h2>
+      <p>En nuestro negocio nos dedicamos a ofrecer servicios de excelencia. Con más de 15 años de experiencia, hemos construido una reputación basada en la calidad y el trato personalizado.</p>
+      <p>Nuestro compromiso es simple: cada cliente que entra por nuestra puerta, sale satisfecho. Esa es la filosofía que nos ha mantenido en el corazón de la comunidad.</p>
+      <div class="about-features">
+        <div class="about-feature">
+      <div class="check">✓</div>
+      <p>Productos frescos y de calidad garantizada</p>
+    </div>
+<div class="about-feature">
+      <div class="check">✓</div>
+      <p>Atención personalizada para cada cliente</p>
+    </div>
+<div class="about-feature">
+      <div class="check">✓</div>
+      <p>Precios justos y competitivos</p>
+    </div>
+<div class="about-feature">
+      <div class="check">✓</div>
+      <p>Años de experiencia respaldando nuestro trabajo</p>
+    </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-  <section class="garantia" id="garantia">
-    <div class="garantia-inner">
-      <div class="garantia-text">
-        <h2>Por que confiar en nosotros</h2>
-        <p>No vendemos servicios que no necesitas. Primero diagnosticamos, despues explicamos y, con tu autorizacion, reparamos. Asi funciona un taller honesto.</p>
-        <ul class="garantia-list">
-          <li>Diagnostico completo sin costo si reparas con nosotros</li>
-          <li>Presupuesto por escrito antes de empezar cualquier trabajo</li>
-          <li>3 meses de garantia en mano de obra y repuestos</li>
-          <li>Repuestos originales o de marca certificada</li>
-          <li>+2,000 autos reparados en Capultitlan desde 2013</li>
-        </ul>
-      </div>
-      <div class="garantia-img">
-        <img src="https://images.unsplash.com/photo-1530046339160-ce3e530c7d2f?auto=format&fit=crop&w=800&q=80" alt="Mecanico trabajando">
-      </div>
-    </div>
-  </section>
-
-  <section class="testimonios">
-    <div class="testimonios-header">
-      <h2>Clientes de Capultitlan que regresan</h2>
-    </div>
-    <div class="testi-grid">
-      <div class="testi-card">
-        <div class="testi-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-        <p>"Me querian cobrar $8,000 por una 'reparacion mayor' en otro taller. Vine con Abel, el diagnostico real fue un sensor de $850 pesos. Me salvo miles. Ahora solo vengo aqui."</p>
-        <div class="testi-autor">
-          <div class="testi-avatar">JL</div>
-          <div><strong>Javier Lopez</strong><span>Taxista, Capultitlan</span></div>
-        </div>
-      </div>
-      <div class="testi-card">
-        <div class="testi-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-        <p>"Llevo mi sedan desde 2018. Cambios de aceite, balatas, alineacion... siempre me dicen el precio exacto antes de empezar. Cumplen los tiempos y el auto queda perfecto."</p>
-        <div class="testi-autor">
-          <div class="testi-avatar">MR</div>
-          <div><strong>Mariana Ruiz</strong><span>Maestra, San Mateo Atenco</span></div>
-        </div>
-      </div>
-      <div class="testi-card">
-        <div class="testi-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-        <p>"Mi camioneta de trabajo se apagaba en semaforos. Dos talleres no supieron que era. Abel encontro el problema en 20 minutos: una valvula EGR sucia. $1,200 y solucionado."</p>
-        <div class="testi-autor">
-          <div class="testi-avatar">FC</div>
-          <div><strong>Fernando Cruz</strong><span>Constructor, Toluca</span></div>
+<!-- TESTIMONIOS — Prueba social -->
+<section class="testimonials-section">
+  <div class="section-header animate-on-scroll">
+    <div class="section-tag" style="color:var(--color-gold)">Testimonios</div>
+    <h2 class="section-title">Lo que dicen nuestros clientes</h2>
+    <p class="section-subtitle">La satisfacción de nuestros clientes es nuestro mejor respaldo</p>
+  </div>
+  <div class="testimonials-grid">
+    <div class="testimonial-card animate-on-scroll">
+      <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+      <p class="testimonial-text">"Excelente servicio, atención amable y productos de primera calidad. Totalmente recomendado."</p>
+      <div class="testimonial-author">
+        <div class="testimonial-avatar">Cs</div>
+        <div>
+          <div class="testimonial-name">Cliente satisfecho</div>
+          <div class="testimonial-role">Vecino de la zona</div>
         </div>
       </div>
     </div>
-  </section>
-
-  <section class="cta-final" id="contacto">
-    <h2>No arriesgues tu auto con cualquiera</h2>
-    <p>Agenda tu diagnostico gratuito. En 30 minutos sabras exactamente que necesita tu vehiculo.</p>
-    <a href="tel:7225881961" class="btn-white">Llamar ahora: 722 588 1961</a>
-  </section>
-
-  <footer>
-    <div class="footer-inner">
-      <div class="footer-brand">
-        <div class="logo">Abel <span>Garcia</span></div>
-        <p>Taller mecanico de confianza en Capultitlan, Toluca. Diagnostico honesto, repuestos de calidad y garantia por escrito en cada reparacion.</p>
-      </div>
-      <div class="footer-col">
-        <h4>Servicios</h4>
-        <a href="#">Diagnostico</a>
-        <a href="#">Mantenimiento</a>
-        <a href="#">Frenos</a>
-        <a href="#">Alineacion</a>
-      </div>
-      <div class="footer-col">
-        <h4>Contacto</h4>
-        <a href="tel:7225881961">722 588 1961</a>
-        <a href="#">WhatsApp</a>
-        <a href="#">Capultitlan, Toluca</a>
+<div class="testimonial-card animate-on-scroll">
+      <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+      <p class="testimonial-text">"Vengo desde hace años y nunca me han fallado. La calidad siempre es consistente."</p>
+      <div class="testimonial-author">
+        <div class="testimonial-avatar">MF</div>
+        <div>
+          <div class="testimonial-name">María F.</div>
+          <div class="testimonial-role">Compradora frecuente</div>
+        </div>
       </div>
     </div>
-    <div class="footer-bottom">
-      © 2025 Taller Mecanico Abel Garcia — Toluca, Estado de Mexico.
-    </div>
-  </footer>
+  </div>
+</section>
 
+<!-- URGENCIA — Escasez + Pérdida aversión -->
+<section class="urgency-section">
+  <div class="urgency-content">
+    <div class="urgency-badge">⚡ Oferta por tiempo limitado</div>
+    <h2>¿Listo para hacer crecer tu negocio?</h2>
+    <p>No dejes que tus competidores sigan robándose tus clientes. Cada día sin presencia digital es dinero que se pierde.</p>
+    <a href="tel:7225881961 | Dir: Capultitlán" class="urgency-cta">📞 Llámanos ahora: 7225881961 | Dir: Capultitlán</a>
+    <p class="urgency-note">Atención personalizada • Respuesta inmediata • Toluca, Estado de México</p>
+  </div>
+</section>
+
+<!-- CONTACTO -->
+<section class="contact-section" id="contacto">
+  <div class="contact-grid">
+    <div class="contact-info">
+      <h2>Visítanos o llámanos</h2>
+      <p>Estamos listos para atenderte. Tu negocio merece crecer.</p>
+      <div class="contact-item">
+        <div class="contact-icon">📍</div>
+        <div>
+          <strong>Dirección</strong>
+          <span>Pendiente</span>
+        </div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-icon">📞</div>
+        <div>
+          <strong>Teléfono</strong>
+          <span>7225881961 | Dir: Capultitlán</span>
+        </div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-icon">🕐</div>
+        <div>
+          <strong>Horario</strong>
+          <span>Lunes a Sábado: 8:00 AM - 8:00 PM</span>
+        </div>
+      </div>
+    </div>
+    <div class="contact-map">
+      <div class="map-placeholder">
+        🗺️ Mapa de ubicación<br>
+        <small>Pendiente</small>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  © 2026 Taller Abel — Negocio local | Toluca, Estado de México | Todos los derechos reservados
+</footer>
+
+<script>
+// ============================================
+// ANIMACIONES CON INTERSECTION OBSERVER
+// ============================================
+const observerOptions = { threshold: 0.1, rootMargin: '0px 0px -50px 0px' };
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, observerOptions);
+
+document.querySelectorAll('.animate-on-scroll').forEach(el => observer.observe(el));
+
+// Header scroll effect
+window.addEventListener('scroll', () => {
+  document.getElementById('header').classList.toggle('scrolled', window.scrollY > 50);
+});
+</script>
 </body>
 </html>

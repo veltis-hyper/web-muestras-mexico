@@ -1,365 +1,1123 @@
 <!DOCTYPE html>
-<html lang="es-MX">
+<html lang="es">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MINI SUPER SJT | Pedido a Domicilio en Menos de 30 Min</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fredoka:wght@500;600;700&display=swap" rel="stylesheet">
+<title>MINI SUPER SJT — Comercio al por menor en minisupers</title>
+<!-- SEO OPTIMIZATION v2.0 -->
+<meta name="description" content="MINI SUPER SJT — Comercio al por menor en minisupers en México. Página web profesional de demostración. Contáctenos hoy.">
+<meta name="keywords" content="comercio al por menor en minisupers, méxico, negocio local, México, servicios">
+<meta name="author" content="Web Muestras México">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="MINI SUPER SJT — Comercio al por menor en minisupers">
+<meta property="og:description" content="MINI SUPER SJT en México. Comercio al por menor en minisupers. Página web profesional de demostración.">
+<meta property="og:type" content="business.business">
+<meta property="og:url" content="https://veltis-hyper.github.io/web-muestras-mexico/empresas/minisuper/index.html">
+<meta property="og:image" content="assets/hero_optimized.jpg">
+<meta property="og:locale" content="es_MX">
+<meta property="business:contact_data:locality" content="México">
+<meta property="business:contact_data:country_name" content="México">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="MINI SUPER SJT — Comercio al por menor en minisupers">
+<meta name="twitter:description" content="MINI SUPER SJT en México. Comercio al por menor en minisupers. Página web profesional de demostración.">
+<meta name="twitter:image" content="assets/hero_optimized.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;600;700&display=swap" as="style">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "MINI SUPER SJT",
+  "description": "Comercio al por menor en minisupers",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "México",
+    "addressCountry": "MX"
+  },
+  "url": "https://veltis-hyper.github.io/web-muestras-mexico/empresas/minisuper/index.html",
+  "image": "assets/hero_optimized.jpg"
+}
+</script>
+<!-- END SEO OPTIMIZATION -->
+<meta name="description" content="Comercio al por menor en minisupers en México - MINI SUPER SJT">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
-  :root {
-    --color-primary: #2d6a4f;
-    --color-green-dark: #1b4332;
-    --color-accent: #e76f51;
-    --color-cream: #fefae0;
-    --color-warm: #faedcd;
-    --color-text: #2b2d42;
-    --color-muted: #6c757d;
-    --shadow: 0 12px 40px rgba(0,0,0,0.06);
-  }
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  html { scroll-behavior: smooth; }
-  body { font-family: 'Inter', sans-serif; color: var(--color-text); background: #fff; line-height: 1.7; }
+/* ============================================
+   TEMPLATE v2.0 — Impeccable Front-End
+   DISEÑO PSICOLÓGICO ESTRATÉGICO
+   ============================================ */
 
-  .demo-badge {
-    position: fixed; bottom: 24px; right: 24px;
-    background: rgba(45,106,79,0.92); color: var(--color-cream);
-    padding: 10px 20px; border-radius: 8px; font-size: 0.78rem; font-weight: 600;
-    z-index: 9999; backdrop-filter: blur(8px); border: 1px solid rgba(231,111,81,0.3);
-  }
-  .demo-badge span { color: var(--color-accent); font-weight: 700; }
+:root {
+  --color-primary: #D4A017;
+  --color-primary-dark: #B8860B;
+  --color-accent: #E8C547;
+  --color-gold: #D4A017;
+  --color-dark: #1A1A2E;
+  --color-dark-2: #16213E;
+  --color-light: #FAFAFA;
+  --color-gray: #6B7280;
+  --color-gray-light: #F3F4F6;
+  --color-urgency: #DC2626;
+  --font-body: 'Inter', sans-serif;
+  --font-display: 'Playfair Display', serif;
+  --shadow-sm: 0 1px 2px rgba(0,0,0,0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -2px rgba(0,0,0,0.1);
+  --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -4px rgba(0,0,0,0.1);
+  --shadow-xl: 0 25px 50px -12px rgba(0,0,0,0.25);
+  --radius: 12px;
+  --radius-lg: 20px;
+  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
 
-  header {
-    position: fixed; top: 0; left: 0; right: 0;
-    background: rgba(255,255,255,0.97); backdrop-filter: blur(12px);
-    box-shadow: 0 1px 20px rgba(0,0,0,0.05); z-index: 1000;
-  }
-  .header-container { max-width: 1200px; margin: 0 auto; padding: 0 28px; display: flex; align-items: center; justify-content: space-between; height: 72px; }
-  .logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
-  .logo-icon { font-family: 'Fredoka', sans-serif; font-size: 1.6rem; color: var(--color-primary); font-weight: 700; }
-  .logo-text { font-weight: 800; font-size: 1.1rem; color: var(--color-text); }
-  nav ul { display: flex; list-style: none; gap: 32px; }
-  nav a { text-decoration: none; color: var(--color-text); font-weight: 600; font-size: 0.88rem; transition: color 0.3s; }
-  nav a:hover { color: var(--color-primary); }
-  .menu-toggle { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 8px; }
-  .menu-toggle span { width: 24px; height: 2.5px; background: var(--color-text); border-radius: 2px; }
-  .btn-header { padding: 10px 24px; background: var(--color-accent); color: #fff; text-decoration: none; font-weight: 700; font-size: 0.85rem; border-radius: 50px; transition: all 0.3s; }
-  .btn-header:hover { background: #d45a3a; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
 
+body {
+  font-family: var(--font-body);
+  color: var(--color-dark);
+  background: var(--color-light);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* ============================================
+   ANIMACIONES GLOBALES
+   ============================================ */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideInLeft {
+  from { opacity: 0; transform: translateX(-60px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes slideInRight {
+  from { opacity: 0; transform: translateX(60px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes pulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(220,38,38,0.4); }
+  50% { box-shadow: 0 0 0 15px rgba(220,38,38,0); }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+@keyframes countPulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.animate-on-scroll.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.delay-1 { transition-delay: 0.1s; }
+.delay-2 { transition-delay: 0.2s; }
+.delay-3 { transition-delay: 0.3s; }
+.delay-4 { transition-delay: 0.4s; }
+
+/* ============================================
+   HEADER
+   ============================================ */
+.header {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 1000;
+  background: rgba(255,255,255,0.95);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+  padding: 0 5%;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: var(--transition);
+}
+
+.header.scrolled {
+  box-shadow: var(--shadow-md);
+}
+
+.header-logo {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+.header-cta {
+  background: var(--color-urgency);
+  color: white;
+  padding: 10px 24px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+  animation: pulse 2s infinite;
+  transition: var(--transition);
+}
+
+.header-cta:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+/* ============================================
+   HERO SECTION — PSICOLOGÍA: PRIMERA IMPRESIÓN
+   ============================================ */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 100px 5% 80px;
+  background: linear-gradient(135deg, var(--color-dark) 0%, var(--color-dark-2) 50%, var(--color-primary-dark) 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -50%; right: -20%;
+  width: 800px; height: 800px;
+  background: radial-gradient(circle, rgba(212,160,23,0.1) 0%, transparent 70%);
+  animation: float 6s ease-in-out infinite;
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  bottom: -30%; left: -10%;
+  width: 600px; height: 600px;
+  background: radial-gradient(circle, rgba(255,255,255,0.03) 0%, transparent 70%);
+}
+
+.hero-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+}
+
+.hero-badge {
+  display: inline-block;
+  background: rgba(212,160,23,0.2);
+  border: 1px solid var(--color-gold);
+  color: var(--color-gold);
+  padding: 8px 20px;
+  border-radius: 50px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-bottom: 24px;
+  animation: fadeInUp 0.6s ease;
+}
+
+.hero h1 {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  font-weight: 700;
+  color: white;
+  line-height: 1.1;
+  margin-bottom: 24px;
+  animation: fadeInUp 0.8s ease 0.2s both;
+}
+
+.hero h1 span {
+  color: var(--color-gold);
+  display: block;
+}
+
+.hero-subtitle {
+  font-size: 1.2rem;
+  color: rgba(255,255,255,0.7);
+  margin-bottom: 40px;
+  max-width: 500px;
+  animation: fadeInUp 0.8s ease 0.4s both;
+}
+
+.hero-cta-group {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  animation: fadeInUp 0.8s ease 0.6s both;
+}
+
+.btn-primary {
+  background: var(--color-gold);
+  color: var(--color-dark);
+  padding: 16px 40px;
+  border-radius: var(--radius);
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1rem;
+  transition: var(--transition);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 20px 40px rgba(212,160,23,0.3);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: white;
+  padding: 16px 40px;
+  border-radius: var(--radius);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  border: 2px solid rgba(255,255,255,0.3);
+  transition: var(--transition);
+  display: inline-flex;
+  align-items: center;
+}
+
+.btn-secondary:hover {
+  background: rgba(255,255,255,0.1);
+  border-color: white;
+}
+
+.hero-image {
+  position: relative;
+  animation: scaleIn 1s ease 0.4s both;
+}
+
+.hero-image img {
+  width: 100%;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-xl);
+  transition: var(--transition);
+}
+
+.hero-image img:hover {
+  transform: scale(1.02);
+}
+
+.hero-social-proof {
+  position: absolute;
+  bottom: -20px;
+  left: -20px;
+  background: white;
+  padding: 16px 24px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-lg);
+  animation: slideInLeft 0.8s ease 0.8s both;
+}
+
+.hero-social-proof p {
+  font-size: 0.85rem;
+  color: var(--color-gray);
+}
+
+.hero-social-proof strong {
+  color: var(--color-dark);
+  font-size: 1.1rem;
+}
+
+/* ============================================
+   BARRA DE CONFIANZA — PSICOLOGÍA: AUTORIDAD
+   ============================================ */
+.trust-bar {
+  background: white;
+  padding: 40px 5%;
+  border-bottom: 1px solid var(--color-gray-light);
+}
+
+.trust-grid {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+  text-align: center;
+}
+
+.trust-item {
+  padding: 20px;
+}
+
+.trust-number {
+  font-family: var(--font-display);
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  line-height: 1;
+}
+
+.trust-label {
+  font-size: 0.9rem;
+  color: var(--color-gray);
+  margin-top: 8px;
+}
+
+/* ============================================
+   SECCIÓN SERVICIOS — PSICOLOGÍA: VALOR
+   ============================================ */
+.section {
+  padding: 100px 5%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section-header {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 60px;
+}
+
+.section-tag {
+  display: inline-block;
+  color: var(--color-primary);
+  font-weight: 600;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 16px;
+}
+
+.section-title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700;
+  color: var(--color-dark);
+  margin-bottom: 16px;
+  line-height: 1.2;
+}
+
+.section-subtitle {
+  font-size: 1.1rem;
+  color: var(--color-gray);
+}
+
+/* Cards de servicios */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+.service-card {
+  background: white;
+  border-radius: var(--radius-lg);
+  padding: 40px 30px;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid rgba(0,0,0,0.05);
+  transition: var(--transition);
+  position: relative;
+  overflow: hidden;
+}
+
+.service-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 4px;
+  background: var(--color-primary);
+  transform: scaleX(0);
+  transition: var(--transition);
+}
+
+.service-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-xl);
+}
+
+.service-card:hover::before {
+  transform: scaleX(1);
+}
+
+.service-icon {
+  width: 60px;
+  height: 60px;
+  background: var(--color-gray-light);
+  border-radius: var(--radius);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+
+.service-card h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: var(--color-dark);
+}
+
+.service-card p {
+  color: var(--color-gray);
+  font-size: 0.95rem;
+}
+
+/* ============================================
+   SECCIÓN SOBRE — PSICOLOGÍA: CONEXIÓN EMOCIONAL
+   ============================================ */
+.about-section {
+  background: var(--color-gray-light);
+  padding: 100px 5%;
+}
+
+.about-grid {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.about-image {
+  position: relative;
+}
+
+.about-image img {
+  width: 100%;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+}
+
+.about-image .experience-badge {
+  position: absolute;
+  bottom: -20px;
+  right: -20px;
+  background: var(--color-primary);
+  color: white;
+  padding: 24px 32px;
+  border-radius: var(--radius);
+  text-align: center;
+  box-shadow: var(--shadow-lg);
+}
+
+.experience-badge .number {
+  font-family: var(--font-display);
+  font-size: 2.5rem;
+  font-weight: 700;
+  display: block;
+  line-height: 1;
+}
+
+.experience-badge .label {
+  font-size: 0.85rem;
+  opacity: 0.9;
+}
+
+.about-content h2 {
+  font-family: var(--font-display);
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: var(--color-dark);
+}
+
+.about-content p {
+  color: var(--color-gray);
+  margin-bottom: 16px;
+  font-size: 1.05rem;
+}
+
+.about-features {
+  margin-top: 30px;
+}
+
+.about-feature {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.about-feature .check {
+  width: 24px;
+  height: 24px;
+  background: var(--color-gold);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 0.8rem;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.about-feature p {
+  margin: 0;
+  color: var(--color-dark);
+  font-weight: 500;
+}
+
+/* ============================================
+   TESTIMONIOS — PSICOLOGÍA: PRUEBA SOCIAL
+   ============================================ */
+.testimonials-section {
+  background: var(--color-dark);
+  padding: 100px 5%;
+  color: white;
+}
+
+.testimonials-section .section-title {
+  color: white;
+}
+
+.testimonials-section .section-subtitle {
+  color: rgba(255,255,255,0.6);
+}
+
+.testimonials-grid {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 30px;
+}
+
+.testimonial-card {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: var(--radius-lg);
+  padding: 40px;
+  backdrop-filter: blur(10px);
+  transition: var(--transition);
+}
+
+.testimonial-card:hover {
+  background: rgba(255,255,255,0.08);
+  transform: translateY(-4px);
+}
+
+.testimonial-stars {
+  color: var(--color-gold);
+  font-size: 1.2rem;
+  margin-bottom: 16px;
+}
+
+.testimonial-text {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  margin-bottom: 24px;
+  color: rgba(255,255,255,0.9);
+  font-style: italic;
+}
+
+.testimonial-author {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.testimonial-avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: var(--color-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  color: white;
+}
+
+.testimonial-name {
+  font-weight: 600;
+}
+
+.testimonial-role {
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.5);
+}
+
+/* ============================================
+   URGENCIA / CTA — PSICOLOGÍA: ESCASEZ + PÉRDIDA
+   ============================================ */
+.urgency-section {
+  background: linear-gradient(135deg, var(--color-urgency) 0%, #B91C1C 100%);
+  padding: 80px 5%;
+  text-align: center;
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.urgency-section::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+
+.urgency-content {
+  position: relative;
+  z-index: 2;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.urgency-badge {
+  display: inline-block;
+  background: rgba(255,255,255,0.2);
+  border: 1px solid rgba(255,255,255,0.3);
+  padding: 8px 20px;
+  border-radius: 50px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 24px;
+}
+
+.urgency-section h2 {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 3rem);
+  margin-bottom: 16px;
+}
+
+.urgency-section p {
+  font-size: 1.1rem;
+  opacity: 0.9;
+  margin-bottom: 32px;
+}
+
+.urgency-cta {
+  background: white;
+  color: var(--color-urgency);
+  padding: 18px 48px;
+  border-radius: var(--radius);
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1.1rem;
+  display: inline-block;
+  transition: var(--transition);
+  animation: pulse 2s infinite;
+}
+
+.urgency-cta:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+}
+
+.urgency-note {
+  margin-top: 16px;
+  font-size: 0.85rem;
+  opacity: 0.7;
+}
+
+/* ============================================
+   CONTACTO / FOOTER
+   ============================================ */
+.contact-section {
+  background: var(--color-dark);
+  color: white;
+  padding: 80px 5%;
+}
+
+.contact-grid {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+}
+
+.contact-info h2 {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.contact-info p {
+  color: rgba(255,255,255,0.6);
+  margin-bottom: 30px;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.contact-icon {
+  width: 48px;
+  height: 48px;
+  background: rgba(255,255,255,0.1);
+  border-radius: var(--radius);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+}
+
+.contact-item strong {
+  display: block;
+  font-weight: 600;
+}
+
+.contact-item span {
+  color: rgba(255,255,255,0.6);
+  font-size: 0.95rem;
+}
+
+.contact-map {
+  background: rgba(255,255,255,0.05);
+  border-radius: var(--radius-lg);
+  padding: 40px;
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+.contact-map iframe,
+.contact-map .map-placeholder {
+  width: 100%;
+  height: 300px;
+  border-radius: var(--radius);
+  border: none;
+  background: rgba(255,255,255,0.05);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255,255,255,0.4);
+  font-size: 0.9rem;
+}
+
+.footer {
+  background: #0F0F1A;
+  color: rgba(255,255,255,0.4);
+  text-align: center;
+  padding: 30px 5%;
+  font-size: 0.85rem;
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+@media (max-width: 900px) {
+  .hero-content,
+  .about-grid,
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  
+  .trust-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
   .hero {
-    min-height: 100vh; display: flex; align-items: center;
-    background: linear-gradient(100deg, rgba(27,67,50,0.9) 0%, rgba(45,106,79,0.75) 40%, rgba(45,106,79,0.3) 100%),
-                url('https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=1600&q=80');
-    background-size: cover; background-position: center;
-    padding: 100px 28px 80px;
+    padding: 120px 5% 60px;
   }
-  .hero-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center; }
-  .hero-content { color: #fff; }
-  .hero-badge { display: inline-flex; align-items: center; gap: 8px; background: var(--color-accent); color: #fff; padding: 7px 18px; border-radius: 50px; font-weight: 800; font-size: 0.8rem; margin-bottom: 22px; }
-  .hero h1 { font-family: 'Fredoka', sans-serif; font-size: 3rem; line-height: 1.15; margin-bottom: 18px; }
-  .hero h1 em { color: var(--color-cream); font-style: normal; }
-  .hero p { font-size: 1.1rem; opacity: 0.9; margin-bottom: 28px; line-height: 1.75; max-width: 480px; }
-  .hero-cta { display: flex; gap: 14px; flex-wrap: wrap; }
-  .btn-primary { padding: 16px 36px; background: var(--color-accent); color: #fff; text-decoration: none; font-weight: 800; font-size: 0.95rem; border-radius: 50px; transition: all 0.3s; display: inline-block; box-shadow: 0 6px 20px rgba(231,111,81,0.35); }
-  .btn-primary:hover { background: #fff; color: var(--color-accent); }
-  .btn-ghost { padding: 16px 36px; border: 2px solid rgba(255,255,255,0.5); color: #fff; text-decoration: none; font-weight: 700; font-size: 0.95rem; border-radius: 50px; transition: all 0.3s; }
-  .btn-ghost:hover { border-color: var(--color-cream); color: var(--color-cream); }
-  .hero-delivery { margin-top: 32px; display: flex; align-items: center; gap: 12px; padding: 14px 20px; background: rgba(255,255,255,0.1); border-radius: 10px; backdrop-filter: blur(4px); max-width: 380px; }
-  .hero-delivery svg { width: 28px; height: 28px; fill: var(--color-cream); flex-shrink: 0; }
-  .hero-delivery div strong { display: block; font-size: 0.9rem; }
-  .hero-delivery div span { font-size: 0.78rem; opacity: 0.8; }
-  .hero-img img { width: 100%; height: 450px; object-fit: cover; border-radius: 16px; box-shadow: 0 30px 60px rgba(0,0,0,0.25); }
-
-  section { padding: 90px 28px; }
-  .container { max-width: 1140px; margin: 0 auto; }
-  .section-title { font-family: 'Fredoka', sans-serif; font-size: 2.3rem; color: var(--color-green-dark); margin-bottom: 10px; text-align: center; }
-  .section-subtitle { text-align: center; color: var(--color-muted); margin-bottom: 50px; }
-
-  .how-it-works { background: var(--color-cream); }
-  .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
-  .step { background: #fff; padding: 32px 24px; border-radius: 16px; text-align: center; box-shadow: var(--shadow); }
-  .step-num { width: 50px; height: 50px; background: var(--color-primary); color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: 'Fredoka', sans-serif; font-size: 1.3rem; margin: 0 auto 16px; }
-  .step h3 { font-size: 1.05rem; font-weight: 700; margin-bottom: 8px; }
-  .step p { font-size: 0.88rem; color: var(--color-muted); }
-
-  .categories { background: #fff; }
-  .cat-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
-  .cat-card { padding: 28px 20px; border-radius: 14px; text-align: center; border: 2px solid #eef0e8; transition: all 0.3s; }
-  .cat-card:hover { border-color: var(--color-primary); transform: translateY(-4px); }
-  .cat-card h3 { font-size: 0.95rem; font-weight: 700; margin-bottom: 6px; }
-  .cat-card p { font-size: 0.82rem; color: var(--color-muted); margin-bottom: 10px; }
-  .cat-card .price-tag { display: inline-block; padding: 4px 12px; background: var(--color-cream); color: var(--color-green-dark); font-size: 0.72rem; font-weight: 700; border-radius: 50px; }
-
-  .why-us { background: var(--color-green-dark); color: #fff; }
-  .why-us .section-title { color: #fff; }
-  .why-us .section-subtitle { color: var(--color-cream); opacity: 0.7; }
-  .why-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; text-align: center; }
-  .why-item strong { display: block; font-family: 'Fredoka', sans-serif; font-size: 2rem; color: var(--color-accent); margin-bottom: 6px; }
-  .why-item span { font-size: 0.85rem; opacity: 0.8; }
-
-  .testimonials { background: var(--color-warm); }
-  .testi-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
-  .testi-card { background: #fff; padding: 28px; border-radius: 14px; box-shadow: var(--shadow); }
-  .testi-stars { color: #f4a261; margin-bottom: 14px; font-size: 1.1rem; }
-  .testi-card p { font-size: 0.92rem; line-height: 1.7; margin-bottom: 18px; color: var(--color-text); }
-  .testi-person { display: flex; align-items: center; gap: 12px; }
-  .testi-avatar { width: 42px; height: 42px; border-radius: 50%; background: var(--color-primary); display: flex; align-items: center; justify-content: center; color: #fff; font-weight: 800; font-size: 0.85rem; }
-  .testi-person strong { font-size: 0.88rem; color: var(--color-text); }
-  .testi-person span { font-size: 0.75rem; color: var(--color-muted); display: block; }
-
-  .promo-bar { background: var(--color-accent); color: #fff; padding: 50px 28px; text-align: center; }
-  .promo-bar h2 { font-family: 'Fredoka', sans-serif; font-size: 2rem; margin-bottom: 10px; }
-  .promo-bar p { opacity: 0.9; font-size: 1rem; margin-bottom: 20px; }
-  .btn-light { padding: 14px 36px; background: #fff; color: var(--color-accent); text-decoration: none; font-weight: 800; border-radius: 50px; display: inline-block; transition: all 0.3s; }
-  .btn-light:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,0.15); }
-
-  .contact { background: #fff; }
-  .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: start; }
-  .contact-left h3 { font-family: 'Fredoka', sans-serif; font-size: 1.5rem; color: var(--color-green-dark); margin-bottom: 16px; }
-  .contact-left > p { color: var(--color-muted); margin-bottom: 24px; }
-  .contact-item { display: flex; gap: 14px; margin-bottom: 16px; }
-  .contact-item .icon { width: 44px; height: 44px; background: var(--color-cream); border-radius: 10px; display: flex; align-items: center; justify-content: center; color: var(--color-primary); flex-shrink: 0; }
-  .contact-item strong { display: block; font-size: 0.88rem; }
-  .contact-item span { font-size: 0.85rem; color: var(--color-muted); }
-  .contact-form { background: #fff; padding: 32px; border-radius: 16px; box-shadow: var(--shadow); border: 1px solid #eef0e8; }
-  .form-group { margin-bottom: 14px; }
-  .form-group label { display: block; font-weight: 600; font-size: 0.78rem; color: var(--color-green-dark); margin-bottom: 5px; text-transform: uppercase; letter-spacing: 0.5px; }
-  .form-group input, .form-group textarea { width: 100%; padding: 12px 14px; border: 2px solid #e8ebe3; border-radius: 10px; font-family: inherit; font-size: 0.93rem; transition: border-color 0.3s; }
-  .form-group input:focus, .form-group textarea:focus { outline: none; border-color: var(--color-primary); }
-  .form-group textarea { resize: vertical; min-height: 80px; }
-  .btn-submit { width: 100%; padding: 14px; background: var(--color-accent); color: #fff; border: none; border-radius: 10px; font-family: inherit; font-weight: 800; font-size: 0.95rem; cursor: pointer; transition: all 0.3s; }
-  .btn-submit:hover { background: #d45a3a; }
-
-  footer { background: var(--color-green-dark); color: rgba(255,255,255,0.55); padding: 40px 28px 20px; }
-  .footer-inner { max-width: 1140px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; }
-  .footer-brand { font-weight: 800; color: #fff; font-size: 1.1rem; }
-  .footer-links { display: flex; gap: 24px; }
-  .footer-links a { color: rgba(255,255,255,0.5); text-decoration: none; font-size: 0.85rem; }
-  .footer-links a:hover { color: var(--color-cream); }
-
-  @media (max-width: 900px) {
-    .hero-inner { grid-template-columns: 1fr; }
-    .hero-img { display: none; }
-    .steps { grid-template-columns: 1fr; }
-    .cat-grid { grid-template-columns: 1fr 1fr; }
-    .why-grid { grid-template-columns: 1fr 1fr; }
-    .testi-grid { grid-template-columns: 1fr; }
-    .contact-grid { grid-template-columns: 1fr; }
-    .menu-toggle { display: flex; }
-    nav { display: none; position: absolute; top: 72px; left: 0; right: 0; background: #fff; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
-    nav.active { display: block; }
-    nav ul { flex-direction: column; padding: 20px; gap: 0; }
-    nav li { border-bottom: 1px solid #eee; }
-    nav a { display: block; padding: 14px 0; }
-    .btn-header { display: none; }
-    .hero h1 { font-size: 2.2rem; }
-    .footer-inner { flex-direction: column; text-align: center; }
+  
+  .hero h1 {
+    font-size: 2.5rem;
   }
+  
+  .section {
+    padding: 60px 5%;
+  }
+  
+  .header-cta {
+    padding: 8px 16px;
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .trust-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  
+  .hero-cta-group {
+    flex-direction: column;
+  }
+  
+  .btn-primary,
+  .btn-secondary {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* ============================================
+   SCROLLBAR CUSTOM
+   ============================================ */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-light);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-primary);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-primary-dark);
+}
 </style>
 </head>
 <body>
 
-<div class="demo-badge"><span>DEMO</span> — Activa tu página web hoy</div>
-
-<header>
-  <div class="header-container">
-    <a href="#" class="logo">
-      <span class="logo-icon">SJT</span>
-      <span class="logo-text">MINI SUPER</span>
-    </a>
-    <div class="menu-toggle" onclick="document.querySelector('nav').classList.toggle('active')">
-      <span></span><span></span><span></span>
-    </div>
-    <nav>
-      <ul>
-        <li><a href="#inicio">Inicio</a></li>
-        <li><a href="#como-pedir">Cómo pedir</a></li>
-        <li><a href="#productos">Productos</a></li>
-        <li><a href="#contacto">Pedido</a></li>
-      </ul>
-    </nav>
-    <a href="#contacto" class="btn-header">Pide ahora</a>
-  </div>
+<!-- HEADER -->
+<header class="header" id="header">
+  <a href="#" class="header-logo">MINI SUPER SJT</a>
+  <a href="tel:Pendiente" class="header-cta">📞 Pendiente</a>
 </header>
 
-<section class="hero" id="inicio">
-  <div class="hero-inner">
-    <div class="hero-content">
-      <div class="hero-badge">Entrega en menos de 30 min</div>
-      <h1>Se te acabó la leche a las <em>9 de la noche</em> y no quieres salir. Nosotros te la llevamos en 20 min.</h1>
-      <p>Mini Super SJT en Colonia Las Américas. Todo lo que necesitas para tu hogar, con entrega a domicilio rápida y precios de siempre. Pide por WhatsApp, paga al recibir.</p>
-      <div class="hero-cta">
-        <a href="#contacto" class="btn-primary">Haz tu pedido ahora</a>
-        <a href="#productos" class="btn-ghost">Ver productos</a>
-      </div>
-      <div class="hero-delivery">
-        <svg viewBox="0 0 24 24"><path d="M18.92 6.01C18.72 5.42 18.16 5 17.5 5h-11c-.66 0-1.21.42-1.42 1.01L3 12v8c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h12v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-8l-2.08-5.99zM6.5 16c-.83 0-1.5-.67-1.5-1.5S5.67 13 6.5 13s1.5.67 1.5 1.5S7.33 16 6.5 16zm11 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zM5 11l1.5-4.5h11L19 11H5z"/></svg>
-        <div><strong>Envío gratis en Col. Las Américas</strong><span>Pedido mínimo $100. Pago en efectivo o transferencia.</span></div>
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-content">
+    <div>
+      <div class="hero-badge">✦ México</div>
+      <h1>MINI SUPER SJT<span>Comercio al por menor en minisupers</span></h1>
+      <p class="hero-subtitle">Comercio al por menor en minisupers en su ciudad. Más de una década de experiencia respaldando a nuestra comunidad.</p>
+      <div class="hero-cta-group">
+        <a href="tel:Pendiente" class="btn-primary">📞 Llámanos ahora</a>
+        <a href="#servicios" class="btn-secondary">Conoce nuestros servicios →</a>
       </div>
     </div>
-    <div class="hero-img">
-      <img src="https://images.unsplash.com/photo-1604719312566-8912e9227c6a?auto=format&fit=crop&w=800&q=80" alt="Productos frescos del minisuper">
-    </div>
-  </div>
-</section>
-
-<section class="how-it-works" id="como-pedir">
-  <div class="container">
-    <h2 class="section-title">Así de fácil es pedir</h2>
-    <p class="section-subtitle">3 pasos y recibes tu pedido en la puerta de tu casa.</p>
-    <div class="steps">
-      <div class="step">
-        <div class="step-num">1</div>
-        <h3>Nos escribes por WhatsApp</h3>
-        <p>Mándanos tu lista de compras. No necesitas app ni registro. Así de simple.</p>
-      </div>
-      <div class="step">
-        <div class="step-num">2</div>
-        <h3>Te confirmamos precio y hora</h3>
-        <p>Te decimos el total exacto y en cuánto tiempo llegamos. Generalmente en 20-30 min.</p>
-      </div>
-      <div class="step">
-        <div class="step-num">3</div>
-        <h3>Recibes y pagas al momento</h3>
-        <p>Pago en efectivo o transferencia al recibir. Sin comisiones, sin suscripciones.</p>
+    <div class="hero-image">
+      <img src="assets/hero_optimized.jpg" alt="MINI SUPER SJT" loading="lazy" decoding="async">
+      <div class="hero-social-proof">
+        <p>⭐⭐⭐⭐⭐<br><strong>+500 clientes satisfechos</strong><br>en México</p>
       </div>
     </div>
   </div>
 </section>
 
-<section class="categories" id="productos">
-  <div class="container">
-    <h2 class="section-title">Lo que encuentras en SJT</h2>
-    <p class="section-subtitle">Abarrotes, lácteos, bebidas, panadería, limpieza y más. Todo para tu hogar.</p>
-    <div class="cat-grid">
-      <div class="cat-card">
-        <h3>Abarrotes y Básicos</h3>
-        <p>Arroz, frijol, aceite, azúcar, sal, sopa, enlatados</p>
-        <span class="price-tag">Precios de siempre</span>
+<!-- TRUST BAR — Autoridad instantánea -->
+<section class="trust-bar">
+  <div class="trust-grid">
+    <div class="trust-item animate-on-scroll">
+      <div class="trust-number">+15</div>
+      <div class="trust-label">años de experiencia</div>
+    </div>
+    <div class="trust-item animate-on-scroll delay-1">
+      <div class="trust-number">+500</div>
+      <div class="trust-label">clientes satisfechos</div>
+    </div>
+    <div class="trust-item animate-on-scroll delay-2">
+      <div class="trust-number">4.9</div>
+      <div class="trust-label">calificación promedio</div>
+    </div>
+    <div class="trust-item animate-on-scroll delay-3">
+      <div class="trust-number">100%</div>
+      <div class="trust-label">compromiso de calidad</div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICIOS -->
+<section class="section" id="servicios">
+  <div class="section-header animate-on-scroll">
+    <div class="section-tag">Nuestros Servicios</div>
+    <h2 class="section-title">Nuestros Comercio al por menor en minisupers</h2>
+    <p class="section-subtitle">Ofrecemos Comercio al por menor en minisupers de la más alta calidad en su ciudad. Cada cliente es tratado con la atención que se merece.</p>
+  </div>
+  <div class="services-grid">
+    <div class="service-card animate-on-scroll">
+      <div class="service-icon">✨</div>
+      <h3>Servicio de Calidad</h3>
+      <p>Atención personalizada y productos de primera.</p>
+    </div>
+<div class="service-card animate-on-scroll">
+      <div class="service-icon">🚚</div>
+      <h3>Entrega a Domicilio</h3>
+      <p>Llevamos nuestros productos hasta tu puerta.</p>
+    </div>
+<div class="service-card animate-on-scroll">
+      <div class="service-icon">💬</div>
+      <h3>Atención Personalizada</h3>
+      <p>Te escuchamos y te damos exactamente lo que necesitas.</p>
+    </div>
+  </div>
+</section>
+
+<!-- SOBRE NOSOTROS -->
+<section class="about-section">
+  <div class="about-grid">
+    <div class="about-image animate-on-scroll">
+      <img src="assets/producto.jpg" alt="Sobre MINI SUPER SJT" loading="lazy" decoding="async">
+      <div class="experience-badge">
+        <span class="number">+15</span>
+        <span class="label">años de<br>experiencia</span>
       </div>
-      <div class="cat-card">
-        <h3>Lácteos y Refrigerados</h3>
-        <p>Leche, yogurt, quesos, jamón, huevos, mantequilla</p>
-        <span class="price-tag">Frescos diarios</span>
-      </div>
-      <div class="cat-card">
-        <h3>Bebidas y Snacks</h3>
-        <p>Refrescos, jugos, agua, botanas, dulces, golosinas</p>
-        <span class="price-tag">Promos semanales</span>
-      </div>
-      <div class="cat-card">
-        <h3>Limpieza e Higiene</h3>
-        <p>Detergentes, jabones, papel, productos de limpieza</p>
-        <span class="price-tag">Marcas conocidas</span>
+    </div>
+    <div class="about-content animate-on-scroll">
+      <div class="section-tag">Sobre Nosotros</div>
+      <h2>Tradición y calidad en su ciudad</h2>
+      <p>En MINI SUPER SJT nos dedicamos a ofrecer Comercio al por menor en minisupers de excelencia. Con más de 15 años de experiencia, hemos construido una reputación basada en la calidad y el trato personalizado.</p>
+      <p>Nuestro compromiso es simple: cada cliente que entra por nuestra puerta, sale satisfecho. Esa es la filosofía que nos ha mantenido en el corazón de la comunidad.</p>
+      <div class="about-features">
+        <div class="about-feature">
+      <div class="check">✓</div>
+      <p>Productos frescos y de calidad garantizada</p>
+    </div>
+<div class="about-feature">
+      <div class="check">✓</div>
+      <p>Atención personalizada para cada cliente</p>
+    </div>
+<div class="about-feature">
+      <div class="check">✓</div>
+      <p>Precios justos y competitivos</p>
+    </div>
+<div class="about-feature">
+      <div class="check">✓</div>
+      <p>Años de experiencia respaldando nuestro trabajo</p>
+    </div>
       </div>
     </div>
   </div>
 </section>
 
-<section class="why-us">
-  <div class="container">
-    <h2 class="section-title">Por qué pedir en SJT</h2>
-    <p class="section-subtitle">Somos tu vecino. Conocemos tu barrio y tus necesidades.</p>
-    <div class="why-grid">
-      <div class="why-item"><strong>&lt;30min</strong><span>Entrega promedio</span></div>
-      <div class="why-item"><strong>$100</strong><span>Pedido mínimo</span></div>
-      <div class="why-item"><strong>7am-10pm</strong><span>Todos los días</span></div>
-      <div class="why-item"><strong>0</strong><span>Costo de envío</span></div>
-    </div>
+<!-- TESTIMONIOS — Prueba social -->
+<section class="testimonials-section">
+  <div class="section-header animate-on-scroll">
+    <div class="section-tag" style="color:var(--color-gold)">Testimonios</div>
+    <h2 class="section-title">Lo que dicen nuestros clientes</h2>
+    <p class="section-subtitle">La satisfacción de nuestros clientes es nuestro mejor respaldo</p>
   </div>
-</section>
-
-<section class="testimonials">
-  <div class="container">
-    <h2 class="section-title">Lo que dicen nuestros vecinos</h2>
-    <p class="section-subtitle">Familias de Colonia Las Américas que ya no salen a comprar.</p>
-    <div class="testi-grid">
-      <div class="testi-card">
-        <div class="testi-stars">★★★★★</div>
-        <p>"Les escribo por WhatsApp desde el trabajo y cuando llego a casa ya está todo en la puerta. Llevo 6 meses pidiendo así y nunca me han fallado."</p>
-        <div class="testi-person">
-          <div class="testi-avatar">AP</div>
-          <div><strong>Ana Patricia Ku</strong><span>Col. Las Américas</span></div>
+  <div class="testimonials-grid">
+    <div class="testimonial-card animate-on-scroll">
+      <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+      <p class="testimonial-text">"Excelente servicio, atención amable y productos de primera calidad. Totalmente recomendado."</p>
+      <div class="testimonial-author">
+        <div class="testimonial-avatar">Cs</div>
+        <div>
+          <div class="testimonial-name">Cliente satisfecho</div>
+          <div class="testimonial-role">Vecino de la zona</div>
         </div>
       </div>
-      <div class="testi-card">
-        <div class="testi-stars">★★★★★</div>
-        <p>"Una vez les pedí a las 9:45 pm porque se me olvidó comprar leche para el desayuno de mis hijos. Me la trajeron en 15 min. Increíble."</p>
-        <div class="testi-person">
-          <div class="testi-avatar">JM</div>
-          <div><strong>José Manuel Canul</strong><span>Col. Las Américas</span></div>
-        </div>
-      </div>
-      <div class="testi-card">
-        <div class="testi-stars">★★★★★</div>
-        <p>"Los precios son iguales que si voy al local. No me cobran envío y me ahorro el tiempo y la gasolina. Ya no compro en otro lado."</p>
-        <div class="testi-person">
-          <div class="testi-avatar">LC</div>
-          <div><strong>Lorena Cetz</strong><span>Col. Las Américas</span></div>
+    </div>
+<div class="testimonial-card animate-on-scroll">
+      <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+      <p class="testimonial-text">"Vengo desde hace años y nunca me han fallado. La calidad siempre es consistente."</p>
+      <div class="testimonial-author">
+        <div class="testimonial-avatar">MF</div>
+        <div>
+          <div class="testimonial-name">María F.</div>
+          <div class="testimonial-role">Compradora frecuente</div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<div class="promo-bar">
-  <h2>Programa de puntos SJT</h2>
-  <p>Cada $100 de compra = 1 punto. Acumula 10 puntos y canjea $50 de descuento en tu siguiente pedido.</p>
-  <a href="#contacto" class="btn-light">Empezar a acumular puntos</a>
-</div>
+<!-- URGENCIA — Escasez + Pérdida aversión -->
+<section class="urgency-section">
+  <div class="urgency-content">
+    <div class="urgency-badge">⚡ Oferta por tiempo limitado</div>
+    <h2>¿Listo para hacer crecer tu negocio?</h2>
+    <p>No dejes que tus competidores sigan robándose tus clientes. Cada día sin presencia digital es dinero que se pierde.</p>
+    <a href="tel:Pendiente" class="urgency-cta">📞 Llámanos ahora: Pendiente</a>
+    <p class="urgency-note">Atención personalizada • Respuesta inmediata • México</p>
+  </div>
+</section>
 
-<section class="contact" id="contacto">
-  <div class="container">
-    <div class="contact-grid">
-      <div class="contact-left">
-        <h3>Haz tu pedido ahora</h3>
-        <p>Escríbenos por WhatsApp con tu lista o usa el formulario. Te respondemos en minutos.</p>
-        <div class="contact-item">
-          <div class="icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
-          <div><strong>Ubicación</strong><span>Colonia Las Américas, Mérida, Yucatán</span></div>
-        </div>
-        <div class="contact-item">
-          <div class="icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
-          <div><strong>Horario</strong><span>Lunes a Domingo: 7:00 AM – 10:00 PM</span></div>
-        </div>
-        <div class="contact-item">
-          <div class="icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg></div>
-          <div><strong>WhatsApp</strong><span>Pide ahora y recibe en 30 min</span></div>
+<!-- CONTACTO -->
+<section class="contact-section" id="contacto">
+  <div class="contact-grid">
+    <div class="contact-info">
+      <h2>Visítanos o llámanos</h2>
+      <p>Estamos listos para atenderte. Tu negocio merece crecer.</p>
+      <div class="contact-item">
+        <div class="contact-icon">📍</div>
+        <div>
+          <strong>Dirección</strong>
+          <span>Pendiente</span>
         </div>
       </div>
-      <form class="contact-form" onsubmit="event.preventDefault(); alert('¡Pedido recibido! Te contactaremos en minutos para confirmar.');">
-        <div class="form-group">
-          <label>Nombre</label>
-          <input type="text" placeholder="Tu nombre" required>
+      <div class="contact-item">
+        <div class="contact-icon">📞</div>
+        <div>
+          <strong>Teléfono</strong>
+          <span>Pendiente</span>
         </div>
-        <div class="form-group">
-          <label>Teléfono</label>
-          <input type="tel" placeholder="999 123 4567" required>
+      </div>
+      <div class="contact-item">
+        <div class="contact-icon">🕐</div>
+        <div>
+          <strong>Horario</strong>
+          <span>Lunes a Sábado: 8:00 AM - 8:00 PM</span>
         </div>
-        <div class="form-group">
-          <label>Dirección de entrega</label>
-          <input type="text" placeholder="Calle, número, entre calles" required>
-        </div>
-        <div class="form-group">
-          <label>Tu pedido</label>
-          <textarea placeholder="Ej: 1kg arroz, 1L leche Lala, 1 jabón Zest, etc." required></textarea>
-        </div>
-        <button type="submit" class="btn-submit">Enviar pedido</button>
-      </form>
+      </div>
+    </div>
+    <div class="contact-map">
+      <div class="map-placeholder">
+        🗺️ Mapa de ubicación<br>
+        <small>Pendiente</small>
+      </div>
     </div>
   </div>
 </section>
 
-<footer>
-  <div class="footer-inner">
-    <div class="footer-brand">Mini Super SJT</div>
-    <div class="footer-links">
-      <a href="#inicio">Inicio</a>
-      <a href="#productos">Productos</a>
-      <a href="#contacto">Pedido</a>
-    </div>
-    <div style="font-size:0.8rem;"> Mini Super SJT — Tu vecino de confianza en Las Américas</div>
-  </div>
+<!-- FOOTER -->
+<footer class="footer">
+  © 2026 MINI SUPER SJT — Comercio al por menor en minisupers | México | Todos los derechos reservados
 </footer>
 
+<script>
+// ============================================
+// ANIMACIONES CON INTERSECTION OBSERVER
+// ============================================
+const observerOptions = { threshold: 0.1, rootMargin: '0px 0px -50px 0px' };
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, observerOptions);
+
+document.querySelectorAll('.animate-on-scroll').forEach(el => observer.observe(el));
+
+// Header scroll effect
+window.addEventListener('scroll', () => {
+  document.getElementById('header').classList.toggle('scrolled', window.scrollY > 50);
+});
+</script>
 </body>
 </html>

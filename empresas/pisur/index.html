@@ -1,398 +1,1123 @@
 <!DOCTYPE html>
-<html lang="es-MX">
+<html lang="es">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>PISUR | Todo para tu Alberca en Mérida — Envío en 24h</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<title>PISUR — Comercio al por menor de articulos para albercas</title>
+<!-- SEO OPTIMIZATION v2.0 -->
+<meta name="description" content="PISUR — Comercio al por menor de articulos para albercas en México. Página web profesional de demostración. Contáctenos hoy.">
+<meta name="keywords" content="comercio al por menor de articulos para albercas, méxico, negocio local, México, servicios">
+<meta name="author" content="Web Muestras México">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="PISUR — Comercio al por menor de articulos para albercas">
+<meta property="og:description" content="PISUR en México. Comercio al por menor de articulos para albercas. Página web profesional de demostración.">
+<meta property="og:type" content="business.business">
+<meta property="og:url" content="https://veltis-hyper.github.io/web-muestras-mexico/empresas/pisur/index.html">
+<meta property="og:image" content="assets/hero_optimized.jpg">
+<meta property="og:locale" content="es_MX">
+<meta property="business:contact_data:locality" content="México">
+<meta property="business:contact_data:country_name" content="México">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="PISUR — Comercio al por menor de articulos para albercas">
+<meta name="twitter:description" content="PISUR en México. Comercio al por menor de articulos para albercas. Página web profesional de demostración.">
+<meta name="twitter:image" content="assets/hero_optimized.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;600;700&display=swap" as="style">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "PISUR",
+  "description": "Comercio al por menor de articulos para albercas",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "México",
+    "addressCountry": "MX"
+  },
+  "url": "https://veltis-hyper.github.io/web-muestras-mexico/empresas/pisur/index.html",
+  "image": "assets/hero_optimized.jpg"
+}
+</script>
+<!-- END SEO OPTIMIZATION -->
+<meta name="description" content="Comercio al por menor de articulos para albercas en México - PISUR">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
-  :root {
-    --color-primary: #0a4d68;
-    --color-coral: #f4a261;
-    --color-ice: #e8f4f8;
-    --color-dark: #062c3d;
-    --color-text: #1e3a4c;
-    --color-muted: #5a7a8a;
-    --shadow: 0 12px 40px rgba(10,77,104,0.08);
-  }
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  html { scroll-behavior: smooth; }
-  body { font-family: 'Inter', sans-serif; color: var(--color-text); background: #fff; line-height: 1.7; }
+/* ============================================
+   TEMPLATE v2.0 — Impeccable Front-End
+   DISEÑO PSICOLÓGICO ESTRATÉGICO
+   ============================================ */
 
-  .demo-badge {
-    position: fixed; bottom: 24px; right: 24px;
-    background: rgba(10,77,104,0.92); color: var(--color-coral);
-    padding: 10px 20px; border-radius: 8px; font-size: 0.78rem; font-weight: 600;
-    z-index: 9999; backdrop-filter: blur(8px); border: 1px solid rgba(244,162,97,0.3);
-  }
-  .demo-badge span { color: #fff; font-weight: 700; }
+:root {
+  --color-primary: #D4A017;
+  --color-primary-dark: #B8860B;
+  --color-accent: #E8C547;
+  --color-gold: #D4A017;
+  --color-dark: #1A1A2E;
+  --color-dark-2: #16213E;
+  --color-light: #FAFAFA;
+  --color-gray: #6B7280;
+  --color-gray-light: #F3F4F6;
+  --color-urgency: #DC2626;
+  --font-body: 'Inter', sans-serif;
+  --font-display: 'Playfair Display', serif;
+  --shadow-sm: 0 1px 2px rgba(0,0,0,0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -2px rgba(0,0,0,0.1);
+  --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -4px rgba(0,0,0,0.1);
+  --shadow-xl: 0 25px 50px -12px rgba(0,0,0,0.25);
+  --radius: 12px;
+  --radius-lg: 20px;
+  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
 
-  header {
-    position: fixed; top: 0; left: 0; right: 0;
-    background: rgba(255,255,255,0.97); backdrop-filter: blur(12px);
-    box-shadow: 0 1px 20px rgba(0,0,0,0.05); z-index: 1000;
-  }
-  .header-container { max-width: 1200px; margin: 0 auto; padding: 0 28px; display: flex; align-items: center; justify-content: space-between; height: 72px; }
-  .logo { display: flex; align-items: center; gap: 10px; font-weight: 800; font-size: 1.4rem; color: var(--color-primary); text-decoration: none; }
-  .logo-icon { width: 40px; height: 40px; background: var(--color-primary); border-radius: 10px; display: flex; align-items: center; justify-content: center; }
-  .logo-icon svg { width: 22px; height: 22px; fill: #fff; }
-  nav ul { display: flex; list-style: none; gap: 32px; }
-  nav a { text-decoration: none; color: var(--color-text); font-weight: 600; font-size: 0.88rem; transition: color 0.3s; }
-  nav a:hover { color: var(--color-primary); }
-  .menu-toggle { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 8px; }
-  .menu-toggle span { width: 24px; height: 2.5px; background: var(--color-primary); border-radius: 2px; }
-  .btn-header { padding: 10px 24px; background: var(--color-primary); color: #fff; text-decoration: none; font-weight: 700; font-size: 0.85rem; border-radius: 6px; transition: all 0.3s; }
-  .btn-header:hover { background: var(--color-dark); }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
 
+body {
+  font-family: var(--font-body);
+  color: var(--color-dark);
+  background: var(--color-light);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* ============================================
+   ANIMACIONES GLOBALES
+   ============================================ */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideInLeft {
+  from { opacity: 0; transform: translateX(-60px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes slideInRight {
+  from { opacity: 0; transform: translateX(60px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes pulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(220,38,38,0.4); }
+  50% { box-shadow: 0 0 0 15px rgba(220,38,38,0); }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+@keyframes countPulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.animate-on-scroll.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.delay-1 { transition-delay: 0.1s; }
+.delay-2 { transition-delay: 0.2s; }
+.delay-3 { transition-delay: 0.3s; }
+.delay-4 { transition-delay: 0.4s; }
+
+/* ============================================
+   HEADER
+   ============================================ */
+.header {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 1000;
+  background: rgba(255,255,255,0.95);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+  padding: 0 5%;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: var(--transition);
+}
+
+.header.scrolled {
+  box-shadow: var(--shadow-md);
+}
+
+.header-logo {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+.header-cta {
+  background: var(--color-urgency);
+  color: white;
+  padding: 10px 24px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+  animation: pulse 2s infinite;
+  transition: var(--transition);
+}
+
+.header-cta:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+/* ============================================
+   HERO SECTION — PSICOLOGÍA: PRIMERA IMPRESIÓN
+   ============================================ */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 100px 5% 80px;
+  background: linear-gradient(135deg, var(--color-dark) 0%, var(--color-dark-2) 50%, var(--color-primary-dark) 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -50%; right: -20%;
+  width: 800px; height: 800px;
+  background: radial-gradient(circle, rgba(212,160,23,0.1) 0%, transparent 70%);
+  animation: float 6s ease-in-out infinite;
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  bottom: -30%; left: -10%;
+  width: 600px; height: 600px;
+  background: radial-gradient(circle, rgba(255,255,255,0.03) 0%, transparent 70%);
+}
+
+.hero-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+}
+
+.hero-badge {
+  display: inline-block;
+  background: rgba(212,160,23,0.2);
+  border: 1px solid var(--color-gold);
+  color: var(--color-gold);
+  padding: 8px 20px;
+  border-radius: 50px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-bottom: 24px;
+  animation: fadeInUp 0.6s ease;
+}
+
+.hero h1 {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  font-weight: 700;
+  color: white;
+  line-height: 1.1;
+  margin-bottom: 24px;
+  animation: fadeInUp 0.8s ease 0.2s both;
+}
+
+.hero h1 span {
+  color: var(--color-gold);
+  display: block;
+}
+
+.hero-subtitle {
+  font-size: 1.2rem;
+  color: rgba(255,255,255,0.7);
+  margin-bottom: 40px;
+  max-width: 500px;
+  animation: fadeInUp 0.8s ease 0.4s both;
+}
+
+.hero-cta-group {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  animation: fadeInUp 0.8s ease 0.6s both;
+}
+
+.btn-primary {
+  background: var(--color-gold);
+  color: var(--color-dark);
+  padding: 16px 40px;
+  border-radius: var(--radius);
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1rem;
+  transition: var(--transition);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 20px 40px rgba(212,160,23,0.3);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: white;
+  padding: 16px 40px;
+  border-radius: var(--radius);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  border: 2px solid rgba(255,255,255,0.3);
+  transition: var(--transition);
+  display: inline-flex;
+  align-items: center;
+}
+
+.btn-secondary:hover {
+  background: rgba(255,255,255,0.1);
+  border-color: white;
+}
+
+.hero-image {
+  position: relative;
+  animation: scaleIn 1s ease 0.4s both;
+}
+
+.hero-image img {
+  width: 100%;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-xl);
+  transition: var(--transition);
+}
+
+.hero-image img:hover {
+  transform: scale(1.02);
+}
+
+.hero-social-proof {
+  position: absolute;
+  bottom: -20px;
+  left: -20px;
+  background: white;
+  padding: 16px 24px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-lg);
+  animation: slideInLeft 0.8s ease 0.8s both;
+}
+
+.hero-social-proof p {
+  font-size: 0.85rem;
+  color: var(--color-gray);
+}
+
+.hero-social-proof strong {
+  color: var(--color-dark);
+  font-size: 1.1rem;
+}
+
+/* ============================================
+   BARRA DE CONFIANZA — PSICOLOGÍA: AUTORIDAD
+   ============================================ */
+.trust-bar {
+  background: white;
+  padding: 40px 5%;
+  border-bottom: 1px solid var(--color-gray-light);
+}
+
+.trust-grid {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+  text-align: center;
+}
+
+.trust-item {
+  padding: 20px;
+}
+
+.trust-number {
+  font-family: var(--font-display);
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  line-height: 1;
+}
+
+.trust-label {
+  font-size: 0.9rem;
+  color: var(--color-gray);
+  margin-top: 8px;
+}
+
+/* ============================================
+   SECCIÓN SERVICIOS — PSICOLOGÍA: VALOR
+   ============================================ */
+.section {
+  padding: 100px 5%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section-header {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 60px;
+}
+
+.section-tag {
+  display: inline-block;
+  color: var(--color-primary);
+  font-weight: 600;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 16px;
+}
+
+.section-title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700;
+  color: var(--color-dark);
+  margin-bottom: 16px;
+  line-height: 1.2;
+}
+
+.section-subtitle {
+  font-size: 1.1rem;
+  color: var(--color-gray);
+}
+
+/* Cards de servicios */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+.service-card {
+  background: white;
+  border-radius: var(--radius-lg);
+  padding: 40px 30px;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid rgba(0,0,0,0.05);
+  transition: var(--transition);
+  position: relative;
+  overflow: hidden;
+}
+
+.service-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 4px;
+  background: var(--color-primary);
+  transform: scaleX(0);
+  transition: var(--transition);
+}
+
+.service-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-xl);
+}
+
+.service-card:hover::before {
+  transform: scaleX(1);
+}
+
+.service-icon {
+  width: 60px;
+  height: 60px;
+  background: var(--color-gray-light);
+  border-radius: var(--radius);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+
+.service-card h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: var(--color-dark);
+}
+
+.service-card p {
+  color: var(--color-gray);
+  font-size: 0.95rem;
+}
+
+/* ============================================
+   SECCIÓN SOBRE — PSICOLOGÍA: CONEXIÓN EMOCIONAL
+   ============================================ */
+.about-section {
+  background: var(--color-gray-light);
+  padding: 100px 5%;
+}
+
+.about-grid {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.about-image {
+  position: relative;
+}
+
+.about-image img {
+  width: 100%;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+}
+
+.about-image .experience-badge {
+  position: absolute;
+  bottom: -20px;
+  right: -20px;
+  background: var(--color-primary);
+  color: white;
+  padding: 24px 32px;
+  border-radius: var(--radius);
+  text-align: center;
+  box-shadow: var(--shadow-lg);
+}
+
+.experience-badge .number {
+  font-family: var(--font-display);
+  font-size: 2.5rem;
+  font-weight: 700;
+  display: block;
+  line-height: 1;
+}
+
+.experience-badge .label {
+  font-size: 0.85rem;
+  opacity: 0.9;
+}
+
+.about-content h2 {
+  font-family: var(--font-display);
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: var(--color-dark);
+}
+
+.about-content p {
+  color: var(--color-gray);
+  margin-bottom: 16px;
+  font-size: 1.05rem;
+}
+
+.about-features {
+  margin-top: 30px;
+}
+
+.about-feature {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.about-feature .check {
+  width: 24px;
+  height: 24px;
+  background: var(--color-gold);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 0.8rem;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.about-feature p {
+  margin: 0;
+  color: var(--color-dark);
+  font-weight: 500;
+}
+
+/* ============================================
+   TESTIMONIOS — PSICOLOGÍA: PRUEBA SOCIAL
+   ============================================ */
+.testimonials-section {
+  background: var(--color-dark);
+  padding: 100px 5%;
+  color: white;
+}
+
+.testimonials-section .section-title {
+  color: white;
+}
+
+.testimonials-section .section-subtitle {
+  color: rgba(255,255,255,0.6);
+}
+
+.testimonials-grid {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 30px;
+}
+
+.testimonial-card {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: var(--radius-lg);
+  padding: 40px;
+  backdrop-filter: blur(10px);
+  transition: var(--transition);
+}
+
+.testimonial-card:hover {
+  background: rgba(255,255,255,0.08);
+  transform: translateY(-4px);
+}
+
+.testimonial-stars {
+  color: var(--color-gold);
+  font-size: 1.2rem;
+  margin-bottom: 16px;
+}
+
+.testimonial-text {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  margin-bottom: 24px;
+  color: rgba(255,255,255,0.9);
+  font-style: italic;
+}
+
+.testimonial-author {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.testimonial-avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: var(--color-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  color: white;
+}
+
+.testimonial-name {
+  font-weight: 600;
+}
+
+.testimonial-role {
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.5);
+}
+
+/* ============================================
+   URGENCIA / CTA — PSICOLOGÍA: ESCASEZ + PÉRDIDA
+   ============================================ */
+.urgency-section {
+  background: linear-gradient(135deg, var(--color-urgency) 0%, #B91C1C 100%);
+  padding: 80px 5%;
+  text-align: center;
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.urgency-section::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+
+.urgency-content {
+  position: relative;
+  z-index: 2;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.urgency-badge {
+  display: inline-block;
+  background: rgba(255,255,255,0.2);
+  border: 1px solid rgba(255,255,255,0.3);
+  padding: 8px 20px;
+  border-radius: 50px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 24px;
+}
+
+.urgency-section h2 {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 3rem);
+  margin-bottom: 16px;
+}
+
+.urgency-section p {
+  font-size: 1.1rem;
+  opacity: 0.9;
+  margin-bottom: 32px;
+}
+
+.urgency-cta {
+  background: white;
+  color: var(--color-urgency);
+  padding: 18px 48px;
+  border-radius: var(--radius);
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1.1rem;
+  display: inline-block;
+  transition: var(--transition);
+  animation: pulse 2s infinite;
+}
+
+.urgency-cta:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+}
+
+.urgency-note {
+  margin-top: 16px;
+  font-size: 0.85rem;
+  opacity: 0.7;
+}
+
+/* ============================================
+   CONTACTO / FOOTER
+   ============================================ */
+.contact-section {
+  background: var(--color-dark);
+  color: white;
+  padding: 80px 5%;
+}
+
+.contact-grid {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+}
+
+.contact-info h2 {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.contact-info p {
+  color: rgba(255,255,255,0.6);
+  margin-bottom: 30px;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.contact-icon {
+  width: 48px;
+  height: 48px;
+  background: rgba(255,255,255,0.1);
+  border-radius: var(--radius);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+}
+
+.contact-item strong {
+  display: block;
+  font-weight: 600;
+}
+
+.contact-item span {
+  color: rgba(255,255,255,0.6);
+  font-size: 0.95rem;
+}
+
+.contact-map {
+  background: rgba(255,255,255,0.05);
+  border-radius: var(--radius-lg);
+  padding: 40px;
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+.contact-map iframe,
+.contact-map .map-placeholder {
+  width: 100%;
+  height: 300px;
+  border-radius: var(--radius);
+  border: none;
+  background: rgba(255,255,255,0.05);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255,255,255,0.4);
+  font-size: 0.9rem;
+}
+
+.footer {
+  background: #0F0F1A;
+  color: rgba(255,255,255,0.4);
+  text-align: center;
+  padding: 30px 5%;
+  font-size: 0.85rem;
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+@media (max-width: 900px) {
+  .hero-content,
+  .about-grid,
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  
+  .trust-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
   .hero {
-    min-height: 100vh; display: flex; align-items: center;
-    background: linear-gradient(110deg, rgba(10,77,104,0.92) 0%, rgba(10,77,104,0.7) 45%, rgba(10,77,104,0.2) 100%),
-                url('https://images.unsplash.com/photo-1572331165267-854da2b10ccc?auto=format&fit=crop&w=1600&q=80');
-    background-size: cover; background-position: center;
-    padding: 100px 28px 80px;
+    padding: 120px 5% 60px;
   }
-  .hero-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 60px; align-items: center; }
-  .hero-content { color: #fff; }
-  .hero-tag { display: inline-flex; align-items: center; gap: 8px; background: var(--color-coral); color: var(--color-dark); padding: 7px 18px; border-radius: 50px; font-weight: 800; font-size: 0.8rem; margin-bottom: 24px; }
-  .hero h1 { font-size: 2.8rem; font-weight: 800; line-height: 1.15; margin-bottom: 18px; }
-  .hero h1 em { color: var(--color-coral); font-style: normal; }
-  .hero p { font-size: 1.08rem; opacity: 0.9; margin-bottom: 32px; max-width: 500px; line-height: 1.75; }
-  .hero-cta { display: flex; gap: 14px; flex-wrap: wrap; }
-  .btn-primary { padding: 16px 32px; background: var(--color-coral); color: var(--color-dark); text-decoration: none; font-weight: 800; font-size: 0.95rem; border-radius: 8px; transition: all 0.3s; }
-  .btn-primary:hover { background: #fff; transform: translateY(-2px); }
-  .btn-outline { padding: 16px 32px; border: 2px solid rgba(255,255,255,0.4); color: #fff; text-decoration: none; font-weight: 700; font-size: 0.95rem; border-radius: 8px; transition: all 0.3s; }
-  .btn-outline:hover { border-color: var(--color-coral); color: var(--color-coral); }
-  .hero-trust { margin-top: 36px; display: flex; gap: 28px; }
-  .hero-trust div strong { display: block; font-size: 1.5rem; font-weight: 800; color: var(--color-coral); }
-  .hero-trust div span { font-size: 0.78rem; opacity: 0.7; }
-  .hero-img { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
-  .hero-img img { width: 100%; height: 180px; object-fit: cover; border-radius: 12px; }
-  .hero-img img:first-child { grid-column: span 2; height: 240px; }
-
-  section { padding: 90px 28px; }
-  .container { max-width: 1140px; margin: 0 auto; }
-  .section-title { font-size: 2.1rem; font-weight: 800; color: var(--color-dark); margin-bottom: 10px; text-align: center; }
-  .section-subtitle { text-align: center; color: var(--color-muted); margin-bottom: 50px; max-width: 600px; margin-left: auto; margin-right: auto; }
-
-  .problem-solution { background: var(--color-ice); }
-  .ps-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; }
-  .ps-box { background: #fff; padding: 36px; border-radius: 16px; box-shadow: var(--shadow); }
-  .ps-box h3 { font-size: 1.2rem; font-weight: 700; margin-bottom: 16px; color: var(--color-dark); }
-  .ps-box ul { list-style: none; }
-  .ps-box li { padding: 8px 0; padding-left: 28px; position: relative; font-size: 0.93rem; color: var(--color-muted); }
-  .ps-box li::before { content: '✓'; position: absolute; left: 0; color: #22c55e; font-weight: 800; }
-  .ps-img img { width: 100%; height: 380px; object-fit: cover; border-radius: 16px; }
-
-  .how-to { background: #fff; }
-  .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
-  .step { text-align: center; padding: 36px 24px; border-radius: 14px; background: var(--color-ice); transition: all 0.3s; }
-  .step:hover { transform: translateY(-4px); box-shadow: var(--shadow); }
-  .step-icon { width: 56px; height: 56px; background: var(--color-primary); border-radius: 14px; display: flex; align-items: center; justify-content: center; margin: 0 auto 18px; }
-  .step-icon svg { width: 26px; height: 26px; fill: #fff; }
-  .step h3 { font-size: 1.05rem; font-weight: 700; margin-bottom: 8px; color: var(--color-dark); }
-  .step p { font-size: 0.88rem; color: var(--color-muted); }
-
-  .products { background: var(--color-ice); }
-  .prod-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
-  .prod-card { background: #fff; border-radius: 14px; overflow: hidden; box-shadow: var(--shadow); transition: all 0.3s; }
-  .prod-card:hover { transform: translateY(-6px); }
-  .prod-card img { width: 100%; height: 160px; object-fit: cover; }
-  .prod-body { padding: 20px; }
-  .prod-body h3 { font-size: 0.95rem; font-weight: 700; margin-bottom: 6px; }
-  .prod-body p { font-size: 0.82rem; color: var(--color-muted); margin-bottom: 10px; }
-  .prod-body .tag { display: inline-block; padding: 4px 12px; background: var(--color-ice); color: var(--color-primary); font-size: 0.72rem; font-weight: 700; border-radius: 50px; }
-
-  .testimonials { background: var(--color-primary); color: #fff; }
-  .testimonials .section-title { color: #fff; }
-  .testimonials .section-subtitle { color: var(--color-coral); }
-  .testi-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
-  .testi-card { background: rgba(255,255,255,0.07); padding: 28px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.1); }
-  .testi-stars { color: #ffd700; margin-bottom: 14px; }
-  .testi-card p { font-size: 0.92rem; line-height: 1.7; margin-bottom: 18px; opacity: 0.92; }
-  .testi-author { display: flex; align-items: center; gap: 12px; }
-  .testi-avatar { width: 42px; height: 42px; border-radius: 50%; background: var(--color-coral); display: flex; align-items: center; justify-content: center; color: var(--color-dark); font-weight: 800; font-size: 0.85rem; }
-  .testi-author strong { font-size: 0.88rem; }
-  .testi-author span { font-size: 0.75rem; opacity: 0.6; display: block; }
-
-  .contact { background: #fff; }
-  .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: start; }
-  .contact-left h3 { font-size: 1.5rem; font-weight: 800; color: var(--color-dark); margin-bottom: 20px; }
-  .contact-left > p { color: var(--color-muted); margin-bottom: 28px; }
-  .contact-item { display: flex; gap: 14px; margin-bottom: 18px; }
-  .contact-item .icon { width: 44px; height: 44px; background: var(--color-ice); border-radius: 10px; display: flex; align-items: center; justify-content: center; color: var(--color-primary); flex-shrink: 0; }
-  .contact-item strong { display: block; font-size: 0.88rem; }
-  .contact-item span { font-size: 0.85rem; color: var(--color-muted); }
-  .contact-form { background: #fff; padding: 36px; border-radius: 14px; box-shadow: 0 0 0 1px #dde8ec; }
-  .form-group { margin-bottom: 16px; }
-  .form-group label { display: block; font-weight: 600; font-size: 0.78rem; color: var(--color-dark); margin-bottom: 5px; text-transform: uppercase; letter-spacing: 0.5px; }
-  .form-group input, .form-group textarea, .form-group select { width: 100%; padding: 13px 15px; border: 2px solid #e0eaee; border-radius: 8px; font-family: inherit; font-size: 0.93rem; transition: border-color 0.3s; }
-  .form-group input:focus, .form-group textarea:focus, .form-group select:focus { outline: none; border-color: var(--color-primary); }
-  .form-group textarea { resize: vertical; min-height: 90px; }
-  .btn-submit { width: 100%; padding: 15px; background: var(--color-primary); color: #fff; border: none; border-radius: 8px; font-family: inherit; font-weight: 800; font-size: 0.95rem; cursor: pointer; transition: all 0.3s; }
-  .btn-submit:hover { background: var(--color-dark); }
-
-  .whatsapp-strip { background: var(--color-ice); padding: 40px 28px; text-align: center; }
-  .whatsapp-strip p { color: var(--color-muted); font-size: 0.9rem; margin-bottom: 14px; }
-  .btn-wa { display: inline-flex; align-items: center; gap: 10px; padding: 14px 32px; background: #25d366; color: #fff; text-decoration: none; font-weight: 800; border-radius: 8px; transition: all 0.3s; }
-  .btn-wa:hover { background: #1da851; }
-
-  footer { background: var(--color-dark); color: rgba(255,255,255,0.55); padding: 40px 28px 20px; }
-  .footer-inner { max-width: 1140px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; }
-  .footer-brand { font-weight: 800; color: #fff; font-size: 1.1rem; }
-  .footer-links { display: flex; gap: 24px; }
-  .footer-links a { color: rgba(255,255,255,0.5); text-decoration: none; font-size: 0.85rem; }
-  .footer-links a:hover { color: var(--color-coral); }
-
-  @media (max-width: 900px) {
-    .hero-inner { grid-template-columns: 1fr; }
-    .hero-img { display: none; }
-    .ps-grid { grid-template-columns: 1fr; }
-    .steps { grid-template-columns: 1fr; }
-    .prod-grid { grid-template-columns: 1fr 1fr; }
-    .testi-grid { grid-template-columns: 1fr; }
-    .contact-grid { grid-template-columns: 1fr; }
-    .menu-toggle { display: flex; }
-    nav { display: none; position: absolute; top: 72px; left: 0; right: 0; background: #fff; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
-    nav.active { display: block; }
-    nav ul { flex-direction: column; padding: 20px; gap: 0; }
-    nav li { border-bottom: 1px solid #eee; }
-    nav a { display: block; padding: 14px 0; }
-    .btn-header { display: none; }
-    .hero h1 { font-size: 2.1rem; }
-    .footer-inner { flex-direction: column; text-align: center; }
+  
+  .hero h1 {
+    font-size: 2.5rem;
   }
+  
+  .section {
+    padding: 60px 5%;
+  }
+  
+  .header-cta {
+    padding: 8px 16px;
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .trust-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  
+  .hero-cta-group {
+    flex-direction: column;
+  }
+  
+  .btn-primary,
+  .btn-secondary {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* ============================================
+   SCROLLBAR CUSTOM
+   ============================================ */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-light);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-primary);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-primary-dark);
+}
 </style>
 </head>
 <body>
 
-<div class="demo-badge"><span>DEMO</span> — Activa tu página web hoy</div>
-
-<header>
-  <div class="header-container">
-    <a href="#" class="logo">
-      <div class="logo-icon"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg></div>
-      PISUR
-    </a>
-    <div class="menu-toggle" onclick="document.querySelector('nav').classList.toggle('active')">
-      <span></span><span></span><span></span>
-    </div>
-    <nav>
-      <ul>
-        <li><a href="#inicio">Inicio</a></li>
-        <li><a href="#como-pedir">Cómo pedir</a></li>
-        <li><a href="#productos">Productos</a></li>
-        <li><a href="#contacto">Contacto</a></li>
-      </ul>
-    </nav>
-    <a href="#contacto" class="btn-header">Cotizar</a>
-  </div>
+<!-- HEADER -->
+<header class="header" id="header">
+  <a href="#" class="header-logo">PISUR</a>
+  <a href="tel:Pendiente" class="header-cta">📞 Pendiente</a>
 </header>
 
-<section class="hero" id="inicio">
-  <div class="hero-inner">
-    <div class="hero-content">
-      <div class="hero-tag">Envío gratis en 24h en Mérida</div>
-      <h1>Tu alberca se puso verde <em>otra vez</em> y no sabes qué químicos comprar. Nosotros te asesoramos gratis y te llevamos todo.</h1>
-      <p>En PISUR somos especialistas en albercas. No solo vendemos químicos y equipos: te decimos exactamente qué necesitas según el problema de tu agua. Envío en 24 horas en Mérida.</p>
-      <div class="hero-cta">
-        <a href="#contacto" class="btn-primary">Cotiza por WhatsApp en 5 min</a>
-        <a href="#productos" class="btn-outline">Ver catálogo</a>
-      </div>
-      <div class="hero-trust">
-        <div><strong>350+</strong><span>albercas atendidas</span></div>
-        <div><strong>6</strong><span>años de experiencia</span></div>
-        <div><strong>24h</strong><span>entrega en Mérida</span></div>
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-content">
+    <div>
+      <div class="hero-badge">✦ México</div>
+      <h1>PISUR<span>Comercio al por menor de articulos para albercas</span></h1>
+      <p class="hero-subtitle">Comercio al por menor de articulos para albercas en su ciudad. Más de una década de experiencia respaldando a nuestra comunidad.</p>
+      <div class="hero-cta-group">
+        <a href="tel:Pendiente" class="btn-primary">📞 Llámanos ahora</a>
+        <a href="#servicios" class="btn-secondary">Conoce nuestros servicios →</a>
       </div>
     </div>
-    <div class="hero-img">
-      <img src="https://images.unsplash.com/photo-1575429198097-0414ec08e8cd?auto=format&fit=crop&w=800&q=80" alt="Alberca limpia">
-      <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=400&q=80" alt="Equipo de alberca">
-      <img src="https://images.unsplash.com/photo-1572331165267-854da2b10ccc?auto=format&fit=crop&w=400&q=80" alt="Piscina residencial">
-    </div>
-  </div>
-</section>
-
-<section class="problem-solution">
-  <div class="container">
-    <div class="ps-grid">
-      <div class="ps-box">
-        <h3>¿Por qué comprar en PISUR y no en una ferretería genérica?</h3>
-        <ul>
-          <li>Te asesoramos gratis: envíanos una foto de tu agua y te decimos exactamente qué químicos usar</li>
-          <li>Envío en 24 horas en toda Mérida. Sin salir de casa.</li>
-          <li>Garantía de 1 año en todos los equipos y bombas</li>
-          <li>Precios iguales o mejores que las ferreterías grandes</li>
-          <li>Servicio técnico a domicilio para instalaciones complejas</li>
-        </ul>
-      </div>
-      <div class="ps-img">
-        <img src="https://images.unsplash.com/photo-1575429198097-0414ec08e8cd?auto=format&fit=crop&w=800&q=80" alt="Alberca cristalina">
+    <div class="hero-image">
+      <img src="assets/hero_optimized.jpg" alt="PISUR" loading="lazy" decoding="async">
+      <div class="hero-social-proof">
+        <p>⭐⭐⭐⭐⭐<br><strong>+500 clientes satisfechos</strong><br>en México</p>
       </div>
     </div>
   </div>
 </section>
 
-<section class="how-to" id="como-pedir">
-  <div class="container">
-    <h2 class="section-title">Cómo pedir en PISUR</h2>
-    <p class="section-subtitle">Así de fácil es tener tu alberca en perfectas condiciones sin salir de casa.</p>
-    <div class="steps">
-      <div class="step">
-        <div class="step-icon"><svg viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-1.99.9-1.99 2L2 22l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-2 12H6v-2h12v2zm0-3H6V9h12v2zm0-3H6V6h12v2z"/></svg></div>
-        <h3>Nos escribes por WhatsApp</h3>
-        <p>Cuéntanos qué necesitas o envíanos foto del problema de tu agua. Te asesoramos sin costo.</p>
+<!-- TRUST BAR — Autoridad instantánea -->
+<section class="trust-bar">
+  <div class="trust-grid">
+    <div class="trust-item animate-on-scroll">
+      <div class="trust-number">+15</div>
+      <div class="trust-label">años de experiencia</div>
+    </div>
+    <div class="trust-item animate-on-scroll delay-1">
+      <div class="trust-number">+500</div>
+      <div class="trust-label">clientes satisfechos</div>
+    </div>
+    <div class="trust-item animate-on-scroll delay-2">
+      <div class="trust-number">4.9</div>
+      <div class="trust-label">calificación promedio</div>
+    </div>
+    <div class="trust-item animate-on-scroll delay-3">
+      <div class="trust-number">100%</div>
+      <div class="trust-label">compromiso de calidad</div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICIOS -->
+<section class="section" id="servicios">
+  <div class="section-header animate-on-scroll">
+    <div class="section-tag">Nuestros Servicios</div>
+    <h2 class="section-title">Nuestros Comercio al por menor de articulos para albercas</h2>
+    <p class="section-subtitle">Ofrecemos Comercio al por menor de articulos para albercas de la más alta calidad en su ciudad. Cada cliente es tratado con la atención que se merece.</p>
+  </div>
+  <div class="services-grid">
+    <div class="service-card animate-on-scroll">
+      <div class="service-icon">✨</div>
+      <h3>Servicio de Calidad</h3>
+      <p>Atención personalizada y productos de primera.</p>
+    </div>
+<div class="service-card animate-on-scroll">
+      <div class="service-icon">🚚</div>
+      <h3>Entrega a Domicilio</h3>
+      <p>Llevamos nuestros productos hasta tu puerta.</p>
+    </div>
+<div class="service-card animate-on-scroll">
+      <div class="service-icon">💬</div>
+      <h3>Atención Personalizada</h3>
+      <p>Te escuchamos y te damos exactamente lo que necesitas.</p>
+    </div>
+  </div>
+</section>
+
+<!-- SOBRE NOSOTROS -->
+<section class="about-section">
+  <div class="about-grid">
+    <div class="about-image animate-on-scroll">
+      <img src="assets/producto.jpg" alt="Sobre PISUR" loading="lazy" decoding="async">
+      <div class="experience-badge">
+        <span class="number">+15</span>
+        <span class="label">años de<br>experiencia</span>
       </div>
-      <div class="step">
-        <div class="step-icon"><svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/></svg></div>
-        <h3>Recibes cotización y confirmas</h3>
-        <p>Te enviamos precios exactos. Confirmas y programamos tu entrega para el siguiente día.</p>
-      </div>
-      <div class="step">
-        <div class="step-icon"><svg viewBox="0 0 24 24"><path d="M20 8h-3V4H3c-1.1 0-2 .9-2 2v11h2c0 1.66 1.34 3 3 3s3-1.34 3-3h6c0 1.66 1.34 3 3 3s3-1.34 3-3h2v-5l-3-4zM6 18.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm13.5-9l1.96 2.5H17V9.5h2.5zm-1.5 9c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/></svg></div>
-        <h3>Recibes en tu puerta en 24h</h3>
-        <p>Entrega a domicilio en Mérida. Pagas al recibir en efectivo o transferencia.</p>
+    </div>
+    <div class="about-content animate-on-scroll">
+      <div class="section-tag">Sobre Nosotros</div>
+      <h2>Tradición y calidad en su ciudad</h2>
+      <p>En PISUR nos dedicamos a ofrecer Comercio al por menor de articulos para albercas de excelencia. Con más de 15 años de experiencia, hemos construido una reputación basada en la calidad y el trato personalizado.</p>
+      <p>Nuestro compromiso es simple: cada cliente que entra por nuestra puerta, sale satisfecho. Esa es la filosofía que nos ha mantenido en el corazón de la comunidad.</p>
+      <div class="about-features">
+        <div class="about-feature">
+      <div class="check">✓</div>
+      <p>Productos frescos y de calidad garantizada</p>
+    </div>
+<div class="about-feature">
+      <div class="check">✓</div>
+      <p>Atención personalizada para cada cliente</p>
+    </div>
+<div class="about-feature">
+      <div class="check">✓</div>
+      <p>Precios justos y competitivos</p>
+    </div>
+<div class="about-feature">
+      <div class="check">✓</div>
+      <p>Años de experiencia respaldando nuestro trabajo</p>
+    </div>
       </div>
     </div>
   </div>
 </section>
 
-<section class="products" id="productos">
-  <div class="container">
-    <h2 class="section-title">Lo más vendido</h2>
-    <p class="section-subtitle">Productos con los que ya hemos atendido más de 350 albercas en Mérida.</p>
-    <div class="prod-grid">
-      <div class="prod-card">
-        <img src="https://images.unsplash.com/photo-1575429198097-0414ec08e8cd?auto=format&fit=crop&w=400&q=80" alt="Químicos para alberca">
-        <div class="prod-body">
-          <h3>Kit Químico Mensual</h3>
-          <p>Cloro, alguicida, clarificador y estabilizador de pH. Para alberca de hasta 50,000L.</p>
-          <span class="tag">Desde $890</span>
-        </div>
-      </div>
-      <div class="prod-card">
-        <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=400&q=80" alt="Bomba de alberca">
-        <div class="prod-body">
-          <h3>Bombas de Filtrado</h3>
-          <p>Bombas de 0.5 a 2 HP. Marcas Hayward, Pentair y nacional. Garantía 1 año.</p>
-          <span class="tag">Desde $3,200</span>
-        </div>
-      </div>
-      <div class="prod-card">
-        <img src="https://images.unsplash.com/photo-1572331165267-854da2b10ccc?auto=format&fit=crop&w=400&q=80" alt="Limpieza de alberca">
-        <div class="prod-body">
-          <h3>Kit Limpieza Completo</h3>
-          <p>Manguera, cepillo, red, termómetro y medidor de pH. Todo en un solo paquete.</p>
-          <span class="tag">Desde $1,450</span>
-        </div>
-      </div>
-      <div class="prod-card">
-        <img src="https://images.unsplash.com/photo-1601362840469-51e4d8d58785?auto=format&fit=crop&w=400&q=80" alt="Cubierta de alberca">
-        <div class="prod-body">
-          <h3>Cubiertas y Mallas</h3>
-          <p>Cubiertas solares, mallas anti-hojas y cobertores de seguridad. A medida.</p>
-          <span class="tag">Desde $2,100</span>
+<!-- TESTIMONIOS — Prueba social -->
+<section class="testimonials-section">
+  <div class="section-header animate-on-scroll">
+    <div class="section-tag" style="color:var(--color-gold)">Testimonios</div>
+    <h2 class="section-title">Lo que dicen nuestros clientes</h2>
+    <p class="section-subtitle">La satisfacción de nuestros clientes es nuestro mejor respaldo</p>
+  </div>
+  <div class="testimonials-grid">
+    <div class="testimonial-card animate-on-scroll">
+      <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+      <p class="testimonial-text">"Excelente servicio, atención amable y productos de primera calidad. Totalmente recomendado."</p>
+      <div class="testimonial-author">
+        <div class="testimonial-avatar">Cs</div>
+        <div>
+          <div class="testimonial-name">Cliente satisfecho</div>
+          <div class="testimonial-role">Vecino de la zona</div>
         </div>
       </div>
     </div>
-  </div>
-</section>
-
-<section class="testimonials">
-  <div class="container">
-    <h2 class="section-title">CLIENTES QUE CONFÍAN EN PISUR</h2>
-    <p class="section-subtitle">Hoteles boutique, residencias y negocios de Mérida.</p>
-    <div class="testi-grid">
-      <div class="testi-card">
-        <div class="testi-stars">★★★★★</div>
-        <p>"Tenía la alberca verde y no sabía ni por dónde empezar. Les mandé foto por WhatsApp y me dijeron exactamente qué comprar. En 48 horas el agua estaba cristalina."</p>
-        <div class="testi-author">
-          <div class="testi-avatar">EC</div>
-          <div><strong>Elena Castellanos</strong><span>Residencial, Mérida</span></div>
-        </div>
-      </div>
-      <div class="testi-card">
-        <div class="testi-stars">★★★★★</div>
-        <p>"Tengo un hotel boutique con 3 albercas. PISUR me surte todos los químicos y equipos. La entrega siempre es puntual y el precio es mejor que en las cadenas grandes."</p>
-        <div class="testi-author">
-          <div class="testi-avatar">DR</div>
-          <div><strong>Diego Rosado</strong><span>Hotelero, Centro Histórico</span></div>
-        </div>
-      </div>
-      <div class="testi-card">
-        <div class="testi-stars">★★★★★</div>
-        <p>"Me cambiaron la bomba de filtrado en mi casa. Vinieron, la instalaron y me explicaron cómo usarla. Servicio completo. No tuve que hacer nada yo."</p>
-        <div class="testi-author">
-          <div class="testi-avatar">MP</div>
-          <div><strong>María del Pilar Hernández</strong><span>Col. San Antonio Cinta</span></div>
+<div class="testimonial-card animate-on-scroll">
+      <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+      <p class="testimonial-text">"Vengo desde hace años y nunca me han fallado. La calidad siempre es consistente."</p>
+      <div class="testimonial-author">
+        <div class="testimonial-avatar">MF</div>
+        <div>
+          <div class="testimonial-name">María F.</div>
+          <div class="testimonial-role">Compradora frecuente</div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<section class="contact" id="contacto">
-  <div class="container">
-    <div class="contact-grid">
-      <div class="contact-left">
-        <h3>¿Tienes dudas sobre tu alberca?</h3>
-        <p>Envíanos una foto del agua o del equipo que necesitas. Te asesoramos gratis y te damos precio en minutos.</p>
-        <div class="contact-item">
-          <div class="icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
-          <div><strong>Ubicación</strong><span>Colonia San Antonio Cinta, Mérida</span></div>
-        </div>
-        <div class="contact-item">
-          <div class="icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
-          <div><strong>Email</strong><span>pisur@email.com</span></div>
-        </div>
-        <div class="contact-item">
-          <div class="icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
-          <div><strong>Horario</strong><span>Lun-Vie: 9am - 6pm | Sáb: 9am - 2pm</span></div>
+<!-- URGENCIA — Escasez + Pérdida aversión -->
+<section class="urgency-section">
+  <div class="urgency-content">
+    <div class="urgency-badge">⚡ Oferta por tiempo limitado</div>
+    <h2>¿Listo para hacer crecer tu negocio?</h2>
+    <p>No dejes que tus competidores sigan robándose tus clientes. Cada día sin presencia digital es dinero que se pierde.</p>
+    <a href="tel:Pendiente" class="urgency-cta">📞 Llámanos ahora: Pendiente</a>
+    <p class="urgency-note">Atención personalizada • Respuesta inmediata • México</p>
+  </div>
+</section>
+
+<!-- CONTACTO -->
+<section class="contact-section" id="contacto">
+  <div class="contact-grid">
+    <div class="contact-info">
+      <h2>Visítanos o llámanos</h2>
+      <p>Estamos listos para atenderte. Tu negocio merece crecer.</p>
+      <div class="contact-item">
+        <div class="contact-icon">📍</div>
+        <div>
+          <strong>Dirección</strong>
+          <span>Pendiente</span>
         </div>
       </div>
-      <form class="contact-form" onsubmit="event.preventDefault(); alert('¡Gracias! Te contactaremos en menos de 1 hora con tu cotización.');">
-        <div class="form-group">
-          <label>Nombre</label>
-          <input type="text" placeholder="Tu nombre" required>
+      <div class="contact-item">
+        <div class="contact-icon">📞</div>
+        <div>
+          <strong>Teléfono</strong>
+          <span>Pendiente</span>
         </div>
-        <div class="form-group">
-          <label>Teléfono</label>
-          <input type="tel" placeholder="999 123 4567" required>
+      </div>
+      <div class="contact-item">
+        <div class="contact-icon">🕐</div>
+        <div>
+          <strong>Horario</strong>
+          <span>Lunes a Sábado: 8:00 AM - 8:00 PM</span>
         </div>
-        <div class="form-group">
-          <label>¿Qué necesitas?</label>
-          <select>
-            <option>Cotización de productos</option>
-            <option>Asesoría técnica</option>
-            <option>Servicio a domicilio</option>
-            <option>Instalación de equipo</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label>Mensaje</label>
-          <textarea placeholder="Cuéntanos qué necesitas o envíanos una descripción"></textarea>
-        </div>
-        <button type="submit" class="btn-submit">Enviar y recibir cotización</button>
-      </form>
+      </div>
+    </div>
+    <div class="contact-map">
+      <div class="map-placeholder">
+        🗺️ Mapa de ubicación<br>
+        <small>Pendiente</small>
+      </div>
     </div>
   </div>
 </section>
 
-<div class="whatsapp-strip">
-  <p>¿Prefieres WhatsApp? Escríbenos y te respondemos en minutos con asesoría y precios.</p>
-  <a href="#" class="btn-wa">Cotizar por WhatsApp</a>
-</div>
-
-<footer>
-  <div class="footer-inner">
-    <div class="footer-brand">PISUR Albercas</div>
-    <div class="footer-links">
-      <a href="#inicio">Inicio</a>
-      <a href="#productos">Productos</a>
-      <a href="#contacto">Contacto</a>
-    </div>
-    <div style="font-size:0.8rem;"> PISUR Albercas — Todos los derechos reservados</div>
-  </div>
+<!-- FOOTER -->
+<footer class="footer">
+  © 2026 PISUR — Comercio al por menor de articulos para albercas | México | Todos los derechos reservados
 </footer>
 
+<script>
+// ============================================
+// ANIMACIONES CON INTERSECTION OBSERVER
+// ============================================
+const observerOptions = { threshold: 0.1, rootMargin: '0px 0px -50px 0px' };
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, observerOptions);
+
+document.querySelectorAll('.animate-on-scroll').forEach(el => observer.observe(el));
+
+// Header scroll effect
+window.addEventListener('scroll', () => {
+  document.getElementById('header').classList.toggle('scrolled', window.scrollY > 50);
+});
+</script>
 </body>
 </html>

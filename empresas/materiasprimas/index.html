@@ -1,351 +1,1123 @@
 <!DOCTYPE html>
-<html lang="es-MX">
+<html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Materias Primas El Angel — Todo para Reposteria en Oaxaca | Precios de Mayoreo</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=DM+Serif+Display&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --cereza: #C9184A;
-      --rosa: #FF4D6D;
-      --dorado: #C9A227;
-      --crema: #FFF8F5;
-      --blanco: #ffffff;
-      --negro: #2B0A12;
-      --gris: #7a6b6e;
-    }
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body { font-family: 'DM Sans', sans-serif; color: var(--negro); background: var(--blanco); line-height: 1.65; }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Materiasprimas — Negocio local</title>
+<!-- SEO OPTIMIZATION v2.0 -->
+<meta name="description" content="Materiasprimas — Negocio local en Oaxaca de Juárez, Oaxaca. Página web profesional de demostración. Contáctenos hoy.">
+<meta name="keywords" content="negocio local, oaxaca de juárez, oaxaca, negocio local, México, servicios">
+<meta name="author" content="Web Muestras México">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="Materiasprimas — Negocio local">
+<meta property="og:description" content="Materiasprimas en Oaxaca de Juárez, Oaxaca. Negocio local. Página web profesional de demostración.">
+<meta property="og:type" content="business.business">
+<meta property="og:url" content="https://veltis-hyper.github.io/web-muestras-mexico/empresas/materiasprimas/index.html">
+<meta property="og:image" content="assets/hero_optimized.jpg">
+<meta property="og:locale" content="es_MX">
+<meta property="business:contact_data:locality" content="Oaxaca de Juárez, Oaxaca">
+<meta property="business:contact_data:country_name" content="México">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Materiasprimas — Negocio local">
+<meta name="twitter:description" content="Materiasprimas en Oaxaca de Juárez, Oaxaca. Negocio local. Página web profesional de demostración.">
+<meta name="twitter:image" content="assets/hero_optimized.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;600;700&display=swap" as="style">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Materiasprimas",
+  "description": "Negocio local",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Oaxaca de Juárez, Oaxaca",
+    "addressCountry": "MX"
+  },
+  "url": "https://veltis-hyper.github.io/web-muestras-mexico/empresas/materiasprimas/index.html",
+  "image": "assets/hero_optimized.jpg"
+}
+</script>
+<!-- END SEO OPTIMIZATION -->
+<meta name="description" content="Servicios en Oaxaca de Juárez, Oaxaca - Empresa">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+/* ============================================
+   TEMPLATE v2.0 — Impeccable Front-End
+   DISEÑO PSICOLÓGICO ESTRATÉGICO
+   ============================================ */
 
-    .demo-badge {
-      position: fixed; bottom: 20px; right: 20px; z-index: 9999;
-      background: rgba(43,10,18,0.9); color: #fff; padding: 10px 18px; border-radius: 8px;
-      font-size: 0.8rem; font-weight: 500; backdrop-filter: blur(10px); max-width: 260px; text-align: center;
-    }
+:root {
+  --color-primary: #D4A017;
+  --color-primary-dark: #B8860B;
+  --color-accent: #E8C547;
+  --color-gold: #D4A017;
+  --color-dark: #1A1A2E;
+  --color-dark-2: #16213E;
+  --color-light: #FAFAFA;
+  --color-gray: #6B7280;
+  --color-gray-light: #F3F4F6;
+  --color-urgency: #DC2626;
+  --font-body: 'Inter', sans-serif;
+  --font-display: 'Playfair Display', serif;
+  --shadow-sm: 0 1px 2px rgba(0,0,0,0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -2px rgba(0,0,0,0.1);
+  --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -4px rgba(0,0,0,0.1);
+  --shadow-xl: 0 25px 50px -12px rgba(0,0,0,0.25);
+  --radius: 12px;
+  --radius-lg: 20px;
+  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
 
-    header {
-      position: fixed; top: 0; left: 0; width: 100%; z-index: 1000;
-      background: rgba(255,255,255,0.96); backdrop-filter: blur(12px);
-      border-bottom: 1px solid rgba(201,24,74,0.08);
-    }
-    .header-container { max-width: 1200px; margin: 0 auto; padding: 0 24px; display: flex; align-items: center; justify-content: space-between; height: 72px; }
-    .logo { font-family: 'DM Serif Display', serif; font-size: 1.4rem; color: var(--cereza); }
-    .logo span { color: var(--dorado); }
-    nav ul { display: flex; gap: 28px; list-style: none; align-items: center; }
-    nav a { text-decoration: none; color: var(--negro); font-weight: 500; font-size: 0.92rem; transition: color 0.3s; }
-    nav a:hover { color: var(--cereza); }
-    .btn-nav { background: var(--cereza); color: #fff !important; padding: 11px 24px; border-radius: 50px; font-weight: 600; }
-    .menu-toggle { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; }
-    .menu-toggle span { width: 24px; height: 2.5px; background: var(--negro); border-radius: 2px; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
 
-    .hero {
-      min-height: 100vh; display: flex; align-items: center;
-      background: linear-gradient(rgba(43,10,18,0.75), rgba(43,10,18,0.5)), url('https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
-      position: relative; padding: 120px 24px 80px;
-    }
-    .hero-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
-    .hero-content { animation: fadeInUp 1s ease; }
-    @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
-    .hero-tag { display: inline-block; background: var(--dorado); color: var(--negro); padding: 6px 16px; border-radius: 50px; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 20px; }
-    .hero h1 { font-family: 'DM Serif Display', serif; font-size: 3.2rem; color: #fff; line-height: 1.1; margin-bottom: 20px; }
-    .hero h1 em { color: var(--rosa); font-style: normal; }
-    .hero-sub { font-size: 1.1rem; color: rgba(255,255,255,0.88); margin-bottom: 32px; }
-    .hero-cta { display: flex; gap: 14px; flex-wrap: wrap; }
-    .btn-main { background: var(--rosa); color: #fff; padding: 15px 32px; border-radius: 50px; text-decoration: none; font-weight: 700; font-size: 0.95rem; transition: transform 0.3s; display: inline-block; }
-    .btn-main:hover { transform: translateY(-2px); }
-    .btn-gold { background: var(--dorado); color: var(--negro); padding: 15px 32px; border-radius: 50px; text-decoration: none; font-weight: 700; font-size: 0.95rem; transition: transform 0.3s; display: inline-block; }
-    .btn-gold:hover { transform: translateY(-2px); }
-    .hero-img { border-radius: 24px; overflow: hidden; box-shadow: 0 30px 60px rgba(0,0,0,0.3); animation: fadeInUp 1s ease 0.2s both; }
-    .hero-img img { width: 100%; height: 420px; object-fit: cover; display: block; }
+body {
+  font-family: var(--font-body);
+  color: var(--color-dark);
+  background: var(--color-light);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
 
-    .trust-bar { background: var(--crema); padding: 32px 24px; }
-    .trust-inner { max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-around; text-align: center; }
-    .trust-item strong { display: block; font-size: 1.8rem; color: var(--cereza); font-weight: 700; }
-    .trust-item span { font-size: 0.85rem; color: var(--gris); }
+/* ============================================
+   ANIMACIONES GLOBALES
+   ============================================ */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
 
-    .productos { padding: 100px 24px; max-width: 1200px; margin: 0 auto; }
-    .productos-header { text-align: center; margin-bottom: 56px; }
-    .productos-header h2 { font-family: 'DM Serif Display', serif; font-size: 2.4rem; margin-bottom: 8px; }
-    .productos-header p { color: var(--gris); }
-    .productos-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
-    .prod-card { background: #fff; border-radius: 20px; overflow: hidden; box-shadow: 0 10px 40px rgba(0,0,0,0.05); border: 1px solid rgba(0,0,0,0.04); transition: transform 0.3s; }
-    .prod-card:hover { transform: translateY(-6px); }
-    .prod-card img { width: 100%; height: 200px; object-fit: cover; }
-    .prod-info { padding: 24px; }
-    .prod-info h3 { font-size: 1.1rem; font-weight: 700; margin-bottom: 6px; }
-    .prod-info p { font-size: 0.88rem; color: var(--gris); margin-bottom: 14px; }
-    .prod-precio { font-size: 0.95rem; font-weight: 700; color: var(--cereza); }
-    .prod-precio span { font-size: 0.8rem; color: var(--gris); font-weight: 400; }
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
 
-    .como-pedir { background: var(--crema); padding: 90px 24px; }
-    .como-pedir-inner { max-width: 1000px; margin: 0 auto; }
-    .como-pedir-header { text-align: center; margin-bottom: 48px; }
-    .como-pedir-header h2 { font-family: 'DM Serif Display', serif; font-size: 2.2rem; }
-    .como-pedir-header p { color: var(--gris); }
-    .pasos { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
-    .paso { text-align: center; }
-    .paso-icon { width: 64px; height: 64px; background: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; font-size: 1.5rem; box-shadow: 0 8px 20px rgba(0,0,0,0.05); }
-    .paso h3 { font-size: 1.05rem; margin-bottom: 6px; }
-    .paso p { font-size: 0.9rem; color: var(--gris); }
+@keyframes slideInLeft {
+  from { opacity: 0; transform: translateX(-60px); }
+  to { opacity: 1; transform: translateX(0); }
+}
 
-    .testimonios { padding: 100px 24px; max-width: 1100px; margin: 0 auto; }
-    .testimonios-header { text-align: center; margin-bottom: 48px; }
-    .testimonios-header h2 { font-family: 'DM Serif Display', serif; font-size: 2.4rem; }
-    .testi-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
-    .testi-card { background: #fff; border: 1px solid rgba(0,0,0,0.06); padding: 32px; border-radius: 16px; }
-    .testi-stars { color: var(--dorado); font-size: 1.1rem; margin-bottom: 14px; }
-    .testi-card p { font-size: 0.92rem; color: #444; margin-bottom: 20px; line-height: 1.7; }
-    .testi-autor { display: flex; align-items: center; gap: 12px; }
-    .testi-avatar { width: 42px; height: 42px; background: var(--cereza); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #fff; font-weight: 700; font-size: 0.85rem; }
-    .testi-autor div strong { font-size: 0.9rem; }
-    .testi-autor div span { font-size: 0.78rem; color: var(--gris); }
+@keyframes slideInRight {
+  from { opacity: 0; transform: translateX(60px); }
+  to { opacity: 1; transform: translateX(0); }
+}
 
-    .garantia { background: var(--negro); color: #fff; padding: 80px 24px; text-align: center; }
-    .garantia-inner { max-width: 700px; margin: 0 auto; }
-    .garantia h2 { font-family: 'DM Serif Display', serif; font-size: 2.2rem; margin-bottom: 16px; }
-    .garantia p { color: rgba(255,255,255,0.75); font-size: 1.05rem; margin-bottom: 28px; }
-    .garantia-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 40px; }
-    .garantia-item { background: rgba(255,255,255,0.05); padding: 28px; border-radius: 16px; }
-    .garantia-item h3 { color: var(--dorado); font-size: 1rem; margin-bottom: 6px; }
-    .garantia-item p { font-size: 0.85rem; color: rgba(255,255,255,0.6); margin: 0; }
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
+}
 
-    footer { background: #1a0a0e; color: rgba(255,255,255,0.55); padding: 60px 24px 30px; }
-    .footer-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 48px; }
-    .footer-brand .logo { color: #fff; margin-bottom: 14px; }
-    .footer-brand p { font-size: 0.88rem; line-height: 1.7; }
-    .footer-col h4 { color: #fff; font-size: 0.95rem; margin-bottom: 18px; }
-    .footer-col a { display: block; color: rgba(255,255,255,0.45); text-decoration: none; font-size: 0.88rem; margin-bottom: 10px; transition: color 0.3s; }
-    .footer-col a:hover { color: var(--rosa); }
-    .footer-bottom { max-width: 1200px; margin: 36px auto 0; padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.06); text-align: center; font-size: 0.78rem; color: rgba(255,255,255,0.3); }
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
 
-    @media (max-width: 900px) {
-      .hero-inner { grid-template-columns: 1fr; }
-      .hero-img { display: none; }
-      .productos-grid, .pasos, .testi-grid, .garantia-grid { grid-template-columns: repeat(2, 1fr); }
-      .footer-inner { grid-template-columns: 1fr; }
-      .trust-inner { flex-wrap: wrap; gap: 20px; }
-    }
-    @media (max-width: 768px) {
-      .menu-toggle { display: flex; }
-      nav { position: absolute; top: 72px; left: 0; width: 100%; background: #fff; max-height: 0; overflow: hidden; transition: max-height 0.4s; }
-      nav.active { max-height: 350px; border-bottom: 1px solid rgba(201,24,74,0.08); }
-      nav ul { flex-direction: column; padding: 20px 24px; gap: 16px; align-items: flex-start; }
-      .hero h1 { font-size: 2.4rem; }
-      .productos-grid, .pasos, .testi-grid, .garantia-grid { grid-template-columns: 1fr; }
-    }
-  </style>
+@keyframes pulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(220,38,38,0.4); }
+  50% { box-shadow: 0 0 0 15px rgba(220,38,38,0); }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+@keyframes countPulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.animate-on-scroll.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.delay-1 { transition-delay: 0.1s; }
+.delay-2 { transition-delay: 0.2s; }
+.delay-3 { transition-delay: 0.3s; }
+.delay-4 { transition-delay: 0.4s; }
+
+/* ============================================
+   HEADER
+   ============================================ */
+.header {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 1000;
+  background: rgba(255,255,255,0.95);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+  padding: 0 5%;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: var(--transition);
+}
+
+.header.scrolled {
+  box-shadow: var(--shadow-md);
+}
+
+.header-logo {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+.header-cta {
+  background: var(--color-urgency);
+  color: white;
+  padding: 10px 24px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+  animation: pulse 2s infinite;
+  transition: var(--transition);
+}
+
+.header-cta:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+/* ============================================
+   HERO SECTION — PSICOLOGÍA: PRIMERA IMPRESIÓN
+   ============================================ */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 100px 5% 80px;
+  background: linear-gradient(135deg, var(--color-dark) 0%, var(--color-dark-2) 50%, var(--color-primary-dark) 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -50%; right: -20%;
+  width: 800px; height: 800px;
+  background: radial-gradient(circle, rgba(212,160,23,0.1) 0%, transparent 70%);
+  animation: float 6s ease-in-out infinite;
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  bottom: -30%; left: -10%;
+  width: 600px; height: 600px;
+  background: radial-gradient(circle, rgba(255,255,255,0.03) 0%, transparent 70%);
+}
+
+.hero-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+}
+
+.hero-badge {
+  display: inline-block;
+  background: rgba(212,160,23,0.2);
+  border: 1px solid var(--color-gold);
+  color: var(--color-gold);
+  padding: 8px 20px;
+  border-radius: 50px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-bottom: 24px;
+  animation: fadeInUp 0.6s ease;
+}
+
+.hero h1 {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  font-weight: 700;
+  color: white;
+  line-height: 1.1;
+  margin-bottom: 24px;
+  animation: fadeInUp 0.8s ease 0.2s both;
+}
+
+.hero h1 span {
+  color: var(--color-gold);
+  display: block;
+}
+
+.hero-subtitle {
+  font-size: 1.2rem;
+  color: rgba(255,255,255,0.7);
+  margin-bottom: 40px;
+  max-width: 500px;
+  animation: fadeInUp 0.8s ease 0.4s both;
+}
+
+.hero-cta-group {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  animation: fadeInUp 0.8s ease 0.6s both;
+}
+
+.btn-primary {
+  background: var(--color-gold);
+  color: var(--color-dark);
+  padding: 16px 40px;
+  border-radius: var(--radius);
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1rem;
+  transition: var(--transition);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 20px 40px rgba(212,160,23,0.3);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: white;
+  padding: 16px 40px;
+  border-radius: var(--radius);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  border: 2px solid rgba(255,255,255,0.3);
+  transition: var(--transition);
+  display: inline-flex;
+  align-items: center;
+}
+
+.btn-secondary:hover {
+  background: rgba(255,255,255,0.1);
+  border-color: white;
+}
+
+.hero-image {
+  position: relative;
+  animation: scaleIn 1s ease 0.4s both;
+}
+
+.hero-image img {
+  width: 100%;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-xl);
+  transition: var(--transition);
+}
+
+.hero-image img:hover {
+  transform: scale(1.02);
+}
+
+.hero-social-proof {
+  position: absolute;
+  bottom: -20px;
+  left: -20px;
+  background: white;
+  padding: 16px 24px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-lg);
+  animation: slideInLeft 0.8s ease 0.8s both;
+}
+
+.hero-social-proof p {
+  font-size: 0.85rem;
+  color: var(--color-gray);
+}
+
+.hero-social-proof strong {
+  color: var(--color-dark);
+  font-size: 1.1rem;
+}
+
+/* ============================================
+   BARRA DE CONFIANZA — PSICOLOGÍA: AUTORIDAD
+   ============================================ */
+.trust-bar {
+  background: white;
+  padding: 40px 5%;
+  border-bottom: 1px solid var(--color-gray-light);
+}
+
+.trust-grid {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+  text-align: center;
+}
+
+.trust-item {
+  padding: 20px;
+}
+
+.trust-number {
+  font-family: var(--font-display);
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  line-height: 1;
+}
+
+.trust-label {
+  font-size: 0.9rem;
+  color: var(--color-gray);
+  margin-top: 8px;
+}
+
+/* ============================================
+   SECCIÓN SERVICIOS — PSICOLOGÍA: VALOR
+   ============================================ */
+.section {
+  padding: 100px 5%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section-header {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 60px;
+}
+
+.section-tag {
+  display: inline-block;
+  color: var(--color-primary);
+  font-weight: 600;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 16px;
+}
+
+.section-title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700;
+  color: var(--color-dark);
+  margin-bottom: 16px;
+  line-height: 1.2;
+}
+
+.section-subtitle {
+  font-size: 1.1rem;
+  color: var(--color-gray);
+}
+
+/* Cards de servicios */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+.service-card {
+  background: white;
+  border-radius: var(--radius-lg);
+  padding: 40px 30px;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid rgba(0,0,0,0.05);
+  transition: var(--transition);
+  position: relative;
+  overflow: hidden;
+}
+
+.service-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 4px;
+  background: var(--color-primary);
+  transform: scaleX(0);
+  transition: var(--transition);
+}
+
+.service-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-xl);
+}
+
+.service-card:hover::before {
+  transform: scaleX(1);
+}
+
+.service-icon {
+  width: 60px;
+  height: 60px;
+  background: var(--color-gray-light);
+  border-radius: var(--radius);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+
+.service-card h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: var(--color-dark);
+}
+
+.service-card p {
+  color: var(--color-gray);
+  font-size: 0.95rem;
+}
+
+/* ============================================
+   SECCIÓN SOBRE — PSICOLOGÍA: CONEXIÓN EMOCIONAL
+   ============================================ */
+.about-section {
+  background: var(--color-gray-light);
+  padding: 100px 5%;
+}
+
+.about-grid {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.about-image {
+  position: relative;
+}
+
+.about-image img {
+  width: 100%;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+}
+
+.about-image .experience-badge {
+  position: absolute;
+  bottom: -20px;
+  right: -20px;
+  background: var(--color-primary);
+  color: white;
+  padding: 24px 32px;
+  border-radius: var(--radius);
+  text-align: center;
+  box-shadow: var(--shadow-lg);
+}
+
+.experience-badge .number {
+  font-family: var(--font-display);
+  font-size: 2.5rem;
+  font-weight: 700;
+  display: block;
+  line-height: 1;
+}
+
+.experience-badge .label {
+  font-size: 0.85rem;
+  opacity: 0.9;
+}
+
+.about-content h2 {
+  font-family: var(--font-display);
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: var(--color-dark);
+}
+
+.about-content p {
+  color: var(--color-gray);
+  margin-bottom: 16px;
+  font-size: 1.05rem;
+}
+
+.about-features {
+  margin-top: 30px;
+}
+
+.about-feature {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.about-feature .check {
+  width: 24px;
+  height: 24px;
+  background: var(--color-gold);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 0.8rem;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.about-feature p {
+  margin: 0;
+  color: var(--color-dark);
+  font-weight: 500;
+}
+
+/* ============================================
+   TESTIMONIOS — PSICOLOGÍA: PRUEBA SOCIAL
+   ============================================ */
+.testimonials-section {
+  background: var(--color-dark);
+  padding: 100px 5%;
+  color: white;
+}
+
+.testimonials-section .section-title {
+  color: white;
+}
+
+.testimonials-section .section-subtitle {
+  color: rgba(255,255,255,0.6);
+}
+
+.testimonials-grid {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 30px;
+}
+
+.testimonial-card {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: var(--radius-lg);
+  padding: 40px;
+  backdrop-filter: blur(10px);
+  transition: var(--transition);
+}
+
+.testimonial-card:hover {
+  background: rgba(255,255,255,0.08);
+  transform: translateY(-4px);
+}
+
+.testimonial-stars {
+  color: var(--color-gold);
+  font-size: 1.2rem;
+  margin-bottom: 16px;
+}
+
+.testimonial-text {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  margin-bottom: 24px;
+  color: rgba(255,255,255,0.9);
+  font-style: italic;
+}
+
+.testimonial-author {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.testimonial-avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: var(--color-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  color: white;
+}
+
+.testimonial-name {
+  font-weight: 600;
+}
+
+.testimonial-role {
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.5);
+}
+
+/* ============================================
+   URGENCIA / CTA — PSICOLOGÍA: ESCASEZ + PÉRDIDA
+   ============================================ */
+.urgency-section {
+  background: linear-gradient(135deg, var(--color-urgency) 0%, #B91C1C 100%);
+  padding: 80px 5%;
+  text-align: center;
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.urgency-section::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+
+.urgency-content {
+  position: relative;
+  z-index: 2;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.urgency-badge {
+  display: inline-block;
+  background: rgba(255,255,255,0.2);
+  border: 1px solid rgba(255,255,255,0.3);
+  padding: 8px 20px;
+  border-radius: 50px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 24px;
+}
+
+.urgency-section h2 {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 3rem);
+  margin-bottom: 16px;
+}
+
+.urgency-section p {
+  font-size: 1.1rem;
+  opacity: 0.9;
+  margin-bottom: 32px;
+}
+
+.urgency-cta {
+  background: white;
+  color: var(--color-urgency);
+  padding: 18px 48px;
+  border-radius: var(--radius);
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1.1rem;
+  display: inline-block;
+  transition: var(--transition);
+  animation: pulse 2s infinite;
+}
+
+.urgency-cta:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+}
+
+.urgency-note {
+  margin-top: 16px;
+  font-size: 0.85rem;
+  opacity: 0.7;
+}
+
+/* ============================================
+   CONTACTO / FOOTER
+   ============================================ */
+.contact-section {
+  background: var(--color-dark);
+  color: white;
+  padding: 80px 5%;
+}
+
+.contact-grid {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+}
+
+.contact-info h2 {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.contact-info p {
+  color: rgba(255,255,255,0.6);
+  margin-bottom: 30px;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.contact-icon {
+  width: 48px;
+  height: 48px;
+  background: rgba(255,255,255,0.1);
+  border-radius: var(--radius);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+}
+
+.contact-item strong {
+  display: block;
+  font-weight: 600;
+}
+
+.contact-item span {
+  color: rgba(255,255,255,0.6);
+  font-size: 0.95rem;
+}
+
+.contact-map {
+  background: rgba(255,255,255,0.05);
+  border-radius: var(--radius-lg);
+  padding: 40px;
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+.contact-map iframe,
+.contact-map .map-placeholder {
+  width: 100%;
+  height: 300px;
+  border-radius: var(--radius);
+  border: none;
+  background: rgba(255,255,255,0.05);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255,255,255,0.4);
+  font-size: 0.9rem;
+}
+
+.footer {
+  background: #0F0F1A;
+  color: rgba(255,255,255,0.4);
+  text-align: center;
+  padding: 30px 5%;
+  font-size: 0.85rem;
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+@media (max-width: 900px) {
+  .hero-content,
+  .about-grid,
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  
+  .trust-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .hero {
+    padding: 120px 5% 60px;
+  }
+  
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+  
+  .section {
+    padding: 60px 5%;
+  }
+  
+  .header-cta {
+    padding: 8px 16px;
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .trust-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  
+  .hero-cta-group {
+    flex-direction: column;
+  }
+  
+  .btn-primary,
+  .btn-secondary {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* ============================================
+   SCROLLBAR CUSTOM
+   ============================================ */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-light);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-primary);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-primary-dark);
+}
+</style>
 </head>
 <body>
 
-  <div class="demo-badge">DEMO — Muestra de tu futura pagina web. Contactanos para activarla.</div>
+<!-- HEADER -->
+<header class="header" id="header">
+  <a href="#" class="header-logo">Materiasprimas</a>
+  <a href="tel:Pendiente" class="header-cta">📞 Pendiente</a>
+</header>
 
-  <header>
-    <div class="header-container">
-      <div class="logo">El <span>Angel</span></div>
-      <button class="menu-toggle" onclick="document.querySelector('nav').classList.toggle('active')">
-        <span></span><span></span><span></span>
-      </button>
-      <nav>
-        <ul>
-          <li><a href="#inicio">Inicio</a></li>
-          <li><a href="#productos">Catalogo</a></li>
-          <li><a href="#como-pedir">Como pedir</a></li>
-          <li><a href="#contacto" class="btn-nav">WhatsApp: 951 516 0319</a></li>
-        </ul>
-      </nav>
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-content">
+    <div>
+      <div class="hero-badge">✦ Oaxaca de Juárez, Oaxaca</div>
+      <h1>Su negocio<span>Calidad y servicio</span></h1>
+      <p class="hero-subtitle">Servicios profesionales en Oaxaca de Juárez, Oaxaca. Más de una década de experiencia respaldando a nuestra comunidad.</p>
+      <div class="hero-cta-group">
+        <a href="tel:Pendiente" class="btn-primary">📞 Llámanos ahora</a>
+        <a href="#servicios" class="btn-secondary">Conoce nuestros servicios →</a>
+      </div>
     </div>
-  </header>
+    <div class="hero-image">
+      <img src="assets/hero_optimized.jpg" alt="Materiasprimas" loading="lazy" decoding="async">
+      <div class="hero-social-proof">
+        <p>⭐⭐⭐⭐⭐<br><strong>+500 clientes satisfechos</strong><br>en Oaxaca de Juárez, Oaxaca</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-  <section class="hero" id="inicio">
-    <div class="hero-inner">
-      <div class="hero-content">
-        <div class="hero-tag">Colonia Centro, Oaxaca</div>
-        <h1>Todo para tu <em>reposteria</em> sin salir de Oaxaca</h1>
-        <p class="hero-sub">Chocolates, harinas, moldes, empaques y mas de 500 productos en stock. Precios de mayoreo desde tu primera compra. Asesoramos a reposteros y panaderos de Oaxaca desde hace 15 anos.</p>
-        <div class="hero-cta">
-          <a href="#productos" class="btn-main">Ver catalogo</a>
-          <a href="https://wa.me/529515160319" class="btn-gold">Pedir por WhatsApp</a>
-        </div>
-      </div>
-      <div class="hero-img">
-        <img src="https://images.unsplash.com/photo-1558618666-fcd25c85f82e?auto=format&fit=crop&w=800&q=80" alt="Materias primas para reposteria">
-      </div>
+<!-- TRUST BAR — Autoridad instantánea -->
+<section class="trust-bar">
+  <div class="trust-grid">
+    <div class="trust-item animate-on-scroll">
+      <div class="trust-number">+15</div>
+      <div class="trust-label">años de experiencia</div>
     </div>
-  </section>
+    <div class="trust-item animate-on-scroll delay-1">
+      <div class="trust-number">+500</div>
+      <div class="trust-label">clientes satisfechos</div>
+    </div>
+    <div class="trust-item animate-on-scroll delay-2">
+      <div class="trust-number">4.9</div>
+      <div class="trust-label">calificación promedio</div>
+    </div>
+    <div class="trust-item animate-on-scroll delay-3">
+      <div class="trust-number">100%</div>
+      <div class="trust-label">compromiso de calidad</div>
+    </div>
+  </div>
+</section>
 
-  <section class="trust-bar">
-    <div class="trust-inner">
-      <div class="trust-item"><strong>500+</strong><span>productos en stock</span></div>
-      <div class="trust-item"><strong>15 anos</strong><span>sirviendo reposteros</span></div>
-      <div class="trust-item"><strong>24h</strong><span>entrega en Oaxaca capital</span></div>
-      <div class="trust-item"><strong>Desde 1 pza</strong><span>precio de mayoreo</span></div>
+<!-- SERVICIOS -->
+<section class="section" id="servicios">
+  <div class="section-header animate-on-scroll">
+    <div class="section-tag">Nuestros Servicios</div>
+    <h2 class="section-title">Nuestros Servicios</h2>
+    <p class="section-subtitle">Ofrecemos servicios de la más alta calidad en Oaxaca de Juárez, Oaxaca. Cada cliente es tratado con la atención que se merece.</p>
+  </div>
+  <div class="services-grid">
+    <div class="service-card animate-on-scroll">
+      <div class="service-icon">✨</div>
+      <h3>Servicio de Calidad</h3>
+      <p>Atención personalizada y productos de primera.</p>
     </div>
-  </section>
+<div class="service-card animate-on-scroll">
+      <div class="service-icon">🚚</div>
+      <h3>Entrega a Domicilio</h3>
+      <p>Llevamos nuestros productos hasta tu puerta.</p>
+    </div>
+<div class="service-card animate-on-scroll">
+      <div class="service-icon">💬</div>
+      <h3>Atención Personalizada</h3>
+      <p>Te escuchamos y te damos exactamente lo que necesitas.</p>
+    </div>
+  </div>
+</section>
 
-  <section class="productos" id="productos">
-    <div class="productos-header">
-      <h2>Lo mas buscado</h2>
-      <p>Estos son los productos que nuestros clientes compran cada semana</p>
-    </div>
-    <div class="productos-grid">
-      <div class="prod-card">
-        <img src="https://images.unsplash.com/photo-1606312619070-d48b4c652a52?auto=format&fit=crop&w=800&q=80" alt="Chocolate para mesa">
-        <div class="prod-info">
-          <h3>Chocolate para Mesa Ibarra</h3>
-          <p>Chocolate tradicional mexicano para mesa, 540g. Ideal para postres y bebidas calientes.</p>
-          <div class="prod-precio">$45 <span>mayoreo $38</span></div>
-        </div>
-      </div>
-      <div class="prod-card">
-        <img src="https://images.unsplash.com/photo-1586444248902-2f64eddc13df?auto=format&fit=crop&w=800&q=80" alt="Harina para pastel">
-        <div class="prod-info">
-          <h3>Harina para Pastel Trigal</h3>
-          <p>Harina de trigo especial para reposteria. Bolsa de 1kg. Suavidad garantizada.</p>
-          <div class="prod-precio">$28 <span>mayoreo $24</span></div>
-        </div>
-      </div>
-      <div class="prod-card">
-        <img src="https://images.unsplash.com/photo-1606890737304-57a1ca8a5b62?auto=format&fit=crop&w=800&q=80" alt="Moldes de reposteria">
-        <div class="prod-info">
-          <h3>Molde para Pastel Redondo</h3>
-          <p>Aluminio antiadherente, 24cm diametro. Resistente y facil de desmoldar.</p>
-          <div class="prod-precio">$85 <span>mayoreo $72</span></div>
-        </div>
-      </div>
-      <div class="prod-card">
-        <img src="https://images.unsplash.com/photo-1590080875515-8a3a8dc5735e?auto=format&fit=crop&w=800&q=80" alt="Azucar glass">
-        <div class="prod-info">
-          <h3>Azucar Glass 1kg</h3>
-          <p>Azucar refinada en polvo para decoracion de pasteles y preparacion de glaseados.</p>
-          <div class="prod-precio">$32 <span>mayoreo $27</span></div>
-        </div>
-      </div>
-      <div class="prod-card">
-        <img src="https://images.unsplash.com/photo-1621303837174-89787a7d4729?auto=format&fit=crop&w=800&q=80" alt="Cobertura de chocolate">
-        <div class="prod-info">
-          <h3>Cobertura de Chocolate 1kg</h3>
-          <p>Chocolate para fundir y cubrir. Ideal para bombones, fresas con crema y trufas.</p>
-          <div class="prod-precio">$120 <span>mayoreo $105</span></div>
-        </div>
-      </div>
-      <div class="prod-card">
-        <img src="https://images.unsplash.com/photo-1563729784474-d77dbb933a9e?auto=format&fit=crop&w=800&q=80" alt="Cajas para pastel">
-        <div class="prod-info">
-          <h3>Caja para Pastel con Ventana</h3>
-          <p>Caja blanca con ventana transparente, 25x25x15cm. Presenta tus pasteles con estilo.</p>
-          <div class="prod-precio">$18 <span>mayoreo $14</span></div>
-        </div>
+<!-- SOBRE NOSOTROS -->
+<section class="about-section">
+  <div class="about-grid">
+    <div class="about-image animate-on-scroll">
+      <img src="assets/producto.jpg" alt="Sobre Materiasprimas" loading="lazy" decoding="async">
+      <div class="experience-badge">
+        <span class="number">+15</span>
+        <span class="label">años de<br>experiencia</span>
       </div>
     </div>
-  </section>
+    <div class="about-content animate-on-scroll">
+      <div class="section-tag">Sobre Nosotros</div>
+      <h2>Tradición y calidad en Oaxaca de Juárez, Oaxaca</h2>
+      <p>En nuestro negocio nos dedicamos a ofrecer servicios de excelencia. Con más de 15 años de experiencia, hemos construido una reputación basada en la calidad y el trato personalizado.</p>
+      <p>Nuestro compromiso es simple: cada cliente que entra por nuestra puerta, sale satisfecho. Esa es la filosofía que nos ha mantenido en el corazón de la comunidad.</p>
+      <div class="about-features">
+        <div class="about-feature">
+      <div class="check">✓</div>
+      <p>Productos frescos y de calidad garantizada</p>
+    </div>
+<div class="about-feature">
+      <div class="check">✓</div>
+      <p>Atención personalizada para cada cliente</p>
+    </div>
+<div class="about-feature">
+      <div class="check">✓</div>
+      <p>Precios justos y competitivos</p>
+    </div>
+<div class="about-feature">
+      <div class="check">✓</div>
+      <p>Años de experiencia respaldando nuestro trabajo</p>
+    </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-  <section class="como-pedir" id="como-pedir">
-    <div class="como-pedir-inner">
-      <div class="como-pedir-header">
-        <h2>Como comprar en 3 pasos</h2>
-        <p>Sin filas, sin complicaciones. Pedido directo por WhatsApp.</p>
-      </div>
-      <div class="pasos">
-        <div class="paso">
-          <div class="paso-icon">1</div>
-          <h3>Mandanos tu lista</h3>
-          <p>Escríbenos por WhatsApp con los productos que necesitas y las cantidades. Te confirmamos disponibilidad en minutos.</p>
-        </div>
-        <div class="paso">
-          <div class="paso-icon">2</div>
-          <h3>Recibe tu cotizacion</h3>
-          <p>Te enviamos precios con descuento de mayoreo. No hay compra minima: desde 1 pieza ya tienes precio especial.</p>
-        </div>
-        <div class="paso">
-          <div class="paso-icon">3</div>
-          <h3>Recoge o te llevamos</h3>
-          <p>Pasa por el local en Centro o te enviamos a domicilio en Oaxaca capital. Entrega en 24 horas habiles.</p>
+<!-- TESTIMONIOS — Prueba social -->
+<section class="testimonials-section">
+  <div class="section-header animate-on-scroll">
+    <div class="section-tag" style="color:var(--color-gold)">Testimonios</div>
+    <h2 class="section-title">Lo que dicen nuestros clientes</h2>
+    <p class="section-subtitle">La satisfacción de nuestros clientes es nuestro mejor respaldo</p>
+  </div>
+  <div class="testimonials-grid">
+    <div class="testimonial-card animate-on-scroll">
+      <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+      <p class="testimonial-text">"Excelente servicio, atención amable y productos de primera calidad. Totalmente recomendado."</p>
+      <div class="testimonial-author">
+        <div class="testimonial-avatar">Cs</div>
+        <div>
+          <div class="testimonial-name">Cliente satisfecho</div>
+          <div class="testimonial-role">Vecino de la zona</div>
         </div>
       </div>
     </div>
-  </section>
+<div class="testimonial-card animate-on-scroll">
+      <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+      <p class="testimonial-text">"Vengo desde hace años y nunca me han fallado. La calidad siempre es consistente."</p>
+      <div class="testimonial-author">
+        <div class="testimonial-avatar">MF</div>
+        <div>
+          <div class="testimonial-name">María F.</div>
+          <div class="testimonial-role">Compradora frecuente</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-  <section class="testimonios" id="testimonios">
-    <div class="testimonios-header">
-      <h2>Reposteros que nos recomiendan</h2>
-    </div>
-    <div class="testi-grid">
-      <div class="testi-card">
-        <div class="testi-stars">★★★★★</div>
-        <p>"Llevo 4 anos comprandoles todo para mi negocio de pasteles. Nunca me han faltado productos y los precios de mayoreo son los mejores de Oaxaca. El equipo me asesora cuando quiero probar algo nuevo."</p>
-        <div class="testi-autor">
-          <div class="testi-avatar">CM</div>
-          <div><strong>Carmen Morales</strong><span>Pasteleria Dulce Hogar, Oaxaca</span></div>
-        </div>
-      </div>
-      <div class="testi-card">
-        <div class="testi-stars">★★★★★</div>
-        <p>"Empece mi negocio de brownies hace 8 meses y El Angel me ha acompanado desde el primer dia. Me explicaron que chocolate usar y como calcular mis costos. Hoy vendo mas de 200 brownies a la semana."</p>
-        <div class="testi-autor">
-          <div class="testi-avatar">AR</div>
-          <div><strong>Andres Rios</strong><span>Brownies Oaxaca, emprendedor</span></div>
-        </div>
-      </div>
-      <div class="testi-card">
-        <div class="testi-stars">★★★★★</div>
-        <p>"La variedad de moldes y empaques es increible. Antes tenia que ir a 3 tiendas distintas. Aqui encuentro todo: desde la harina hasta la caja para entregar. Me ahorran horas cada semana."</p>
-        <div class="testi-autor">
-          <div class="testi-avatar">PM</div>
-          <div><strong>Patricia Mendez</strong><span>Repostera desde casa, Col. Centro</span></div>
-        </div>
-      </div>
-    </div>
-  </section>
+<!-- URGENCIA — Escasez + Pérdida aversión -->
+<section class="urgency-section">
+  <div class="urgency-content">
+    <div class="urgency-badge">⚡ Oferta por tiempo limitado</div>
+    <h2>¿Listo para hacer crecer tu negocio?</h2>
+    <p>No dejes que tus competidores sigan robándose tus clientes. Cada día sin presencia digital es dinero que se pierde.</p>
+    <a href="tel:Pendiente" class="urgency-cta">📞 Llámanos ahora: Pendiente</a>
+    <p class="urgency-note">Atención personalizada • Respuesta inmediata • Oaxaca de Juárez, Oaxaca</p>
+  </div>
+</section>
 
-  <section class="garantia" id="contacto">
-    <div class="garantia-inner">
-      <h2>Tu creatividad, nuestra materia prima</h2>
-      <p>¿Necesitas algo que no ves en el catalogo? Escribenos. Traemos productos especiales por pedido con entrega garantizada.</p>
-      <a href="https://wa.me/529515160319" class="btn-main">Cotiza gratis por WhatsApp</a>
-      <div class="garantia-grid">
-        <div class="garantia-item">
-          <h3>Precio de mayoreo</h3>
-          <p>Desde 1 pieza. Sin compra minima.</p>
+<!-- CONTACTO -->
+<section class="contact-section" id="contacto">
+  <div class="contact-grid">
+    <div class="contact-info">
+      <h2>Visítanos o llámanos</h2>
+      <p>Estamos listos para atenderte. Tu negocio merece crecer.</p>
+      <div class="contact-item">
+        <div class="contact-icon">📍</div>
+        <div>
+          <strong>Dirección</strong>
+          <span>Pendiente</span>
         </div>
-        <div class="garantia-item">
-          <h3>Asesoria gratis</h3>
-          <p>Te ayudamos a elegir lo mejor.</p>
+      </div>
+      <div class="contact-item">
+        <div class="contact-icon">📞</div>
+        <div>
+          <strong>Teléfono</strong>
+          <span>Pendiente</span>
         </div>
-        <div class="garantia-item">
-          <h3>Entrega 24h</h3>
-          <p>En Oaxaca capital y alrededores.</p>
+      </div>
+      <div class="contact-item">
+        <div class="contact-icon">🕐</div>
+        <div>
+          <strong>Horario</strong>
+          <span>Lunes a Sábado: 8:00 AM - 8:00 PM</span>
         </div>
       </div>
     </div>
-  </section>
+    <div class="contact-map">
+      <div class="map-placeholder">
+        🗺️ Mapa de ubicación<br>
+        <small>Pendiente</small>
+      </div>
+    </div>
+  </div>
+</section>
 
-  <footer>
-    <div class="footer-inner">
-      <div class="footer-brand">
-        <div class="logo">Materias Primas <span>El Angel</span></div>
-        <p>El surtido mas completo de insumos para reposteria en Oaxaca de Juarez. Precios de mayoreo, asesoria personalizada y entrega a domicilio.</p>
-      </div>
-      <div class="footer-col">
-        <h4>Categorias</h4>
-        <a href="#">Chocolates</a>
-        <a href="#">Harinas y azucares</a>
-        <a href="#">Moldes y utensilios</a>
-        <a href="#">Empaques</a>
-      </div>
-      <div class="footer-col">
-        <h4>Contacto</h4>
-        <a href="tel:9515160319">951 516 0319</a>
-        <a href="#">WhatsApp</a>
-        <a href="#">Colonia Centro, Oaxaca</a>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      © 2025 Materias Primas El Angel — Oaxaca de Juarez.
-    </div>
-  </footer>
+<!-- FOOTER -->
+<footer class="footer">
+  © 2026 Materiasprimas — Negocio local | Oaxaca de Juárez, Oaxaca | Todos los derechos reservados
+</footer>
 
+<script>
+// ============================================
+// ANIMACIONES CON INTERSECTION OBSERVER
+// ============================================
+const observerOptions = { threshold: 0.1, rootMargin: '0px 0px -50px 0px' };
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, observerOptions);
+
+document.querySelectorAll('.animate-on-scroll').forEach(el => observer.observe(el));
+
+// Header scroll effect
+window.addEventListener('scroll', () => {
+  document.getElementById('header').classList.toggle('scrolled', window.scrollY > 50);
+});
+</script>
 </body>
 </html>

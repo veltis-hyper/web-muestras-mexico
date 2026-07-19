@@ -1,554 +1,1123 @@
 <!DOCTYPE html>
-<html lang="es-MX">
+<html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pelador de Pollos La Pasadita | Pollo Fresco en Veracruz</title>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --rojo: #C62828;
-      --rojo-oscuro: #9E1B1B;
-      --verde: #2E7D32;
-      --verde-claro: #43A047;
-      --amarillo: #F9A825;
-      --gris: #333;
-      --gris-claro: #F5F5F5;
-      --blanco: #FFFFFF;
-    }
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body { font-family: 'Outfit', sans-serif; color: var(--gris); line-height: 1.6; background: var(--blanco); }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PELADOR DE POLLOS LA PASADITA — Procesamiento y venta de pollo (avicola)</title>
+<!-- SEO OPTIMIZATION v2.0 -->
+<meta name="description" content="PELADOR DE POLLOS LA PASADITA — Procesamiento y venta de pollo (avicola) en Veracruz, Veracruz. Página web profesional de demostración. Contáctenos hoy.">
+<meta name="keywords" content="procesamiento y venta de pollo (avicola), veracruz, veracruz, negocio local, México, servicios">
+<meta name="author" content="Web Muestras México">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="PELADOR DE POLLOS LA PASADITA — Procesamiento y venta de pollo (avicola)">
+<meta property="og:description" content="PELADOR DE POLLOS LA PASADITA en Veracruz, Veracruz. Procesamiento y venta de pollo (avicola). Página web profesional de demostración.">
+<meta property="og:type" content="business.business">
+<meta property="og:url" content="https://veltis-hyper.github.io/web-muestras-mexico/empresas/pollos_pasadita/index.html">
+<meta property="og:image" content="assets/hero_optimized.jpg">
+<meta property="og:locale" content="es_MX">
+<meta property="business:contact_data:locality" content="Veracruz, Veracruz">
+<meta property="business:contact_data:country_name" content="México">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="PELADOR DE POLLOS LA PASADITA — Procesamiento y venta de pollo (avicola)">
+<meta name="twitter:description" content="PELADOR DE POLLOS LA PASADITA en Veracruz, Veracruz. Procesamiento y venta de pollo (avicola). Página web profesional de demostración.">
+<meta name="twitter:image" content="assets/hero_optimized.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;600;700&display=swap" as="style">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "PELADOR DE POLLOS LA PASADITA",
+  "description": "Procesamiento y venta de pollo (avicola)",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Veracruz, Veracruz",
+    "addressCountry": "MX"
+  },
+  "url": "https://veltis-hyper.github.io/web-muestras-mexico/empresas/pollos_pasadita/index.html",
+  "image": "assets/hero_optimized.jpg"
+}
+</script>
+<!-- END SEO OPTIMIZATION -->
+<meta name="description" content="Procesamiento y venta de pollo (avicola) en Veracruz, Veracruz - PELADOR DE POLLOS LA PASADITA">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+/* ============================================
+   TEMPLATE v2.0 — Impeccable Front-End
+   DISEÑO PSICOLÓGICO ESTRATÉGICO
+   ============================================ */
 
-    .demo-badge {
-      background: var(--rojo); color: var(--blanco); text-align: center;
-      padding: 8px 20px; font-size: 0.78rem; font-weight: 500; letter-spacing: 0.5px;
-      position: sticky; top: 0; z-index: 2000;
-    }
+:root {
+  --color-primary: #D4A017;
+  --color-primary-dark: #B8860B;
+  --color-accent: #E8C547;
+  --color-gold: #D4A017;
+  --color-dark: #1A1A2E;
+  --color-dark-2: #16213E;
+  --color-light: #FAFAFA;
+  --color-gray: #6B7280;
+  --color-gray-light: #F3F4F6;
+  --color-urgency: #DC2626;
+  --font-body: 'Inter', sans-serif;
+  --font-display: 'Playfair Display', serif;
+  --shadow-sm: 0 1px 2px rgba(0,0,0,0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -2px rgba(0,0,0,0.1);
+  --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -4px rgba(0,0,0,0.1);
+  --shadow-xl: 0 25px 50px -12px rgba(0,0,0,0.25);
+  --radius: 12px;
+  --radius-lg: 20px;
+  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
 
-    header {
-      background: var(--blanco); position: sticky; top: 32px; z-index: 1000;
-      box-shadow: 0 2px 20px rgba(0,0,0,0.06);
-    }
-    .header-container {
-      max-width: 1200px; margin: 0 auto; padding: 14px 24px;
-      display: flex; justify-content: space-between; align-items: center;
-    }
-    .logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
-    .logo-mark {
-      width: 42px; height: 42px; background: var(--rojo); border-radius: 50%;
-      display: flex; align-items: center; justify-content: center;
-      font-family: 'Playfair Display', serif; color: #fff; font-size: 1.3rem; font-weight: 700;
-    }
-    .logo-text { font-family: 'Playfair Display', serif; font-size: 1.3rem; color: var(--rojo-oscuro); font-weight: 700; }
-    .logo-text span { display: block; font-family: 'Outfit', sans-serif; font-size: 0.62rem; color: var(--verde); letter-spacing: 2px; text-transform: uppercase; margin-top: -2px; }
-    nav ul { display: flex; list-style: none; gap: 32px; }
-    nav a { text-decoration: none; color: var(--gris); font-weight: 500; font-size: 0.88rem; transition: color 0.3s; }
-    nav a:hover { color: var(--rojo); }
-    .cta-header {
-      background: var(--verde); color: #fff; padding: 10px 24px; border-radius: 30px;
-      text-decoration: none; font-weight: 600; font-size: 0.85rem; transition: all 0.3s;
-    }
-    .cta-header:hover { background: var(--verde-claro); }
-    .menu-toggle { display: none; font-size: 1.5rem; cursor: pointer; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
 
-    /* HERO */
-    .hero {
-      position: relative; min-height: 90vh; display: flex; align-items: center; overflow: hidden;
-    }
-    .hero-bg {
-      position: absolute; inset: 0;
-      background: url('https://images.unsplash.com/photo-1606728035253-49e8a23146de?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
-    }
-    .hero-overlay {
-      position: absolute; inset: 0;
-      background: linear-gradient(to right, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.5) 50%, rgba(0,0,0,0.2) 100%);
-    }
-    .hero-content {
-      position: relative; z-index: 2; max-width: 1200px; margin: 0 auto; padding: 80px 24px;
-      width: 100%;
-    }
-    .hero-inner { max-width: 560px; }
-    .hero-tag {
-      display: inline-block; background: var(--verde); color: #fff;
-      padding: 6px 18px; border-radius: 20px; font-size: 0.78rem; font-weight: 700;
-      letter-spacing: 1px; text-transform: uppercase; margin-bottom: 24px;
-    }
-    .hero h1 {
-      font-family: 'Playfair Display', serif; font-size: 3.8rem; color: #fff;
-      line-height: 1.1; margin-bottom: 20px; font-weight: 700;
-    }
-    .hero h1 em { color: var(--amarillo); font-style: normal; }
-    .hero-sub { font-size: 1.1rem; color: rgba(255,255,255,0.85); margin-bottom: 32px; line-height: 1.7; }
-    .hero-cta {
-      display: inline-block; background: var(--verde); color: #fff;
-      padding: 16px 36px; border-radius: 30px; text-decoration: none;
-      font-weight: 700; font-size: 1rem; transition: all 0.3s;
-    }
-    .hero-cta:hover { background: var(--verde-claro); transform: translateY(-2px); }
-    .hero-precios {
-      margin-top: 32px; display: flex; gap: 20px; flex-wrap: wrap;
-    }
-    .hero-precio-item {
-      background: rgba(255,255,255,0.1); backdrop-filter: blur(5px);
-      padding: 12px 20px; border-radius: 10px; border: 1px solid rgba(255,255,255,0.15);
-    }
-    .hero-precio-item strong { color: var(--amarillo); font-size: 1.1rem; display: block; }
-    .hero-precio-item span { color: rgba(255,255,255,0.7); font-size: 0.8rem; }
+body {
+  font-family: var(--font-body);
+  color: var(--color-dark);
+  background: var(--color-light);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
 
-    /* INFO BAR */
-    .info-bar {
-      background: var(--verde); padding: 30px 24px;
-    }
-    .info-grid {
-      max-width: 1200px; margin: 0 auto;
-      display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; text-align: center;
-    }
-    .info-item h4 { font-family: 'Playfair Display', serif; font-size: 1.8rem; color: var(--amarillo); }
-    .info-item p { color: rgba(255,255,255,0.9); font-size: 0.85rem; }
+/* ============================================
+   ANIMACIONES GLOBALES
+   ============================================ */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
 
-    /* CÓMO PEDIR */
-    .como-pedir { padding: 100px 24px; max-width: 1200px; margin: 0 auto; }
-    .section-header { text-align: center; margin-bottom: 60px; }
-    .section-header h2 { font-family: 'Playfair Display', serif; font-size: 2.6rem; color: var(--rojo-oscuro); margin-bottom: 10px; }
-    .section-header p { color: #666; font-size: 1.05rem; }
-    .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; }
-    .step {
-      text-align: center; padding: 40px 24px; background: var(--gris-claro); border-radius: 16px;
-      position: relative;
-    }
-    .step-num {
-      width: 48px; height: 48px; background: var(--rojo); color: #fff;
-      border-radius: 50%; display: flex; align-items: center; justify-content: center;
-      font-weight: 700; font-size: 1.1rem; margin: 0 auto 20px;
-    }
-    .step h3 { font-size: 1.15rem; color: var(--rojo-oscuro); margin-bottom: 8px; }
-    .step p { font-size: 0.9rem; color: #555; }
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
 
-    /* CATÁLOGO -->
-    .catalogo { background: var(--gris-claro); padding: 100px 24px; }
-    .catalogo-inner { max-width: 1200px; margin: 0 auto; }
-    .catalogo-grid {
-      display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 50px;
-    }
-    .producto {
-      background: var(--blanco); border-radius: 16px; overflow: hidden;
-      transition: all 0.3s; border: 1px solid #eee;
-    }
-    .producto:hover { transform: translateY(-6px); box-shadow: 0 20px 50px rgba(0,0,0,0.1); }
-    .producto-img { height: 200px; overflow: hidden; }
-    .producto-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s; }
-    .producto:hover .producto-img img { transform: scale(1.05); }
-    .producto-info { padding: 24px; }
-    .producto-info h3 { font-size: 1.1rem; color: var(--rojo-oscuro); margin-bottom: 6px; }
-    .producto-info p { font-size: 0.88rem; color: #666; margin-bottom: 12px; }
-    .producto-precio { font-weight: 700; color: var(--verde); font-size: 1.1rem; }
-    .producto-precio span { font-size: 0.8rem; color: #999; font-weight: 400; }
-    .producto-tag {
-      display: inline-block; background: var(--gris-claro); color: var(--rojo-oscuro);
-      padding: 4px 12px; border-radius: 12px; font-size: 0.75rem; font-weight: 500; margin-bottom: 10px;
-    }
+@keyframes slideInLeft {
+  from { opacity: 0; transform: translateX(-60px); }
+  to { opacity: 1; transform: translateX(0); }
+}
 
-    /* CALIDAD -->
-    .calidad { padding: 100px 24px; max-width: 1200px; margin: 0 auto; }
-    .calidad-grid {
-      display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center;
-    }
-    .calidad-img { border-radius: 16px; overflow: hidden; height: 400px; }
-    .calidad-img img { width: 100%; height: 100%; object-fit: cover; }
-    .calidad-text h2 { font-family: 'Playfair Display', serif; font-size: 2.4rem; color: var(--rojo-oscuro); margin-bottom: 16px; }
-    .calidad-text h2 em { color: var(--verde); font-style: normal; }
-    .calidad-text p { color: #555; margin-bottom: 20px; font-size: 1.05rem; }
-    .calidad-list { list-style: none; margin-bottom: 28px; }
-    .calidad-list li {
-      padding: 8px 0; padding-left: 28px; position: relative;
-      color: #444; font-size: 0.95rem;
-    }
-    .calidad-list li::before { content: '✓'; position: absolute; left: 0; color: var(--verde); font-weight: 700; }
-    .calidad-cta {
-      background: var(--rojo); color: #fff; padding: 14px 32px; border-radius: 30px;
-      text-decoration: none; font-weight: 700; display: inline-block; transition: all 0.3s;
-    }
-    .calidad-cta:hover { background: var(--rojo-oscuro); }
+@keyframes slideInRight {
+  from { opacity: 0; transform: translateX(60px); }
+  to { opacity: 1; transform: translateX(0); }
+}
 
-    /* TESTIMONIOS -->
-    .testimonios { padding: 100px 24px; background: var(--gris-claro); }
-    .testimonios-inner { max-width: 1200px; margin: 0 auto; }
-    .testimonios-grid {
-      display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 50px;
-    }
-    .testimonio {
-      background: var(--blanco); padding: 28px; border-radius: 16px;
-    }
-    .testimonio-stars { color: var(--amarillo); font-size: 1.1rem; margin-bottom: 12px; letter-spacing: 2px; }
-    .testimonio p { font-size: 0.92rem; color: #555; margin-bottom: 16px; line-height: 1.7; font-style: italic; }
-    .testimonio-autor { display: flex; align-items: center; gap: 10px; }
-    .testimonio-avatar {
-      width: 40px; height: 40px; border-radius: 50%;
-      background: var(--rojo); display: flex; align-items: center; justify-content: center;
-      font-weight: 700; color: #fff; font-size: 0.8rem;
-    }
-    .testimonio-autor div strong { font-size: 0.88rem; color: var(--rojo-oscuro); }
-    .testimonio-autor div span { font-size: 0.78rem; color: #999; }
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
+}
 
-    /* CONTACTO -->
-    .contacto { padding: 80px 24px; max-width: 1200px; margin: 0 auto; }
-    .contacto-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; }
-    .contacto-info h2 { font-family: 'Playfair Display', serif; font-size: 2.2rem; color: var(--rojo-oscuro); margin-bottom: 12px; }
-    .contacto-info > p { color: #666; margin-bottom: 28px; }
-    .contacto-item {
-      display: flex; align-items: flex-start; gap: 14px; margin-bottom: 16px;
-      padding: 16px; background: var(--gris-claro); border-radius: 12px;
-    }
-    .contacto-item strong { display: block; color: var(--rojo-oscuro); font-size: 0.85rem; margin-bottom: 2px; }
-    .contacto-item span { color: #666; font-size: 0.9rem; }
-    .contacto-form {
-      background: var(--gris-claro); padding: 40px; border-radius: 16px;
-    }
-    .contacto-form h3 { font-size: 1.15rem; color: var(--rojo-oscuro); margin-bottom: 20px; }
-    .form-group { margin-bottom: 16px; }
-    .form-group label { display: block; font-size: 0.78rem; font-weight: 600; color: #666; margin-bottom: 6px; text-transform: uppercase; letter-spacing: 0.5px; }
-    .form-group input, .form-group select, .form-group textarea {
-      width: 100%; padding: 12px 14px; border: 2px solid #ddd; border-radius: 10px;
-      font-family: 'Outfit', sans-serif; font-size: 0.95rem; transition: border-color 0.3s; background: #fff;
-    }
-    .form-group input:focus, .form-group select:focus, .form-group textarea:focus { outline: none; border-color: var(--verde); }
-    .form-group textarea { resize: vertical; min-height: 100px; }
-    .submit-btn {
-      width: 100%; padding: 14px; background: var(--verde); color: #fff;
-      border: none; border-radius: 10px; font-size: 1rem; font-weight: 700;
-      cursor: pointer; transition: all 0.3s; font-family: 'Outfit', sans-serif;
-    }
-    .submit-btn:hover { background: var(--verde-claro); }
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
 
-    /* FOOTER -->
-    footer { background: var(--rojo-oscuro); color: rgba(255,255,255,0.6); padding: 50px 24px 24px; }
-    .footer-inner { max-width: 1200px; margin: 0 auto; }
-    .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px; margin-bottom: 40px; }
-    .footer-brand .logo-text { color: #fff; font-size: 1.3rem; }
-    .footer-brand p { margin-top: 12px; font-size: 0.88rem; line-height: 1.7; max-width: 320px; }
-    .footer-col h4 { color: var(--amarillo); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 16px; }
-    .footer-col a { color: rgba(255,255,255,0.6); text-decoration: none; display: block; padding: 4px 0; font-size: 0.88rem; transition: color 0.3s; }
-    .footer-col a:hover { color: var(--amarillo); }
-    .footer-bottom { border-top: 1px solid rgba(255,255,255,0.1); padding-top: 24px; text-align: center; font-size: 0.78rem; }
+@keyframes pulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(220,38,38,0.4); }
+  50% { box-shadow: 0 0 0 15px rgba(220,38,38,0); }
+}
 
-    /* RESPONSIVE -->
-    @media (max-width: 900px) {
-      .info-grid { grid-template-columns: repeat(2, 1fr); }
-      .steps { grid-template-columns: 1fr; }
-      .catalogo-grid { grid-template-columns: repeat(2, 1fr); }
-      .calidad-grid { grid-template-columns: 1fr; }
-      .calidad-img { height: 280px; }
-      .testimonios-grid { grid-template-columns: 1fr; }
-      .contacto-grid { grid-template-columns: 1fr; }
-      .footer-grid { grid-template-columns: 1fr; }
-      .hero h1 { font-size: 2.8rem; }
-    }
-    @media (max-width: 600px) {
-      nav, .cta-header { display: none; }
-      .menu-toggle { display: block; }
-      .catalogo-grid { grid-template-columns: 1fr; }
-      .info-grid { grid-template-columns: 1fr 1fr; }
-      .hero h1 { font-size: 2.4rem; }
-    }
-  </style>
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+@keyframes countPulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.animate-on-scroll.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.delay-1 { transition-delay: 0.1s; }
+.delay-2 { transition-delay: 0.2s; }
+.delay-3 { transition-delay: 0.3s; }
+.delay-4 { transition-delay: 0.4s; }
+
+/* ============================================
+   HEADER
+   ============================================ */
+.header {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 1000;
+  background: rgba(255,255,255,0.95);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+  padding: 0 5%;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: var(--transition);
+}
+
+.header.scrolled {
+  box-shadow: var(--shadow-md);
+}
+
+.header-logo {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+.header-cta {
+  background: var(--color-urgency);
+  color: white;
+  padding: 10px 24px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+  animation: pulse 2s infinite;
+  transition: var(--transition);
+}
+
+.header-cta:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+/* ============================================
+   HERO SECTION — PSICOLOGÍA: PRIMERA IMPRESIÓN
+   ============================================ */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 100px 5% 80px;
+  background: linear-gradient(135deg, var(--color-dark) 0%, var(--color-dark-2) 50%, var(--color-primary-dark) 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -50%; right: -20%;
+  width: 800px; height: 800px;
+  background: radial-gradient(circle, rgba(212,160,23,0.1) 0%, transparent 70%);
+  animation: float 6s ease-in-out infinite;
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  bottom: -30%; left: -10%;
+  width: 600px; height: 600px;
+  background: radial-gradient(circle, rgba(255,255,255,0.03) 0%, transparent 70%);
+}
+
+.hero-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+}
+
+.hero-badge {
+  display: inline-block;
+  background: rgba(212,160,23,0.2);
+  border: 1px solid var(--color-gold);
+  color: var(--color-gold);
+  padding: 8px 20px;
+  border-radius: 50px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-bottom: 24px;
+  animation: fadeInUp 0.6s ease;
+}
+
+.hero h1 {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  font-weight: 700;
+  color: white;
+  line-height: 1.1;
+  margin-bottom: 24px;
+  animation: fadeInUp 0.8s ease 0.2s both;
+}
+
+.hero h1 span {
+  color: var(--color-gold);
+  display: block;
+}
+
+.hero-subtitle {
+  font-size: 1.2rem;
+  color: rgba(255,255,255,0.7);
+  margin-bottom: 40px;
+  max-width: 500px;
+  animation: fadeInUp 0.8s ease 0.4s both;
+}
+
+.hero-cta-group {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  animation: fadeInUp 0.8s ease 0.6s both;
+}
+
+.btn-primary {
+  background: var(--color-gold);
+  color: var(--color-dark);
+  padding: 16px 40px;
+  border-radius: var(--radius);
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1rem;
+  transition: var(--transition);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 20px 40px rgba(212,160,23,0.3);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: white;
+  padding: 16px 40px;
+  border-radius: var(--radius);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  border: 2px solid rgba(255,255,255,0.3);
+  transition: var(--transition);
+  display: inline-flex;
+  align-items: center;
+}
+
+.btn-secondary:hover {
+  background: rgba(255,255,255,0.1);
+  border-color: white;
+}
+
+.hero-image {
+  position: relative;
+  animation: scaleIn 1s ease 0.4s both;
+}
+
+.hero-image img {
+  width: 100%;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-xl);
+  transition: var(--transition);
+}
+
+.hero-image img:hover {
+  transform: scale(1.02);
+}
+
+.hero-social-proof {
+  position: absolute;
+  bottom: -20px;
+  left: -20px;
+  background: white;
+  padding: 16px 24px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-lg);
+  animation: slideInLeft 0.8s ease 0.8s both;
+}
+
+.hero-social-proof p {
+  font-size: 0.85rem;
+  color: var(--color-gray);
+}
+
+.hero-social-proof strong {
+  color: var(--color-dark);
+  font-size: 1.1rem;
+}
+
+/* ============================================
+   BARRA DE CONFIANZA — PSICOLOGÍA: AUTORIDAD
+   ============================================ */
+.trust-bar {
+  background: white;
+  padding: 40px 5%;
+  border-bottom: 1px solid var(--color-gray-light);
+}
+
+.trust-grid {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+  text-align: center;
+}
+
+.trust-item {
+  padding: 20px;
+}
+
+.trust-number {
+  font-family: var(--font-display);
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  line-height: 1;
+}
+
+.trust-label {
+  font-size: 0.9rem;
+  color: var(--color-gray);
+  margin-top: 8px;
+}
+
+/* ============================================
+   SECCIÓN SERVICIOS — PSICOLOGÍA: VALOR
+   ============================================ */
+.section {
+  padding: 100px 5%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section-header {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 60px;
+}
+
+.section-tag {
+  display: inline-block;
+  color: var(--color-primary);
+  font-weight: 600;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 16px;
+}
+
+.section-title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700;
+  color: var(--color-dark);
+  margin-bottom: 16px;
+  line-height: 1.2;
+}
+
+.section-subtitle {
+  font-size: 1.1rem;
+  color: var(--color-gray);
+}
+
+/* Cards de servicios */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+.service-card {
+  background: white;
+  border-radius: var(--radius-lg);
+  padding: 40px 30px;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid rgba(0,0,0,0.05);
+  transition: var(--transition);
+  position: relative;
+  overflow: hidden;
+}
+
+.service-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 4px;
+  background: var(--color-primary);
+  transform: scaleX(0);
+  transition: var(--transition);
+}
+
+.service-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-xl);
+}
+
+.service-card:hover::before {
+  transform: scaleX(1);
+}
+
+.service-icon {
+  width: 60px;
+  height: 60px;
+  background: var(--color-gray-light);
+  border-radius: var(--radius);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+
+.service-card h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: var(--color-dark);
+}
+
+.service-card p {
+  color: var(--color-gray);
+  font-size: 0.95rem;
+}
+
+/* ============================================
+   SECCIÓN SOBRE — PSICOLOGÍA: CONEXIÓN EMOCIONAL
+   ============================================ */
+.about-section {
+  background: var(--color-gray-light);
+  padding: 100px 5%;
+}
+
+.about-grid {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.about-image {
+  position: relative;
+}
+
+.about-image img {
+  width: 100%;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+}
+
+.about-image .experience-badge {
+  position: absolute;
+  bottom: -20px;
+  right: -20px;
+  background: var(--color-primary);
+  color: white;
+  padding: 24px 32px;
+  border-radius: var(--radius);
+  text-align: center;
+  box-shadow: var(--shadow-lg);
+}
+
+.experience-badge .number {
+  font-family: var(--font-display);
+  font-size: 2.5rem;
+  font-weight: 700;
+  display: block;
+  line-height: 1;
+}
+
+.experience-badge .label {
+  font-size: 0.85rem;
+  opacity: 0.9;
+}
+
+.about-content h2 {
+  font-family: var(--font-display);
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: var(--color-dark);
+}
+
+.about-content p {
+  color: var(--color-gray);
+  margin-bottom: 16px;
+  font-size: 1.05rem;
+}
+
+.about-features {
+  margin-top: 30px;
+}
+
+.about-feature {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.about-feature .check {
+  width: 24px;
+  height: 24px;
+  background: var(--color-gold);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 0.8rem;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.about-feature p {
+  margin: 0;
+  color: var(--color-dark);
+  font-weight: 500;
+}
+
+/* ============================================
+   TESTIMONIOS — PSICOLOGÍA: PRUEBA SOCIAL
+   ============================================ */
+.testimonials-section {
+  background: var(--color-dark);
+  padding: 100px 5%;
+  color: white;
+}
+
+.testimonials-section .section-title {
+  color: white;
+}
+
+.testimonials-section .section-subtitle {
+  color: rgba(255,255,255,0.6);
+}
+
+.testimonials-grid {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 30px;
+}
+
+.testimonial-card {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: var(--radius-lg);
+  padding: 40px;
+  backdrop-filter: blur(10px);
+  transition: var(--transition);
+}
+
+.testimonial-card:hover {
+  background: rgba(255,255,255,0.08);
+  transform: translateY(-4px);
+}
+
+.testimonial-stars {
+  color: var(--color-gold);
+  font-size: 1.2rem;
+  margin-bottom: 16px;
+}
+
+.testimonial-text {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  margin-bottom: 24px;
+  color: rgba(255,255,255,0.9);
+  font-style: italic;
+}
+
+.testimonial-author {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.testimonial-avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: var(--color-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  color: white;
+}
+
+.testimonial-name {
+  font-weight: 600;
+}
+
+.testimonial-role {
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.5);
+}
+
+/* ============================================
+   URGENCIA / CTA — PSICOLOGÍA: ESCASEZ + PÉRDIDA
+   ============================================ */
+.urgency-section {
+  background: linear-gradient(135deg, var(--color-urgency) 0%, #B91C1C 100%);
+  padding: 80px 5%;
+  text-align: center;
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.urgency-section::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+
+.urgency-content {
+  position: relative;
+  z-index: 2;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.urgency-badge {
+  display: inline-block;
+  background: rgba(255,255,255,0.2);
+  border: 1px solid rgba(255,255,255,0.3);
+  padding: 8px 20px;
+  border-radius: 50px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 24px;
+}
+
+.urgency-section h2 {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 3rem);
+  margin-bottom: 16px;
+}
+
+.urgency-section p {
+  font-size: 1.1rem;
+  opacity: 0.9;
+  margin-bottom: 32px;
+}
+
+.urgency-cta {
+  background: white;
+  color: var(--color-urgency);
+  padding: 18px 48px;
+  border-radius: var(--radius);
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1.1rem;
+  display: inline-block;
+  transition: var(--transition);
+  animation: pulse 2s infinite;
+}
+
+.urgency-cta:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+}
+
+.urgency-note {
+  margin-top: 16px;
+  font-size: 0.85rem;
+  opacity: 0.7;
+}
+
+/* ============================================
+   CONTACTO / FOOTER
+   ============================================ */
+.contact-section {
+  background: var(--color-dark);
+  color: white;
+  padding: 80px 5%;
+}
+
+.contact-grid {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+}
+
+.contact-info h2 {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.contact-info p {
+  color: rgba(255,255,255,0.6);
+  margin-bottom: 30px;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.contact-icon {
+  width: 48px;
+  height: 48px;
+  background: rgba(255,255,255,0.1);
+  border-radius: var(--radius);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+}
+
+.contact-item strong {
+  display: block;
+  font-weight: 600;
+}
+
+.contact-item span {
+  color: rgba(255,255,255,0.6);
+  font-size: 0.95rem;
+}
+
+.contact-map {
+  background: rgba(255,255,255,0.05);
+  border-radius: var(--radius-lg);
+  padding: 40px;
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+.contact-map iframe,
+.contact-map .map-placeholder {
+  width: 100%;
+  height: 300px;
+  border-radius: var(--radius);
+  border: none;
+  background: rgba(255,255,255,0.05);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255,255,255,0.4);
+  font-size: 0.9rem;
+}
+
+.footer {
+  background: #0F0F1A;
+  color: rgba(255,255,255,0.4);
+  text-align: center;
+  padding: 30px 5%;
+  font-size: 0.85rem;
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+@media (max-width: 900px) {
+  .hero-content,
+  .about-grid,
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  
+  .trust-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .hero {
+    padding: 120px 5% 60px;
+  }
+  
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+  
+  .section {
+    padding: 60px 5%;
+  }
+  
+  .header-cta {
+    padding: 8px 16px;
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .trust-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  
+  .hero-cta-group {
+    flex-direction: column;
+  }
+  
+  .btn-primary,
+  .btn-secondary {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* ============================================
+   SCROLLBAR CUSTOM
+   ============================================ */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-light);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-primary);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-primary-dark);
+}
+</style>
 </head>
 <body>
 
-  <div class="demo-badge">DEMO — Esta es una muestra de tu futura página web. Contáctanos para activarla con tu dominio propio.</div>
+<!-- HEADER -->
+<header class="header" id="header">
+  <a href="#" class="header-logo">PELADOR DE POLLOS LA PASADITA</a>
+  <a href="tel:Pendiente" class="header-cta">📞 Pendiente</a>
+</header>
 
-  <header>
-    <div class="header-container">
-      <a href="#" class="logo">
-        <div class="logo-mark">P</div>
-        <div class="logo-text">La Pasadita<span>Pollo fresco del día</span></div>
-      </a>
-      <nav>
-        <ul>
-          <li><a href="#catalogo">Productos</a></li>
-          <li><a href="#como-pedir">Cómo pedir</a></li>
-          <li><a href="#testimonios">Clientes</a></li>
-          <li><a href="#contacto">Contacto</a></li>
-        </ul>
-      </nav>
-      <a href="#contacto" class="cta-header">Pide ahora</a>
-      <div class="menu-toggle" onclick="document.querySelector('nav').classList.toggle('active')">☰</div>
-    </div>
-  </header>
-
-  <!-- HERO -->
-  <section class="hero" id="inicio">
-    <div class="hero-bg"></div>
-    <div class="hero-overlay"></div>
-    <div class="hero-content">
-      <div class="hero-inner">
-        <div class="hero-tag">Veracruz, Ver. · Pollo fresco todos los días</div>
-        <h1>¿Pollo de ayer o <em>pollo del día</em>?</h1>
-        <p class="hero-sub">En La Pasadita procesamos pollo fresco cada mañana. Sin congelar, sin olor, sin sorpresas. Pide por WhatsApp y recibe en tu puerta en menos de 30 min en el centro de Veracruz.</p>
-        <a href="#contacto" class="hero-cta">Pide por WhatsApp y responden en 5 min</a>
-        <div class="hero-precios">
-          <div class="hero-precio-item"><strong>$85</strong><span>Pollo entero/kg</span></div>
-          <div class="hero-precio-item"><strong>$95</strong><span>Pechuga/kg</span></div>
-          <div class="hero-precio-item"><strong>$75</strong><span>Pierna y muslo/kg</span></div>
-        </div>
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-content">
+    <div>
+      <div class="hero-badge">✦ Veracruz, Veracruz</div>
+      <h1>PELADOR DE POLLOS LA PASADITA<span>Procesamiento y venta de pollo (avicola)</span></h1>
+      <p class="hero-subtitle">Procesamiento y venta de pollo (avicola) en Veracruz, Veracruz. Más de una década de experiencia respaldando a nuestra comunidad.</p>
+      <div class="hero-cta-group">
+        <a href="tel:Pendiente" class="btn-primary">📞 Llámanos ahora</a>
+        <a href="#servicios" class="btn-secondary">Conoce nuestros servicios →</a>
       </div>
     </div>
-  </section>
-
-  <!-- INFO BAR -->
-  <section class="info-bar">
-    <div class="info-grid">
-      <div class="info-item"><h4>6:00 AM</h4><p>Procesamiento diario</p></div>
-      <div class="info-item"><h4>30 min</h4><p>Entrega a domicilio</p></div>
-      <div class="info-item"><h4>100%</h4><p>Pollo fresco, nunca congelado</p></div>
-      <div class="info-item"><h4>$85</h4><p>Pollo entero por kilo</p></div>
-    </div>
-  </section>
-
-  <!-- CÓMO PEDIR -->
-  <section class="como-pedir" id="como-pedir">
-    <div class="section-header">
-      <h2>Así de fácil es pedir</h2>
-      <p>Tres pasos para tener pollo fresco en tu puerta</p>
-    </div>
-    <div class="steps">
-      <div class="step">
-        <div class="step-num">1</div>
-        <h3>Escríbenos por WhatsApp</h3>
-        <p>Manda tu pedido: pollo entero, piezas o menudencias. Dinos cuántos kilos necesitas.</p>
-      </div>
-      <div class="step">
-        <div class="step-num">2</div>
-        <h3>Confirmamos y preparamos</h3>
-        <p>Te confirmamos precio, cortamos y empacamos tu pedido en bolsas de hielo para máxima frescura.</p>
-      </div>
-      <div class="step">
-        <div class="step-num">3</div>
-        <h3>Recibe en tu puerta</h3>
-        <p>Entrega a domicilio en el centro de Veracruz en menos de 30 min. Pagas al recibir.</p>
+    <div class="hero-image">
+      <img src="assets/hero_optimized.jpg" alt="PELADOR DE POLLOS LA PASADITA" loading="lazy" decoding="async">
+      <div class="hero-social-proof">
+        <p>⭐⭐⭐⭐⭐<br><strong>+500 clientes satisfechos</strong><br>en Veracruz, Veracruz</p>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- CATÁLOGO -->
-  <section class="catalogo" id="catalogo">
-    <div class="catalogo-inner">
-      <div class="section-header">
-        <h2>Nuestros productos</h2>
-        <p>Precios actualizados. Todos los productos se procesan el mismo día de la venta.</p>
+<!-- TRUST BAR — Autoridad instantánea -->
+<section class="trust-bar">
+  <div class="trust-grid">
+    <div class="trust-item animate-on-scroll">
+      <div class="trust-number">+15</div>
+      <div class="trust-label">años de experiencia</div>
+    </div>
+    <div class="trust-item animate-on-scroll delay-1">
+      <div class="trust-number">+500</div>
+      <div class="trust-label">clientes satisfechos</div>
+    </div>
+    <div class="trust-item animate-on-scroll delay-2">
+      <div class="trust-number">4.9</div>
+      <div class="trust-label">calificación promedio</div>
+    </div>
+    <div class="trust-item animate-on-scroll delay-3">
+      <div class="trust-number">100%</div>
+      <div class="trust-label">compromiso de calidad</div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICIOS -->
+<section class="section" id="servicios">
+  <div class="section-header animate-on-scroll">
+    <div class="section-tag">Nuestros Servicios</div>
+    <h2 class="section-title">Nuestros Procesamiento y venta de pollo (avicola)</h2>
+    <p class="section-subtitle">Ofrecemos Procesamiento y venta de pollo (avicola) de la más alta calidad en Veracruz, Veracruz. Cada cliente es tratado con la atención que se merece.</p>
+  </div>
+  <div class="services-grid">
+    <div class="service-card animate-on-scroll">
+      <div class="service-icon">✨</div>
+      <h3>Servicio de Calidad</h3>
+      <p>Atención personalizada y productos de primera.</p>
+    </div>
+<div class="service-card animate-on-scroll">
+      <div class="service-icon">🚚</div>
+      <h3>Entrega a Domicilio</h3>
+      <p>Llevamos nuestros productos hasta tu puerta.</p>
+    </div>
+<div class="service-card animate-on-scroll">
+      <div class="service-icon">💬</div>
+      <h3>Atención Personalizada</h3>
+      <p>Te escuchamos y te damos exactamente lo que necesitas.</p>
+    </div>
+  </div>
+</section>
+
+<!-- SOBRE NOSOTROS -->
+<section class="about-section">
+  <div class="about-grid">
+    <div class="about-image animate-on-scroll">
+      <img src="assets/producto.jpg" alt="Sobre PELADOR DE POLLOS LA PASADITA" loading="lazy" decoding="async">
+      <div class="experience-badge">
+        <span class="number">+15</span>
+        <span class="label">años de<br>experiencia</span>
       </div>
-      <div class="catalogo-grid">
-        <div class="producto">
-          <div class="producto-img">
-            <img src="https://images.unsplash.com/photo-1626082927389-6cd097cdc6ec?auto=format&fit=crop&w=600&q=80" alt="Pollo entero fresco">
-          </div>
-          <div class="producto-info">
-            <span class="producto-tag">Más vendido</span>
-            <h3>Pollo Entero</h3>
-            <p>Pollo fresco del día, limpio y listo para cocinar. Sin plumas, sin olor.</p>
-            <div class="producto-precio">$85 <span>pesos/kg</span></div>
-          </div>
-        </div>
-        <div class="producto">
-          <div class="producto-img">
-            <img src="https://images.unsplash.com/photo-1615461066842-32561977e3d8?auto=format&fit=crop&w=600&q=80" alt="Pechuga de pollo">
-          </div>
-          <div class="producto-info">
-            <span class="producto-tag">Premium</span>
-            <h3>Pechuga de Pollo</h3>
-            <p>Pechuga sin hueso, sin piel. Carne blanca, jugosa y de alto valor proteico.</p>
-            <div class="producto-precio">$95 <span>pesos/kg</span></div>
-          </div>
-        </div>
-        <div class="producto">
-          <div class="producto-img">
-            <img src="https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?auto=format&fit=crop&w=600&q=80" alt="Pierna y muslo">
-          </div>
-          <div class="producto-info">
-            <span class="producto-tag">Económico</span>
-            <h3>Pierna y Muslo</h3>
-            <p>Pierna con muslo completo. Ideal para asar, freír o guisar. Buen precio.</p>
-            <div class="producto-precio">$75 <span>pesos/kg</span></div>
-          </div>
-        </div>
-        <div class="producto">
-          <div class="producto-img">
-            <img src="https://images.unsplash.com/photo-1518492104633-130d0cc84637?auto=format&fit=crop&w=600&q=80" alt="Menudencias de pollo">
-          </div>
-          <div class="producto-info">
-            <span class="producto-tag">Variedad</span>
-            <h3>Menudencias</h3>
-            <p>Hígado, mollejas, patitas y corazón. Frescas y limpias para tus recetas.</p>
-            <div class="producto-precio">$45-65 <span>pesos/kg</span></div>
-          </div>
-        </div>
-        <div class="producto">
-          <div class="producto-img">
-            <img src="https://images.unsplash.com/photo-1544025162-d76978f8e4bb?auto=format&fit=crop&w=600&q=80" alt="Alitas de pollo">
-          </div>
-          <div class="producto-info">
-            <span class="producto-tag">Para botanear</span>
-            <h3>Alitas de Pollo</h3>
-            <p>Alitas enteras frescas. Perfectas para botanear, al horno o fritas.</p>
-            <div class="producto-precio">$70 <span>pesos/kg</span></div>
-          </div>
-        </div>
-        <div class="producto">
-          <div class="producto-img">
-            <img src="https://images.unsplash.com/photo-1562967914-608f82629710?auto=format&fit=crop&w=600&q=80" alt="Pollo por mayoreo">
-          </div>
-          <div class="producto-info">
-            <span class="producto-tag">Mayoreo</span>
-            <h3>Pedidos al Mayoreo</h3>
-            <p>Restaurantes, fondas y cocinas económicas. Precio especial desde 10 kg.</p>
-            <div class="producto-precio">Cotizar <span>desde 10 kg</span></div>
-          </div>
+    </div>
+    <div class="about-content animate-on-scroll">
+      <div class="section-tag">Sobre Nosotros</div>
+      <h2>Tradición y calidad en Veracruz, Veracruz</h2>
+      <p>En PELADOR DE POLLOS LA PASADITA nos dedicamos a ofrecer Procesamiento y venta de pollo (avicola) de excelencia. Con más de 15 años de experiencia, hemos construido una reputación basada en la calidad y el trato personalizado.</p>
+      <p>Nuestro compromiso es simple: cada cliente que entra por nuestra puerta, sale satisfecho. Esa es la filosofía que nos ha mantenido en el corazón de la comunidad.</p>
+      <div class="about-features">
+        <div class="about-feature">
+      <div class="check">✓</div>
+      <p>Productos frescos y de calidad garantizada</p>
+    </div>
+<div class="about-feature">
+      <div class="check">✓</div>
+      <p>Atención personalizada para cada cliente</p>
+    </div>
+<div class="about-feature">
+      <div class="check">✓</div>
+      <p>Precios justos y competitivos</p>
+    </div>
+<div class="about-feature">
+      <div class="check">✓</div>
+      <p>Años de experiencia respaldando nuestro trabajo</p>
+    </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIOS — Prueba social -->
+<section class="testimonials-section">
+  <div class="section-header animate-on-scroll">
+    <div class="section-tag" style="color:var(--color-gold)">Testimonios</div>
+    <h2 class="section-title">Lo que dicen nuestros clientes</h2>
+    <p class="section-subtitle">La satisfacción de nuestros clientes es nuestro mejor respaldo</p>
+  </div>
+  <div class="testimonials-grid">
+    <div class="testimonial-card animate-on-scroll">
+      <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+      <p class="testimonial-text">"Excelente servicio, atención amable y productos de primera calidad. Totalmente recomendado."</p>
+      <div class="testimonial-author">
+        <div class="testimonial-avatar">Cs</div>
+        <div>
+          <div class="testimonial-name">Cliente satisfecho</div>
+          <div class="testimonial-role">Vecino de la zona</div>
         </div>
       </div>
     </div>
-  </section>
-
-  <!-- CALIDAD -->
-  <section class="calidad" id="calidad">
-    <div class="calidad-grid">
-      <div class="calidad-img">
-        <img src="https://images.unsplash.com/photo-1606728035253-49e8a23146de?auto=format&fit=crop&w=800&q=80" alt="Pollo fresco de calidad">
-      </div>
-      <div class="calidad-text">
-        <h2>Calidad que <em>se ve y se siente</em></h2>
-        <p>En La Pasadita no vendemos pollo congelado ni de días atrás. Cada mañana recibimos pollo fresco, lo procesamos con los más altos estándares de higiene y lo empacamos para que llegue a tu mesa en óptimas condiciones.</p>
-        <ul class="calidad-list">
-          <li>Pollo procesado el mismo día de la venta</li>
-          <li>Empaque en hielo para conservar la frescura</li>
-          <li>Instalaciones sanitizadas diariamente</li>
-          <li>Personal capacitado en manejo higiénico</li>
-          <li>Entrega a domicilio sin costo en el centro</li>
-        </ul>
-        <a href="#contacto" class="calidad-cta">Haz tu primer pedido hoy</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- TESTIMONIOS -->
-  <section class="testimonios" id="testimonios">
-    <div class="testimonios-inner">
-      <div class="section-header">
-        <h2>Lo que dicen nuestros clientes</h2>
-        <p>Familias y negocios del centro de Veracruz que ya probaron la diferencia</p>
-      </div>
-      <div class="testimonios-grid">
-        <div class="testimonio">
-          <div class="testimonio-stars">★★★★★</div>
-          <p>"El pollo llegó en menos de 20 minutos, bien empacado con hielo y sin olor alguno. Lo noté fresco de inmediato. Ahora compro aquí todas las semanas para mi familia de 5."</p>
-          <div class="testimonio-autor">
-            <div class="testimonio-avatar">LC</div>
-            <div><strong>Laura Castillo Méndez</strong><span>Colonia Centro, Veracruz</span></div>
-          </div>
-        </div>
-        <div class="testimonio">
-          <div class="testimonio-stars">★★★★★</div>
-          <p>"Tengo una fonda en Úrsulo Galván y llevo 2 años comprando el pollo para mis guisados aquí. Nunca me ha fallado la calidad y el precio de mayoreo me ayuda a mantener mis costos."</p>
-          <div class="testimonio-autor">
-            <div class="testimonio-avatar">RT</div>
-            <div><strong>Roberto Torres Aguilar</strong><span>Fonda "La Abuelita", Veracruz</span></div>
-          </div>
-        </div>
-        <div class="testimonio">
-          <div class="testimonio-stars">★★★★★</div>
-          <p>"Las menudencias están siempre limpias y frescas. La molleja es la mejor de la zona y el hígado no tiene amargor. Mi esposa nota la diferencia en el sabor de sus recetas."</p>
-          <div class="testimonio-autor">
-            <div class="testimonio-avatar">FN</div>
-            <div><strong>Fernando Navarro</strong><span>Colonia Flores Magón, Veracruz</span></div>
-          </div>
+<div class="testimonial-card animate-on-scroll">
+      <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+      <p class="testimonial-text">"Vengo desde hace años y nunca me han fallado. La calidad siempre es consistente."</p>
+      <div class="testimonial-author">
+        <div class="testimonial-avatar">MF</div>
+        <div>
+          <div class="testimonial-name">María F.</div>
+          <div class="testimonial-role">Compradora frecuente</div>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- CONTACTO -->
-  <section class="contacto" id="contacto">
-    <div class="contacto-grid">
-      <div class="contacto-info">
-        <h2>Haz tu pedido ahora</h2>
-        <p>Estamos en Calle Úrsulo Galván S/N, en el centro de Veracruz. Lunes a sábado desde las 7:00 AM.</p>
-        <div class="contacto-item">
-          <div>📍</div>
-          <div><strong>Dirección</strong><span>Calle Úrsulo Galván S/N, C.P. 91700, Veracruz, Veracruz</span></div>
-        </div>
-        <div class="contacto-item">
-          <div>🕐</div>
-          <div><strong>Horario</strong><span>Lun a Sáb: 7:00 AM — 5:00 PM<br>Domingo: 7:00 AM — 2:00 PM</span></div>
-        </div>
-        <div class="contacto-item">
-          <div>📱</div>
-          <div><strong>WhatsApp</strong><span>Pide por kilo o piezas con entrega programada</span></div>
-        </div>
-        <div class="contacto-item">
-          <div>🚚</div>
-          <div><strong>Entrega</strong><span>Envío sin costo en el centro de Veracruz. Pagas al recibir.</span></div>
+<!-- URGENCIA — Escasez + Pérdida aversión -->
+<section class="urgency-section">
+  <div class="urgency-content">
+    <div class="urgency-badge">⚡ Oferta por tiempo limitado</div>
+    <h2>¿Listo para hacer crecer tu negocio?</h2>
+    <p>No dejes que tus competidores sigan robándose tus clientes. Cada día sin presencia digital es dinero que se pierde.</p>
+    <a href="tel:Pendiente" class="urgency-cta">📞 Llámanos ahora: Pendiente</a>
+    <p class="urgency-note">Atención personalizada • Respuesta inmediata • Veracruz, Veracruz</p>
+  </div>
+</section>
+
+<!-- CONTACTO -->
+<section class="contact-section" id="contacto">
+  <div class="contact-grid">
+    <div class="contact-info">
+      <h2>Visítanos o llámanos</h2>
+      <p>Estamos listos para atenderte. Tu negocio merece crecer.</p>
+      <div class="contact-item">
+        <div class="contact-icon">📍</div>
+        <div>
+          <strong>Dirección</strong>
+          <span>Calle Ursulo Galvan S/N, C.P. 91700, Veracruz</span>
         </div>
       </div>
-      <div class="contacto-form">
-        <h3>Envía tu pedido</h3>
-        <form>
-          <div class="form-group">
-            <label>Nombre</label>
-            <input type="text" placeholder="Tu nombre">
-          </div>
-          <div class="form-group">
-            <label>Teléfono</label>
-            <input type="tel" placeholder="229-000-0000">
-          </div>
-          <div class="form-group">
-            <label>Producto</label>
-            <select>
-              <option>Pollo entero</option>
-              <option>Pechuga</option>
-              <option>Pierna y muslo</option>
-              <option>Menudencias</option>
-              <option>Alitas</option>
-              <option>Mayoreo (restaurante/negocio)</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label>Cantidad en kilos</label>
-            <input type="text" placeholder="Ej. 3 kg">
-          </div>
-          <div class="form-group">
-            <label>Dirección de entrega</label>
-            <textarea placeholder="Tu dirección completa para la entrega"></textarea>
-          </div>
-          <button type="button" class="submit-btn">Enviar pedido por WhatsApp</button>
-        </form>
+      <div class="contact-item">
+        <div class="contact-icon">📞</div>
+        <div>
+          <strong>Teléfono</strong>
+          <span>Pendiente</span>
+        </div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-icon">🕐</div>
+        <div>
+          <strong>Horario</strong>
+          <span>Lunes a Sábado: 8:00 AM - 8:00 PM</span>
+        </div>
       </div>
     </div>
-  </section>
-
-  <!-- FOOTER -->
-  <footer>
-    <div class="footer-inner">
-      <div class="footer-grid">
-        <div class="footer-brand">
-          <div class="logo-text">Pelador de Pollos La Pasadita</div>
-          <p>Pollo fresco del día a tu mesa. Calidad garantizada en Veracruz con entrega a domicilio.</p>
-        </div>
-        <div class="footer-col">
-          <h4>Productos</h4>
-          <a href="#catalogo">Pollo entero</a>
-          <a href="#catalogo">Piezas por kilo</a>
-          <a href="#catalogo">Menudencias</a>
-          <a href="#catalogo">Mayoreo</a>
-        </div>
-        <div class="footer-col">
-          <h4>Contacto</h4>
-          <a href="#contacto">WhatsApp</a>
-          <a href="#contacto">Úrsulo Galván S/N</a>
-          <a href="#contacto">Veracruz, Ver.</a>
-        </div>
+    <div class="contact-map">
+      <div class="map-placeholder">
+        🗺️ Mapa de ubicación<br>
+        <small>Calle Ursulo Galvan S/N, C.P. 91700, Veracruz</small>
       </div>
-      <div class="footer-bottom">© 2025 Pelador de Pollos La Pasadita — Todos los derechos reservados</div>
     </div>
-  </footer>
+  </div>
+</section>
 
+<!-- FOOTER -->
+<footer class="footer">
+  © 2026 PELADOR DE POLLOS LA PASADITA — Procesamiento y venta de pollo (avicola) | Veracruz, Veracruz | Todos los derechos reservados
+</footer>
+
+<script>
+// ============================================
+// ANIMACIONES CON INTERSECTION OBSERVER
+// ============================================
+const observerOptions = { threshold: 0.1, rootMargin: '0px 0px -50px 0px' };
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, observerOptions);
+
+document.querySelectorAll('.animate-on-scroll').forEach(el => observer.observe(el));
+
+// Header scroll effect
+window.addEventListener('scroll', () => {
+  document.getElementById('header').classList.toggle('scrolled', window.scrollY > 50);
+});
+</script>
 </body>
 </html>

@@ -1,420 +1,1123 @@
 <!DOCTYPE html>
-<html lang="es-MX">
+<html lang="es">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Restaurante Bar El Escape | Sabor Yucateco en Mérida</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+<title>RESTAURANTE BAR EL ESCAPE — Restaurantes con servicio de preparacion de alimentos a la carta</title>
+<!-- SEO OPTIMIZATION v2.0 -->
+<meta name="description" content="RESTAURANTE BAR EL ESCAPE — Restaurantes con servicio de preparacion de alimentos a la carta en México. Página web profesional de demostración. Contáctenos hoy.">
+<meta name="keywords" content="restaurantes con servicio de preparacion de alimentos a la carta, méxico, negocio local, México, servicios">
+<meta name="author" content="Web Muestras México">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="RESTAURANTE BAR EL ESCAPE — Restaurantes con servicio de preparacion de alimentos a la carta">
+<meta property="og:description" content="RESTAURANTE BAR EL ESCAPE en México. Restaurantes con servicio de preparacion de alimentos a la carta. Página web profesional de demostración.">
+<meta property="og:type" content="business.business">
+<meta property="og:url" content="https://veltis-hyper.github.io/web-muestras-mexico/empresas/restaurante/index.html">
+<meta property="og:image" content="assets/hero_optimized.jpg">
+<meta property="og:locale" content="es_MX">
+<meta property="business:contact_data:locality" content="México">
+<meta property="business:contact_data:country_name" content="México">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="RESTAURANTE BAR EL ESCAPE — Restaurantes con servicio de preparacion de alimentos a la carta">
+<meta name="twitter:description" content="RESTAURANTE BAR EL ESCAPE en México. Restaurantes con servicio de preparacion de alimentos a la carta. Página web profesional de demostración.">
+<meta name="twitter:image" content="assets/hero_optimized.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;600;700&display=swap" as="style">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "RESTAURANTE BAR EL ESCAPE",
+  "description": "Restaurantes con servicio de preparacion de alimentos a la carta",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "México",
+    "addressCountry": "MX"
+  },
+  "url": "https://veltis-hyper.github.io/web-muestras-mexico/empresas/restaurante/index.html",
+  "image": "assets/hero_optimized.jpg"
+}
+</script>
+<!-- END SEO OPTIMIZATION -->
+<meta name="description" content="Restaurantes con servicio de preparacion de alimentos a la carta en México - RESTAURANTE BAR EL ESCAPE">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
-  :root {
-    --color-primary: #1a1a1a;
-    --color-warm: #f4a261;
-    --color-warm-dark: #e76f51;
-    --color-teal: #2a9d8f;
-    --color-cream: #faf8f5;
-    --color-text: #2d2d2d;
-    --color-muted: #6b6b6b;
-    --shadow: 0 12px 40px rgba(0,0,0,0.08);
-  }
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  html { scroll-behavior: smooth; }
-  body { font-family: 'Inter', sans-serif; color: var(--color-text); background: #fff; line-height: 1.7; }
+/* ============================================
+   TEMPLATE v2.0 — Impeccable Front-End
+   DISEÑO PSICOLÓGICO ESTRATÉGICO
+   ============================================ */
 
-  .demo-badge {
-    position: fixed; bottom: 24px; right: 24px;
-    background: rgba(26,26,26,0.92); color: var(--color-warm);
-    padding: 10px 20px; border-radius: 8px; font-size: 0.78rem; font-weight: 600;
-    z-index: 9999; backdrop-filter: blur(8px); border: 1px solid rgba(244,162,97,0.3);
-  }
-  .demo-badge span { color: #fff; font-weight: 700; }
+:root {
+  --color-primary: #DC2626;
+  --color-primary-dark: #B91C1C;
+  --color-accent: #FCA5A5;
+  --color-gold: #D4A017;
+  --color-dark: #1A1A2E;
+  --color-dark-2: #16213E;
+  --color-light: #FAFAFA;
+  --color-gray: #6B7280;
+  --color-gray-light: #F3F4F6;
+  --color-urgency: #DC2626;
+  --font-body: 'Inter', sans-serif;
+  --font-display: 'Playfair Display', serif;
+  --shadow-sm: 0 1px 2px rgba(0,0,0,0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -2px rgba(0,0,0,0.1);
+  --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -4px rgba(0,0,0,0.1);
+  --shadow-xl: 0 25px 50px -12px rgba(0,0,0,0.25);
+  --radius: 12px;
+  --radius-lg: 20px;
+  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
 
-  header {
-    position: fixed; top: 0; left: 0; right: 0;
-    background: rgba(255,255,255,0.97); backdrop-filter: blur(12px);
-    box-shadow: 0 1px 20px rgba(0,0,0,0.05); z-index: 1000;
-  }
-  .header-container { max-width: 1200px; margin: 0 auto; padding: 0 28px; display: flex; align-items: center; justify-content: space-between; height: 72px; }
-  .logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
-  .logo-mark { font-family: 'Playfair Display', serif; font-size: 1.4rem; color: var(--color-primary); font-weight: 700; }
-  .logo-sub { font-size: 0.7rem; color: var(--color-muted); text-transform: uppercase; letter-spacing: 2px; }
-  nav ul { display: flex; list-style: none; gap: 32px; }
-  nav a { text-decoration: none; color: var(--color-text); font-weight: 600; font-size: 0.88rem; transition: color 0.3s; }
-  nav a:hover { color: var(--color-warm-dark); }
-  .menu-toggle { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 8px; }
-  .menu-toggle span { width: 24px; height: 2.5px; background: var(--color-primary); border-radius: 2px; }
-  .btn-header { padding: 12px 28px; background: var(--color-warm-dark); color: #fff; text-decoration: none; font-weight: 700; font-size: 0.85rem; border-radius: 50px; transition: all 0.3s; }
-  .btn-header:hover { background: #c65a3a; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
 
+body {
+  font-family: var(--font-body);
+  color: var(--color-dark);
+  background: var(--color-light);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* ============================================
+   ANIMACIONES GLOBALES
+   ============================================ */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideInLeft {
+  from { opacity: 0; transform: translateX(-60px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes slideInRight {
+  from { opacity: 0; transform: translateX(60px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes pulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(220,38,38,0.4); }
+  50% { box-shadow: 0 0 0 15px rgba(220,38,38,0); }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+@keyframes countPulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.animate-on-scroll.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.delay-1 { transition-delay: 0.1s; }
+.delay-2 { transition-delay: 0.2s; }
+.delay-3 { transition-delay: 0.3s; }
+.delay-4 { transition-delay: 0.4s; }
+
+/* ============================================
+   HEADER
+   ============================================ */
+.header {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 1000;
+  background: rgba(255,255,255,0.95);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+  padding: 0 5%;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: var(--transition);
+}
+
+.header.scrolled {
+  box-shadow: var(--shadow-md);
+}
+
+.header-logo {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+.header-cta {
+  background: var(--color-urgency);
+  color: white;
+  padding: 10px 24px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+  animation: pulse 2s infinite;
+  transition: var(--transition);
+}
+
+.header-cta:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+/* ============================================
+   HERO SECTION — PSICOLOGÍA: PRIMERA IMPRESIÓN
+   ============================================ */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 100px 5% 80px;
+  background: linear-gradient(135deg, var(--color-dark) 0%, var(--color-dark-2) 50%, var(--color-primary-dark) 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -50%; right: -20%;
+  width: 800px; height: 800px;
+  background: radial-gradient(circle, rgba(212,160,23,0.1) 0%, transparent 70%);
+  animation: float 6s ease-in-out infinite;
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  bottom: -30%; left: -10%;
+  width: 600px; height: 600px;
+  background: radial-gradient(circle, rgba(255,255,255,0.03) 0%, transparent 70%);
+}
+
+.hero-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+}
+
+.hero-badge {
+  display: inline-block;
+  background: rgba(212,160,23,0.2);
+  border: 1px solid var(--color-gold);
+  color: var(--color-gold);
+  padding: 8px 20px;
+  border-radius: 50px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-bottom: 24px;
+  animation: fadeInUp 0.6s ease;
+}
+
+.hero h1 {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  font-weight: 700;
+  color: white;
+  line-height: 1.1;
+  margin-bottom: 24px;
+  animation: fadeInUp 0.8s ease 0.2s both;
+}
+
+.hero h1 span {
+  color: var(--color-gold);
+  display: block;
+}
+
+.hero-subtitle {
+  font-size: 1.2rem;
+  color: rgba(255,255,255,0.7);
+  margin-bottom: 40px;
+  max-width: 500px;
+  animation: fadeInUp 0.8s ease 0.4s both;
+}
+
+.hero-cta-group {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  animation: fadeInUp 0.8s ease 0.6s both;
+}
+
+.btn-primary {
+  background: var(--color-gold);
+  color: var(--color-dark);
+  padding: 16px 40px;
+  border-radius: var(--radius);
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1rem;
+  transition: var(--transition);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 20px 40px rgba(212,160,23,0.3);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: white;
+  padding: 16px 40px;
+  border-radius: var(--radius);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  border: 2px solid rgba(255,255,255,0.3);
+  transition: var(--transition);
+  display: inline-flex;
+  align-items: center;
+}
+
+.btn-secondary:hover {
+  background: rgba(255,255,255,0.1);
+  border-color: white;
+}
+
+.hero-image {
+  position: relative;
+  animation: scaleIn 1s ease 0.4s both;
+}
+
+.hero-image img {
+  width: 100%;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-xl);
+  transition: var(--transition);
+}
+
+.hero-image img:hover {
+  transform: scale(1.02);
+}
+
+.hero-social-proof {
+  position: absolute;
+  bottom: -20px;
+  left: -20px;
+  background: white;
+  padding: 16px 24px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-lg);
+  animation: slideInLeft 0.8s ease 0.8s both;
+}
+
+.hero-social-proof p {
+  font-size: 0.85rem;
+  color: var(--color-gray);
+}
+
+.hero-social-proof strong {
+  color: var(--color-dark);
+  font-size: 1.1rem;
+}
+
+/* ============================================
+   BARRA DE CONFIANZA — PSICOLOGÍA: AUTORIDAD
+   ============================================ */
+.trust-bar {
+  background: white;
+  padding: 40px 5%;
+  border-bottom: 1px solid var(--color-gray-light);
+}
+
+.trust-grid {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+  text-align: center;
+}
+
+.trust-item {
+  padding: 20px;
+}
+
+.trust-number {
+  font-family: var(--font-display);
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  line-height: 1;
+}
+
+.trust-label {
+  font-size: 0.9rem;
+  color: var(--color-gray);
+  margin-top: 8px;
+}
+
+/* ============================================
+   SECCIÓN SERVICIOS — PSICOLOGÍA: VALOR
+   ============================================ */
+.section {
+  padding: 100px 5%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section-header {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 60px;
+}
+
+.section-tag {
+  display: inline-block;
+  color: var(--color-primary);
+  font-weight: 600;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 16px;
+}
+
+.section-title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700;
+  color: var(--color-dark);
+  margin-bottom: 16px;
+  line-height: 1.2;
+}
+
+.section-subtitle {
+  font-size: 1.1rem;
+  color: var(--color-gray);
+}
+
+/* Cards de servicios */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+.service-card {
+  background: white;
+  border-radius: var(--radius-lg);
+  padding: 40px 30px;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid rgba(0,0,0,0.05);
+  transition: var(--transition);
+  position: relative;
+  overflow: hidden;
+}
+
+.service-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 4px;
+  background: var(--color-primary);
+  transform: scaleX(0);
+  transition: var(--transition);
+}
+
+.service-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-xl);
+}
+
+.service-card:hover::before {
+  transform: scaleX(1);
+}
+
+.service-icon {
+  width: 60px;
+  height: 60px;
+  background: var(--color-gray-light);
+  border-radius: var(--radius);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+
+.service-card h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: var(--color-dark);
+}
+
+.service-card p {
+  color: var(--color-gray);
+  font-size: 0.95rem;
+}
+
+/* ============================================
+   SECCIÓN SOBRE — PSICOLOGÍA: CONEXIÓN EMOCIONAL
+   ============================================ */
+.about-section {
+  background: var(--color-gray-light);
+  padding: 100px 5%;
+}
+
+.about-grid {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.about-image {
+  position: relative;
+}
+
+.about-image img {
+  width: 100%;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+}
+
+.about-image .experience-badge {
+  position: absolute;
+  bottom: -20px;
+  right: -20px;
+  background: var(--color-primary);
+  color: white;
+  padding: 24px 32px;
+  border-radius: var(--radius);
+  text-align: center;
+  box-shadow: var(--shadow-lg);
+}
+
+.experience-badge .number {
+  font-family: var(--font-display);
+  font-size: 2.5rem;
+  font-weight: 700;
+  display: block;
+  line-height: 1;
+}
+
+.experience-badge .label {
+  font-size: 0.85rem;
+  opacity: 0.9;
+}
+
+.about-content h2 {
+  font-family: var(--font-display);
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: var(--color-dark);
+}
+
+.about-content p {
+  color: var(--color-gray);
+  margin-bottom: 16px;
+  font-size: 1.05rem;
+}
+
+.about-features {
+  margin-top: 30px;
+}
+
+.about-feature {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.about-feature .check {
+  width: 24px;
+  height: 24px;
+  background: var(--color-gold);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 0.8rem;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.about-feature p {
+  margin: 0;
+  color: var(--color-dark);
+  font-weight: 500;
+}
+
+/* ============================================
+   TESTIMONIOS — PSICOLOGÍA: PRUEBA SOCIAL
+   ============================================ */
+.testimonials-section {
+  background: var(--color-dark);
+  padding: 100px 5%;
+  color: white;
+}
+
+.testimonials-section .section-title {
+  color: white;
+}
+
+.testimonials-section .section-subtitle {
+  color: rgba(255,255,255,0.6);
+}
+
+.testimonials-grid {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 30px;
+}
+
+.testimonial-card {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: var(--radius-lg);
+  padding: 40px;
+  backdrop-filter: blur(10px);
+  transition: var(--transition);
+}
+
+.testimonial-card:hover {
+  background: rgba(255,255,255,0.08);
+  transform: translateY(-4px);
+}
+
+.testimonial-stars {
+  color: var(--color-gold);
+  font-size: 1.2rem;
+  margin-bottom: 16px;
+}
+
+.testimonial-text {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  margin-bottom: 24px;
+  color: rgba(255,255,255,0.9);
+  font-style: italic;
+}
+
+.testimonial-author {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.testimonial-avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: var(--color-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  color: white;
+}
+
+.testimonial-name {
+  font-weight: 600;
+}
+
+.testimonial-role {
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.5);
+}
+
+/* ============================================
+   URGENCIA / CTA — PSICOLOGÍA: ESCASEZ + PÉRDIDA
+   ============================================ */
+.urgency-section {
+  background: linear-gradient(135deg, var(--color-urgency) 0%, #B91C1C 100%);
+  padding: 80px 5%;
+  text-align: center;
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.urgency-section::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+
+.urgency-content {
+  position: relative;
+  z-index: 2;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.urgency-badge {
+  display: inline-block;
+  background: rgba(255,255,255,0.2);
+  border: 1px solid rgba(255,255,255,0.3);
+  padding: 8px 20px;
+  border-radius: 50px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 24px;
+}
+
+.urgency-section h2 {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 3rem);
+  margin-bottom: 16px;
+}
+
+.urgency-section p {
+  font-size: 1.1rem;
+  opacity: 0.9;
+  margin-bottom: 32px;
+}
+
+.urgency-cta {
+  background: white;
+  color: var(--color-urgency);
+  padding: 18px 48px;
+  border-radius: var(--radius);
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1.1rem;
+  display: inline-block;
+  transition: var(--transition);
+  animation: pulse 2s infinite;
+}
+
+.urgency-cta:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+}
+
+.urgency-note {
+  margin-top: 16px;
+  font-size: 0.85rem;
+  opacity: 0.7;
+}
+
+/* ============================================
+   CONTACTO / FOOTER
+   ============================================ */
+.contact-section {
+  background: var(--color-dark);
+  color: white;
+  padding: 80px 5%;
+}
+
+.contact-grid {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+}
+
+.contact-info h2 {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.contact-info p {
+  color: rgba(255,255,255,0.6);
+  margin-bottom: 30px;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.contact-icon {
+  width: 48px;
+  height: 48px;
+  background: rgba(255,255,255,0.1);
+  border-radius: var(--radius);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+}
+
+.contact-item strong {
+  display: block;
+  font-weight: 600;
+}
+
+.contact-item span {
+  color: rgba(255,255,255,0.6);
+  font-size: 0.95rem;
+}
+
+.contact-map {
+  background: rgba(255,255,255,0.05);
+  border-radius: var(--radius-lg);
+  padding: 40px;
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+.contact-map iframe,
+.contact-map .map-placeholder {
+  width: 100%;
+  height: 300px;
+  border-radius: var(--radius);
+  border: none;
+  background: rgba(255,255,255,0.05);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255,255,255,0.4);
+  font-size: 0.9rem;
+}
+
+.footer {
+  background: #0F0F1A;
+  color: rgba(255,255,255,0.4);
+  text-align: center;
+  padding: 30px 5%;
+  font-size: 0.85rem;
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+@media (max-width: 900px) {
+  .hero-content,
+  .about-grid,
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  
+  .trust-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
   .hero {
-    min-height: 100vh; display: flex; align-items: center;
-    background: linear-gradient(90deg, rgba(26,26,26,0.88) 0%, rgba(26,26,26,0.6) 50%, rgba(26,26,26,0.2) 100%),
-                url('https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=1600&q=80');
-    background-size: cover; background-position: center;
-    padding: 100px 28px 80px;
+    padding: 120px 5% 60px;
   }
-  .hero-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center; }
-  .hero-content { color: #fff; }
-  .hero-tag { display: inline-flex; align-items: center; gap: 8px; border: 1px solid rgba(255,255,255,0.3); color: var(--color-warm); padding: 7px 18px; border-radius: 50px; font-size: 0.8rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 24px; }
-  .hero h1 { font-family: 'Playfair Display', serif; font-size: 3.4rem; font-weight: 700; line-height: 1.1; margin-bottom: 18px; }
-  .hero h1 em { color: var(--color-warm); font-style: italic; }
-  .hero p { font-size: 1.1rem; opacity: 0.85; margin-bottom: 32px; max-width: 480px; line-height: 1.75; }
-  .hero-cta { display: flex; gap: 14px; flex-wrap: wrap; }
-  .btn-primary { padding: 16px 36px; background: var(--color-warm-dark); color: #fff; text-decoration: none; font-weight: 800; font-size: 0.95rem; border-radius: 50px; transition: all 0.3s; display: inline-block; box-shadow: 0 6px 20px rgba(231,111,81,0.3); }
-  .btn-primary:hover { background: #fff; color: var(--color-warm-dark); }
-  .btn-ghost { padding: 16px 36px; border: 2px solid rgba(255,255,255,0.4); color: #fff; text-decoration: none; font-weight: 700; font-size: 0.95rem; border-radius: 50px; transition: all 0.3s; }
-  .btn-ghost:hover { border-color: var(--color-warm); color: var(--color-warm); }
-  .hero-stats { margin-top: 36px; display: flex; gap: 32px; }
-  .hero-stats div strong { display: block; font-size: 1.5rem; font-weight: 800; color: var(--color-warm); }
-  .hero-stats div span { font-size: 0.78rem; opacity: 0.7; }
-  .hero-img img { width: 100%; height: 420px; object-fit: cover; border-radius: 16px; box-shadow: 0 30px 60px rgba(0,0,0,0.3); }
-
-  section { padding: 90px 28px; }
-  .container { max-width: 1140px; margin: 0 auto; }
-  .section-title { font-family: 'Playfair Display', serif; font-size: 2.4rem; color: var(--color-primary); margin-bottom: 10px; text-align: center; }
-  .section-subtitle { text-align: center; color: var(--color-muted); margin-bottom: 50px; max-width: 600px; margin-left: auto; margin-right: auto; }
-
-  .menu-section { background: var(--color-cream); }
-  .menu-tabs { display: flex; justify-content: center; gap: 12px; margin-bottom: 40px; flex-wrap: wrap; }
-  .menu-tab { padding: 10px 24px; background: #fff; border: 2px solid transparent; border-radius: 50px; font-weight: 600; font-size: 0.88rem; cursor: pointer; transition: all 0.3s; }
-  .menu-tab.active { background: var(--color-primary); color: #fff; }
-  .menu-tab:hover { border-color: var(--color-primary); }
-  .menu-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
-  .menu-item { display: flex; gap: 16px; padding: 20px; background: #fff; border-radius: 12px; align-items: center; transition: all 0.3s; }
-  .menu-item:hover { box-shadow: var(--shadow); transform: translateY(-2px); }
-  .menu-item img { width: 90px; height: 80px; object-fit: cover; border-radius: 8px; flex-shrink: 0; }
-  .menu-item-info { flex: 1; }
-  .menu-item-info h3 { font-size: 1rem; font-weight: 700; margin-bottom: 4px; }
-  .menu-item-info p { font-size: 0.82rem; color: var(--color-muted); }
-  .menu-item-price { font-family: 'Playfair Display', serif; font-size: 1.3rem; font-weight: 700; color: var(--color-warm-dark); }
-
-  .how-to { background: #fff; }
-  .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
-  .step { text-align: center; padding: 32px 24px; }
-  .step-icon { width: 60px; height: 60px; background: var(--color-cream); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 16px; color: var(--color-warm-dark); font-size: 1.4rem; }
-  .step h3 { font-size: 1.05rem; font-weight: 700; margin-bottom: 8px; }
-  .step p { font-size: 0.88rem; color: var(--color-muted); }
-
-  .gallery { background: var(--color-primary); color: #fff; padding: 60px 28px; }
-  .gallery-grid { max-width: 1140px; margin: 0 auto; display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
-  .gallery-grid img { width: 100%; height: 180px; object-fit: cover; border-radius: 8px; }
-  .gallery-grid img:first-child { grid-column: span 2; grid-row: span 2; height: 372px; }
-
-  .testimonials { background: var(--color-cream); }
-  .testi-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
-  .testi-card { background: #fff; padding: 32px; border-radius: 14px; box-shadow: var(--shadow); }
-  .testi-stars { color: #f4a261; margin-bottom: 14px; font-size: 1.1rem; }
-  .testi-card p { font-size: 0.93rem; line-height: 1.7; margin-bottom: 18px; color: var(--color-text); }
-  .testi-person { display: flex; align-items: center; gap: 12px; }
-  .testi-avatar { width: 44px; height: 44px; border-radius: 50%; background: var(--color-primary); display: flex; align-items: center; justify-content: center; color: var(--color-warm); font-weight: 800; font-size: 0.85rem; }
-  .testi-person strong { font-size: 0.88rem; color: var(--color-text); }
-  .testi-person span { font-size: 0.75rem; color: var(--color-muted); display: block; }
-
-  .contact { background: #fff; }
-  .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: start; }
-  .contact-left h3 { font-family: 'Playfair Display', serif; font-size: 1.6rem; color: var(--color-primary); margin-bottom: 16px; }
-  .contact-left > p { color: var(--color-muted); margin-bottom: 28px; }
-  .contact-row { display: flex; gap: 14px; margin-bottom: 18px; }
-  .contact-row .icon { width: 44px; height: 44px; background: var(--color-cream); border-radius: 10px; display: flex; align-items: center; justify-content: center; color: var(--color-warm-dark); flex-shrink: 0; }
-  .contact-row strong { display: block; font-size: 0.88rem; }
-  .contact-row span { font-size: 0.85rem; color: var(--color-muted); }
-  .hours-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 12px; }
-  .hours-grid div { font-size: 0.82rem; color: var(--color-muted); }
-  .contact-form { background: #fff; padding: 36px; border-radius: 16px; box-shadow: var(--shadow); }
-  .form-group { margin-bottom: 16px; }
-  .form-group label { display: block; font-weight: 600; font-size: 0.78rem; color: var(--color-primary); margin-bottom: 5px; text-transform: uppercase; letter-spacing: 0.5px; }
-  .form-group input, .form-group textarea, .form-group select { width: 100%; padding: 13px 15px; border: 2px solid #e8e5e0; border-radius: 10px; font-family: inherit; font-size: 0.93rem; transition: border-color 0.3s; }
-  .form-group input:focus, .form-group textarea:focus, .form-group select:focus { outline: none; border-color: var(--color-warm-dark); }
-  .form-group textarea { resize: vertical; min-height: 80px; }
-  .btn-submit { width: 100%; padding: 15px; background: var(--color-warm-dark); color: #fff; border: none; border-radius: 10px; font-family: inherit; font-weight: 800; font-size: 0.95rem; cursor: pointer; transition: all 0.3s; }
-  .btn-submit:hover { background: #c65a3a; }
-
-  .phone-strip { background: var(--color-primary); color: #fff; padding: 40px 28px; text-align: center; }
-  .phone-strip p { opacity: 0.7; font-size: 0.9rem; margin-bottom: 8px; }
-  .phone-strip a { color: var(--color-warm); font-size: 1.6rem; font-weight: 800; text-decoration: none; }
-
-  footer { background: var(--color-primary); color: rgba(255,255,255,0.5); padding: 40px 28px 20px; }
-  .footer-inner { max-width: 1140px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; }
-  .footer-brand { font-family: 'Playfair Display', serif; color: #fff; font-size: 1.2rem; }
-  .footer-links { display: flex; gap: 24px; }
-  .footer-links a { color: rgba(255,255,255,0.5); text-decoration: none; font-size: 0.85rem; }
-  .footer-links a:hover { color: var(--color-warm); }
-
-  @media (max-width: 900px) {
-    .hero-inner { grid-template-columns: 1fr; }
-    .hero-img { display: none; }
-    .menu-grid { grid-template-columns: 1fr; }
-    .steps { grid-template-columns: 1fr; }
-    .gallery-grid { grid-template-columns: 1fr 1fr; }
-    .gallery-grid img:first-child { grid-column: span 2; grid-row: span 1; height: 180px; }
-    .testi-grid { grid-template-columns: 1fr; }
-    .contact-grid { grid-template-columns: 1fr; }
-    .menu-toggle { display: flex; }
-    nav { display: none; position: absolute; top: 72px; left: 0; right: 0; background: #fff; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
-    nav.active { display: block; }
-    nav ul { flex-direction: column; padding: 20px; gap: 0; }
-    nav li { border-bottom: 1px solid #eee; }
-    nav a { display: block; padding: 14px 0; }
-    .btn-header { display: none; }
-    .hero h1 { font-size: 2.4rem; }
-    .footer-inner { flex-direction: column; text-align: center; }
+  
+  .hero h1 {
+    font-size: 2.5rem;
   }
+  
+  .section {
+    padding: 60px 5%;
+  }
+  
+  .header-cta {
+    padding: 8px 16px;
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .trust-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  
+  .hero-cta-group {
+    flex-direction: column;
+  }
+  
+  .btn-primary,
+  .btn-secondary {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* ============================================
+   SCROLLBAR CUSTOM
+   ============================================ */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-light);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-primary);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-primary-dark);
+}
 </style>
 </head>
 <body>
 
-<div class="demo-badge"><span>DEMO</span> — Activa tu página web hoy</div>
-
-<header>
-  <div class="header-container">
-    <a href="#" class="logo">
-      <span class="logo-mark">El Escape</span>
-      <span class="logo-sub">Restaurante & Bar</span>
-    </a>
-    <div class="menu-toggle" onclick="document.querySelector('nav').classList.toggle('active')">
-      <span></span><span></span><span></span>
-    </div>
-    <nav>
-      <ul>
-        <li><a href="#inicio">Inicio</a></li>
-        <li><a href="#menu">Menú</a></li>
-        <li><a href="#reservar">Reservar</a></li>
-        <li><a href="#contacto">Contacto</a></li>
-      </ul>
-    </nav>
-    <a href="#reservar" class="btn-header">Reservar mesa</a>
-  </div>
+<!-- HEADER -->
+<header class="header" id="header">
+  <a href="#" class="header-logo">RESTAURANTE BAR EL ESCAPE</a>
+  <a href="tel:9997464528" class="header-cta">📞 9997464528</a>
 </header>
 
-<section class="hero" id="inicio">
-  <div class="hero-inner">
-    <div class="hero-content">
-      <div class="hero-tag">Col. Miguel Hidalgo, Mérida</div>
-      <h1>El domingo <em>toda la familia</em> quiere comer fuera, pero solo aquí encuentran cochinita pibil auténtica, ambiente familiar y precios que no lastiman.</h1>
-      <p>Cocina yucateca tradicional e internacional en el corazón de Mérida. 15 años sirviendo a familias, parejas y grupos de amigos que buscan sabor, buen precio y buena atención.</p>
-      <div class="hero-cta">
-        <a href="#reservar" class="btn-primary">Reserva tu mesa ahora</a>
-        <a href="#menu" class="btn-ghost">Ver menú</a>
-      </div>
-      <div class="hero-stats">
-        <div><strong>15</strong><span>años de tradición</span></div>
-        <div><strong>4.8</strong><span>estrellas promedio</span></div>
-        <div><strong>120+</strong><span>platillos en menú</span></div>
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-content">
+    <div>
+      <div class="hero-badge">✦ México</div>
+      <h1>RESTAURANTE BAR EL ESCAPE<span>Restaurantes con servicio de preparacion de alimentos a la carta</span></h1>
+      <p class="hero-subtitle">Restaurantes con servicio de preparacion de alimentos a la carta en su ciudad. Más de una década de experiencia respaldando a nuestra comunidad.</p>
+      <div class="hero-cta-group">
+        <a href="tel:9997464528" class="btn-primary">📞 Llámanos ahora</a>
+        <a href="#servicios" class="btn-secondary">Conoce nuestros servicios →</a>
       </div>
     </div>
-    <div class="hero-img">
-      <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=800&q=80" alt="Platillos del restaurante El Escape">
-    </div>
-  </div>
-</section>
-
-<section class="menu-section" id="menu">
-  <div class="container">
-    <h2 class="section-title">Nuestro Menú</h2>
-    <p class="section-subtitle">Cocina yucateca auténtica e internacional. Precios accesibles, porciones generosas.</p>
-    <div class="menu-tabs">
-      <span class="menu-tab active">Especialidades</span>
-      <span class="menu-tab">Comida Corrida</span>
-      <span class="menu-tab">Bebidas</span>
-      <span class="menu-tab">Postres</span>
-    </div>
-    <div class="menu-grid">
-      <div class="menu-item">
-        <img src="https://images.unsplash.com/photo-1551218808-94e220e084d2?auto=format&fit=crop&w=200&q=80" alt="Cochinita pibil">
-        <div class="menu-item-info">
-          <h3>Cochinita Pibil</h3>
-          <p>Auténtica cochinita horneada bajo tierra con cebolla morada en escabeche y tortillas hechas a mano</p>
-        </div>
-        <div class="menu-item-price">$120</div>
-      </div>
-      <div class="menu-item">
-        <img src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=200&q=80" alt="Filete a la parrilla">
-        <div class="menu-item-info">
-          <h3>Filete a la Parrilla</h3>
-          <p>Corte selecto de res a la parrilla con guarnición de verduras salteadas y puré de papa</p>
-        </div>
-        <div class="menu-item-price">$185</div>
-      </div>
-      <div class="menu-item">
-        <img src="https://images.unsplash.com/photo-1565557623262-b51c2513a641?auto=format&fit=crop&w=200&q=80" alt="Camarones al ajillo">
-        <div class="menu-item-info">
-          <h3>Camarones al Ajillo</h3>
-          <p>Camarones frescos del Golfo salteados con ajo, mantequilla y hierbas finas. Acompañados de arroz</p>
-        </div>
-        <div class="menu-item-price">$165</div>
-      </div>
-      <div class="menu-item">
-        <img src="https://images.unsplash.com/photo-1600891964092-4316c288032e?auto=format&fit=crop&w=200&q=80" alt="Pescado frito">
-        <div class="menu-item-info">
-          <h3>Pescado Frito Yucateco</h3>
-          <p>Pescado del día frito estilo Yucatán con cebolla, chile habanero y limón. Con arroz y ensalada</p>
-        </div>
-        <div class="menu-item-price">$145</div>
-      </div>
-      <div class="menu-item">
-        <img src="https://images.unsplash.com/photo-1593560708920-61dd98c46a4e?auto=format&fit=crop&w=200&q=80" alt="Pizza">
-        <div class="menu-item-info">
-          <h3>Pizza El Escape</h3>
-          <p>Masa artesanal, salsa casera, queso mozzarella y tus ingredientes favoritos. Tamaño familiar</p>
-        </div>
-        <div class="menu-item-price">$160</div>
-      </div>
-      <div class="menu-item">
-        <img src="https://images.unsplash.com/photo-1512058564366-18510be2db19?auto=format&fit=crop&w=200&q=80" alt="Margarita">
-        <div class="menu-item-info">
-          <h3>Margarita Clásica</h3>
-          <p>Tequila, triple sec, jugo de limón fresco y sal en el borde. La favorita de nuestros clientes</p>
-        </div>
-        <div class="menu-item-price">$65</div>
+    <div class="hero-image">
+      <img src="assets/hero_optimized.jpg" alt="RESTAURANTE BAR EL ESCAPE" loading="lazy" decoding="async">
+      <div class="hero-social-proof">
+        <p>⭐⭐⭐⭐⭐<br><strong>+500 clientes satisfechos</strong><br>en México</p>
       </div>
     </div>
   </div>
 </section>
 
-<section class="how-to">
-  <div class="container">
-    <h2 class="section-title">Cómo reservar</h2>
-    <p class="section-subtitle">3 formas rápidas de asegurar tu mesa en El Escape.</p>
-    <div class="steps">
-      <div class="step">
-        <div class="step-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div>
-        <h3>Reserva en línea</h3>
-        <p>Llena el formulario con fecha, hora y número de personas. Te confirmamos en minutos.</p>
+<!-- TRUST BAR — Autoridad instantánea -->
+<section class="trust-bar">
+  <div class="trust-grid">
+    <div class="trust-item animate-on-scroll">
+      <div class="trust-number">+15</div>
+      <div class="trust-label">años de experiencia</div>
+    </div>
+    <div class="trust-item animate-on-scroll delay-1">
+      <div class="trust-number">+500</div>
+      <div class="trust-label">clientes satisfechos</div>
+    </div>
+    <div class="trust-item animate-on-scroll delay-2">
+      <div class="trust-number">4.9</div>
+      <div class="trust-label">calificación promedio</div>
+    </div>
+    <div class="trust-item animate-on-scroll delay-3">
+      <div class="trust-number">100%</div>
+      <div class="trust-label">compromiso de calidad</div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICIOS -->
+<section class="section" id="servicios">
+  <div class="section-header animate-on-scroll">
+    <div class="section-tag">Nuestros Servicios</div>
+    <h2 class="section-title">Nuestros Restaurantes con servicio de preparacion de alimentos a la carta</h2>
+    <p class="section-subtitle">Ofrecemos Restaurantes con servicio de preparacion de alimentos a la carta de la más alta calidad en su ciudad. Cada cliente es tratado con la atención que se merece.</p>
+  </div>
+  <div class="services-grid">
+    <div class="service-card animate-on-scroll">
+      <div class="service-icon">🍽️</div>
+      <h3>Comida a la Carta</h3>
+      <p>Platillos tradicionales preparados con recetas de familia.</p>
+    </div>
+<div class="service-card animate-on-scroll">
+      <div class="service-icon">🎉</div>
+      <h3>Eventos Privados</h3>
+      <p>Salón para cumpleaños, reuniones y celebraciones.</p>
+    </div>
+<div class="service-card animate-on-scroll">
+      <div class="service-icon">🛵</div>
+      <h3>Servicio a Domicilio</h3>
+      <p>Llevamos la comida a tu puerta, caliente y a tiempo.</p>
+    </div>
+  </div>
+</section>
+
+<!-- SOBRE NOSOTROS -->
+<section class="about-section">
+  <div class="about-grid">
+    <div class="about-image animate-on-scroll">
+      <img src="assets/producto.jpg" alt="Sobre RESTAURANTE BAR EL ESCAPE" loading="lazy" decoding="async">
+      <div class="experience-badge">
+        <span class="number">+15</span>
+        <span class="label">años de<br>experiencia</span>
       </div>
-      <div class="step">
-        <div class="step-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg></div>
-        <h3>Llámanos o WhatsApp</h3>
-        <p>Tel: 999 746 4528. Responden de inmediato y te guardamos la mesa sin prepago.</p>
-      </div>
-      <div class="step">
-        <div class="step-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
-        <h3>Pasa directamente</h3>
-        <p>En Col. Miguel Hidalgo. Mesas disponibles para grupos pequeños sin reserva previa.</p>
+    </div>
+    <div class="about-content animate-on-scroll">
+      <div class="section-tag">Sobre Nosotros</div>
+      <h2>Tradición y calidad en su ciudad</h2>
+      <p>En RESTAURANTE BAR EL ESCAPE nos dedicamos a ofrecer Restaurantes con servicio de preparacion de alimentos a la carta de excelencia. Con más de 15 años de experiencia, hemos construido una reputación basada en la calidad y el trato personalizado.</p>
+      <p>Nuestro compromiso es simple: cada cliente que entra por nuestra puerta, sale satisfecho. Esa es la filosofía que nos ha mantenido en el corazón de la comunidad.</p>
+      <div class="about-features">
+        <div class="about-feature">
+      <div class="check">✓</div>
+      <p>Productos frescos y de calidad garantizada</p>
+    </div>
+<div class="about-feature">
+      <div class="check">✓</div>
+      <p>Atención personalizada para cada cliente</p>
+    </div>
+<div class="about-feature">
+      <div class="check">✓</div>
+      <p>Precios justos y competitivos</p>
+    </div>
+<div class="about-feature">
+      <div class="check">✓</div>
+      <p>Años de experiencia respaldando nuestro trabajo</p>
+    </div>
       </div>
     </div>
   </div>
 </section>
 
-<section class="gallery">
-  <div class="gallery-grid">
-    <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=800&q=80" alt="Ambiente del restaurante">
-    <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=400&q=80" alt="Platillo mexicano">
-    <img src="https://images.unsplash.com/photo-1551218808-94e220e084d2?auto=format&fit=crop&w=400&q=80" alt="Cocina del restaurante">
-    <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=400&q=80" alt="Interior del restaurante">
-    <img src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=400&q=80" alt="Corte de carne">
+<!-- TESTIMONIOS — Prueba social -->
+<section class="testimonials-section">
+  <div class="section-header animate-on-scroll">
+    <div class="section-tag" style="color:var(--color-gold)">Testimonios</div>
+    <h2 class="section-title">Lo que dicen nuestros clientes</h2>
+    <p class="section-subtitle">La satisfacción de nuestros clientes es nuestro mejor respaldo</p>
   </div>
-</section>
-
-<section class="testimonials">
-  <div class="container">
-    <h2 class="section-title">Lo que dicen nuestros comensales</h2>
-    <p class="section-subtitle">15 años construyendo una comunidad de clientes fieles.</p>
-    <div class="testi-grid">
-      <div class="testi-card">
-        <div class="testi-stars">★★★★★</div>
-        <p>"Vengo con mi familia todos los domingos desde hace 5 años. La cochinita pibil es la más auténtica que he probado fuera de mi pueblo. El precio es justo y la atención siempre es buena."</p>
-        <div class="testi-person">
-          <div class="testi-avatar">RC</div>
-          <div><strong>Rosa Canché</strong><span>Comensal frecuente</span></div>
+  <div class="testimonials-grid">
+    <div class="testimonial-card animate-on-scroll">
+      <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+      <p class="testimonial-text">"Excelente servicio, atención amable y productos de primera calidad. Totalmente recomendado."</p>
+      <div class="testimonial-author">
+        <div class="testimonial-avatar">Cs</div>
+        <div>
+          <div class="testimonial-name">Cliente satisfecho</div>
+          <div class="testimonial-role">Vecino de la zona</div>
         </div>
       </div>
-      <div class="testi-card">
-        <div class="testi-stars">★★★★★</div>
-        <p>"Celebré mi cumpleaños aquí con 15 amigos. Nos dieron una mesa grande, el servicio fue rápido y todos quedaron satisfechos. La pizza familiar es enorme y deliciosa."</p>
-        <div class="testi-person">
-          <div class="testi-avatar">AP</div>
-          <div><strong>Andrés Pech</strong><span>Residente de Mérida</span></div>
-        </div>
-      </div>
-      <div class="testi-card">
-        <div class="testi-stars">★★★★★</div>
-        <p>"Soy turista de CDMX y un vecino me recomendó El Escape. Me sorprendió la calidad del pescado frito por el precio. Volví 3 veces en una semana. Altamente recomendado."</p>
-        <div class="testi-person">
-          <div class="testi-avatar">LM</div>
-          <div><strong>Laura Martínez</strong><span>Turista, Ciudad de México</span></div>
+    </div>
+<div class="testimonial-card animate-on-scroll">
+      <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+      <p class="testimonial-text">"Vengo desde hace años y nunca me han fallado. La calidad siempre es consistente."</p>
+      <div class="testimonial-author">
+        <div class="testimonial-avatar">MF</div>
+        <div>
+          <div class="testimonial-name">María F.</div>
+          <div class="testimonial-role">Compradora frecuente</div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<section class="contact" id="reservar">
-  <div class="container">
-    <div class="contact-grid">
-      <div class="contact-left">
-        <h3>Reserva tu mesa</h3>
-        <p>Completa el formulario y te confirmamos tu reserva en minutos. Para grupos de más de 8 personas, llámanos directamente.</p>
-        <div class="contact-row">
-          <div class="icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
-          <div><strong>Ubicación</strong><span>Colonia Miguel Hidalgo, Mérida, Yucatán</span></div>
-        </div>
-        <div class="contact-row">
-          <div class="icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg></div>
-          <div><strong>Teléfono</strong><span>999 746 4528</span></div>
-        </div>
-        <div class="contact-row">
-          <div class="icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
-          <div><strong>Horarios</strong>
-            <div class="hours-grid">
-              <div>Lun-Jue: 1pm - 11pm</div>
-              <div>Vie-Dom: 1pm - 1am</div>
-            </div>
-          </div>
+<!-- URGENCIA — Escasez + Pérdida aversión -->
+<section class="urgency-section">
+  <div class="urgency-content">
+    <div class="urgency-badge">⚡ Oferta por tiempo limitado</div>
+    <h2>¿Listo para hacer crecer tu negocio?</h2>
+    <p>No dejes que tus competidores sigan robándose tus clientes. Cada día sin presencia digital es dinero que se pierde.</p>
+    <a href="tel:9997464528" class="urgency-cta">📞 Llámanos ahora: 9997464528</a>
+    <p class="urgency-note">Atención personalizada • Respuesta inmediata • México</p>
+  </div>
+</section>
+
+<!-- CONTACTO -->
+<section class="contact-section" id="contacto">
+  <div class="contact-grid">
+    <div class="contact-info">
+      <h2>Visítanos o llámanos</h2>
+      <p>Estamos listos para atenderte. Tu negocio merece crecer.</p>
+      <div class="contact-item">
+        <div class="contact-icon">📍</div>
+        <div>
+          <strong>Dirección</strong>
+          <span>Pendiente</span>
         </div>
       </div>
-      <form class="contact-form" onsubmit="event.preventDefault(); alert('¡Reserva solicitada! Te contactaremos en minutos para confirmar tu mesa.');">
-        <div class="form-group">
-          <label>Nombre</label>
-          <input type="text" placeholder="Tu nombre" required>
+      <div class="contact-item">
+        <div class="contact-icon">📞</div>
+        <div>
+          <strong>Teléfono</strong>
+          <span>9997464528</span>
         </div>
-        <div class="form-group">
-          <label>Teléfono</label>
-          <input type="tel" placeholder="999 123 4567" required>
+      </div>
+      <div class="contact-item">
+        <div class="contact-icon">🕐</div>
+        <div>
+          <strong>Horario</strong>
+          <span>Lunes a Sábado: 8:00 AM - 8:00 PM</span>
         </div>
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
-          <div class="form-group">
-            <label>Fecha</label>
-            <input type="date" required>
-          </div>
-          <div class="form-group">
-            <label>Hora</label>
-            <input type="time" required>
-          </div>
-        </div>
-        <div class="form-group">
-          <label>Personas</label>
-          <select>
-            <option>2 personas</option>
-            <option>4 personas</option>
-            <option>6 personas</option>
-            <option>8+ personas (llamar)</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label>Ocasión especial</label>
-          <input type="text" placeholder="Ej: Cumpleaños, aniversario, cena de negocios">
-        </div>
-        <button type="submit" class="btn-submit">Reservar mi mesa</button>
-      </form>
+      </div>
+    </div>
+    <div class="contact-map">
+      <div class="map-placeholder">
+        🗺️ Mapa de ubicación<br>
+        <small>Pendiente</small>
+      </div>
     </div>
   </div>
 </section>
 
-<div class="phone-strip" id="contacto">
-  <p>También puedes reservar llamando directamente</p>
-  <a href="tel:9997464528">999 746 4528</a>
-</div>
-
-<footer>
-  <div class="footer-inner">
-    <div class="footer-brand">Restaurante Bar El Escape</div>
-    <div class="footer-links">
-      <a href="#inicio">Inicio</a>
-      <a href="#menu">Menú</a>
-      <a href="#reservar">Reservar</a>
-    </div>
-    <div style="font-size:0.8rem;"> Restaurante Bar El Escape — Sabor y tradición en Mérida</div>
-  </div>
+<!-- FOOTER -->
+<footer class="footer">
+  © 2026 RESTAURANTE BAR EL ESCAPE — Restaurantes con servicio de preparacion de alimentos a la carta | México | Todos los derechos reservados
 </footer>
 
+<script>
+// ============================================
+// ANIMACIONES CON INTERSECTION OBSERVER
+// ============================================
+const observerOptions = { threshold: 0.1, rootMargin: '0px 0px -50px 0px' };
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, observerOptions);
+
+document.querySelectorAll('.animate-on-scroll').forEach(el => observer.observe(el));
+
+// Header scroll effect
+window.addEventListener('scroll', () => {
+  document.getElementById('header').classList.toggle('scrolled', window.scrollY > 50);
+});
+</script>
 </body>
 </html>

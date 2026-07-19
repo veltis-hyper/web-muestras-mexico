@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Última Oportunidad - Web Muestras México</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap');
+    body { margin:0; padding:0; background:#1a1a2e; font-family:'Inter',Arial,sans-serif; }
+    .container { max-width:600px; margin:0 auto; background:#ffffff; border-radius:16px; overflow:hidden; }
+    .urgency-bar { background:#e53935; color:#fff; text-align:center; padding:12px; font-size:13px; font-weight:700; letter-spacing:1px; text-transform:uppercase; }
+    .header { background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); padding:40px 32px; text-align:center; }
+    .header h1 { color:#d4af37; font-size:26px; margin:0; font-weight:900; }
+    .header p { color:#a0a0b0; font-size:15px; margin:12px 0 0; }
+    .body { padding:40px 32px; background:#fff; }
+    .lead { font-size:18px; color:#1a1a2e; font-weight:700; margin-bottom:20px; text-align:center; }
+    .message { color:#555; font-size:15px; line-height:1.7; margin-bottom:20px; text-align:center; }
+    .countdown { background:#fff8e1; border:2px solid #d4af37; border-radius:12px; padding:24px; text-align:center; margin:24px 0; }
+    .countdown h3 { color:#8a6d0b; font-size:16px; margin:0 0 12px; font-weight:700; }
+    .countdown .number { font-size:48px; font-weight:900; color:#1a1a2e; line-height:1; }
+    .countdown .label { font-size:14px; color:#888; margin-top:4px; }
+    .price { text-align:center; margin:32px 0; }
+    .price .old { font-size:16px; color:#999; text-decoration:line-through; margin-bottom:8px; }
+    .price .new { font-size:42px; font-weight:900; color:#e53935; }
+    .price .note { font-size:13px; color:#888; margin-top:8px; }
+    .cta { text-align:center; margin:32px 0; }
+    .cta a { display:inline-block; background:#e53935; color:#fff; padding:18px 40px; border-radius:8px; text-decoration:none; font-weight:700; font-size:16px; box-shadow:0 4px 16px rgba(229,57,53,0.3); }
+    .cta a:hover { background:#c62828; }
+    .guarantee { text-align:center; padding:16px; background:#f8f8f8; border-radius:8px; margin-top:24px; }
+    .guarantee p { color:#666; font-size:13px; margin:0; }
+    .guarantee strong { color:#1a1a2e; }
+    .footer { background:#1a1a2e; padding:24px 32px; text-align:center; }
+    .footer p { color:#888; font-size:12px; margin:0; }
+    @media (max-width:600px) {
+      .body { padding:24px 20px; }
+      .price .new { font-size:32px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="urgency-bar">⚠️ Esta oferta expira en 48 horas</div>
+    <div class="header">
+      <h1>{{NOMBRE_EMPRESA}}</h1>
+      <p>Esta es su última oportunidad de tener una página web profesional</p>
+    </div>
+    <div class="body">
+      <p class="lead">{{NOMBRE_CONTACTO}}, su competencia ya está en internet.</p>
+      <p class="message">Mientras lee esto, clientes potenciales están buscando servicios como los suyos en Google. Si no está ahí, está perdiendo dinero. Cada día sin web es un día regalando clientes a la competencia.</p>
+      <div class="countdown">
+        <h3>⏰ Oferta especial válida por:</h3>
+        <div class="number">48</div>
+        <div class="label">horas restantes</div>
+      </div>
+      <div class="price">
+        <div class="old">$5,999 MXN</div>
+        <div class="new">$3,499 MXN</div>
+        <div class="note">Pago único. Sin mensualidades. Incluye dominio y hosting primer año.</div>
+      </div>
+      <div class="cta">
+        <a href="{{URL_PAGO}}">Sí, quiero mi página web ahora →</a>
+      </div>
+      <div class="guarantee">
+        <p><strong>Garantía de satisfacción:</strong> Si no le gusta el resultado, le devolvemos su dinero. Sin preguntas. Sin riesgo.</p>
+      </div>
+    </div>
+    <div class="footer">
+      <p>Web Muestras México © 2026 — No deje que su competencia le gane</p>
+    </div>
+  </div>
+</body>
+</html>

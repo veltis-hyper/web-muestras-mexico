@@ -1,356 +1,1123 @@
 <!DOCTYPE html>
-<html lang="es-MX">
+<html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MISCELÁNEA ROMERO | Todo lo que necesitas, a precio de barrio | San Juan del Río</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --ink: #1a1a1a;
-      --terracotta: #e76f51;
-      --green: #2a9d8f;
-      --warm: #f4a261;
-      --cream: #fffaf5;
-      --white: #ffffff;
-      --slate: #6b7280;
-      --card: #ffffff;
-    }
-    * { margin:0; padding:0; box-sizing:border-box; }
-    html { scroll-behavior: smooth; }
-    body { font-family:'Inter',sans-serif; background:var(--cream); color:var(--ink); line-height:1.6; overflow-x:hidden; }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Miscelanea — Negocio local</title>
+<!-- SEO OPTIMIZATION v2.0 -->
+<meta name="description" content="Miscelanea — Negocio local en San Juan del Rio, Queretaro. Página web profesional de demostración. Contáctenos hoy.">
+<meta name="keywords" content="negocio local, san juan del rio, queretaro, negocio local, México, servicios">
+<meta name="author" content="Web Muestras México">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="Miscelanea — Negocio local">
+<meta property="og:description" content="Miscelanea en San Juan del Rio, Queretaro. Negocio local. Página web profesional de demostración.">
+<meta property="og:type" content="business.business">
+<meta property="og:url" content="https://veltis-hyper.github.io/web-muestras-mexico/empresas/miscelanea/index.html">
+<meta property="og:image" content="assets/hero_optimized.jpg">
+<meta property="og:locale" content="es_MX">
+<meta property="business:contact_data:locality" content="San Juan del Rio, Queretaro">
+<meta property="business:contact_data:country_name" content="México">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Miscelanea — Negocio local">
+<meta name="twitter:description" content="Miscelanea en San Juan del Rio, Queretaro. Negocio local. Página web profesional de demostración.">
+<meta name="twitter:image" content="assets/hero_optimized.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;600;700&display=swap" as="style">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Miscelanea",
+  "description": "Negocio local",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "San Juan del Rio, Queretaro",
+    "addressCountry": "MX"
+  },
+  "url": "https://veltis-hyper.github.io/web-muestras-mexico/empresas/miscelanea/index.html",
+  "image": "assets/hero_optimized.jpg"
+}
+</script>
+<!-- END SEO OPTIMIZATION -->
+<meta name="description" content="Servicios en San Juan del Rio, Queretaro - Empresa">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+/* ============================================
+   TEMPLATE v2.0 — Impeccable Front-End
+   DISEÑO PSICOLÓGICO ESTRATÉGICO
+   ============================================ */
 
-    .demo-badge { position:fixed; bottom:20px; right:20px; z-index:9999; background:var(--ink); color:#fff; padding:10px 20px; border-radius:8px; font-weight:600; font-size:12px; letter-spacing:0.5px; border:1px solid rgba(255,255,255,0.2); box-shadow:0 4px 20px rgba(0,0,0,0.3); cursor:pointer; transition:all .3s; }
-    .demo-badge:hover { background:var(--terracotta); }
+:root {
+  --color-primary: #D4A017;
+  --color-primary-dark: #B8860B;
+  --color-accent: #E8C547;
+  --color-gold: #D4A017;
+  --color-dark: #1A1A2E;
+  --color-dark-2: #16213E;
+  --color-light: #FAFAFA;
+  --color-gray: #6B7280;
+  --color-gray-light: #F3F4F6;
+  --color-urgency: #DC2626;
+  --font-body: 'Inter', sans-serif;
+  --font-display: 'Playfair Display', serif;
+  --shadow-sm: 0 1px 2px rgba(0,0,0,0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -2px rgba(0,0,0,0.1);
+  --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -4px rgba(0,0,0,0.1);
+  --shadow-xl: 0 25px 50px -12px rgba(0,0,0,0.25);
+  --radius: 12px;
+  --radius-lg: 20px;
+  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
 
-    header { position:fixed; top:0; left:0; right:0; z-index:1000; background:rgba(255,255,255,0.95); backdrop-filter:blur(16px); border-bottom:1px solid rgba(0,0,0,0.06); }
-    .header-inner { max-width:1200px; margin:0 auto; padding:14px 28px; display:flex; align-items:center; justify-content:space-between; }
-    .logo { display:flex; align-items:center; gap:10px; font-weight:800; font-size:20px; color:var(--ink); letter-spacing:-0.5px; }
-    .logo-icon { width:36px; height:36px; background:var(--terracotta); border-radius:10px; display:flex; align-items:center; justify-content:center; color:#fff; font-weight:800; font-size:14px; }
-    nav ul { display:flex; gap:36px; list-style:none; align-items:center; }
-    nav a { color:var(--slate); text-decoration:none; font-weight:500; font-size:14px; transition:color .2s; }
-    nav a:hover { color:var(--terracotta); }
-    .btn-header { padding:10px 24px; background:var(--terracotta); color:#fff; font-weight:600; font-size:13px; border-radius:8px; text-decoration:none; transition:all .2s; }
-    .btn-header:hover { background:var(--warm); }
-    .mobile-toggle { display:none; background:none; border:none; font-size:24px; cursor:pointer; color:var(--ink); }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
 
-    /* Hero */
-    .hero { position:relative; min-height:100vh; display:flex; align-items:center; padding:100px 28px 80px; overflow:hidden; }
-    .hero-bg { position:absolute; inset:0; z-index:-1; }
-    .hero-bg img { width:100%; height:100%; object-fit:cover; }
-    .hero-bg::after { content:''; position:absolute; inset:0; background:linear-gradient(90deg, rgba(26,26,26,0.92) 0%, rgba(26,26,26,0.7) 50%, rgba(26,26,26,0.3) 100%); }
-    .hero-inner { max-width:1200px; margin:0 auto; width:100%; display:grid; grid-template-columns:1.2fr 1fr; gap:64px; align-items:center; }
-    .hero-content { max-width:540px; }
-    .hero-tag { display:inline-flex; align-items:center; gap:8px; background:rgba(231,111,81,0.2); color:var(--warm); padding:8px 18px; border-radius:50px; font-size:13px; font-weight:600; margin-bottom:24px; border:1px solid rgba(231,111,81,0.3); }
-    .hero h1 { font-size:clamp(36px,4.5vw,56px); font-weight:800; color:#fff; line-height:1.1; margin-bottom:20px; }
-    .hero h1 span { color:var(--warm); }
-    .hero p { font-size:17px; color:rgba(255,255,255,0.85); line-height:1.7; margin-bottom:32px; }
-    .hero-cta { display:flex; gap:14px; flex-wrap:wrap; align-items:center; }
-    .btn-primary { padding:16px 32px; background:var(--terracotta); color:#fff; font-weight:700; font-size:15px; border-radius:10px; text-decoration:none; transition:all .2s; display:inline-flex; align-items:center; gap:8px; border:none; cursor:pointer; }
-    .btn-primary:hover { background:var(--warm); transform:translateY(-2px); box-shadow:0 10px 30px rgba(231,111,81,0.3); }
-    .btn-secondary { padding:16px 32px; background:transparent; color:#fff; font-weight:700; font-size:15px; border-radius:10px; text-decoration:none; border:2px solid rgba(255,255,255,0.3); transition:all .2s; }
-    .btn-secondary:hover { border-color:#fff; background:rgba(255,255,255,0.1); }
-    .hero-promo { background:rgba(255,255,255,0.1); backdrop-filter:blur(12px); border:1px solid rgba(255,255,255,0.15); border-radius:16px; padding:28px; }
-    .hero-promo h3 { font-size:16px; color:var(--warm); margin-bottom:16px; font-weight:700; }
-    .promo-item { display:flex; justify-content:space-between; align-items:center; padding:10px 0; border-bottom:1px solid rgba(255,255,255,0.08); }
-    .promo-item:last-child { border-bottom:none; }
-    .promo-item span { font-size:14px; color:#fff; }
-    .promo-item .price { font-weight:700; color:var(--warm); }
+body {
+  font-family: var(--font-body);
+  color: var(--color-dark);
+  background: var(--color-light);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
 
-    /* Why choose us */
-    .why { padding:80px 28px; background:var(--white); }
-    .why-inner { max-width:1000px; margin:0 auto; display:grid; grid-template-columns:1fr 1fr; gap:48px; align-items:center; }
-    .why-left img { width:100%; height:360px; object-fit:cover; border-radius:16px; }
-    .why-right h2 { font-size:32px; font-weight:800; color:var(--ink); margin-bottom:16px; }
-    .why-right p { color:var(--slate); font-size:16px; line-height:1.7; margin-bottom:24px; }
-    .why-check { display:flex; align-items:flex-start; gap:12px; margin-bottom:16px; }
-    .why-check .check { width:24px; height:24px; background:var(--green); border-radius:50%; display:flex; align-items:center; justify-content:center; color:#fff; font-size:12px; flex-shrink:0; margin-top:2px; }
-    .why-check span { font-size:15px; color:var(--ink); font-weight:500; }
+/* ============================================
+   ANIMACIONES GLOBALES
+   ============================================ */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
 
-    /* Categories */
-    .categories { padding:100px 28px; }
-    .categories-inner { max-width:1200px; margin:0 auto; }
-    .cat-header { text-align:center; margin-bottom:56px; }
-    .cat-header h2 { font-size:36px; font-weight:800; color:var(--ink); margin-bottom:12px; }
-    .cat-header p { color:var(--slate); font-size:17px; }
-    .cat-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:20px; }
-    .cat-card { position:relative; border-radius:16px; overflow:hidden; height:280px; cursor:pointer; transition:transform .3s; }
-    .cat-card:hover { transform:translateY(-6px); }
-    .cat-card img { width:100%; height:100%; object-fit:cover; transition:transform .4s; }
-    .cat-card:hover img { transform:scale(1.05); }
-    .cat-card .overlay { position:absolute; inset:0; background:linear-gradient(0deg, rgba(26,26,26,0.85), transparent 50%); display:flex; flex-direction:column; justify-content:flex-end; padding:20px; }
-    .cat-card h3 { font-size:18px; font-weight:700; color:#fff; margin-bottom:4px; }
-    .cat-card span { font-size:13px; color:rgba(255,255,255,0.7); }
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
 
-    /* How to order */
-    .how { padding:100px 28px; background:var(--white); }
-    .how-inner { max-width:1000px; margin:0 auto; }
-    .how-header { text-align:center; margin-bottom:56px; }
-    .how-header h2 { font-size:36px; font-weight:800; color:var(--ink); margin-bottom:12px; }
-    .how-header p { color:var(--slate); font-size:17px; }
-    .how-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:40px; }
-    .how-step { text-align:center; }
-    .how-step-icon { width:64px; height:64px; background:var(--cream); border:2px solid var(--terracotta); border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:28px; margin:0 auto 20px; }
-    .how-step h3 { font-size:18px; font-weight:700; color:var(--ink); margin-bottom:10px; }
-    .how-step p { font-size:14px; color:var(--slate); line-height:1.6; }
+@keyframes slideInLeft {
+  from { opacity: 0; transform: translateX(-60px); }
+  to { opacity: 1; transform: translateX(0); }
+}
 
-    /* Testimonials */
-    .testimonials { padding:100px 28px; }
-    .testimonials-inner { max-width:1100px; margin:0 auto; }
-    .testi-header { text-align:center; margin-bottom:56px; }
-    .testi-header h2 { font-size:36px; font-weight:800; color:var(--ink); margin-bottom:12px; }
-    .testi-header p { color:var(--slate); font-size:17px; }
-    .testi-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:24px; }
-    .testi-card { background:var(--white); border:1px solid #e5e7eb; border-radius:16px; padding:28px; position:relative; }
-    .testi-card::before { content:'"'; position:absolute; top:12px; left:16px; font-size:48px; color:#e5e7eb; font-family:Georgia,serif; line-height:1; }
-    .testi-stars { color:var(--warm); font-size:16px; letter-spacing:2px; margin-bottom:16px; }
-    .testi-text { font-size:15px; color:var(--slate); line-height:1.7; margin-bottom:20px; position:relative; z-index:1; }
-    .testi-author { display:flex; align-items:center; gap:12px; }
-    .testi-avatar { width:40px; height:40px; border-radius:50%; background:var(--terracotta); display:flex; align-items:center; justify-content:center; color:#fff; font-weight:700; font-size:14px; }
-    .testi-author div strong { font-size:14px; color:var(--ink); }
-    .testi-author div span { font-size:12px; color:var(--slate); }
+@keyframes slideInRight {
+  from { opacity: 0; transform: translateX(60px); }
+  to { opacity: 1; transform: translateX(0); }
+}
 
-    /* Contact */
-    .contact { padding:100px 28px; background:var(--white); }
-    .contact-inner { max-width:900px; margin:0 auto; display:grid; grid-template-columns:1fr 1fr; gap:48px; align-items:start; }
-    .contact-left h2 { font-size:32px; font-weight:800; color:var(--ink); margin-bottom:16px; }
-    .contact-left p { color:var(--slate); font-size:16px; line-height:1.7; margin-bottom:32px; }
-    .contact-item { display:flex; align-items:flex-start; gap:14px; margin-bottom:20px; }
-    .contact-item-icon { width:40px; height:40px; background:var(--cream); border-radius:10px; display:flex; align-items:center; justify-content:center; color:var(--terracotta); font-size:18px; flex-shrink:0; }
-    .contact-item div strong { font-size:15px; color:var(--ink); display:block; margin-bottom:2px; }
-    .contact-item div span { font-size:14px; color:var(--slate); }
-    .whatsapp-btn { display:inline-flex; align-items:center; gap:10px; padding:14px 28px; background:#22c55e; color:#fff; font-weight:700; font-size:15px; border-radius:10px; text-decoration:none; margin-top:8px; transition:all .2s; }
-    .whatsapp-btn:hover { background:#16a34a; transform:translateY(-2px); }
-    .contact-form { display:flex; flex-direction:column; gap:16px; background:var(--cream); padding:32px; border-radius:16px; }
-    .contact-form input, .contact-form textarea { padding:14px 18px; border:2px solid #e5e7eb; border-radius:10px; font-family:inherit; font-size:15px; transition:border-color .2s; background:var(--white); }
-    .contact-form input:focus, .contact-form textarea:focus { outline:none; border-color:var(--terracotta); }
-    .contact-form textarea { min-height:100px; resize:vertical; }
-    .contact-form button { padding:14px; background:var(--terracotta); color:#fff; font-weight:700; font-size:15px; border:none; border-radius:10px; cursor:pointer; transition:all .2s; }
-    .contact-form button:hover { background:var(--warm); }
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
+}
 
-    /* Footer */
-    footer { background:var(--ink); padding:40px 28px 24px; }
-    .footer-inner { max-width:1200px; margin:0 auto; display:flex; justify-content:space-between; align-items:center; }
-    .footer-logo { font-weight:800; font-size:18px; color:#fff; }
-    .footer-copy { color:var(--slate); font-size:13px; }
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
 
-    @media (max-width:900px) {
-      .hero-inner { grid-template-columns:1fr; }
-      .hero-promo { display:none; }
-      .why-inner { grid-template-columns:1fr; }
-      .cat-grid { grid-template-columns:repeat(2,1fr); }
-      .how-grid { grid-template-columns:1fr; }
-      .testi-grid { grid-template-columns:1fr; }
-      .contact-inner { grid-template-columns:1fr; }
-      .footer-inner { flex-direction:column; gap:12px; text-align:center; }
-      nav ul { display:none; position:absolute; top:100%; left:0; right:0; background:#fff; flex-direction:column; padding:20px; gap:16px; border-bottom:1px solid #e5e7eb; }
-      nav ul.active { display:flex; }
-      .mobile-toggle { display:block; }
-    }
-  </style>
+@keyframes pulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(220,38,38,0.4); }
+  50% { box-shadow: 0 0 0 15px rgba(220,38,38,0); }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+@keyframes countPulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.animate-on-scroll.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.delay-1 { transition-delay: 0.1s; }
+.delay-2 { transition-delay: 0.2s; }
+.delay-3 { transition-delay: 0.3s; }
+.delay-4 { transition-delay: 0.4s; }
+
+/* ============================================
+   HEADER
+   ============================================ */
+.header {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 1000;
+  background: rgba(255,255,255,0.95);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+  padding: 0 5%;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: var(--transition);
+}
+
+.header.scrolled {
+  box-shadow: var(--shadow-md);
+}
+
+.header-logo {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+.header-cta {
+  background: var(--color-urgency);
+  color: white;
+  padding: 10px 24px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+  animation: pulse 2s infinite;
+  transition: var(--transition);
+}
+
+.header-cta:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+/* ============================================
+   HERO SECTION — PSICOLOGÍA: PRIMERA IMPRESIÓN
+   ============================================ */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 100px 5% 80px;
+  background: linear-gradient(135deg, var(--color-dark) 0%, var(--color-dark-2) 50%, var(--color-primary-dark) 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -50%; right: -20%;
+  width: 800px; height: 800px;
+  background: radial-gradient(circle, rgba(212,160,23,0.1) 0%, transparent 70%);
+  animation: float 6s ease-in-out infinite;
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  bottom: -30%; left: -10%;
+  width: 600px; height: 600px;
+  background: radial-gradient(circle, rgba(255,255,255,0.03) 0%, transparent 70%);
+}
+
+.hero-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+}
+
+.hero-badge {
+  display: inline-block;
+  background: rgba(212,160,23,0.2);
+  border: 1px solid var(--color-gold);
+  color: var(--color-gold);
+  padding: 8px 20px;
+  border-radius: 50px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-bottom: 24px;
+  animation: fadeInUp 0.6s ease;
+}
+
+.hero h1 {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  font-weight: 700;
+  color: white;
+  line-height: 1.1;
+  margin-bottom: 24px;
+  animation: fadeInUp 0.8s ease 0.2s both;
+}
+
+.hero h1 span {
+  color: var(--color-gold);
+  display: block;
+}
+
+.hero-subtitle {
+  font-size: 1.2rem;
+  color: rgba(255,255,255,0.7);
+  margin-bottom: 40px;
+  max-width: 500px;
+  animation: fadeInUp 0.8s ease 0.4s both;
+}
+
+.hero-cta-group {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  animation: fadeInUp 0.8s ease 0.6s both;
+}
+
+.btn-primary {
+  background: var(--color-gold);
+  color: var(--color-dark);
+  padding: 16px 40px;
+  border-radius: var(--radius);
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1rem;
+  transition: var(--transition);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 20px 40px rgba(212,160,23,0.3);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: white;
+  padding: 16px 40px;
+  border-radius: var(--radius);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  border: 2px solid rgba(255,255,255,0.3);
+  transition: var(--transition);
+  display: inline-flex;
+  align-items: center;
+}
+
+.btn-secondary:hover {
+  background: rgba(255,255,255,0.1);
+  border-color: white;
+}
+
+.hero-image {
+  position: relative;
+  animation: scaleIn 1s ease 0.4s both;
+}
+
+.hero-image img {
+  width: 100%;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-xl);
+  transition: var(--transition);
+}
+
+.hero-image img:hover {
+  transform: scale(1.02);
+}
+
+.hero-social-proof {
+  position: absolute;
+  bottom: -20px;
+  left: -20px;
+  background: white;
+  padding: 16px 24px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-lg);
+  animation: slideInLeft 0.8s ease 0.8s both;
+}
+
+.hero-social-proof p {
+  font-size: 0.85rem;
+  color: var(--color-gray);
+}
+
+.hero-social-proof strong {
+  color: var(--color-dark);
+  font-size: 1.1rem;
+}
+
+/* ============================================
+   BARRA DE CONFIANZA — PSICOLOGÍA: AUTORIDAD
+   ============================================ */
+.trust-bar {
+  background: white;
+  padding: 40px 5%;
+  border-bottom: 1px solid var(--color-gray-light);
+}
+
+.trust-grid {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+  text-align: center;
+}
+
+.trust-item {
+  padding: 20px;
+}
+
+.trust-number {
+  font-family: var(--font-display);
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  line-height: 1;
+}
+
+.trust-label {
+  font-size: 0.9rem;
+  color: var(--color-gray);
+  margin-top: 8px;
+}
+
+/* ============================================
+   SECCIÓN SERVICIOS — PSICOLOGÍA: VALOR
+   ============================================ */
+.section {
+  padding: 100px 5%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section-header {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 60px;
+}
+
+.section-tag {
+  display: inline-block;
+  color: var(--color-primary);
+  font-weight: 600;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 16px;
+}
+
+.section-title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700;
+  color: var(--color-dark);
+  margin-bottom: 16px;
+  line-height: 1.2;
+}
+
+.section-subtitle {
+  font-size: 1.1rem;
+  color: var(--color-gray);
+}
+
+/* Cards de servicios */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+.service-card {
+  background: white;
+  border-radius: var(--radius-lg);
+  padding: 40px 30px;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid rgba(0,0,0,0.05);
+  transition: var(--transition);
+  position: relative;
+  overflow: hidden;
+}
+
+.service-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 4px;
+  background: var(--color-primary);
+  transform: scaleX(0);
+  transition: var(--transition);
+}
+
+.service-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-xl);
+}
+
+.service-card:hover::before {
+  transform: scaleX(1);
+}
+
+.service-icon {
+  width: 60px;
+  height: 60px;
+  background: var(--color-gray-light);
+  border-radius: var(--radius);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+
+.service-card h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: var(--color-dark);
+}
+
+.service-card p {
+  color: var(--color-gray);
+  font-size: 0.95rem;
+}
+
+/* ============================================
+   SECCIÓN SOBRE — PSICOLOGÍA: CONEXIÓN EMOCIONAL
+   ============================================ */
+.about-section {
+  background: var(--color-gray-light);
+  padding: 100px 5%;
+}
+
+.about-grid {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.about-image {
+  position: relative;
+}
+
+.about-image img {
+  width: 100%;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+}
+
+.about-image .experience-badge {
+  position: absolute;
+  bottom: -20px;
+  right: -20px;
+  background: var(--color-primary);
+  color: white;
+  padding: 24px 32px;
+  border-radius: var(--radius);
+  text-align: center;
+  box-shadow: var(--shadow-lg);
+}
+
+.experience-badge .number {
+  font-family: var(--font-display);
+  font-size: 2.5rem;
+  font-weight: 700;
+  display: block;
+  line-height: 1;
+}
+
+.experience-badge .label {
+  font-size: 0.85rem;
+  opacity: 0.9;
+}
+
+.about-content h2 {
+  font-family: var(--font-display);
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: var(--color-dark);
+}
+
+.about-content p {
+  color: var(--color-gray);
+  margin-bottom: 16px;
+  font-size: 1.05rem;
+}
+
+.about-features {
+  margin-top: 30px;
+}
+
+.about-feature {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.about-feature .check {
+  width: 24px;
+  height: 24px;
+  background: var(--color-gold);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 0.8rem;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.about-feature p {
+  margin: 0;
+  color: var(--color-dark);
+  font-weight: 500;
+}
+
+/* ============================================
+   TESTIMONIOS — PSICOLOGÍA: PRUEBA SOCIAL
+   ============================================ */
+.testimonials-section {
+  background: var(--color-dark);
+  padding: 100px 5%;
+  color: white;
+}
+
+.testimonials-section .section-title {
+  color: white;
+}
+
+.testimonials-section .section-subtitle {
+  color: rgba(255,255,255,0.6);
+}
+
+.testimonials-grid {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 30px;
+}
+
+.testimonial-card {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: var(--radius-lg);
+  padding: 40px;
+  backdrop-filter: blur(10px);
+  transition: var(--transition);
+}
+
+.testimonial-card:hover {
+  background: rgba(255,255,255,0.08);
+  transform: translateY(-4px);
+}
+
+.testimonial-stars {
+  color: var(--color-gold);
+  font-size: 1.2rem;
+  margin-bottom: 16px;
+}
+
+.testimonial-text {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  margin-bottom: 24px;
+  color: rgba(255,255,255,0.9);
+  font-style: italic;
+}
+
+.testimonial-author {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.testimonial-avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: var(--color-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  color: white;
+}
+
+.testimonial-name {
+  font-weight: 600;
+}
+
+.testimonial-role {
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.5);
+}
+
+/* ============================================
+   URGENCIA / CTA — PSICOLOGÍA: ESCASEZ + PÉRDIDA
+   ============================================ */
+.urgency-section {
+  background: linear-gradient(135deg, var(--color-urgency) 0%, #B91C1C 100%);
+  padding: 80px 5%;
+  text-align: center;
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.urgency-section::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+
+.urgency-content {
+  position: relative;
+  z-index: 2;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.urgency-badge {
+  display: inline-block;
+  background: rgba(255,255,255,0.2);
+  border: 1px solid rgba(255,255,255,0.3);
+  padding: 8px 20px;
+  border-radius: 50px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 24px;
+}
+
+.urgency-section h2 {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 3rem);
+  margin-bottom: 16px;
+}
+
+.urgency-section p {
+  font-size: 1.1rem;
+  opacity: 0.9;
+  margin-bottom: 32px;
+}
+
+.urgency-cta {
+  background: white;
+  color: var(--color-urgency);
+  padding: 18px 48px;
+  border-radius: var(--radius);
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1.1rem;
+  display: inline-block;
+  transition: var(--transition);
+  animation: pulse 2s infinite;
+}
+
+.urgency-cta:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+}
+
+.urgency-note {
+  margin-top: 16px;
+  font-size: 0.85rem;
+  opacity: 0.7;
+}
+
+/* ============================================
+   CONTACTO / FOOTER
+   ============================================ */
+.contact-section {
+  background: var(--color-dark);
+  color: white;
+  padding: 80px 5%;
+}
+
+.contact-grid {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+}
+
+.contact-info h2 {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.contact-info p {
+  color: rgba(255,255,255,0.6);
+  margin-bottom: 30px;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.contact-icon {
+  width: 48px;
+  height: 48px;
+  background: rgba(255,255,255,0.1);
+  border-radius: var(--radius);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+}
+
+.contact-item strong {
+  display: block;
+  font-weight: 600;
+}
+
+.contact-item span {
+  color: rgba(255,255,255,0.6);
+  font-size: 0.95rem;
+}
+
+.contact-map {
+  background: rgba(255,255,255,0.05);
+  border-radius: var(--radius-lg);
+  padding: 40px;
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+.contact-map iframe,
+.contact-map .map-placeholder {
+  width: 100%;
+  height: 300px;
+  border-radius: var(--radius);
+  border: none;
+  background: rgba(255,255,255,0.05);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255,255,255,0.4);
+  font-size: 0.9rem;
+}
+
+.footer {
+  background: #0F0F1A;
+  color: rgba(255,255,255,0.4);
+  text-align: center;
+  padding: 30px 5%;
+  font-size: 0.85rem;
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+@media (max-width: 900px) {
+  .hero-content,
+  .about-grid,
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  
+  .trust-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .hero {
+    padding: 120px 5% 60px;
+  }
+  
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+  
+  .section {
+    padding: 60px 5%;
+  }
+  
+  .header-cta {
+    padding: 8px 16px;
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .trust-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  
+  .hero-cta-group {
+    flex-direction: column;
+  }
+  
+  .btn-primary,
+  .btn-secondary {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* ============================================
+   SCROLLBAR CUSTOM
+   ============================================ */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-light);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-primary);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-primary-dark);
+}
+</style>
 </head>
 <body>
 
-  <div class="demo-badge">DEMO — Activa tu web hoy</div>
+<!-- HEADER -->
+<header class="header" id="header">
+  <a href="#" class="header-logo">Miscelanea</a>
+  <a href="tel:Pendiente" class="header-cta">📞 Pendiente</a>
+</header>
 
-  <header>
-    <div class="header-inner">
-      <div class="logo"><div class="logo-icon">R</div> MISCELÁNEA ROMERO</div>
-      <button class="mobile-toggle" onclick="document.querySelector('nav ul').classList.toggle('active')">☰</button>
-      <nav>
-        <ul>
-          <li><a href="#inicio">Inicio</a></li>
-          <li><a href="#productos">Productos</a></li>
-          <li><a href="#pedir">Cómo pedir</a></li>
-          <li><a href="#testimonios">Vecinos</a></li>
-          <li><a href="#contacto" class="btn-header">Pedir ahora</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
-
-  <section class="hero" id="inicio">
-    <div class="hero-bg">
-      <img src="https://images.unsplash.com/photo-1604719312566-8912e9227c6a?auto=format&fit=crop&w=1600&q=80" alt="Tienda de barrio">
-    </div>
-    <div class="hero-inner">
-      <div class="hero-content">
-        <div class="hero-tag">Abierto ahora — Colonia Banthí</div>
-        <h1>¿Te faltó el <span>shampoo</span>, un <span>cable</span> o un <span>juguete</span>? Lo tenemos.</h1>
-        <p>Más de 2,000 productos en una sola tienda. Desde $15 pesos. Entrega a domicilio en menos de 30 minutos en las colonias cercanas. Sin apps, sin comisiones, sin esperar horas.</p>
-        <div class="hero-cta">
-          <a href="#contacto" class="btn-primary">Pide por WhatsApp →</a>
-          <a href="#productos" class="btn-secondary">Ver productos</a>
-        </div>
-      </div>
-      <div class="hero-promo">
-        <h3>Promos de esta semana</h3>
-        <div class="promo-item"><span>Detergente líquido 1L</span><span class="price">$28</span></div>
-        <div class="promo-item"><span>Cable USB tipo C</span><span class="price">$35</span></div>
-        <div class="promo-item"><span>Shampoo 400ml</span><span class="price">$42</span></div>
-        <div class="promo-item"><span>Juguete para niños</span><span class="price">$55</span></div>
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-content">
+    <div>
+      <div class="hero-badge">✦ San Juan del Rio, Queretaro</div>
+      <h1>Su negocio<span>Calidad y servicio</span></h1>
+      <p class="hero-subtitle">Servicios profesionales en San Juan del Rio, Queretaro. Más de una década de experiencia respaldando a nuestra comunidad.</p>
+      <div class="hero-cta-group">
+        <a href="tel:Pendiente" class="btn-primary">📞 Llámanos ahora</a>
+        <a href="#servicios" class="btn-secondary">Conoce nuestros servicios →</a>
       </div>
     </div>
-  </section>
-
-  <section class="why">
-    <div class="why-inner">
-      <div class="why-left">
-        <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=800&q=80" alt="Tienda de conveniencia">
-      </div>
-      <div class="why-right">
-        <h2>¿Por qué comprar aquí y no en la tienda de la esquina?</h2>
-        <p>En Miscelánea Romero conocemos a cada vecino. Sabemos qué necesitas antes de que lo pidas. Y si no lo tenemos, te lo conseguimos en 24 horas.</p>
-        <div class="why-check"><div class="check">✓</div><span>Precios más bajos que Oxxo y 7-Eleven en 80% de los productos</span></div>
-        <div class="why-check"><div class="check">✓</div><span>Entrega a domicilio en menos de 30 min (Banthí, Centro, La Floresta)</span></div>
-        <div class="why-check"><div class="check">✓</div><span>Pedido mínimo de $50 pesos. Sin costo de envío.</span></div>
-        <div class="why-check"><div class="check">✓</div><span>Te fiámos si nos conoces. Pagas el viernes de quincena.</span></div>
+    <div class="hero-image">
+      <img src="assets/hero_optimized.jpg" alt="Miscelanea" loading="lazy" decoding="async">
+      <div class="hero-social-proof">
+        <p>⭐⭐⭐⭐⭐<br><strong>+500 clientes satisfechos</strong><br>en San Juan del Rio, Queretaro</p>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section class="categories" id="productos">
-    <div class="categories-inner">
-      <div class="cat-header">
-        <h2>¿Qué buscas hoy?</h2>
-        <p>Encuentra de todo. Si no lo ves, pregúntanos por WhatsApp.</p>
-      </div>
-      <div class="cat-grid">
-        <div class="cat-card">
-          <img src="https://images.unsplash.com/photo-1581539250439-c0a3c57a4eb3?auto=format&fit=crop&w=600&q=80" alt="Productos de hogar">
-          <div class="overlay">
-            <h3>Hogar y Limpieza</h3>
-            <span>Desde $15</span>
-          </div>
-        </div>
-        <div class="cat-card">
-          <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=600&q=80" alt="Ropa y accesorios">
-          <div class="overlay">
-            <h3>Ropa y Calzado</h3>
-            <span>Desde $120</span>
-          </div>
-        </div>
-        <div class="cat-card">
-          <img src="https://images.unsplash.com/photo-1567401893414-76b7b1e5a7a5?auto=format&fit=crop&w=600&q=80" alt="Electrónica">
-          <div class="overlay">
-            <h3>Electrónica y Accesorios</h3>
-            <span>Desde $35</span>
-          </div>
-        </div>
-        <div class="cat-card">
-          <img src="https://images.unsplash.com/photo-1620916566398-39f1143ab7be?auto=format&fit=crop&w=600&q=80" alt="Belleza">
-          <div class="overlay">
-            <h3>Belleza y Cuidado</h3>
-            <span>Desde $25</span>
-          </div>
-        </div>
+<!-- TRUST BAR — Autoridad instantánea -->
+<section class="trust-bar">
+  <div class="trust-grid">
+    <div class="trust-item animate-on-scroll">
+      <div class="trust-number">+15</div>
+      <div class="trust-label">años de experiencia</div>
+    </div>
+    <div class="trust-item animate-on-scroll delay-1">
+      <div class="trust-number">+500</div>
+      <div class="trust-label">clientes satisfechos</div>
+    </div>
+    <div class="trust-item animate-on-scroll delay-2">
+      <div class="trust-number">4.9</div>
+      <div class="trust-label">calificación promedio</div>
+    </div>
+    <div class="trust-item animate-on-scroll delay-3">
+      <div class="trust-number">100%</div>
+      <div class="trust-label">compromiso de calidad</div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICIOS -->
+<section class="section" id="servicios">
+  <div class="section-header animate-on-scroll">
+    <div class="section-tag">Nuestros Servicios</div>
+    <h2 class="section-title">Nuestros Servicios</h2>
+    <p class="section-subtitle">Ofrecemos servicios de la más alta calidad en San Juan del Rio, Queretaro. Cada cliente es tratado con la atención que se merece.</p>
+  </div>
+  <div class="services-grid">
+    <div class="service-card animate-on-scroll">
+      <div class="service-icon">✨</div>
+      <h3>Servicio de Calidad</h3>
+      <p>Atención personalizada y productos de primera.</p>
+    </div>
+<div class="service-card animate-on-scroll">
+      <div class="service-icon">🚚</div>
+      <h3>Entrega a Domicilio</h3>
+      <p>Llevamos nuestros productos hasta tu puerta.</p>
+    </div>
+<div class="service-card animate-on-scroll">
+      <div class="service-icon">💬</div>
+      <h3>Atención Personalizada</h3>
+      <p>Te escuchamos y te damos exactamente lo que necesitas.</p>
+    </div>
+  </div>
+</section>
+
+<!-- SOBRE NOSOTROS -->
+<section class="about-section">
+  <div class="about-grid">
+    <div class="about-image animate-on-scroll">
+      <img src="assets/producto.jpg" alt="Sobre Miscelanea" loading="lazy" decoding="async">
+      <div class="experience-badge">
+        <span class="number">+15</span>
+        <span class="label">años de<br>experiencia</span>
       </div>
     </div>
-  </section>
-
-  <section class="how" id="pedir">
-    <div class="how-inner">
-      <div class="how-header">
-        <h2>Pide en 3 pasos, sin apps</h2>
-        <p>Así de fácil. No necesitas descargar nada. Solo WhatsApp.</p>
-      </div>
-      <div class="how-grid">
-        <div class="how-step">
-          <div class="how-step-icon">📱</div>
-          <h3>Escríbenos por WhatsApp</h3>
-          <p>Mándanos tu lista de compras. Puedes decir "un shampoo, un cable, una coca de 2L y un juguete para mi sobrino." Nosotros te confirmamos precios.</p>
-        </div>
-        <div class="how-step">
-          <div class="how-step-icon">📦</div>
-          <h3>Preparamos tu pedido</h3>
-          <p>En menos de 15 minutos tenemos tu pedido listo. Si falta algo te ofrecemos alternativa al mismo precio. Sin sorpresas.</p>
-        </div>
-        <div class="how-step">
-          <div class="how-step-icon">🛵</div>
-          <h3>Te lo llevamos a tu casa</h3>
-          <p>Entrega en Banthí, Centro, La Floresta y colonias aledañas en menos de 30 minutos. Pagas en efectivo o transferencia al recibir.</p>
-        </div>
+    <div class="about-content animate-on-scroll">
+      <div class="section-tag">Sobre Nosotros</div>
+      <h2>Tradición y calidad en San Juan del Rio, Queretaro</h2>
+      <p>En nuestro negocio nos dedicamos a ofrecer servicios de excelencia. Con más de 15 años de experiencia, hemos construido una reputación basada en la calidad y el trato personalizado.</p>
+      <p>Nuestro compromiso es simple: cada cliente que entra por nuestra puerta, sale satisfecho. Esa es la filosofía que nos ha mantenido en el corazón de la comunidad.</p>
+      <div class="about-features">
+        <div class="about-feature">
+      <div class="check">✓</div>
+      <p>Productos frescos y de calidad garantizada</p>
+    </div>
+<div class="about-feature">
+      <div class="check">✓</div>
+      <p>Atención personalizada para cada cliente</p>
+    </div>
+<div class="about-feature">
+      <div class="check">✓</div>
+      <p>Precios justos y competitivos</p>
+    </div>
+<div class="about-feature">
+      <div class="check">✓</div>
+      <p>Años de experiencia respaldando nuestro trabajo</p>
+    </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section class="testimonials" id="testimonios">
-    <div class="testimonials-inner">
-      <div class="testi-header">
-        <h2>Lo que dicen los vecinos</h2>
-        <p>Más de 15 años siendo la tienda de confianza de la Colonia Banthí.</p>
-      </div>
-      <div class="testi-grid">
-        <div class="testi-card">
-          <div class="testi-stars">★★★★★</div>
-          <p class="testi-text">Un domingo a las 8pm mi hijo se quedó sin pañales. Les escribí por WhatsApp y en 20 minutos tocaron la puerta. No cobraron envío. Eso es lo que no te da ninguna app.</p>
-          <div class="testi-author">
-            <div class="testi-avatar">DP</div>
-            <div><strong>Diana Pérez</strong><span>Mamá de 2, Colonia Banthí</span></div>
-          </div>
-        </div>
-        <div class="testi-card">
-          <div class="testi-stars">★★★★★</div>
-          <p class="testi-text">Compré un celular y se me descompuso el cargador a los 3 días. Me lo cambiaron sin papeleos ni reclamos. Aquí te conocen por tu nombre, no por tu número de pedido.</p>
-          <div class="testi-author">
-            <div class="testi-avatar">FS</div>
-            <div><strong>Francisco Sánchez</strong><span>Estudiante, CECATI</span></div>
-          </div>
-        </div>
-        <div class="testi-card">
-          <div class="testi-stars">★★★★★</div>
-          <p class="testi-text">Llevo 8 años comprando aquí. Cuando me faltó para el aguinaldo de mis empleados, me fiaron 3 semanas sin interés. En ninguna tienda de cadena te hacen eso.</p>
-          <div class="testi-author">
-            <div class="testi-avatar">GT</div>
-            <div><strong>Guillermo Torres</strong><span>Dueño de taquería, Centro</span></div>
-          </div>
+<!-- TESTIMONIOS — Prueba social -->
+<section class="testimonials-section">
+  <div class="section-header animate-on-scroll">
+    <div class="section-tag" style="color:var(--color-gold)">Testimonios</div>
+    <h2 class="section-title">Lo que dicen nuestros clientes</h2>
+    <p class="section-subtitle">La satisfacción de nuestros clientes es nuestro mejor respaldo</p>
+  </div>
+  <div class="testimonials-grid">
+    <div class="testimonial-card animate-on-scroll">
+      <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+      <p class="testimonial-text">"Excelente servicio, atención amable y productos de primera calidad. Totalmente recomendado."</p>
+      <div class="testimonial-author">
+        <div class="testimonial-avatar">Cs</div>
+        <div>
+          <div class="testimonial-name">Cliente satisfecho</div>
+          <div class="testimonial-role">Vecino de la zona</div>
         </div>
       </div>
     </div>
-  </section>
-
-  <section class="contact" id="contacto">
-    <div class="contact-inner">
-      <div class="contact-left">
-        <h2>¿Te faltó algo? Te lo llevamos.</h2>
-        <p>Envíanos tu lista por WhatsApp. En menos de 30 minutos tocamos tu puerta en la Colonia Banthí y zonas cercanas.</p>
-        <div class="contact-item">
-          <div class="contact-item-icon">📍</div>
-          <div><strong>Ubicación</strong><span>Calle Guadalupe Victoria 36, Colonia Banthí, SJR, Qro.</span></div>
+<div class="testimonial-card animate-on-scroll">
+      <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+      <p class="testimonial-text">"Vengo desde hace años y nunca me han fallado. La calidad siempre es consistente."</p>
+      <div class="testimonial-author">
+        <div class="testimonial-avatar">MF</div>
+        <div>
+          <div class="testimonial-name">María F.</div>
+          <div class="testimonial-role">Compradora frecuente</div>
         </div>
-        <div class="contact-item">
-          <div class="contact-item-icon">🕐</div>
-          <div><strong>Horario</strong><span>Lunes a Sábado: 8am-9pm, Domingo: 9am-3pm</span></div>
-        </div>
-        <div class="contact-item">
-          <div class="contact-item-icon">🛵</div>
-          <div><strong>Entrega</strong><span>Gratis en Banthí, Centro, La Floresta. Pedido mínimo $50.</span></div>
-        </div>
-        <a href="#" class="whatsapp-btn">💬 Pide por WhatsApp ahora</a>
       </div>
-      <form class="contact-form" onsubmit="event.preventDefault(); alert('¡Gracias! Te respondemos en minutos. Demostración.');">
-        <input type="text" placeholder="Tu nombre" required>
-        <input type="tel" placeholder="Tu teléfono" required>
-        <input type="text" placeholder="Tu colonia">
-        <textarea placeholder="¿Qué necesitas? Ej: un shampoo, un cable, un juguete..."></textarea>
-        <button type="submit">Enviar pedido — Respondemos en 5 min</button>
-      </form>
     </div>
-  </section>
+  </div>
+</section>
 
-  <footer>
-    <div class="footer-inner">
-      <div class="footer-logo">MISCELÁNEA ROMERO</div>
-      <div class="footer-copy">© 2025 Miscelánea Romero — Todo lo que necesitas, a precio de barrio</div>
+<!-- URGENCIA — Escasez + Pérdida aversión -->
+<section class="urgency-section">
+  <div class="urgency-content">
+    <div class="urgency-badge">⚡ Oferta por tiempo limitado</div>
+    <h2>¿Listo para hacer crecer tu negocio?</h2>
+    <p>No dejes que tus competidores sigan robándose tus clientes. Cada día sin presencia digital es dinero que se pierde.</p>
+    <a href="tel:Pendiente" class="urgency-cta">📞 Llámanos ahora: Pendiente</a>
+    <p class="urgency-note">Atención personalizada • Respuesta inmediata • San Juan del Rio, Queretaro</p>
+  </div>
+</section>
+
+<!-- CONTACTO -->
+<section class="contact-section" id="contacto">
+  <div class="contact-grid">
+    <div class="contact-info">
+      <h2>Visítanos o llámanos</h2>
+      <p>Estamos listos para atenderte. Tu negocio merece crecer.</p>
+      <div class="contact-item">
+        <div class="contact-icon">📍</div>
+        <div>
+          <strong>Dirección</strong>
+          <span>Pendiente</span>
+        </div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-icon">📞</div>
+        <div>
+          <strong>Teléfono</strong>
+          <span>Pendiente</span>
+        </div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-icon">🕐</div>
+        <div>
+          <strong>Horario</strong>
+          <span>Lunes a Sábado: 8:00 AM - 8:00 PM</span>
+        </div>
+      </div>
     </div>
-  </footer>
+    <div class="contact-map">
+      <div class="map-placeholder">
+        🗺️ Mapa de ubicación<br>
+        <small>Pendiente</small>
+      </div>
+    </div>
+  </div>
+</section>
 
-  <script>
-    window.addEventListener('scroll', () => {
-      document.querySelector('header').classList.toggle('scrolled', window.scrollY > 20);
-    });
-  </script>
+<!-- FOOTER -->
+<footer class="footer">
+  © 2026 Miscelanea — Negocio local | San Juan del Rio, Queretaro | Todos los derechos reservados
+</footer>
 
+<script>
+// ============================================
+// ANIMACIONES CON INTERSECTION OBSERVER
+// ============================================
+const observerOptions = { threshold: 0.1, rootMargin: '0px 0px -50px 0px' };
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, observerOptions);
+
+document.querySelectorAll('.animate-on-scroll').forEach(el => observer.observe(el));
+
+// Header scroll effect
+window.addEventListener('scroll', () => {
+  document.getElementById('header').classList.toggle('scrolled', window.scrollY > 50);
+});
+</script>
 </body>
 </html>
