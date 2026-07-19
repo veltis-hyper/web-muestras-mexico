@@ -1,180 +1,212 @@
 <!DOCTYPE html>
-<html lang="es-MX">
+<html lang="es">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Portafolio Web — 30 Propuestas para Empresas Mexicanas</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+<title>Web Muestras México — 30 Demos Profesionales</title>
+<meta name="description" content="30 páginas web de demostración para negocios mexicanos. Diseño profesional, psicológicamente optimizado.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
-:root{--primary:#0f172a;--accent:#2563eb;--accent2:#f59e0b;--success:#10b981;--bg:#f8fafc;--card:#fff;--text:#1e293b;--muted:#64748b;--border:#e2e8f0;--shadow:0 4px 24px rgba(0,0,0,0.06);}
-*{margin:0;padding:0;box-sizing:border-box;}
-html{scroll-behavior:smooth;}
-body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);line-height:1.6;}
-
-header{background:linear-gradient(135deg,var(--primary)0%,#1e3a5f 50%,var(--accent)100%);color:#fff;padding:80px 24px 60px;text-align:center;position:relative;overflow:hidden;}
-header::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 30% 50%,rgba(255,255,255,0.06)0%,transparent 50%);}
-header .content{position:relative;z-index:1;max-width:900px;margin:0 auto;}
-header h1{font-family:'Playfair Display',serif;font-size:3rem;font-weight:700;margin-bottom:16px;line-height:1.1;}
-header p{font-size:1.15rem;opacity:0.9;max-width:600px;margin:0 auto 32px;}
-header .badge{display:inline-block;background:rgba(255,255,255,0.12);border:1px solid rgba(255,255,255,0.2);padding:10px 24px;border-radius:50px;font-size:0.9rem;font-weight:500;}
-
-.stats-bar{background:#fff;border-bottom:1px solid var(--border);padding:28px 24px;}
-.stats-grid{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:24px;text-align:center;}
-.stat-item h3{font-size:2.2rem;color:var(--accent);font-weight:800;}
-.stat-item p{color:var(--muted);font-size:0.9rem;margin-top:4px;}
-
-.container{max-width:1400px;margin:0 auto;padding:48px 24px;}
-
-.filters{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-bottom:40px;}
-.filter-btn{padding:8px 20px;border-radius:50px;border:1px solid var(--border);background:#fff;color:var(--text);font-size:0.85rem;font-weight:500;cursor:pointer;transition:all 0.2s;}
-.filter-btn:hover,.filter-btn.active{background:var(--accent);color:#fff;border-color:var(--accent);}
-
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(360px,1fr));gap:20px;}
-
-.card{background:var(--card);border-radius:16px;border:1px solid var(--border);overflow:hidden;transition:transform 0.3s,box-shadow 0.3s;display:flex;flex-direction:column;}
-.card:hover{transform:translateY(-4px);box-shadow:0 12px 32px rgba(0,0,0,0.08);}
-.card-header{padding:20px 20px 12px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:12px;}
-.card-icon{width:44px;height:44px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0;}
-.card-title h4{font-size:1rem;font-weight:600;color:var(--primary);line-height:1.3;}
-.card-title span{font-size:0.78rem;color:var(--muted);}
-.card-body{padding:16px 20px;flex:1;}
-.card-body p{font-size:0.85rem;color:var(--muted);margin-bottom:12px;}
-.card-tags{display:flex;flex-wrap:wrap;gap:6px;}
-.tag{font-size:0.72rem;padding:4px 10px;border-radius:20px;font-weight:500;}
-.tag-estado{background:#dbeafe;color:#1e40af;}
-.tag-giro{background:#fef3c7;color:#92400e;}
-.tag-precio{background:#dcfce7;color:#166534;}
-.card-footer{padding:14px 20px;border-top:1px solid var(--border);display:flex;gap:10px;}
-.btn{flex:1;text-align:center;padding:10px 14px;border-radius:10px;font-size:0.82rem;font-weight:600;text-decoration:none;transition:all 0.2s;border:none;cursor:pointer;}
-.btn-primary{background:var(--accent);color:#fff;}
-.btn-primary:hover{background:#1d4ed8;}
-.btn-outline{background:#fff;color:var(--text);border:1px solid var(--border);}
-.btn-outline:hover{background:var(--bg);}
-.btn-success{background:var(--success);color:#fff;}
-.btn-success:hover{background:#059669;}
-
-.cta-section{background:linear-gradient(135deg,var(--primary)0%,#1e3a5f 100%);color:#fff;padding:80px 24px;text-align:center;}
-.cta-section h2{font-family:'Playfair Display',serif;font-size:2.4rem;margin-bottom:16px;}
-.cta-section p{opacity:0.85;max-width:600px;margin:0 auto 28px;}
-.cta-btn{display:inline-block;padding:16px 40px;background:var(--accent2);color:var(--primary);font-weight:700;font-size:1rem;border-radius:12px;text-decoration:none;transition:all 0.3s;}
-.cta-btn:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(245,158,11,0.3);}
-
-footer{text-align:center;padding:40px 24px;border-top:1px solid var(--border);color:var(--muted);font-size:0.85rem;}
-
-@media(max-width:768px){header h1{font-size:2.2rem;}.stats-grid{grid-template-columns:repeat(2,1fr);}.grid{grid-template-columns:1fr;}}
+:root {
+  --color-primary: #D4A017;
+  --color-primary-dark: #B8860B;
+  --color-dark: #1A1A2E;
+  --color-dark-2: #16213E;
+  --color-light: #FAFAFA;
+  --color-gray: #6B7280;
+  --color-gray-light: #F3F4F6;
+  --font-body: 'Inter', sans-serif;
+  --font-display: 'Playfair Display', serif;
+  --shadow-sm: 0 1px 2px rgba(0,0,0,0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.1);
+  --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.1);
+  --shadow-xl: 0 25px 50px -12px rgba(0,0,0,0.25);
+  --radius: 12px;
+  --radius-lg: 20px;
+  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { font-family: var(--font-body); color: var(--color-dark); background: var(--color-light); line-height: 1.6; }
+@keyframes fadeInUp { from { opacity: 0; transform: translateY(40px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+.animate-on-scroll { opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease, transform 0.8s ease; }
+.animate-on-scroll.visible { opacity: 1; transform: translateY(0); }
+.header { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: rgba(26,26,46,0.95); backdrop-filter: blur(20px); padding: 0 5%; height: 70px; display: flex; align-items: center; justify-content: space-between; }
+.header-logo { font-family: var(--font-display); font-size: 1.4rem; font-weight: 700; color: var(--color-primary); text-decoration: none; }
+.header-nav a { color: rgba(255,255,255,0.7); text-decoration: none; margin-left: 30px; font-size: 0.9rem; font-weight: 500; transition: var(--transition); }
+.header-nav a:hover { color: var(--color-primary); }
+.hero { min-height: 70vh; display: flex; align-items: center; justify-content: center; text-align: center; padding: 120px 5% 80px; background: linear-gradient(135deg, var(--color-dark) 0%, var(--color-dark-2) 50%, #1E3A5F 100%); position: relative; overflow: hidden; }
+.hero::before { content: ''; position: absolute; top: -30%; right: -10%; width: 600px; height: 600px; background: radial-gradient(circle, rgba(212,160,23,0.15) 0%, transparent 70%); animation: float 6s ease-in-out infinite; }
+.hero-badge { display: inline-block; background: rgba(212,160,23,0.2); border: 1px solid var(--color-primary); color: var(--color-primary); padding: 8px 24px; border-radius: 50px; font-size: 0.85rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 24px; animation: fadeInUp 0.6s ease; }
+.hero h1 { font-family: var(--font-display); font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 700; color: white; line-height: 1.1; margin-bottom: 20px; animation: fadeInUp 0.8s ease 0.2s both; }
+.hero h1 span { color: var(--color-primary); }
+.hero-subtitle { font-size: 1.15rem; color: rgba(255,255,255,0.6); max-width: 600px; margin: 0 auto 40px; animation: fadeInUp 0.8s ease 0.4s both; }
+.hero-stats { display: flex; justify-content: center; gap: 50px; margin-top: 40px; animation: fadeInUp 0.8s ease 0.6s both; }
+.hero-stat { text-align: center; }
+.hero-stat .number { font-family: var(--font-display); font-size: 2.5rem; font-weight: 700; color: var(--color-primary); line-height: 1; }
+.hero-stat .label { font-size: 0.85rem; color: rgba(255,255,255,0.5); margin-top: 4px; }
+.section { padding: 80px 5%; max-width: 1400px; margin: 0 auto; }
+.section-header { text-align: center; max-width: 700px; margin: 0 auto 60px; }
+.section-tag { display: inline-block; color: var(--color-primary); font-weight: 600; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 16px; }
+.section-title { font-family: var(--font-display); font-size: clamp(1.8rem, 3vw, 2.5rem); font-weight: 700; margin-bottom: 12px; }
+.section-subtitle { color: var(--color-gray); font-size: 1.05rem; }
+.empresas-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 24px; }
+.empresa-card { background: white; border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-sm); border: 1px solid rgba(0,0,0,0.05); transition: var(--transition); text-decoration: none; color: inherit; display: block; }
+.empresa-card:hover { transform: translateY(-8px); box-shadow: var(--shadow-xl); }
+.empresa-card-image { height: 180px; display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; }
+.empresa-card-image .overlay { position: absolute; bottom: 0; left: 0; right: 0; padding: 40px 20px 16px; background: linear-gradient(transparent, rgba(0,0,0,0.7)); color: white; }
+.empresa-card-image .overlay h3 { font-size: 1.1rem; font-weight: 700; }
+.empresa-card-city { position: absolute; top: 12px; right: 12px; background: rgba(255,255,255,0.2); backdrop-filter: blur(10px); color: white; padding: 4px 12px; border-radius: 50px; font-size: 0.75rem; font-weight: 600; }
+.empresa-card-body { padding: 24px; }
+.empresa-card-body h3 { font-size: 1.15rem; font-weight: 700; margin-bottom: 6px; color: var(--color-dark); }
+.empresa-card-body p { font-size: 0.9rem; color: var(--color-gray); margin-bottom: 16px; }
+.empresa-card-tags { display: flex; gap: 8px; flex-wrap: wrap; }
+.empresa-tag { background: var(--color-gray-light); color: var(--color-gray); padding: 4px 12px; border-radius: 50px; font-size: 0.75rem; font-weight: 500; }
+.empresa-tag-web { background: #D1FAE5; color: #065F46; }
+.footer { background: var(--color-dark); color: rgba(255,255,255,0.4); text-align: center; padding: 40px 5%; }
+.footer a { color: var(--color-primary); text-decoration: none; }
+@media (max-width: 768px) { .header-nav { display: none; } .hero-stats { flex-direction: column; gap: 20px; } .empresas-grid { grid-template-columns: 1fr; } }
 </style>
 </head>
 <body>
 
-<header>
-<div class="content">
-<div class="badge">Propuesta de Servicio Web para PyMEs</div>
-<h1>30 Landing Pages Demo para Empresas Mexicanas</h1>
-<p>Páginas web personalizadas para pequeñas empresas en México que aún no tienen presencia digital profesional.</p>
-</div>
+<header class="header">
+  <a href="#" class="header-logo">✦ Web Muestras México</a>
+  <nav class="header-nav">
+    <a href="#empresas">Empresas</a>
+    <a href="#metodologia">Metodología</a>
+    <a href="#contacto">Contacto</a>
+  </nav>
 </header>
 
-<div class="stats-bar">
-<div class="stats-grid">
-<div class="stat-item"><h3>30</h3><p>Empresas</p></div>
-<div class="stat-item"><h3>7</h3><p>Estados</p></div>
-<div class="stat-item"><h3>100%</h3><p>Responsive</p></div>
-<div class="stat-item"><h3>$6K</h3><p>Paquete sugerido</p></div>
-</div>
-</div>
-
-<main class="container">
-<div class="filters">
-<button class="filter-btn active" onclick="filterAll()">Todas</button>
-<button class="filter-btn" onclick="filterState('Yucatán')">Yucatán</button>
-<button class="filter-btn" onclick="filterState('Oaxaca')">Oaxaca</button>
-<button class="filter-btn" onclick="filterState('Estado de México')">Edo. Méx.</button>
-<button class="filter-btn" onclick="filterState('Veracruz')">Veracruz</button>
-<button class="filter-btn" onclick="filterState('Puebla')">Puebla</button>
-<button class="filter-btn" onclick="filterState('Querétaro')">Querétaro</button>
-<button class="filter-btn" onclick="filterState('Guanajuato')">Guanajuato</button>
-</div>
-
-<div class="grid" id="cards"></div>
-</main>
-
-<section class="cta-section">
-<h2>¿Quieres una propuesta para tu negocio?</h2>
-<p>Cada página está diseñada para convertir visitantes en clientes. Responsive, con WhatsApp, formulario de contacto y SEO local.</p>
-<a href="mailto:contacto@webmuestras.mx" class="cta-btn">Solicitar mi propuesta →</a>
+<section class="hero">
+  <div>
+    <div class="hero-badge">v2.0 — Impeccable Front-End</div>
+    <h1>30 Páginas Web<br><span>Imposibles de Rechazar</span></h1>
+    <p class="hero-subtitle">
+      Demos profesionales para negocios mexicanos.<br>
+      Diseño psicológicamente optimizado. Animaciones fluidas. CTA estratégicos.<br>
+      Cada página está construida para convertir visitantes en clientes.
+    </p>
+    <div class="hero-stats">
+      <div class="hero-stat"><div class="number">30</div><div class="label">Empresas</div></div>
+      <div class="hero-stat"><div class="number">17</div><div class="label">Giros distintos</div></div>
+      <div class="hero-stat"><div class="number">3</div><div class="label">Estados</div></div>
+      <div class="hero-stat"><div class="number">100%</div><div class="label">Personalizado</div></div>
+    </div>
+  </div>
 </section>
 
-<footer>
-<p>2025 — Proyecto de muestra. Todas las páginas son demostraciones front-end para fines comerciales.</p>
-<p style="margin-top:8px;font-size:0.78rem;">Empresas verificadas sin sitio web propio mediante directorios oficiales (DENUE/INEGI, pymes.org.mx).</p>
+<section class="section" id="empresas">
+  <div class="section-header animate-on-scroll">
+    <div class="section-tag">Portafolio de Demos</div>
+    <h2 class="section-title">Todas las empresas</h2>
+    <p class="section-subtitle">Haz clic en cualquier tarjeta para ver la demo en vivo</p>
+  </div>
+  <div class="empresas-grid" id="grid"></div>
+</section>
+
+<section class="section" id="metodologia" style="background:var(--color-gray-light);">
+  <div class="section-header animate-on-scroll">
+    <div class="section-tag">Metodología</div>
+    <h2 class="section-title">Cómo funciona el método del Secuestro de Atención</h2>
+    <p class="section-subtitle">Un sistema probado para vender páginas web sin que el cliente pueda rechazarte</p>
+  </div>
+  <div style="max-width:900px;margin:0 auto;">
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:30px;">
+      <div style="text-align:center;padding:30px;background:white;border-radius:var(--radius-lg);box-shadow:var(--shadow-sm);" class="animate-on-scroll">
+        <div style="width:60px;height:60px;background:var(--color-primary);color:white;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.5rem;font-weight:700;margin:0 auto 16px;">1</div>
+        <h3 style="margin-bottom:8px;">El Regalo</h3>
+        <p style="color:var(--color-gray);font-size:0.9rem;">Entregas la demo sin pedir nada. La reciprocidad psicológica se activa.</p>
+      </div>
+      <div style="text-align:center;padding:30px;background:white;border-radius:var(--radius-lg);box-shadow:var(--shadow-sm);" class="animate-on-scroll">
+        <div style="width:60px;height:60px;background:var(--color-primary);color:white;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.5rem;font-weight:700;margin:0 auto 16px;">2</div>
+        <h3 style="margin-bottom:8px;">El Gancho</h3>
+        <p style="color:var(--color-gray);font-size:0.9rem;">Llamas para "saber qué le pareció". No vendes. Escuchas. El interés emerge solo.</p>
+      </div>
+      <div style="text-align:center;padding:30px;background:white;border-radius:var(--radius-lg);box-shadow:var(--shadow-sm);" class="animate-on-scroll">
+        <div style="width:60px;height:60px;background:var(--color-primary);color:white;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.5rem;font-weight:700;margin:0 auto 16px;">3</div>
+        <h3 style="margin-bottom:8px;">El Cierre</h3>
+        <p style="color:var(--color-gray);font-size:0.9rem;">Oferta con urgencia real. Cierre asumido. Tomas el 50% de anticipo.</p>
+      </div>
+      <div style="text-align:center;padding:30px;background:white;border-radius:var(--radius-lg);box-shadow:var(--shadow-sm);" class="animate-on-scroll">
+        <div style="width:60px;height:60px;background:var(--color-primary);color:white;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.5rem;font-weight:700;margin:0 auto 16px;">4</div>
+        <h3 style="margin-bottom:8px;">La Escala</h3>
+        <p style="color:var(--color-gray);font-size:0.9rem;">Entregas, pides referencias, repites con los vecinos del área.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer" id="contacto">
+  <p><strong style="color:var(--color-primary);">Web Muestras México v2.0</strong></p>
+  <p>30 demos profesionales · Diseño psicológico · Front-end impecable</p>
+  <p style="margin-top:16px;font-size:0.8rem;">Generado con <a href="#">Kimi Work</a></p>
 </footer>
 
 <script>
-const empresas=[
-{short:'seralum',nombre:'SERALUM — Servicio de Aluminio y Herrería',estado:'Yucatán',ciudad:'Mérida',giro:'Herrería y aluminio',icon:'⚒️',color:'#1e3a5f',contacto:'No disponible',dominio:'seralum.mx'},
-{short:'autospa',nombre:'AUTO SPA',estado:'Yucatán',ciudad:'Mérida',giro:'Lavado y lubricado de autos',icon:'🚗',color:'#2563eb',contacto:'No disponible',dominio:'autospamerida.com'},
-{short:'pisur',nombre:'PISUR — Artículos para Albercas',estado:'Yucatán',ciudad:'Mérida',giro:'Equipos y mantenimiento de albercas',icon:'🏊',color:'#0891b2',contacto:'pisur@email.com',dominio:'pisuralbercas.mx'},
-{short:'minisuper',nombre:'MINI SUPER SJT',estado:'Yucatán',ciudad:'Mérida',giro:'Minisuper de barrio',icon:'🛒',color:'#dc2626',contacto:'No disponible',dominio:'minisupersjt.com'},
-{short:'restaurante',nombre:'RESTAURANTE BAR EL ESCAPE',estado:'Yucatán',ciudad:'Mérida',giro:'Restaurante-bar tradicional',icon:'🍽️',color:'#c2410c',contacto:'Tel: 9997464528',dominio:'restauranteescape.mx'},
-{short:'taller_moscos',nombre:'Taller de Bicicletas y Motos Los Moscos',estado:'Yucatán',ciudad:'Mérida',giro:'Reparación de bicicletas',icon:'🚲',color:'#374151',contacto:'No disponible',dominio:'tallerlosmoscos.mx'},
-{short:'lavanderia',nombre:'Lavandería Vásquez',estado:'Oaxaca',ciudad:'Oaxaca de Juárez',giro:'Lavandería y tintorería',icon:'👕',color:'#0284c7',contacto:'Calle Sexta Oriente 105, Col. Cuauhtémoc',dominio:'lavanderiavasquezoaxaca.com'},
-{short:'polleria',nombre:'Pollería La Chatita',estado:'Oaxaca',ciudad:'Oaxaca de Juárez',giro:'Venta de carne de aves',icon:'🍗',color:'#f59e0b',contacto:'Col. Cosijoeza',dominio:'pollerialachatita.com.mx'},
-{short:'despacho',nombre:'Despacho Jurídico Lic. Herminio Peralta',estado:'Oaxaca',ciudad:'Oaxaca de Juárez',giro:'Servicios legales',icon:'⚖️',color:'#1e3a5f',contacto:'Tel: 951 516 0540',dominio:'peraltalegaloaxaca.com'},
-{short:'panaderia_vicky',nombre:'Panadería Vicky',estado:'Oaxaca',ciudad:'Oaxaca de Juárez',giro:'Panadería y repostería',icon:'🥖',color:'#92400e',contacto:'Tel: 951 501 0488',dominio:'panaderiavickyoaxaca.com'},
-{short:'comedor',nombre:'Comedor (Comida Económica)',estado:'Oaxaca',ciudad:'Oaxaca de Juárez',giro:'Comida económica',icon:'🍛',color:'#ea580c',contacto:'Tel: 951 516 5566',dominio:'comedoreconomico-oaxaca.com'},
-{short:'materiasprimas',nombre:'Materias Primas El Ángel',estado:'Oaxaca',ciudad:'Oaxaca de Juárez',giro:'Insumos para repostería',icon:'🧁',color:'#db2777',contacto:'Tel: 951 516 0319',dominio:'materiasprimaselangel.com'},
-{short:'tortilleria_gz',nombre:'Tortillería González',estado:'Estado de México',ciudad:'Toluca',giro:'Tortillas de maíz y nixtamal',icon:'🌽',color:'#ca8a04',contacto:'Tel: 7222038888',dominio:'tortilleriagonzalez-toluca.mx'},
-{short:'taller_abel',nombre:'Abel García Conrado — Taller Mecánico',estado:'Estado de México',ciudad:'Toluca',giro:'Taller mecánico',icon:'🔩',color:'#4b5563',contacto:'Tel: 7225881961',dominio:'tallerabelgarcia-toluca.mx'},
-{short:'floreria',nombre:'Florería Janet',estado:'Estado de México',ciudad:'Metepec',giro:'Flores y arreglos florales',icon:'🌸',color:'#ec4899',contacto:'Metepec, Edo. Méx.',dominio:'floreriajanet-metepec.mx'},
-{short:'tortilleria_tc',nombre:'Tortillería Tollocan',estado:'Estado de México',ciudad:'Toluca',giro:'Tortillas de maíz',icon:'🌮',color:'#d97706',contacto:'Tel: 7222777032',dominio:'tortilleriatollocan.mx'},
-{short:'taller_fortuna',nombre:'Taller Mecánico La Fortuna',estado:'Estado de México',ciudad:'Toluca',giro:'Servicio automotriz',icon:'🔧',color:'#991b1b',contacto:'Calzada del Pacífico, Toluca',dominio:'tallermecanicolafortuna.mx'},
-{short:'panaderia_imperial',nombre:'Panadería y Pastelería Imperial',estado:'Estado de México',ciudad:'Toluca',giro:'Panadería tradicional',icon:'🍞',color:'#a16207',contacto:'Tel: 7225661938',dominio:'panaderiaimperial-toluca.mx'},
-{short:'taller_cardenas',nombre:'TALLER CARDENAS',estado:'Veracruz',ciudad:'Veracruz',giro:'Maquinado industrial',icon:'⚙️',color:'#1e40af',contacto:'No disponible',dominio:'tallercardenas-veracruz.mx'},
-{short:'pollos_pasadita',nombre:'PELADOR DE POLLOS LA PASADITA',estado:'Veracruz',ciudad:'Veracruz',giro:'Procesamiento de pollo',icon:'🐔',color:'#dc2626',contacto:'Calle Úrsulo Galván S/N',dominio:'pollolapasadita-veracruz.mx'},
-{short:'engorda_mojarras',nombre:'ENGORDA DE MOJARRAS',estado:'Veracruz',ciudad:'Las Amapolas',giro:'Acuicultura',icon:'🐟',color:'#0d9488',contacto:'Las Amapolas, C.P. 91697',dominio:'engordamojarras-veracruz.mx'},
-{short:'pescadores_indep',nombre:'PESCADORES INDEPENDIENTES',estado:'Veracruz',ciudad:'Punta Gorda',giro:'Pesca artesanal',icon:'🎣',color:'#0369a1',contacto:'Punta Gorda, C.P. 94280',dominio:'pescadores-puntagorda.mx'},
-{short:'pescadores_capi',nombre:'PESCADORES CAPIOTEROS S.C. DE R.L.',estado:'Veracruz',ciudad:'Veracruz',giro:'Cooperativa pesquera',icon:'🐠',color:'#1e3a5f',contacto:'Veracruz, C.P. 91900',dominio:'capioteros-veracruz.mx'},
-{short:'pescadores_gallega',nombre:'SCPP PESCADORES DEL BAJO DE LA GALLEGA',estado:'Veracruz',ciudad:'Veracruz',giro:'Cooperativa pesquera',icon:'🦐',color:'#0f766e',contacto:'Veracruz, C.P. 91897',dominio:'pescadoresgallega-veracruz.mx'},
-{short:'frutas_guicho',nombre:'FRUTAS Y VERDURAS GUICHO',estado:'Puebla',ciudad:'Puebla',giro:'Frutas y verduras frescas',icon:'🍎',color:'#16a34a',contacto:'Tel: 222 287 8880',dominio:'frutasyverdurasguicho.mx'},
-{short:'tecnofon',nombre:'TECNOFON',estado:'Puebla',ciudad:'Puebla',giro:'Smartphones y reparaciones',icon:'📱',color:'#1e293b',contacto:'Calle 9 Norte 406-C, Centro',dominio:'tecnofonpuebla.mx'},
-{short:'forrajera',nombre:'FORRAJERA DR',estado:'Querétaro',ciudad:'San Juan del Río',giro:'Medicamentos veterinarios',icon:'🐄',color:'#15803d',contacto:'Tel: 427 150 0702',dominio:'forrajeradr.mx'},
-{short:'arquitecturando',nombre:'ARQUITECTURANDO DISEÑO Y CONSTRUCCIÓN',estado:'Querétaro',ciudad:'San Juan del Río',giro:'Construcción y urbanización',icon:'🏗️',color:'#374151',contacto:'[email protected]',dominio:'arquitecturando.mx'},
-{short:'miscelanea',nombre:'MISCELÁNEA ROMERO',estado:'Querétaro',ciudad:'San Juan del Río',giro:'Miscelánea de barrio',icon:'🏪',color:'#be123c',contacto:'Calle Guadalupe Victoria 36, Col. Banthí',dominio:'miscelanearomero.mx'},
-{short:'campo_mesa',nombre:'CAMPO EN TU MESA',estado:'Guanajuato',ciudad:'León',giro:'Productos artesanales de nopal',icon:'🌿',color:'#166534',contacto:'Los Alisos 3, León, Gto.',dominio:'campoentumesa.mx'}
+const empresas = [
+  {slug:'arquitecturando',nombre:'Arquitecturando',giro:'Arquitectura y construcción',ciudad:'San Juan del Río, Qro',grad:'linear-gradient(135deg,#1A1A2E 0%,#16213E 100%)'},
+  {slug:'autospa',nombre:'AUTO SPA',giro:'Lavado y lubricado de autos',ciudad:'México',grad:'linear-gradient(135deg,#1e3a5f 0%,#2563eb 100%)'},
+  {slug:'campo_mesa',nombre:'Campo Mesa',giro:'Productos de nopal',ciudad:'León, Gto',grad:'linear-gradient(135deg,#166534 0%,#22c55e 100%)'},
+  {slug:'comedor',nombre:'Comedor',giro:'Comida económica',ciudad:'Oaxaca',grad:'linear-gradient(135deg,#ea580c 0%,#f97316 100%)'},
+  {slug:'despacho',nombre:'Despacho',giro:'Servicios profesionales',ciudad:'Oaxaca',grad:'linear-gradient(135deg,#1e3a5f 0%,#3b82f6 100%)'},
+  {slug:'engorda_mojarras',nombre:'Engorda Mojarras',giro:'Acuicultura',ciudad:'Veracruz',grad:'linear-gradient(135deg,#0d9488 0%,#14b8a6 100%)'},
+  {slug:'floreria',nombre:'Florería',giro:'Flores y arreglos',ciudad:'Metepec, Edomex',grad:'linear-gradient(135deg,#ec4899 0%,#f472b6 100%)'},
+  {slug:'forrajera',nombre:'Forrajera',giro:'Forrajes y veterinaria',ciudad:'San Juan del Río, Qro',grad:'linear-gradient(135deg,#15803d 0%,#22c55e 100%)'},
+  {slug:'frutas_guicho',nombre:'Frutas Guicho',giro:'Frutas y verduras',ciudad:'Puebla',grad:'linear-gradient(135deg,#16a34a 0%,#84cc16 100%)'},
+  {slug:'lavanderia',nombre:'Lavandería',giro:'Lavado y tintorería',ciudad:'Oaxaca',grad:'linear-gradient(135deg,#0284c7 0%,#38bdf8 100%)'},
+  {slug:'materiasprimas',nombre:'Materias Primas',giro:'Insumos repostería',ciudad:'Oaxaca',grad:'linear-gradient(135deg,#db2777 0%,#f472b6 100%)'},
+  {slug:'minisuper',nombre:'MINI SUPER SJT',giro:'Minisuper',ciudad:'México',grad:'linear-gradient(135deg,#dc2626 0%,#ef4444 100%)'},
+  {slug:'miscelanea',nombre:'Miscelánea',giro:'Variedades',ciudad:'San Juan del Río, Qro',grad:'linear-gradient(135deg,#be123c 0%,#f43f5e 100%)'},
+  {slug:'panaderia_imperial',nombre:'Panadería Imperial',giro:'Panadería tradicional',ciudad:'Toluca, Edomex',grad:'linear-gradient(135deg,#a16207 0%,#eab308 100%)'},
+  {slug:'panaderia_vicky',nombre:'Panadería Vicky',giro:'Panadería',ciudad:'Oaxaca',grad:'linear-gradient(135deg,#92400e 0%,#d97706 100%)'},
+  {slug:'pescadores_capi',nombre:'Pescadores Capi',giro:'Cooperativa pesquera',ciudad:'Veracruz',grad:'linear-gradient(135deg,#1e3a5f 0%,#0ea5e9 100%)'},
+  {slug:'pescadores_gallega',nombre:'Pescadores Gallega',giro:'Pesca artesanal',ciudad:'Veracruz',grad:'linear-gradient(135deg,#0f766e 0%,#14b8a6 100%)'},
+  {slug:'pescadores_indep',nombre:'Pescadores Indep',giro:'Pesca artesanal',ciudad:'Veracruz',grad:'linear-gradient(135deg,#0369a1 0%,#38bdf8 100%)'},
+  {slug:'pisur',nombre:'PISUR',giro:'Artículos para albercas',ciudad:'México',grad:'linear-gradient(135deg,#0891b2 0%,#22d3ee 100%)'},
+  {slug:'polleria',nombre:'Pollería',giro:'Venta de pollo',ciudad:'Oaxaca',grad:'linear-gradient(135deg,#f59e0b 0%,#fbbf24 100%)'},
+  {slug:'pollos_pasadita',nombre:'PELADOR LA PASADITA',giro:'Procesamiento de pollo',ciudad:'Veracruz',grad:'linear-gradient(135deg,#991b1b 0%,#ef4444 100%)'},
+  {slug:'restaurante',nombre:'RESTAURANTE BAR EL ESCAPE',giro:'Restaurante-bar',ciudad:'México',grad:'linear-gradient(135deg,#c2410c 0%,#f97316 100%)'},
+  {slug:'seralum',nombre:'SERALUM',giro:'Aluminio y herrería',ciudad:'México',grad:'linear-gradient(135deg,#374151 0%,#6b7280 100%)'},
+  {slug:'taller_abel',nombre:'Taller Abel',giro:'Taller mecánico',ciudad:'Toluca, Edomex',grad:'linear-gradient(135deg,#4b5563 0%,#9ca3af 100%)'},
+  {slug:'taller_cardenas',nombre:'TALLER CARDENAS',giro:'Maquinado industrial',ciudad:'Veracruz',grad:'linear-gradient(135deg,#1e40af 0%,#3b82f6 100%)'},
+  {slug:'taller_fortuna',nombre:'Taller La Fortuna',giro:'Servicio automotriz',ciudad:'Toluca, Edomex',grad:'linear-gradient(135deg,#991b1b 0%,#dc2626 100%)'},
+  {slug:'taller_moscos',nombre:'Taller Moscos',giro:'Bicicletas y motos',ciudad:'Mérida, Yuc',grad:'linear-gradient(135deg,#1f2937 0%,#4b5563 100%)'},
+  {slug:'tecnofon',nombre:'Tecnofon',giro:'Electrónica',ciudad:'Puebla',grad:'linear-gradient(135deg,#1e293b 0%,#475569 100%)'},
+  {slug:'tortilleria_gz',nombre:'Tortillería GZ',giro:'Tortillas de maíz',ciudad:'Toluca, Edomex',grad:'linear-gradient(135deg,#ca8a04 0%,#facc15 100%)'},
+  {slug:'tortilleria_tc',nombre:'Tortillería Tollocan',giro:'Tortillas y nixtamal',ciudad:'Toluca, Edomex',grad:'linear-gradient(135deg,#d97706 0%,#fbbf24 100%)'}
 ];
 
-function renderCards(list){
-const c=document.getElementById('cards');
-c.innerHTML=list.map(e=>`
-<div class="card" data-estado="${e.estado}">
-<div class="card-header">
-<div class="card-icon" style="background:${e.color}15;color:${e.color}">${e.icon}</div>
-<div class="card-title">
-<h4>${e.nombre}</h4>
-<span>${e.ciudad}, ${e.estado}</span>
-</div>
-</div>
-<div class="card-body">
-<p>${e.giro}</p>
-<div class="card-tags">
-<span class="tag tag-estado">${e.estado}</span>
-<span class="tag tag-giro">${e.giro.split(' ').slice(0,2).join(' ')}</span>
-<span class="tag tag-precio">$6,000 MXN</span>
-</div>
-</div>
-<div class="card-footer">
-<a href="empresas/${e.short}/index.html" class="btn btn-primary" target="_blank">Ver Demo</a>
-<a href="empresas/${e.short}/propuesta.pdf" class="btn btn-success" target="_blank">PDF</a>
-<a href="empresas/${e.short}/README.txt" class="btn btn-outline" target="_blank">Datos</a>
-</div>
-</div>
-`).join('');
-}
+const grid = document.getElementById('grid');
+empresas.forEach((e, i) => {
+  const card = document.createElement('a');
+  card.href = `empresas/${e.slug}/index.html`;
+  card.className = 'empresa-card animate-on-scroll';
+  card.style.animationDelay = `${i * 0.05}s`;
+  card.innerHTML = `
+    <div class="empresa-card-image" style="background:${e.grad};">
+      <div class="overlay"><h3>${e.nombre}</h3></div>
+      <span class="empresa-card-city">${e.ciudad}</span>
+    </div>
+    <div class="empresa-card-body">
+      <h3>${e.nombre}</h3>
+      <p>${e.giro}</p>
+      <div class="empresa-card-tags">
+        <span class="empresa-tag empresa-tag-web">Web Demo</span>
+        <span class="empresa-tag">${e.ciudad}</span>
+      </div>
+    </div>
+  `;
+  grid.appendChild(card);
+});
 
-function filterAll(){renderCards(empresas);document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));event.target.classList.add('active');}
-function filterState(st){renderCards(empresas.filter(e=>e.estado===st));document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));event.target.classList.add('active');}
-
-renderCards(empresas);
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+}, { threshold: 0.1 });
+document.querySelectorAll('.animate-on-scroll').forEach(el => observer.observe(el));
 </script>
 
 </body>
